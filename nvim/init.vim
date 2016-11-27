@@ -55,6 +55,7 @@ Plug 'w0rp/ale'
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 Plug 'sheerun/vim-polyglot'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
