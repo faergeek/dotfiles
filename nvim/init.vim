@@ -110,3 +110,8 @@ map <C-c> <plug>NERDCommenterToggle
 " Next/Previous error from ALE
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" Filetype mappings
+autocmd BufRead,BufNewFile *.js.flow setfiletype javascript
+autocmd BufRead,BufNewFile .babelrc setfiletype json
+autocmd BufRead,BufNewFile .flowconfig setfiletype dosini
