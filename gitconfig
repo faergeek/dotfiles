@@ -1,0 +1,13 @@
+[include]
+  path = ~/.gitconfig.local
+[core]
+  excludesfile = ~/.gitignore
+[push]
+  default = upstream
+[fetch]
+  prune = true
+[merge]
+  tool = ediff
+  conflictstyle = diff3
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'

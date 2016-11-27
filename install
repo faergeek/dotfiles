@@ -1,0 +1,16 @@
+#!/bin/sh
+DIRNAME=`dirname $0`
+DOTROOT=`realpath ${DIRNAME}`
+# FIXME: should respect xdg variable values
+CONFIG_HOME=$HOME/.config
+
+brew tap homebrew/dupes
+brew tap neovim/neovim
+
+brew install asciinema elm fish git grc grep heroku imagemagick moreutils neovim nmap node nvm ocaml ocamlbuild opam ssh-copy-id tree
+
+ln -sf $DOTROOT/gitconfig $HOME/.gitconfig
+ln -sf $DOTROOT/gitignore $HOME/.gitignore
+ln -sf $DOTROOT/fish $CONFIG_HOME/
+ln -sf $DOTROOT/nvim $CONFIG_HOME/
+ln -sf $DOTROOT/omf $CONFIG_HOME/
