@@ -5,11 +5,12 @@ call plug#begin()
 " File tree
 Plug 'scrooloose/nerdtree'
 
-" Start screen + session-management
+" Session management
+Plug 'tpope/vim-obsession'
+
+" Start screen
 let g:startify_session_autoload = 1
-let g:startify_session_persistence = 1
 let g:startify_session_delete_buffers = 1
-let g:startify_skiplist = ['COMMIT_EDITMSG']
 Plug 'mhinz/vim-startify'
 
 " Colorscheme
