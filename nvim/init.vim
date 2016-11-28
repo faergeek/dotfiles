@@ -5,6 +5,9 @@ call plug#begin()
 " File tree
 Plug 'scrooloose/nerdtree'
 
+" CtrlP
+Plug 'ctrlpvim/ctrlp.vim'
+
 " Session management
 Plug 'tpope/vim-obsession'
 
@@ -96,6 +99,8 @@ set list listchars=tab:»\ ,trail:·,nbsp:+
 " Always write to file without renaming stuff
 " otherwise breaks webpack watch and similar things
 set backupcopy=yes
+
+set wildignore=*/node_modules/*,*.min.js
 
 " Restore last cursor position
 augroup vimrcEx
