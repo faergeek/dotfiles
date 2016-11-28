@@ -7,7 +7,7 @@
 [fetch]
   prune = true
 [merge]
-  tool = ediff
+  tool = nvimdiff
   conflictstyle = diff3
-[mergetool "vimdiff"]
+[mergetool "nvimdiff"]
   cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
