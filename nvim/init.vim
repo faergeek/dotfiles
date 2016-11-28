@@ -52,10 +52,19 @@ let g:ale_linters = {
 Plug 'w0rp/ale'
 
 " Syntaxes
+Plug 'JulesWang/css.vim', {'for': 'css'}
+Plug 'lambdatoast/elm.vim', {'for': 'elm'}
+Plug 'dag/vim-fish', {'for': 'fish'}
+Plug 'tpope/vim-git'
+Plug 'jparise/vim-graphql', {'for': 'graphql'}
+Plug 'othree/html5.vim', {'for': 'html'}
 let g:javascript_plugin_flow = 1
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'elzr/vim-json', {'for': 'json'}
 let g:jsx_ext_required = 0
-Plug 'sheerun/vim-polyglot'
-Plug 'jparise/vim-graphql'
+Plug 'mxw/vim-jsx', {'for': 'javascript'}
+Plug 'jrk/vim-ocaml', {'for': 'ocaml'}
+Plug 'wavded/vim-stylus', {'for': 'stylus'}
 
 call plug#end()
 
