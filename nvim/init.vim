@@ -34,9 +34,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-let g:flow#enable = 0 " Use some more generic thing for this
-Plug 'flowtype/vim-flow', {'for': 'javascript'}
+let g:deoplete#enable_at_startup = 1
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'steelsojka/deoplete-flow'
 
 " Comment helpers
 let g:NERDSpaceDelims = 1
