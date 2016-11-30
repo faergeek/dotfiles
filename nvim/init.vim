@@ -72,6 +72,10 @@ Plug 'wavded/vim-stylus', {'for': 'stylus'}
 
 call plug#end()
 
+" Merlin
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
 " Searching
 set ignorecase " ignore case on search
 set smartcase " only ignore case if entering lower-case
