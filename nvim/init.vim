@@ -104,6 +104,7 @@ set list listchars=tab:»\ ,trail:·,nbsp:+
 " otherwise breaks webpack watch and similar things
 set backupcopy=yes
 
+set completeopt+=menuone,noinsert,noselect
 set wildignore=*/node_modules/*,*.min.js
 
 " read per-directory settings
@@ -134,6 +135,40 @@ map <C-c> <plug>NERDCommenterToggle
 " Next/Previous error from ALE
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" Next three snippets of code were taken from deoplete docs with slight
+" variation for Shift+Tab. I have no idea how to refactor this, so it's just
+" duplicated. Sorry...
+
+" 1.
+" Cycling completions on Tab
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+
+" 2.
+" Cycling completions in reverse order on Shift+Tab
+inoremap <silent><expr> <S-TAB>
+      \ pumvisible() ? "\<C-p>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+
+" 3.
+" Don't just close completion popup on enter, but also
+" insert caret return
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+  return deoplete#close_popup() . "\<CR>"
+endfunction
 
 " Filetype mappings
 autocmd BufRead,BufNewFile *.js.flow setfiletype javascript
