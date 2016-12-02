@@ -106,6 +106,10 @@ set backupcopy=yes
 
 set wildignore=*/node_modules/*,*.min.js
 
+" read per-directory settings
+set exrc
+set secure
+
 " Restore last cursor position
 augroup vimrcEx
   au!
