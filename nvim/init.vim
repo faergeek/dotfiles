@@ -37,6 +37,7 @@ Plug 'airblade/vim-gitgutter'
 let g:deoplete#enable_at_startup = 1
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'steelsojka/deoplete-flow'
+Plug 'zchee/deoplete-jedi'
 
 " Comment helpers
 let g:NERDSpaceDelims = 1
