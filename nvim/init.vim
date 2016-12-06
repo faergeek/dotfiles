@@ -51,11 +51,8 @@ Plug 'tpope/vim-surround'
 
 " Linting
 let g:ale_javascript_eslint_executable = 'eslint_d'
-
-let g:ale_linters = {
-      \ 'javascript': ['eslint', 'flow'],
-      \}
-
+let g:ale_linters = {}
+let g:ale_linters.javascript = ['eslint', 'flow']
 Plug 'w0rp/ale'
 
 " Syntaxes
