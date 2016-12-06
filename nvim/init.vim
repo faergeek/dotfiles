@@ -73,9 +73,10 @@ Plug 'wavded/vim-stylus', {'for': 'stylus'}
 
 call plug#end()
 
-" Merlin
+" OCaml-related things
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
+execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
 
 " Searching
 set ignorecase " ignore case on search
