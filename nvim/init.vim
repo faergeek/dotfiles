@@ -35,6 +35,8 @@ Plug 'airblade/vim-gitgutter'
 
 " Completion
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.ocaml = '[^ ,;\t\[()\]]'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'steelsojka/deoplete-flow'
 Plug 'zchee/deoplete-jedi'
