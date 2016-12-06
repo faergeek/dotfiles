@@ -175,3 +175,5 @@ endfunction
 autocmd BufRead,BufNewFile *.js.flow setfiletype javascript
 autocmd BufRead,BufNewFile .babelrc setfiletype json
 autocmd BufRead,BufNewFile .flowconfig setfiletype dosini
+autocmd BufRead,BufNewFile .sentryclirc setfiletype dosini
+autocmd BufRead,BufNewFile *.eliom setfiletype ocaml
