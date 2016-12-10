@@ -17,7 +17,6 @@ let g:startify_session_delete_buffers = 1
 Plug 'mhinz/vim-startify'
 
 " Colorscheme
-let g:gruvbox_italic = 1
 Plug 'morhetz/gruvbox'
 
 " Status line
@@ -112,6 +111,7 @@ endif
 
 set background=dark
 let g:gruvbox_contrast_dark = "soft"
+let g:gruvbox_italic = 1
 colorscheme gruvbox
 
 " Highlight cursor line
