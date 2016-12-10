@@ -47,6 +47,9 @@ Plug 'scrooloose/nerdcommenter', {'on': '<plug>NERDCommenterToggle'}
 " Surround
 Plug 'tpope/vim-surround'
 
+" Rainbow parens
+Plug 'kien/rainbow_parentheses.vim'
+
 " Linting
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_linters = {}
@@ -67,6 +70,7 @@ let g:jsx_ext_required = 0
 Plug 'mxw/vim-jsx', {'for': 'javascript'}
 Plug 'jrk/vim-ocaml', {'for': 'ocaml'}
 Plug 'wavded/vim-stylus', {'for': 'stylus'}
+Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 
 call plug#end()
 
@@ -175,3 +179,8 @@ autocmd BufRead,BufNewFile .babelrc setfiletype json
 autocmd BufRead,BufNewFile .flowconfig setfiletype dosini
 autocmd BufRead,BufNewFile .sentryclirc setfiletype dosini
 autocmd BufRead,BufNewFile *.eliom setfiletype ocaml
+
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
