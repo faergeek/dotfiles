@@ -30,9 +30,6 @@ set -gx PKG_CONFIG_PATH /opt/X11/lib/pkgconfig
 # pkgconfig path for zlib
 set -gx PKG_CONFIG_PATH /usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH
 
-# set default makeflags to (count of processors * 2) to speedup compilation
-set -gx MAKEFLAGS "-j"(math (nproc)"*2")
-
 # nvm
 set -gx NVM_DIR "$HOME/.nvm"
 
