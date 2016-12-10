@@ -73,9 +73,9 @@ Plug 'clojure-vim/nvim-parinfer.js', {'do': 'UpdateRemotePlugins'}
 " Completion
 let g:deoplete#enable_at_startup = 1
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'steelsojka/deoplete-flow'
-Plug 'zchee/deoplete-jedi'
-Plug 'clojure-vim/async-clj-omni'
+Plug 'steelsojka/deoplete-flow', {'for': 'javascript'}
+Plug 'zchee/deoplete-jedi', {'for': 'python'}
+Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'}
 
 " Linting
 let g:ale_javascript_eslint_executable = 'eslint_d'
