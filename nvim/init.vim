@@ -33,12 +33,6 @@ Plug 'tpope/vim-fugitive'
 " Git gutter
 Plug 'airblade/vim-gitgutter'
 
-" Completion
-let g:deoplete#enable_at_startup = 1
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'steelsojka/deoplete-flow'
-Plug 'zchee/deoplete-jedi'
-
 " Comment helpers
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
@@ -55,12 +49,6 @@ Plug 'neovim/node-host', {'do': 'UpdateRemotePlugins'}
 
 " Rainbow parens
 Plug 'kien/rainbow_parentheses.vim'
-
-" Linting
-let g:ale_javascript_eslint_executable = 'eslint_d'
-let g:ale_linters = {}
-let g:ale_linters.javascript = ['eslint', 'flow']
-Plug 'w0rp/ale'
 
 " Syntaxes
 Plug 'JulesWang/css.vim', {'for': 'css'}
@@ -81,6 +69,18 @@ Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 " Clojure stuff
 Plug 'tpope/vim-fireplace'
 Plug 'clojure-vim/nvim-parinfer.js', {'do': 'UpdateRemotePlugins'}
+
+" Completion
+let g:deoplete#enable_at_startup = 1
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'steelsojka/deoplete-flow'
+Plug 'zchee/deoplete-jedi'
+
+" Linting
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_linters = {}
+let g:ale_linters.javascript = ['eslint', 'flow']
+Plug 'w0rp/ale'
 
 call plug#end()
 
