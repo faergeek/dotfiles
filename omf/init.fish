@@ -30,8 +30,5 @@ set -gx PKG_CONFIG_PATH /opt/X11/lib/pkgconfig
 # pkgconfig path for zlib
 set -gx PKG_CONFIG_PATH /usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH
 
-# nvm
-set -gx NVM_DIR "$HOME/.nvm"
-
 # opam
 eval (opam config env)
