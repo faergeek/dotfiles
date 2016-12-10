@@ -76,9 +76,11 @@ Plug 'clojure-vim/nvim-parinfer.js', {
 
 " Completion
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#keyword_patterns = {}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'steelsojka/deoplete-flow', {'for': 'javascript'}
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
+let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'}
 
 " Linting
