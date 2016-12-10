@@ -47,6 +47,12 @@ Plug 'scrooloose/nerdcommenter', {'on': '<plug>NERDCommenterToggle'}
 " Surround
 Plug 'tpope/vim-surround'
 
+" For repeating plugin mappings
+Plug 'tpope/vim-repeat'
+
+" Host for plugins written in node
+Plug 'neovim/node-host', {'do': 'UpdateRemotePlugins'}
+
 " Rainbow parens
 Plug 'kien/rainbow_parentheses.vim'
 
@@ -71,6 +77,10 @@ Plug 'mxw/vim-jsx', {'for': 'javascript'}
 Plug 'jrk/vim-ocaml', {'for': 'ocaml'}
 Plug 'wavded/vim-stylus', {'for': 'stylus'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
+
+" Clojure stuff
+Plug 'tpope/vim-fireplace'
+Plug 'clojure-vim/nvim-parinfer.js', {'do': 'UpdateRemotePlugins'}
 
 call plug#end()
 
