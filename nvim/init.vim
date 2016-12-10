@@ -75,6 +75,7 @@ let g:deoplete#enable_at_startup = 1
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'steelsojka/deoplete-flow'
 Plug 'zchee/deoplete-jedi'
+Plug 'clojure-vim/async-clj-omni'
 
 " Linting
 let g:ale_javascript_eslint_executable = 'eslint_d'
