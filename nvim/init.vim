@@ -67,8 +67,12 @@ Plug 'wavded/vim-stylus', {'for': 'stylus'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 
 " Clojure stuff
-Plug 'tpope/vim-fireplace'
-Plug 'clojure-vim/nvim-parinfer.js', {'do': 'UpdateRemotePlugins'}
+Plug 'tpope/vim-fireplace', {'for': 'clojure'}
+
+Plug 'clojure-vim/nvim-parinfer.js', {
+      \'do': 'UpdateRemotePlugins',
+      \'for': 'clojure'
+      \}
 
 " Completion
 let g:deoplete#enable_at_startup = 1
