@@ -45,12 +45,12 @@ Plug 'tpope/vim-repeat'
 
 function! NodeHostPostUpdate(info)
   if a:info.status == 'installed'
-    !npm install
-    UpdateRemotePlugins
+    !npm install --production
   elseif a:info.status == 'updated'
-    !npm up
-    UpdateRemotePlugins
+    !npm update
   endif
+
+  UpdateRemotePlugins
 endfunction
 
 " Host for plugins written in node
