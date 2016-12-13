@@ -73,6 +73,7 @@ let g:jsx_ext_required = 0
 Plug 'mxw/vim-jsx', {'for': 'javascript'}
 Plug 'jrk/vim-ocaml', {'for': 'ocaml'}
 Plug 'wavded/vim-stylus', {'for': 'stylus'}
+Plug 'digitaltoad/vim-pug', {'for': 'pug'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 
 " Clojure stuff
