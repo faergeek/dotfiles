@@ -2,6 +2,19 @@ set shell=sh
 
 call plug#begin()
 
+function! NodeHostPostUpdate(info)
+  if a:info.status == 'installed'
+    !npm install --production
+  elseif a:info.status == 'updated'
+    !npm update
+  endif
+
+  UpdateRemotePlugins
+endfunction
+
+" Host for plugins written in node
+Plug 'neovim/node-host', {'do': function('NodeHostPostUpdate')}
+
 " File tree
 Plug 'scrooloose/nerdtree'
 
@@ -42,19 +55,6 @@ Plug 'tpope/vim-surround'
 
 " For repeating plugin mappings
 Plug 'tpope/vim-repeat'
-
-function! NodeHostPostUpdate(info)
-  if a:info.status == 'installed'
-    !npm install --production
-  elseif a:info.status == 'updated'
-    !npm update
-  endif
-
-  UpdateRemotePlugins
-endfunction
-
-" Host for plugins written in node
-Plug 'neovim/node-host', {'do': function('NodeHostPostUpdate')}
 
 " Rainbow parens
 Plug 'kien/rainbow_parentheses.vim'
