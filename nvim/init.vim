@@ -78,10 +78,7 @@ Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 
 " Clojure stuff
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
-Plug 'clojure-vim/nvim-parinfer.js', {
-      \'do': ':UpdateRemotePlugins',
-      \'for': 'clojure'
-      \}
+Plug 'clojure-vim/nvim-parinfer.js', {'do': ':UpdateRemotePlugins'}
 
 " Completion
 let g:deoplete#enable_at_startup = 1
