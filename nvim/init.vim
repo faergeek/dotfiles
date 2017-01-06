@@ -78,6 +78,7 @@ Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 
 " Clojure stuff
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
+let g:parinfer_preview_cursor_scope = 1
 Plug 'clojure-vim/nvim-parinfer.js', {'do': ':UpdateRemotePlugins'}
 
 " Completion
