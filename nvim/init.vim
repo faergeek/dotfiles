@@ -93,6 +93,7 @@ Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'}
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_linters = {}
 let g:ale_linters.javascript = ['eslint', 'flow']
+let g:ale_linters.html = []
 Plug 'w0rp/ale'
 
 call plug#end()
