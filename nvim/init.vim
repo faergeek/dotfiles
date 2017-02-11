@@ -70,7 +70,6 @@ Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'elzr/vim-json', {'for': 'json'}
 let g:jsx_ext_required = 0
 Plug 'mxw/vim-jsx', {'for': 'javascript'}
-Plug 'jrk/vim-ocaml', {'for': 'ocaml'}
 Plug 'wavded/vim-stylus', {'for': 'stylus'}
 Plug 'digitaltoad/vim-pug', {'for': 'pug'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
@@ -97,11 +96,6 @@ let g:ale_linters.html = []
 Plug 'w0rp/ale'
 
 call plug#end()
-
-" OCaml-related things
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
 
 " Searching
 set ignorecase " ignore case on search
@@ -164,46 +158,11 @@ map <C-c> <plug>NERDCommenterToggle
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Next three snippets of code were taken from deoplete docs with slight
-" variation for Shift+Tab. I have no idea how to refactor this, so it's just
-" duplicated. Sorry...
-
-" 1.
-" Cycling completions on Tab
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
-
-" 2.
-" Cycling completions in reverse order on Shift+Tab
-inoremap <silent><expr> <S-TAB>
-      \ pumvisible() ? "\<C-p>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
-
-" 3.
-" Don't just close completion popup on enter, but also
-" insert caret return
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-  return deoplete#close_popup() . "\<CR>"
-endfunction
-
 " Filetype mappings
 autocmd BufRead,BufNewFile *.js.flow setfiletype javascript
 autocmd BufRead,BufNewFile .babelrc setfiletype json
 autocmd BufRead,BufNewFile .flowconfig setfiletype dosini
 autocmd BufRead,BufNewFile .sentryclirc setfiletype dosini
-autocmd BufRead,BufNewFile *.eliom setfiletype ocaml
 
 autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
