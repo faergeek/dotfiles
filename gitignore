@@ -1,9 +1,10 @@
-# OS or Editor files
+# OS/Editor/Tools files
 ._*
 .DS_Store
 Thumbs.db
 Session.vim
 .nvimrc
+.eslintcache
 
 # Files that might appear on external disks
 .Spotlight-V100

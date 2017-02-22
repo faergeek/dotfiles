@@ -89,6 +89,7 @@ let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'}
 
 " Linting
+let g:ale_javascript_eslint_options = '--cache'
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_linters = {}
 let g:ale_linters.javascript = ['eslint', 'flow']
