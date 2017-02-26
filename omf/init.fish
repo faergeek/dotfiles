@@ -31,3 +31,7 @@ set -gx PATH (yarn global bin) $PATH
 set -gx PKG_CONFIG_PATH /opt/X11/lib/pkgconfig
 # pkgconfig path for zlib
 set -gx PKG_CONFIG_PATH /usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH
+
+set -gx ANDROID_HOME $HOME/Library/Android/sdk
+set -gx PATH $PATH $ANDROID_HOME/tools
+set -gx PATH $PATH $ANDROID_HOME/platform-tools
