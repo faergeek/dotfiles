@@ -35,3 +35,4 @@ set -gx PKG_CONFIG_PATH /usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH
 set -gx ANDROID_HOME $HOME/Library/Android/sdk
 set -gx PATH $PATH $ANDROID_HOME/tools
 set -gx PATH $PATH $ANDROID_HOME/platform-tools
+set -gx LANG ru_RU.UTF-8
