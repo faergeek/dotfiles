@@ -144,9 +144,6 @@ augroup vimrcEx
         \ endif
 augroup END
 
-" Change cursor between block (normal mode) and line (insert mode)
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
 " Toggle NERDTree
 noremap <backspace> :NERDTreeToggle<CR>
 " Reveal in NERDTree
