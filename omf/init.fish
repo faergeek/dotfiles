@@ -24,9 +24,6 @@ set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 # add local node_modules/.bin to PATH
 set -gx PATH ./node_modules/.bin $PATH
 
-# yarn global binaries
-set -gx PATH (yarn global bin) $PATH
-
 # pkgconfig path for XQuartz
 set -gx PKG_CONFIG_PATH /opt/X11/lib/pkgconfig
 # pkgconfig path for zlib
