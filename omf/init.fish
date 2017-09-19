@@ -21,9 +21,6 @@ set -gx LESS_TERMCAP_us (printf "\033[01;32m")
 # set paths for gnu binaries and man pages
 set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 
-# add local node_modules/.bin to PATH
-set -gx PATH ./node_modules/.bin $PATH
-
 # pkgconfig path for XQuartz
 set -gx PKG_CONFIG_PATH /opt/X11/lib/pkgconfig
 # pkgconfig path for zlib
