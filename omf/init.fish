@@ -29,4 +29,5 @@ set -gx PKG_CONFIG_PATH /opt/X11/lib/pkgconfig
 # pkgconfig path for zlib
 set -gx PKG_CONFIG_PATH /usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH
 
+# set locale
 set -gx LANG ru_RU.UTF-8
