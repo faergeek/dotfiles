@@ -1,2 +1,4 @@
 package brew
+package foreign-env
+package nvm
 theme bobthefish
