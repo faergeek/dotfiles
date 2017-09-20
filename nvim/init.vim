@@ -2,25 +2,6 @@ set shell=sh
 
 call plug#begin()
 
-function! NodeHostPostUpdate(info)
-  if a:info.status == 'installed'
-    !npm install --production
-  elseif a:info.status == 'updated'
-    !npm update
-  endif
-
-  UpdateRemotePlugins
-endfunction
-
-" Host for plugins written in node
-Plug 'neovim/node-host', {'do': function('NodeHostPostUpdate')}
-
-" File tree
-Plug 'scrooloose/nerdtree'
-
-" CtrlP
-Plug 'ctrlpvim/ctrlp.vim'
-
 " Session management
 Plug 'tpope/vim-obsession'
 
@@ -39,9 +20,6 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 Plug 'vim-airline/vim-airline'
 
-" Git
-Plug 'tpope/vim-fugitive'
-
 " Git gutter
 Plug 'airblade/vim-gitgutter'
 
@@ -56,12 +34,8 @@ Plug 'tpope/vim-surround'
 " For repeating plugin mappings
 Plug 'tpope/vim-repeat'
 
-" Rainbow parens
-Plug 'kien/rainbow_parentheses.vim'
-
 " Syntaxes
 Plug 'JulesWang/css.vim', {'for': 'css'}
-Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'tpope/vim-git'
 Plug 'jparise/vim-graphql', {'for': 'graphql'}
@@ -72,25 +46,15 @@ let g:jsx_ext_required = 0
 Plug 'mxw/vim-jsx', {'for': 'javascript'}
 Plug 'wavded/vim-stylus', {'for': 'stylus'}
 Plug 'digitaltoad/vim-pug', {'for': 'pug'}
-Plug 'guns/vim-clojure-static', {'for': 'clojure'}
-
-" Clojure stuff
-Plug 'tpope/vim-fireplace', {'for': 'clojure'}
-let g:parinfer_preview_cursor_scope = 1
-Plug 'clojure-vim/nvim-parinfer.js', {'do': ':UpdateRemotePlugins'}
 
 " Completion
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#keyword_patterns = {}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'steelsojka/deoplete-flow', {'for': 'javascript'}
-Plug 'zchee/deoplete-jedi', {'for': 'python'}
-let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
-Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'}
 
 " Linting
 let g:ale_javascript_eslint_options = '--cache'
-let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_linters = {}
 let g:ale_linters.javascript = ['eslint', 'flow']
 let g:ale_linters.html = []
@@ -144,11 +108,6 @@ augroup vimrcEx
         \ endif
 augroup END
 
-" Toggle NERDTree
-noremap <backspace> :NERDTreeToggle<CR>
-" Reveal in NERDTree
-noremap <leader>f :NERDTreeFind<CR>
-
 " Toggle comments
 map <C-c> <plug>NERDCommenterToggle
 
@@ -161,8 +120,3 @@ autocmd BufRead,BufNewFile *.js.flow setfiletype javascript
 autocmd BufRead,BufNewFile .babelrc setfiletype json
 autocmd BufRead,BufNewFile .flowconfig setfiletype dosini
 autocmd BufRead,BufNewFile .sentryclirc setfiletype dosini
-
-autocmd VimEnter * RainbowParenthesesToggle
-autocmd Syntax * RainbowParenthesesLoadRound
-autocmd Syntax * RainbowParenthesesLoadSquare
-autocmd Syntax * RainbowParenthesesLoadBraces
