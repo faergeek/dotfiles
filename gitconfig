@@ -2,6 +2,7 @@
   path = ~/.gitconfig.local
 [core]
   excludesfile = ~/.gitignore
+  quotepath = false
 [push]
   default = upstream
 [fetch]
