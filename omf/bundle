@@ -1,5 +1,3 @@
-package brew
-package foreign-env
+package colored-man-pages
 package node-binpath
-package nvm
 theme bobthefish
