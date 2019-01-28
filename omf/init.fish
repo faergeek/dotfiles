@@ -9,3 +9,4 @@ set -g theme_display_k8s_context yes
 # set nvim as an editor
 set -gx EDITOR nvim
 set -gx VISUAL nvim
+set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
