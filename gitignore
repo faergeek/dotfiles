@@ -1,4 +1,5 @@
 # OS/Editor/Tools files
+*.code-workspace
 ._*
 .DS_Store
 Thumbs.db
