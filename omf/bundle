@@ -1,5 +1,3 @@
 package brew
-package colored-man-pages
 package node-binpath
-package osx
 theme bobthefish
