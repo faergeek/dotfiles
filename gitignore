@@ -6,7 +6,6 @@ Thumbs.db
 Session.vim
 .nvimrc
 .eslintcache
-.vscode
 
 # Files that might appear on external disks
 .Spotlight-V100
