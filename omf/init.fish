@@ -5,7 +5,6 @@ set -g theme_title_display_process yes
 set -g theme_show_exit_status yes
 set -g theme_newline_cursor yes
 set -g theme_display_k8s_context yes
-set -g theme_display_node yes
 set -g theme_color_scheme dracula
 
 # set nvim as an editor
