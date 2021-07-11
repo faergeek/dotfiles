@@ -8,19 +8,8 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-if has("termguicolors") " Enable TrueColor support
-  set termguicolors
-endif
-
-set background=dark
 colorscheme pablo
 
-" Highlight cursor line
-set cursorline
-" Show line numbers
-set number numberwidth=4
-" Show whitespaces
-set list listchars=tab:»\ ,trail:·,nbsp:+
 " Always write to file without renaming stuff
 " otherwise breaks webpack watch and similar things
 set backupcopy=yes
