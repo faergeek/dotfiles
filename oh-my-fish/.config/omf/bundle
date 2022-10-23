@@ -1,4 +1,5 @@
 package foreign-env
 package node-binpath
 package nvm
+package rustup
 theme bobthefish
