@@ -1,2 +1,4 @@
+package foreign-env
 package node-binpath
+package nvm
 theme bobthefish
