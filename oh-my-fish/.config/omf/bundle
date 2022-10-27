@@ -1,3 +1,4 @@
+package colored-man-pages
 package foreign-env
 package node-binpath
 package nvm
