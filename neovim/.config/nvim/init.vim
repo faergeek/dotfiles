@@ -8,7 +8,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-colorscheme quiet
+colorscheme peachpuff
 
 " Always write to file without renaming stuff
 " otherwise breaks webpack watch and similar things
