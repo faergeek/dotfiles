@@ -7,6 +7,7 @@ set -g theme_newline_cursor yes
 set -g theme_display_k8s_context yes
 set -g theme_color_scheme dracula
 set -g theme_display_node yes
+set -g theme_nerd_fonts yes
 
 # set nvim as an editor
 set -gx EDITOR nvim
