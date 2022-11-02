@@ -14,3 +14,5 @@
   cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [init]
   defaultBranch = master
+[pull]
+  rebase = true
