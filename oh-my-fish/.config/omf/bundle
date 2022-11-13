@@ -1,3 +1,4 @@
+package android-sdk
 package foreign-env
 package node-binpath
 package nvm
