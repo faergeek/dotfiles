@@ -8,6 +8,8 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+colorscheme lunaperche
+
 " Always write to file without renaming stuff
 " otherwise breaks webpack watch and similar things
 set backupcopy=yes
