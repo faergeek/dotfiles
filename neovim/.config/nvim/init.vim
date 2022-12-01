@@ -8,6 +8,11 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+augroup user_colors
+  autocmd!
+  autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+augroup END
+
 colorscheme lunaperche
 
 " Always write to file without renaming stuff
