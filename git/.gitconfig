@@ -4,6 +4,7 @@
   excludesfile = ~/.gitignore_global
   quotepath = false
 [push]
+  autoSetupRemote = true
   default = upstream
 [fetch]
   prune = true
