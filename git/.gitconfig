@@ -3,19 +3,19 @@
 [core]
   excludesfile = ~/.gitignore_global
   quotepath = false
-[push]
-  autoSetupRemote = true
-  default = upstream
 [fetch]
   prune = true
+[init]
+  defaultBranch = master
 [merge]
   tool = nvimdiff
   conflictstyle = diff3
 [mergetool "nvimdiff"]
   cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-[init]
-  defaultBranch = master
 [pull]
   rebase = true
+[push]
+  autoSetupRemote = true
+  default = upstream
 [tag]
   sort = version:refname
