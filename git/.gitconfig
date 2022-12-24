@@ -1,5 +1,7 @@
 [include]
   path = ~/.gitconfig.local
+[commit]
+  gpgSign = true
 [core]
   excludesfile = ~/.gitignore_global
   quotepath = false
