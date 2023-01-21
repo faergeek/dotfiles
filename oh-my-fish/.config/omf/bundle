@@ -1,6 +1,7 @@
 package android-sdk
 package brew
 package foreign-env
+package fzf
 package node-binpath
 package nvm
 package rustup
