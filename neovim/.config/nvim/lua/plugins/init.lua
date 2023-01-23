@@ -79,9 +79,10 @@ require('packer').startup {
           )
 
           map('n', 'gr', function()
-            require('telescope.builtin').lsp_references(
-              require('telescope.themes').get_cursor()
-            )
+            require('telescope.builtin').lsp_references {
+              include_declaration = false,
+              show_line = false,
+            }
           end, '[G]oto [R]eferences')
 
           map(
