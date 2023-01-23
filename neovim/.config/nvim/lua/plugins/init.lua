@@ -605,6 +605,15 @@ require('packer').startup {
       requires = { 'nvim-lua/plenary.nvim' },
       config = function()
         require('telescope').setup {
+          defaults = {
+            dynamic_preview_title = true,
+            layout_config = {
+              width = 0.95,
+              height = 0.95,
+              preview_width = 0.6,
+            },
+            path_display = { shorten = 5 },
+          },
           extensions = {
             ['ui-select'] = {
               require('telescope.themes').get_cursor(),
