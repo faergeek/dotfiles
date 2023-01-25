@@ -10,6 +10,7 @@ require('nvim-lastplace').setup {
 require('auto-session').setup {
   auto_session_create_enabled = false,
   auto_session_use_git_branch = true,
+  log_level = 'error',
 }
 
 require('session-lens').setup {}
