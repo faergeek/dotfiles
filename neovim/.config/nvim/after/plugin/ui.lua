@@ -7,6 +7,18 @@ require('rose-pine').setup {
 
 vim.cmd.colorscheme 'rose-pine'
 
+local function lualine_diff_source()
+  local gitsigns = vim.fn.getbufvar(vim.fn.bufnr(), 'gitsigns_status_dict')
+
+  if gitsigns then
+    return {
+      added = gitsigns.added,
+      modified = gitsigns.changed,
+      removed = gitsigns.removed,
+    }
+  end
+end
+
 require('lualine').setup {
   options = {
     globalstatus = true,
@@ -15,8 +27,29 @@ require('lualine').setup {
   sections = {
     lualine_a = {
       require('auto-session-library').current_session_name,
-      { 'mode' },
+      'mode',
     },
+    lualine_b = { { 'b:gitsigns_head', icon = '' } },
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {},
+  },
+  winbar = {
+    lualine_a = {},
+    lualine_b = { { 'diff', source = lualine_diff_source }, 'diagnostics' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' },
+  },
+  inactive_winbar = {
+    lualine_a = {},
+    lualine_b = { { 'diff', source = lualine_diff_source }, 'diagnostics' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' },
   },
 }
 
