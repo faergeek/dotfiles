@@ -69,3 +69,5 @@ require('nvim-autopairs').setup {
   break_undo = false,
   check_ts = true,
 }
+
+require('colorizer').setup {}

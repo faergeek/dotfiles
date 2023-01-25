@@ -54,6 +54,8 @@ require('packer').startup {
       'windwp/nvim-ts-autotag',
       'RRethy/nvim-treesitter-endwise',
 
+      'NvChad/nvim-colorizer.lua',
+
       run = function()
         pcall(require('nvim-treesitter.install').update {
           with_sync = true,
