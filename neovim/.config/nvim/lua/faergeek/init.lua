@@ -30,6 +30,7 @@ require('packer').startup {
       'nvim-lualine/lualine.nvim',
       'kdheepak/tabline.nvim',
       'j-hui/fidget.nvim',
+      'folke/trouble.nvim',
     }
 
     -- ../../after/plugin/sessions.lua

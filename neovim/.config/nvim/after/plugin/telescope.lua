@@ -2,6 +2,8 @@ local telescope = require 'telescope'
 local builtin = require 'telescope.builtin'
 local themes = require 'telescope.themes'
 
+local trouble = require 'trouble.providers.telescope'
+
 telescope.setup {
   defaults = {
     dynamic_preview_title = true,
@@ -11,6 +13,10 @@ telescope.setup {
       horizontal = {
         preview_width = 0.6,
       },
+    },
+    mappings = {
+      i = { ['<c-t>'] = trouble.open_with_trouble },
+      n = { ['<c-t>'] = trouble.open_with_trouble },
     },
     path_display = { shorten = 5 },
   },

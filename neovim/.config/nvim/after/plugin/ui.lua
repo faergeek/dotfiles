@@ -1,3 +1,4 @@
+local autocmd = require('faergeek.utils').autocmd
 local keymap = require('faergeek.utils').keymap
 
 require('rose-pine').setup {
@@ -115,6 +116,18 @@ theme.header.val = {
 }
 
 require('alpha').setup(theme.config)
+
+require('trouble').setup {
+  auto_open = true,
+  auto_close = true,
+  use_diagnostic_signs = true,
+}
+
+autocmd('Close trouble before vim exits', 'VimLeavePre', function()
+  vim.cmd.TroubleClose()
+  vim.cmd.cclose()
+  vim.cmd.lclose()
+end)
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = 'single',
