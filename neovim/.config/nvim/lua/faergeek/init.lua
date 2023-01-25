@@ -147,7 +147,7 @@ vim.opt.foldenable = false
 
 vim.opt.completeopt = { 'menuone', 'noselect' }
 vim.opt.showmode = false
-vim.opt.shortmess = 'aoOtTWcF'
+vim.opt.shortmess = 'aoOtTWcFS'
 vim.opt.cmdheight = 2
 vim.opt.title = true
 vim.opt.scrolloff = 8
