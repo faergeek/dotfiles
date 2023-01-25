@@ -20,7 +20,11 @@ local function lualine_diff_source()
 end
 
 require('lualine').setup {
+  extensions = { 'quickfix' },
   options = {
+    disabled_filetypes = {
+      winbar = { 'qf' },
+    },
     globalstatus = true,
     theme = 'rose-pine',
   },
