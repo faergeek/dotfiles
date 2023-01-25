@@ -29,7 +29,6 @@ require('packer').startup {
       'goolord/alpha-nvim',
       'nvim-lualine/lualine.nvim',
       'kdheepak/tabline.nvim',
-      'kevinhwang91/nvim-hlslens',
       'j-hui/fidget.nvim',
     }
 
