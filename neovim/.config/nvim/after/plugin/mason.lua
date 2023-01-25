@@ -50,7 +50,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(
 )
 
 require('neodev').setup()
-require('mason').setup()
+
+require('mason').setup {
+  ui = {
+    border = 'single',
+  },
+}
 
 local mason_lspconfig = require 'mason-lspconfig'
 
@@ -66,6 +71,10 @@ mason_lspconfig.setup {
 }
 
 local lspconfig = require 'lspconfig'
+
+require('lspconfig.ui.windows').default_options = {
+  border = 'single',
+}
 
 mason_lspconfig.setup_handlers {
   function(server_name)
