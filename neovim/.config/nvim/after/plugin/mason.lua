@@ -29,7 +29,7 @@ local function lsp_config_on_attach(_, bufnr)
   keymap(
     '[D]ocument [S]ymbols',
     'n',
-    '<leader>ds',
+    'gO',
     builtin.lsp_document_symbols,
     { buffer = bufnr }
   )
