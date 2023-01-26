@@ -24,7 +24,7 @@ require('packer').startup {
     -- after/plugin/ui.lua
     use {
       'nvim-tree/nvim-web-devicons',
-      { 'rose-pine/neovim', as = 'rose-pine' },
+      'folke/tokyonight.nvim',
       'stevearc/dressing.nvim',
       'goolord/alpha-nvim',
       'nvim-lualine/lualine.nvim',

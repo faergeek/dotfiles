@@ -1,12 +1,13 @@
 local autocmd = require('faergeek.utils').autocmd
 local keymap = require('faergeek.utils').keymap
 
-require('rose-pine').setup {
-  disable_background = true,
-  disable_float_background = true,
+require('tokyonight').setup {
+  lualine_bold = true,
+  sidebars = {},
+  transparent = true,
 }
 
-vim.cmd.colorscheme 'rose-pine'
+vim.cmd.colorscheme 'tokyonight'
 
 local function lualine_diff_source()
   local gitsigns = vim.fn.getbufvar(vim.fn.bufnr(), 'gitsigns_status_dict')
@@ -27,7 +28,7 @@ require('lualine').setup {
       winbar = { 'qf' },
     },
     globalstatus = true,
-    theme = 'rose-pine',
+    theme = 'tokyonight',
   },
   sections = {
     lualine_a = {
