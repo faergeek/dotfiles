@@ -121,6 +121,15 @@ require('trouble').setup {
   use_diagnostic_signs = true,
 }
 
+keymap('Open Trouble window', 'n', '<leader>t', ':Trouble<CR>')
+
+keymap(
+  'Show LSP references in Trouble',
+  'n',
+  'gR',
+  ':TroubleToggle lsp_references<CR>'
+)
+
 autocmd('Close trouble before vim exits', 'VimLeavePre', function()
   vim.cmd.TroubleClose()
   vim.cmd.cclose()
