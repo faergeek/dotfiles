@@ -45,7 +45,7 @@ keymap('Telescope [D]ot[f]iles', 'n', '<leader>df', function()
   }
 end)
 
-keymap('Telescope [B]uffers', 'n', '<leader>b', function()
+keymap('Telescope [O]pen Buffers', 'n', '<leader>o', function()
   builtin.buffers {
     ignore_current_buffer = true,
     sort_mru = true,
