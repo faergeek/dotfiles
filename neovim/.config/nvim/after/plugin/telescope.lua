@@ -55,7 +55,6 @@ end)
 keymap('Telescope Help', 'n', '<leader>?', builtin.help_tags)
 keymap('Telescope [L]ive [G]rep', 'n', '<leader>lg', builtin.live_grep)
 keymap('Telescope [K]eymaps', 'n', '<leader>k', builtin.keymaps)
-keymap('Telescope [O]ld [F]iles', 'n', '<leader>of', builtin.oldfiles)
 
 keymap('Telescope [G]it [B]ranches', 'n', '<leader>gb', builtin.git_branches)
 keymap('Telescope [G]it [C]ommits', 'n', '<leader>gc', builtin.git_commits)
