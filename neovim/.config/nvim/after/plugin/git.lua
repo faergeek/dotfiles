@@ -100,9 +100,9 @@ require('gitsigns').setup {
     )
 
     keymap(
-      'Git: Toggle deleted',
+      '[G]it: Toggle [D]eleted',
       'n',
-      '<leader>td',
+      '<leader>gd',
       gitsigns.toggle_deleted,
       { buffer = bufnr }
     )

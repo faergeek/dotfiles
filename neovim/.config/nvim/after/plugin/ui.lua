@@ -122,7 +122,21 @@ require('trouble').setup {
   use_diagnostic_signs = true,
 }
 
-keymap('Open Trouble window', 'n', '<leader>t', ':Trouble<CR>')
+keymap('Open Trouble window', 'n', '<leader>tt', ':Trouble<CR>')
+
+keymap(
+  'Open Trouble window with workspace diagnostics',
+  'n',
+  '<leader>td',
+  ':Trouble workspace_diagnostics<CR>'
+)
+
+keymap(
+  'Replace quickfix list with Trouble window',
+  'n',
+  '<leader>tq',
+  ':cclose<CR>:Trouble quickfix<CR>'
+)
 
 keymap(
   'Show LSP references in Trouble',
