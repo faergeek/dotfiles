@@ -5,7 +5,6 @@ require('indent_blankline').setup {
 }
 
 require('nvim-treesitter.configs').setup {
-  additional_vim_regex_highlighting = false,
   autotag = {
     enable = true,
   },
@@ -41,7 +40,10 @@ require('nvim-treesitter.configs').setup {
     'vim',
     'yaml',
   },
-  highlight = { enable = true },
+  highlight = {
+    additional_vim_regex_highlighting = false,
+    enable = true,
+  },
   incremental_selection = {
     enable = true,
     keymaps = {
