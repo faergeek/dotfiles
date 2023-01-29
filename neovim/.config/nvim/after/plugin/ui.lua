@@ -72,7 +72,7 @@ keymap(
   vim.cmd.TablineToggleShowAllBuffers
 )
 
-keymap('[T]ab [R]ename', 'n', '<leader>tr', function()
+keymap('[R]ename [T]ab', 'n', '<leader>rt', function()
   vim.ui.input({ prompt = 'Enter new tab name: ' }, function(new_name)
     if not new_name then
       return
@@ -122,26 +122,26 @@ require('trouble').setup {
   use_diagnostic_signs = true,
 }
 
-keymap('Open Trouble window', 'n', '<leader>tt', ':Trouble<CR>')
+keymap('[T]rouble: Open', 'n', '<leader>to', ':Trouble<CR>')
 
 keymap(
-  'Open Trouble window with workspace diagnostics',
+  '[T]rouble: Workspace [D]iagnostics',
   'n',
   '<leader>td',
   ':Trouble workspace_diagnostics<CR>'
 )
 
 keymap(
-  'Replace quickfix list with Trouble window',
+  '[T]rouble: [Q]uickfix',
   'n',
   '<leader>tq',
   ':cclose<CR>:Trouble quickfix<CR>'
 )
 
 keymap(
-  'Show LSP references in Trouble',
+  '[T]rouble: LSP [R]eferences',
   'n',
-  'gR',
+  '<leader>tr',
   ':TroubleToggle lsp_references<CR>'
 )
 

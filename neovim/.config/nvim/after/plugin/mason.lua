@@ -4,7 +4,7 @@ local function lsp_config_on_attach(_, bufnr)
   local keymap = require('faergeek.utils').keymap
 
   keymap(
-    '[R]ename [S]ymbol',
+    'LSP: [R]ename [S]ymbol',
     'n',
     '<leader>rs',
     vim.lsp.buf.rename,
@@ -12,14 +12,14 @@ local function lsp_config_on_attach(_, bufnr)
   )
 
   keymap(
-    '[C]ode [A]ction',
+    'LSP: Code [A]ction',
     { 'n', 'v' },
-    '<leader>ca',
+    '<leader>a',
     vim.lsp.buf.code_action,
     { buffer = bufnr }
   )
 
-  keymap('[G]oto [R]eferences', 'n', 'gr', function()
+  keymap('LSP: [G]oto [R]eferences', 'n', 'gr', function()
     builtin.lsp_references {
       include_declaration = false,
       show_line = false,
@@ -27,7 +27,7 @@ local function lsp_config_on_attach(_, bufnr)
   end, { buffer = bufnr })
 
   keymap(
-    '[D]ocument [S]ymbols',
+    'LSP: Document Symbols',
     'n',
     'gO',
     builtin.lsp_document_symbols,
@@ -35,14 +35,20 @@ local function lsp_config_on_attach(_, bufnr)
   )
 
   keymap(
-    'Workspace Symbols',
+    'LSP: Workspace Symbols',
     'n',
     '<C-t>',
     builtin.lsp_dynamic_workspace_symbols,
     { buffer = bufnr }
   )
 
-  keymap('Hover Documentation', 'n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
+  keymap(
+    'LSP: Hover Documentation',
+    'n',
+    'K',
+    vim.lsp.buf.hover,
+    { buffer = bufnr }
+  )
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(
