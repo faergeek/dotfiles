@@ -134,7 +134,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.list = true
-vim.opt.listchars = 'tab:» ,extends:⤳,precedes:⬿,trail:·,nbsp:␣'
+vim.opt.listchars = 'tab:» ,extends:…,precedes:…,trail:·,nbsp:␣'
 vim.opt.showmatch = true
 
 vim.opt.ignorecase = true
@@ -145,8 +145,11 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.breakindent = true
+vim.opt.breakindentopt = 'sbr'
 vim.opt.textwidth = 80
-vim.opt.wrap = false
+vim.opt.linebreak = true
+vim.opt.showbreak = '↳ '
+vim.opt.cpoptions:append 'n'
 
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
