@@ -77,7 +77,6 @@ mason_lspconfig.setup {
     'rust_analyzer',
     'tsserver',
     'sumneko_lua',
-    'wgsl_analyzer',
   },
 }
 

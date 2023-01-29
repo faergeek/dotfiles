@@ -4,17 +4,6 @@ require('indent_blankline').setup {
   show_current_context = true,
 }
 
-vim.filetype.add { extension = { wgsl = 'wgsl' } }
-
-local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-
-parser_config.wgsl = {
-  install_info = {
-    url = 'https://github.com/szebniok/tree-sitter-wgsl',
-    files = { 'src/parser.c' },
-  },
-}
-
 require('nvim-treesitter.configs').setup {
   autotag = {
     enable = true,
@@ -50,7 +39,6 @@ require('nvim-treesitter.configs').setup {
     'typescript',
     'vim',
     'yaml',
-    'wgsl',
   },
   highlight = {
     additional_vim_regex_highlighting = false,
