@@ -49,6 +49,11 @@ require('packer').startup {
       'nvim-treesitter/playground',
       'nvim-treesitter/nvim-treesitter-context',
 
+      {
+        'kevinhwang91/nvim-ufo',
+        requires = 'kevinhwang91/promise-async',
+      },
+
       'JoosepAlviste/nvim-ts-context-commentstring',
       'numToStr/Comment.nvim',
 
@@ -153,7 +158,9 @@ vim.opt.cpoptions:append 'n'
 
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldenable = false
+vim.opt.foldlevelstart = 99
+vim.opt.foldcolumn = '1'
+vim.opt.fillchars = 'fold: ,foldopen:,foldsep: ,foldclose:'
 
 vim.opt.completeopt = { 'menuone', 'noselect' }
 vim.opt.showmode = false
