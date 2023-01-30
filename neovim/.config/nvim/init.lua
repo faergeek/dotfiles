@@ -208,7 +208,6 @@ autocmd('Briefly highlight yanked text', 'TextYankPost', function()
 end)
 
 autocmd('Override options for terminal buffers', 'TermOpen', function()
-  print 'Term'
   vim.opt.number = false
   vim.opt.relativenumber = false
   vim.opt.signcolumn = 'auto'
