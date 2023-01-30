@@ -206,3 +206,11 @@ keymap('Quickfix: Previous item', 'n', '<C-k>', ':cprev<CR>')
 autocmd('Briefly highlight yanked text', 'TextYankPost', function()
   vim.highlight.on_yank {}
 end)
+
+autocmd('Override options for terminal buffers', 'TermOpen', function()
+  print 'Term'
+  vim.opt.number = false
+  vim.opt.relativenumber = false
+  vim.opt.signcolumn = 'auto'
+  vim.opt.foldcolumn = '0'
+end)
