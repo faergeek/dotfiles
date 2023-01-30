@@ -213,3 +213,9 @@ autocmd('Override options for terminal buffers', 'TermOpen', function()
   vim.opt.signcolumn = 'auto'
   vim.opt.foldcolumn = '0'
 end)
+
+autocmd('Close terminal if job exited without an error', 'TermClose', function()
+  if vim.v.event.status == 0 then
+    vim.api.nvim_buf_delete(0, {})
+  end
+end)

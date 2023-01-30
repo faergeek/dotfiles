@@ -191,9 +191,3 @@ vim.fn.sign_define('DiagnosticSignInfo', {
 keymap('[S]how [D]iagnostics', 'n', '<leader>sd', vim.diagnostic.open_float)
 keymap('Diagnostic: Next item', 'n', ']d', vim.diagnostic.goto_next)
 keymap('Diagnostic: Previous item', 'n', '[d', vim.diagnostic.goto_prev)
-
-autocmd('Close terminal if job exited without an error', 'TermClose', function()
-  if vim.v.event.status == 0 then
-    vim.api.nvim_buf_delete(0, {})
-  end
-end)
