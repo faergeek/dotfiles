@@ -75,8 +75,9 @@ mason_lspconfig.setup {
     'cssmodules_ls',
     'eslint',
     'rust_analyzer',
-    'tsserver',
+    'stylelint_lsp',
     'sumneko_lua',
+    'tsserver',
   },
 }
 
