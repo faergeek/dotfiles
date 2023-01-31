@@ -65,6 +65,7 @@ require('packer').startup {
       'windwp/nvim-autopairs',
       'windwp/nvim-ts-autotag',
       'RRethy/nvim-treesitter-endwise',
+      'echasnovski/mini.surround',
 
       'NvChad/nvim-colorizer.lua',
 

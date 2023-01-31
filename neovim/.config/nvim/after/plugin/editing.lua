@@ -121,4 +121,6 @@ require('nvim-autopairs').setup {
   check_ts = true,
 }
 
+require('mini.surround').setup {}
+
 require('colorizer').setup {}
