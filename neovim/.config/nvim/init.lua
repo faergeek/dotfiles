@@ -214,10 +214,10 @@ autocmd('Briefly highlight yanked text', 'TextYankPost', function()
 end)
 
 autocmd('Override options for terminal buffers', 'TermOpen', function()
-  vim.opt.number = false
-  vim.opt.relativenumber = false
-  vim.opt.signcolumn = 'auto'
-  vim.opt.foldcolumn = '0'
+  vim.opt_local.number = false
+  vim.opt_local.relativenumber = false
+  vim.opt_local.signcolumn = 'auto'
+  vim.opt_local.foldcolumn = '0'
 end)
 
 autocmd('Close terminal if job exited without an error', 'TermClose', function()
