@@ -223,7 +223,7 @@ require('trouble').setup {
   use_diagnostic_signs = true,
 }
 
-keymap('[T]rouble: Open', 'n', '<leader>to', ':Trouble<CR>')
+keymap('[T]rouble: Open', 'n', '<leader>tt', ':TroubleToggle<CR>')
 
 keymap(
   '[T]rouble: Workspace [D]iagnostics',
@@ -243,7 +243,7 @@ keymap(
   '[T]rouble: LSP [R]eferences',
   'n',
   '<leader>tr',
-  ':TroubleToggle lsp_references<CR>'
+  ':Trouble lsp_references<CR>'
 )
 
 autocmd('Close trouble before vim exits', 'VimLeavePre', function()
