@@ -28,13 +28,14 @@ require('packer').startup {
       'stevearc/dressing.nvim',
       'goolord/alpha-nvim',
       'nvim-lualine/lualine.nvim',
-      'kdheepak/tabline.nvim',
-      'j-hui/fidget.nvim',
-      'folke/trouble.nvim',
       {
         'j-morano/buffer_manager.nvim',
         requires = 'nvim-lua/plenary.nvim',
       },
+      'kdheepak/tabline.nvim',
+      'j-hui/fidget.nvim',
+      'folke/trouble.nvim',
+      'stevearc/oil.nvim',
     }
 
     -- after/plugin/sessions.lua

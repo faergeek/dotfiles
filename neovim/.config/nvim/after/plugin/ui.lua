@@ -161,6 +161,10 @@ keymap('Buffer Manager: [O]pen buffers', 'n', '<leader>o', function()
   require('buffer_manager.ui').toggle_quick_menu()
 end)
 
+require('oil').setup()
+
+keymap('Oil: [P]arent directory', 'n', '-', require('oil').open_float)
+
 require('tabline').setup {
   enable = false,
   options = {
