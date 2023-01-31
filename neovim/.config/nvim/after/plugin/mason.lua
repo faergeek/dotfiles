@@ -19,12 +19,12 @@ local function lsp_config_on_attach(_, bufnr)
     { buffer = bufnr }
   )
 
-  keymap('LSP: [G]oto [R]eferences', 'n', 'gr', function()
-    builtin.lsp_references {
-      include_declaration = false,
-      show_line = false,
-    }
-  end, { buffer = bufnr })
+  keymap(
+    '[T]rouble: LSP [R]eferences',
+    'n',
+    'gr',
+    ':Trouble lsp_references<CR>'
+  )
 
   keymap(
     'LSP: Document Symbols',

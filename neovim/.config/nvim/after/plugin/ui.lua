@@ -239,13 +239,6 @@ keymap(
   ':cclose<CR>:Trouble quickfix<CR>'
 )
 
-keymap(
-  '[T]rouble: LSP [R]eferences',
-  'n',
-  '<leader>tr',
-  ':Trouble lsp_references<CR>'
-)
-
 autocmd('Close trouble before vim exits', 'VimLeavePre', function()
   vim.cmd.TroubleClose()
   vim.cmd.cclose()
