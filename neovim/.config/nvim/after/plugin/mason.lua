@@ -49,6 +49,29 @@ local function lsp_config_on_attach(_, bufnr)
     vim.lsp.buf.hover,
     { buffer = bufnr }
   )
+
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function()
+    vim.lsp.buf.format {
+      bufnr = bufnr,
+      filter = function(client)
+        if client.name == 'tsserver' then
+          return false
+        end
+
+        if client.name == 'eslint' then
+          client.server_capabilities.documentFormattingProvider = true
+        end
+
+        return client.supports_method 'textDocument/formatting'
+      end,
+    }
+  end, { desc = 'Format current buffer with LSP' })
+
+  local autocmd = require('faergeek.utils').autocmd
+
+  autocmd('Format file on save using LSP', 'BufWritePre', 'Format', {
+    buffer = bufnr,
+  })
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(
@@ -67,9 +90,7 @@ require('mason').setup {
   },
 }
 
-local mason_lspconfig = require 'mason-lspconfig'
-
-mason_lspconfig.setup {
+require('mason-lspconfig').setup {
   ensure_installed = {
     'cssls',
     'cssmodules_ls',
@@ -81,17 +102,40 @@ mason_lspconfig.setup {
   },
 }
 
-local lspconfig = require 'lspconfig'
-
 require('lspconfig.ui.windows').default_options = {
   border = 'single',
 }
 
-mason_lspconfig.setup_handlers {
+local lspconfig = require 'lspconfig'
+
+require('mason-lspconfig').setup_handlers {
   function(server_name)
     lspconfig[server_name].setup {
       capabilities = capabilities,
       on_attach = lsp_config_on_attach,
+    }
+  end,
+  ['eslint'] = function()
+    lspconfig.eslint.setup {
+      capabilities = capabilities,
+      on_attach = lsp_config_on_attach,
+      settings = {
+        codeActionOnSave = {
+          enable = true,
+          mode = 'all',
+        },
+      },
+    }
+  end,
+  ['stylelint_lsp'] = function()
+    lspconfig.stylelint_lsp.setup {
+      capabilities = capabilities,
+      on_attach = lsp_config_on_attach,
+      settings = {
+        stylelintplus = {
+          autoFixOnFormat = true,
+        },
+      },
     }
   end,
   ['sumneko_lua'] = function()
@@ -121,9 +165,7 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
-local mason_null_ls = require 'mason-null-ls'
-
-mason_null_ls.setup {
+require('mason-null-ls').setup {
   automatic_setup = true,
   ensure_installed = {
     'prettierd',
@@ -131,24 +173,6 @@ mason_null_ls.setup {
   },
 }
 
-require('null-ls').setup {
-  on_attach = function(_, bufnr)
-    vim.api.nvim_buf_create_user_command(bufnr, 'Format', function()
-      vim.lsp.buf.format {
-        bufnr = bufnr,
-        filter = function(client)
-          return (client.name == 'null-ls')
-            and (client.supports_method 'textDocument/formatting')
-        end,
-      }
-    end, { desc = 'Format current buffer with LSP' })
+require('null-ls').setup()
 
-    local autocmd = require('faergeek.utils').autocmd
-
-    autocmd('Format file on save using LSP', 'BufWritePre', 'Format', {
-      buffer = bufnr,
-    })
-  end,
-}
-
-mason_null_ls.setup_handlers {}
+require('mason-null-ls').setup_handlers {}
