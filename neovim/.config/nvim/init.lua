@@ -31,6 +31,10 @@ require('packer').startup {
       'kdheepak/tabline.nvim',
       'j-hui/fidget.nvim',
       'folke/trouble.nvim',
+      {
+        'j-morano/buffer_manager.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+      },
     }
 
     -- after/plugin/sessions.lua

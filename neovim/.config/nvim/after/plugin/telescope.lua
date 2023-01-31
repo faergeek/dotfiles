@@ -45,13 +45,6 @@ keymap('Telescope [D]ot[f]iles', 'n', '<leader>df', function()
   }
 end)
 
-keymap('Telescope [O]pen Buffers', 'n', '<leader>o', function()
-  builtin.buffers {
-    ignore_current_buffer = true,
-    sort_mru = true,
-  }
-end)
-
 keymap('Telescope Help', 'n', '<leader>?', builtin.help_tags)
 keymap('Telescope [L]ive [G]rep', 'n', '<leader>lg', builtin.live_grep)
 keymap('Telescope [K]eymaps', 'n', '<leader>k', builtin.keymaps)

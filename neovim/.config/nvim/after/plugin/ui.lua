@@ -21,6 +21,47 @@ local function lualine_diff_source()
   end
 end
 
+local function get_diagnostic_for_cursor()
+  local cursor_col = vim.api.nvim_win_get_cursor(0)[2]
+
+  for _, diagnostic in
+    ipairs(vim.diagnostic.get(0, { lnum = vim.fn.line '.' - 1 }))
+  do
+    if (cursor_col >= diagnostic.col) and (cursor_col < diagnostic.end_col) then
+      return diagnostic
+    end
+  end
+
+  return error()
+end
+
+local diagnostic_severity_suffixes = { 'Error', 'Warn', 'Info', 'Hint' }
+
+local function get_diagnostic_color(diagnostic)
+  return 'Diagnostic' .. diagnostic_severity_suffixes[diagnostic.severity]
+end
+
+local function get_diagnostic_sign(diagnostic)
+  local defined_sign = vim.fn.sign_getdefined(
+    'DiagnosticSign' .. diagnostic_severity_suffixes[diagnostic.severity]
+  )[1]
+
+  if defined_sign then
+    return defined_sign.text
+  else
+    return ''
+  end
+end
+
+local function format_diagnostic_verbose(diagnostic)
+  return string.format(
+    '%s%s [%s]',
+    get_diagnostic_sign(diagnostic),
+    diagnostic.message,
+    diagnostic.source
+  )
+end
+
 require('lualine').setup {
   extensions = { 'quickfix' },
   options = {
@@ -31,46 +72,101 @@ require('lualine').setup {
     theme = 'tokyonight',
   },
   sections = {
-    lualine_a = {
-      require('auto-session-library').current_session_name,
-      'mode',
+    lualine_b = {
+      {
+        'b:gitsigns_head',
+        icon = '',
+      },
     },
-    lualine_b = { { 'b:gitsigns_head', icon = '' } },
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
+    lualine_c = {
+      {
+        function()
+          return format_diagnostic_verbose(get_diagnostic_for_cursor())
+        end,
+
+        color = function()
+          local _, diagnostic = pcall(get_diagnostic_for_cursor)
+
+          if diagnostic then
+            return get_diagnostic_color(diagnostic)
+          else
+            return nil
+          end
+        end,
+      },
+    },
+    lualine_x = {
+      'searchcount',
+      'encoding',
+      'fileformat',
+      'filetype',
+    },
+  },
+  tabline = {
+    lualine_a = { require('auto-session-library').current_session_name },
+    lualine_x = { require('tabline').tabline_tabs },
   },
   winbar = {
-    lualine_a = {},
-    lualine_b = { { 'diff', source = lualine_diff_source }, 'diagnostics' },
-    lualine_c = { 'filename' },
-    lualine_x = { 'searchcount', 'encoding', 'fileformat', 'filetype' },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' },
+    lualine_c = {
+      {
+        'filename',
+        newfile_status = true,
+        path = 1,
+        symbols = {
+          modified = '',
+        },
+      },
+    },
+    lualine_x = {
+      { 'diff', source = lualine_diff_source },
+      { 'diagnostics' },
+    },
   },
   inactive_winbar = {
-    lualine_a = {},
-    lualine_b = { { 'diff', source = lualine_diff_source }, 'diagnostics' },
-    lualine_c = { 'filename' },
-    lualine_x = { 'searchcount', 'encoding', 'fileformat', 'filetype' },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' },
+    lualine_c = {
+      {
+        'filename',
+        newfile_status = true,
+        path = 1,
+        symbols = {
+          modified = '',
+        },
+      },
+    },
+    lualine_x = {
+      { 'diff', source = lualine_diff_source },
+      { 'diagnostics' },
+    },
   },
 }
 
+require('buffer_manager').setup {
+  focus_alternate_buffer = true,
+}
+
+local buffer_keys = '1234567890'
+for i = 1, #buffer_keys do
+  local key = buffer_keys:sub(i, i)
+  keymap(
+    string.format('Buffer Manager: switch to buffer #%s', key),
+    'n',
+    string.format('<leader>%s', key),
+    function()
+      require('buffer_manager.ui').nav_file(i)
+    end
+  )
+end
+
+keymap('Buffer Manager: [O]pen buffers', 'n', '<leader>o', function()
+  require('buffer_manager.ui').toggle_quick_menu()
+end)
+
 require('tabline').setup {
+  enable = false,
   options = {
     show_bufnr = true,
   },
 }
-
-keymap(
-  '[S]how [B]uffers',
-  'n',
-  '<leader>sb',
-  vim.cmd.TablineToggleShowAllBuffers
-)
 
 keymap('[R]ename [T]ab', 'n', '<leader>rt', function()
   vim.ui.input({ prompt = 'Enter new tab name: ' }, function(new_name)
@@ -99,6 +195,7 @@ require('fidget').setup {
   },
   window = {
     blend = 0,
+    relative = 'editor',
   },
 }
 
@@ -161,7 +258,11 @@ vim.lsp.handlers['textDocument/signatureHelp'] =
   })
 
 vim.diagnostic.config {
-  float = { border = 'single' },
+  float = {
+    border = 'single',
+    format = format_diagnostic_verbose,
+    scope = 'cursor',
+  },
 }
 
 vim.fn.sign_define('DiagnosticSignError', {
