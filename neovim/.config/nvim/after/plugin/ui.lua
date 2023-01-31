@@ -107,7 +107,7 @@ require('lualine').setup {
     lualine_x = { require('tabline').tabline_tabs },
   },
   winbar = {
-    lualine_c = {
+    lualine_b = {
       {
         'filename',
         newfile_status = true,
@@ -123,7 +123,7 @@ require('lualine').setup {
     },
   },
   inactive_winbar = {
-    lualine_c = {
+    lualine_b = {
       {
         'filename',
         newfile_status = true,
