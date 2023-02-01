@@ -19,6 +19,7 @@ require('mason-lspconfig').setup {
     'cssls',
     'cssmodules_ls',
     'eslint',
+    'html',
     'rust_analyzer',
     'stylelint_lsp',
     'sumneko_lua',

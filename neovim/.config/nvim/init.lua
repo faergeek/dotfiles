@@ -278,6 +278,11 @@ autocmd('Setup LSP', 'LspAttach', function(args)
     client.server_capabilities.documentFormattingProvider = true
   end
 
+  if client.name == 'html' then
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end
+
   if client.name == 'sumneko_lua' then
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
