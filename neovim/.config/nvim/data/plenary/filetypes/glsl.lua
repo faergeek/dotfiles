@@ -1,0 +1,5 @@
+return {
+  extension = {
+    ['glsl'] = 'glsl',
+  },
+}

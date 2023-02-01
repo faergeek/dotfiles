@@ -2,6 +2,8 @@ local telescope = require 'telescope'
 local builtin = require 'telescope.builtin'
 local themes = require 'telescope.themes'
 
+require('plenary.filetype').add_file 'glsl'
+
 telescope.setup {
   defaults = {
     dynamic_preview_title = true,
