@@ -54,6 +54,8 @@ require('packer').startup {
       'nvim-treesitter/playground',
       'nvim-treesitter/nvim-treesitter-context',
 
+      'antonk52/vim-browserslist',
+
       {
         'kevinhwang91/nvim-ufo',
         requires = 'kevinhwang91/promise-async',
