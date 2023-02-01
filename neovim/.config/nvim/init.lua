@@ -227,3 +227,82 @@ autocmd('Close terminal if job exited without an error', 'TermClose', function()
     vim.api.nvim_buf_delete(0, {})
   end
 end)
+
+keymap('LSP: [R]ename [S]ymbol', 'n', '<leader>rs', vim.lsp.buf.rename)
+keymap('LSP: Code [A]ction', { 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action)
+keymap('LSP: [G]o to [R]eferences', 'n', 'gr', ':Trouble lsp_references<CR>')
+
+local function lsp_handle_capability(bufnr, client, capability, callback)
+  local handled_flag_key = 'faergeek_lsp_attach_handled_' .. capability
+
+  if
+    not vim.b[bufnr][handled_flag_key]
+    and client.server_capabilities[capability]
+  then
+    vim.b[bufnr][handled_flag_key] = true
+    callback()
+  end
+end
+
+autocmd('Setup LSP', 'LspAttach', function(args)
+  local bufnr = args.buf
+  local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+  lsp_handle_capability(bufnr, client, 'hoverProvider', function()
+    keymap('LSP: Hover Documentation', 'n', 'K', vim.lsp.buf.hover, {
+      buffer = bufnr,
+    })
+  end)
+
+  lsp_handle_capability(bufnr, client, 'documentSymbolProvider', function()
+    keymap(
+      'LSP: Document Symbols',
+      'n',
+      'gO',
+      require('telescope.builtin').lsp_document_symbols,
+      { buffer = bufnr }
+    )
+  end)
+
+  lsp_handle_capability(bufnr, client, 'workspaceSymbolProvider', function()
+    keymap(
+      'LSP: Workspace Symbols',
+      'n',
+      '<C-t>',
+      require('telescope.builtin').lsp_dynamic_workspace_symbols,
+      { buffer = bufnr }
+    )
+  end)
+
+  if client.name == 'eslint' then
+    client.server_capabilities.documentFormattingProvider = true
+  end
+
+  if client.name == 'sumneko_lua' then
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end
+
+  if client.name == 'tsserver' then
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end
+
+  lsp_handle_capability(bufnr, client, 'documentFormattingProvider', function()
+    vim.api.nvim_buf_create_user_command(bufnr, 'Format', function()
+      vim.lsp.buf.format {
+        bufnr = bufnr,
+        filter = function(c)
+          return c.supports_method 'textDocument/formatting'
+        end,
+      }
+    end, { desc = 'Format current buffer using LSP' })
+
+    autocmd(
+      'Format file on save using LSP',
+      'BufWritePre',
+      'Format',
+      { buffer = bufnr }
+    )
+  end)
+end)

@@ -1,79 +1,3 @@
-local function lsp_config_on_attach(_, bufnr)
-  local builtin = require 'telescope.builtin'
-
-  local keymap = require('faergeek.utils').keymap
-
-  keymap(
-    'LSP: [R]ename [S]ymbol',
-    'n',
-    '<leader>rs',
-    vim.lsp.buf.rename,
-    { buffer = bufnr }
-  )
-
-  keymap(
-    'LSP: Code [A]ction',
-    { 'n', 'v' },
-    '<leader>a',
-    vim.lsp.buf.code_action,
-    { buffer = bufnr }
-  )
-
-  keymap(
-    '[T]rouble: LSP [R]eferences',
-    'n',
-    'gr',
-    ':Trouble lsp_references<CR>'
-  )
-
-  keymap(
-    'LSP: Document Symbols',
-    'n',
-    'gO',
-    builtin.lsp_document_symbols,
-    { buffer = bufnr }
-  )
-
-  keymap(
-    'LSP: Workspace Symbols',
-    'n',
-    '<C-t>',
-    builtin.lsp_dynamic_workspace_symbols,
-    { buffer = bufnr }
-  )
-
-  keymap(
-    'LSP: Hover Documentation',
-    'n',
-    'K',
-    vim.lsp.buf.hover,
-    { buffer = bufnr }
-  )
-
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function()
-    vim.lsp.buf.format {
-      bufnr = bufnr,
-      filter = function(client)
-        if client.name == 'tsserver' then
-          return false
-        end
-
-        if client.name == 'eslint' then
-          client.server_capabilities.documentFormattingProvider = true
-        end
-
-        return client.supports_method 'textDocument/formatting'
-      end,
-    }
-  end, { desc = 'Format current buffer with LSP' })
-
-  local autocmd = require('faergeek.utils').autocmd
-
-  autocmd('Format file on save using LSP', 'BufWritePre', 'Format', {
-    buffer = bufnr,
-  })
-end
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
@@ -112,13 +36,11 @@ require('mason-lspconfig').setup_handlers {
   function(server_name)
     lspconfig[server_name].setup {
       capabilities = capabilities,
-      on_attach = lsp_config_on_attach,
     }
   end,
   ['eslint'] = function()
     lspconfig.eslint.setup {
       capabilities = capabilities,
-      on_attach = lsp_config_on_attach,
       settings = {
         codeActionOnSave = {
           enable = true,
@@ -130,7 +52,6 @@ require('mason-lspconfig').setup_handlers {
   ['stylelint_lsp'] = function()
     lspconfig.stylelint_lsp.setup {
       capabilities = capabilities,
-      on_attach = lsp_config_on_attach,
       settings = {
         stylelintplus = {
           autoFixOnFormat = true,
@@ -141,7 +62,6 @@ require('mason-lspconfig').setup_handlers {
   ['sumneko_lua'] = function()
     lspconfig.sumneko_lua.setup {
       capabilities = capabilities,
-      on_attach = lsp_config_on_attach,
       settings = {
         Lua = {
           completion = { callSnippet = 'Replace' },
@@ -155,7 +75,6 @@ require('mason-lspconfig').setup_handlers {
   ['tsserver'] = function()
     lspconfig.tsserver.setup {
       capabilities = capabilities,
-      on_attach = lsp_config_on_attach,
       settings = {
         completions = {
           completeFunctionCalls = true,
