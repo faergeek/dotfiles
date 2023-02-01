@@ -24,6 +24,7 @@ require('nvim-treesitter.configs').setup {
     'git_rebase',
     'gitcommit',
     'gitignore',
+    'glsl',
     'help',
     'html',
     'javascript',
