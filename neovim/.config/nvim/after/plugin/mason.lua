@@ -131,8 +131,8 @@ require('mason-nvim-dap').setup_handlers {
 
     local config = {
       name = 'Node: Attach',
-      request = 'attach',
       type = 'node2',
+      request = 'attach',
     }
 
     dap.configurations.javascript = { config }

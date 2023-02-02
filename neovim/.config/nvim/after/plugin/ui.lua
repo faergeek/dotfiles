@@ -307,9 +307,9 @@ dapui.setup {
       position = 'right',
       size = 40,
       elements = {
-        'scopes',
-        'breakpoints',
-        'stacks',
+        { id = 'scopes', size = 0.5 },
+        { id = 'breakpoints', size = 0.25 },
+        { id = 'stacks', size = 0.25 },
       },
     },
     {
@@ -391,6 +391,8 @@ keymap('Debug: [L]og [P]oint', 'n', '<Leader>lp', function()
 end)
 
 keymap('Debug: Continue', 'n', '<C-x>', dap.continue)
+
+keymap('[D]ebug: [T]oggle UI', 'n', '<leader>dt', dapui.toggle)
 
 keymap('[D]ebug: Reset sizes', 'n', '<leader>d=', function()
   dapui.open {
