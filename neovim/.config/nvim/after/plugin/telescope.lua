@@ -17,6 +17,13 @@ telescope.setup {
     },
     path_display = { shorten = 5 },
   },
+  pickers = {
+    live_grep = {
+      additional_args = function(opts)
+        return { '--hidden' }
+      end,
+    },
+  },
 }
 
 pcall(telescope.load_extension, 'fzf')
