@@ -63,10 +63,13 @@ local function format_diagnostic_verbose(diagnostic)
 end
 
 require('lualine').setup {
-  extensions = { 'quickfix' },
+  extensions = {
+    'nvim-dap-ui',
+    'quickfix',
+  },
   options = {
     disabled_filetypes = {
-      winbar = { 'qf' },
+      winbar = { 'dap-repl', 'qf' },
     },
     globalstatus = true,
     theme = 'tokyonight',
@@ -289,3 +292,113 @@ vim.fn.sign_define('DiagnosticSignInfo', {
 keymap('[S]how [D]iagnostics', 'n', '<leader>sd', vim.diagnostic.open_float)
 keymap('Diagnostic: Next item', 'n', ']d', vim.diagnostic.goto_next)
 keymap('Diagnostic: Previous item', 'n', '[d', vim.diagnostic.goto_prev)
+
+local dap = require 'dap'
+local dapui = require 'dapui'
+
+dapui.setup {
+  icons = {
+    collapsed = '',
+    current_frame = '',
+    expanded = '',
+  },
+  layouts = {
+    {
+      position = 'right',
+      size = 40,
+      elements = {
+        'scopes',
+        'breakpoints',
+        'stacks',
+      },
+    },
+    {
+      position = 'bottom',
+      size = 10,
+      elements = { 'repl' },
+    },
+  },
+}
+
+dap.listeners.after.event_initialized['dapui_config'] = function()
+  dapui.open()
+end
+
+dap.listeners.before.event_terminated['dapui_config'] = function()
+  dapui.close()
+end
+
+dap.listeners.before.event_exited['dapui_config'] = function()
+  dapui.close()
+end
+
+require('nvim-dap-virtual-text').setup {
+  all_references = true,
+  highlight_new_as_changed = true,
+}
+
+vim.fn.sign_define('DapBreakpoint', {
+  text = '',
+  texthl = 'DapUIBreakpointsLine',
+})
+
+vim.fn.sign_define('DapBreakpointCondition', {
+  text = '',
+  texthl = 'DapUIBreakpointsLine',
+})
+
+vim.fn.sign_define('DapLogPoint', {
+  text = '',
+  texthl = 'DapUIBreakpointsLine',
+})
+
+vim.fn.sign_define('DapStopped', {
+  text = '',
+  texthl = 'DapUIBreakpointsLine',
+  numhl = 'DapUIBreakpointsLine',
+  linehl = 'debugPC',
+})
+
+vim.fn.sign_define('DapBreakpointRejected', {
+  text = '',
+  texthl = 'DapUIBreakpointsDisabledLine',
+})
+
+autocmd('Close dap-ui windows before vim exits', 'VimLeavePre', function()
+  dapui.close()
+end)
+
+keymap('Debug: Toggle [B]reakpoint', 'n', '<leader>b', dap.toggle_breakpoint)
+
+keymap('Debug: [C]onditional [B]reakpoint', 'n', '<Leader>cb', function()
+  vim.ui.input({ prompt = 'Breakpoint condition: ' }, function(condition)
+    if not condition or condition == '' then
+      return
+    end
+
+    dap.set_breakpoint(condition)
+  end)
+end)
+
+keymap('Debug: [L]og [P]oint', 'n', '<Leader>lp', function()
+  vim.ui.input({ prompt = 'Log point message: ' }, function(message)
+    if not message or message == '' then
+      return
+    end
+
+    dap.set_breakpoint(nil, nil, message)
+  end)
+end)
+
+keymap('Debug: Continue', 'n', '<C-x>', dap.continue)
+
+keymap('[D]ebug: Reset sizes', 'n', '<leader>d=', function()
+  dapui.open {
+    reset = true,
+  }
+end)
+
+keymap('Debug: Step over', 'n', '<C-j>', dap.step_over)
+keymap('Debug: Step into', 'n', '<C-l>', dap.step_into)
+keymap('Debug: Step out', 'n', '<C-h>', dap.step_out)
+keymap('Debug: Run to cursor', 'n', '<C-k>', dap.run_to_cursor)

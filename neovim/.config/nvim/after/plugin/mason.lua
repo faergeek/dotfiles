@@ -106,3 +106,38 @@ require('mason-null-ls').setup_handlers {
 }
 
 null_ls.setup()
+
+require('mason-nvim-dap').setup {
+  ensure_installed = {
+    'firefox',
+    'node2',
+  },
+}
+
+local dap = require 'dap'
+
+require('mason-nvim-dap').setup_handlers {
+  firefox = function()
+    dap.adapters.firefox = {
+      command = 'firefox-debug-adapter',
+      type = 'executable',
+    }
+  end,
+  node2 = function()
+    dap.adapters.node2 = {
+      command = 'node-debug2-adapter',
+      type = 'executable',
+    }
+
+    local config = {
+      name = 'Node: Attach',
+      request = 'attach',
+      type = 'node2',
+    }
+
+    dap.configurations.javascript = { config }
+    dap.configurations.javascriptreact = { config }
+    dap.configurations.typescript = { config }
+    dap.configurations.typescriptreact = { config }
+  end,
+}

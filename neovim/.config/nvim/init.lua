@@ -36,6 +36,8 @@ require('packer').startup {
       'j-hui/fidget.nvim',
       'folke/trouble.nvim',
       'stevearc/oil.nvim',
+      'rcarriga/nvim-dap-ui',
+      'theHamsta/nvim-dap-virtual-text',
     }
 
     -- after/plugin/sessions.lua
@@ -43,6 +45,7 @@ require('packer').startup {
       'ethanholz/nvim-lastplace',
       'rmagatti/auto-session',
       'rmagatti/session-lens',
+      'MunifTanjim/exrc.nvim',
     }
 
     -- after/plugin/editing.lua
@@ -89,6 +92,9 @@ require('packer').startup {
       'jose-elias-alvarez/null-ls.nvim',
       'jayp0521/mason-null-ls.nvim',
 
+      'mfussenegger/nvim-dap',
+      'jay-babu/mason-nvim-dap.nvim',
+
       requires = 'nvim-lua/plenary.nvim',
     }
 
@@ -102,6 +108,7 @@ require('packer').startup {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-calc',
+      'rcarriga/cmp-dap',
       'onsails/lspkind.nvim',
       'saadparwaiz1/cmp_luasnip',
     }
@@ -207,9 +214,6 @@ keymap('Move selection up', 'v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
 keymap('Move selection down', 'v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
 
 keymap('Join next line, preserving cursor position', 'n', 'J', 'mzJ`z')
-
-keymap('Quickfix: Next item', 'n', '<C-j>', ':cnext<CR>')
-keymap('Quickfix: Previous item', 'n', '<C-k>', ':cprev<CR>')
 
 autocmd('Briefly highlight yanked text', 'TextYankPost', function()
   vim.highlight.on_yank {}

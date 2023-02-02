@@ -4,6 +4,10 @@ local icons = require 'nvim-web-devicons'
 local lspkind = require 'lspkind'
 
 cmp.setup {
+  enabled = function()
+    return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt'
+      or require('cmp_dap').is_dap_buffer()
+  end,
   experimental = {
     ghost_text = true,
   },
@@ -63,3 +67,9 @@ cmp.setup {
     documentation = cmp.config.window.bordered(),
   },
 }
+
+require('cmp').setup.filetype({ 'dap-repl', 'dapui_watches', 'dapui_hover' }, {
+  sources = {
+    { name = 'dap' },
+  },
+})

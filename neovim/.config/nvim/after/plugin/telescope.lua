@@ -23,7 +23,6 @@ pcall(telescope.load_extension, 'fzf')
 
 local keymap = require('faergeek.utils').keymap
 
-keymap('Telescope [B]uiltins', 'n', '<leader>b', builtin.builtin)
 keymap('Telescope commands', 'n', '<leader>:', builtin.commands)
 
 keymap('Telescope search current buffer', 'n', '<leader>/', function()

@@ -22,3 +22,9 @@ keymap(
   '<leader>fs',
   extensions['session-lens'].search_session
 )
+
+require('exrc').setup {
+  files = {
+    '.nvim.lua',
+  },
+}
