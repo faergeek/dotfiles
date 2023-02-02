@@ -53,6 +53,7 @@ require('mason-lspconfig').setup_handlers {
   ['stylelint_lsp'] = function()
     lspconfig.stylelint_lsp.setup {
       capabilities = capabilities,
+      filetypes = { 'css' },
       settings = {
         stylelintplus = {
           autoFixOnFormat = true,
