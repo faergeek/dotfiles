@@ -23,13 +23,13 @@ keymap('LuaSnip: Jump backward', { 'i', 's' }, '<C-b>', function()
   end
 end)
 
-keymap('LuaSnip: Choise forward', 'i', '<C-j>', function()
+keymap('LuaSnip: Choise forward', 'i', '<C-n>', function()
   if ls.choice_active() then
     ls.change_choice(1)
   end
 end)
 
-keymap('LuaSnip: Choise backward', 'i', '<C-k>', function()
+keymap('LuaSnip: Choise backward', 'i', '<C-p>', function()
   if ls.choice_active() then
     ls.change_choice(-1)
   end
