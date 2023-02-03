@@ -20,6 +20,7 @@ require('mason-lspconfig').setup {
     'cssmodules_ls',
     'eslint',
     'html',
+    'jsonls',
     'rust_analyzer',
     'stylelint_lsp',
     'sumneko_lua',
@@ -46,6 +47,17 @@ require('mason-lspconfig').setup_handlers {
         codeActionOnSave = {
           enable = true,
           mode = 'all',
+        },
+      },
+    }
+  end,
+  ['jsonls'] = function()
+    lspconfig.jsonls.setup {
+      capabilities = capabilities,
+      settings = {
+        json = {
+          schemas = require('schemastore').json.schemas(),
+          validate = { enable = true },
         },
       },
     }
