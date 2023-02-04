@@ -269,16 +269,6 @@ autocmd('Setup LSP', 'LspAttach', function(args)
     )
   end)
 
-  lsp_handle_capability(bufnr, client, 'workspaceSymbolProvider', function()
-    keymap(
-      'LSP: Workspace Symbols',
-      'n',
-      '<C-t>',
-      require('telescope.builtin').lsp_dynamic_workspace_symbols,
-      { buffer = bufnr }
-    )
-  end)
-
   if client.name == 'eslint' then
     client.server_capabilities.documentFormattingProvider = true
   end
