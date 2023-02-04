@@ -180,7 +180,6 @@ vim.opt.expandtab = true
 vim.opt.breakindent = true
 vim.opt.breakindentopt = 'sbr'
 vim.opt.textwidth = 80
-vim.opt.colorcolumn = '+0'
 vim.opt.linebreak = true
 vim.opt.showbreak = '↳ '
 vim.opt.cpoptions:append 'n'
