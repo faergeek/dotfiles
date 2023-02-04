@@ -158,8 +158,15 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.list = true
-vim.opt.listchars =
-  'precedes:…,tab:» ,multispace:·,nbsp:␣,trail:·,extends:…,eol:⏎'
+vim.opt.listchars = {
+  eol = '⏎',
+  extends = '…',
+  multispace = '·',
+  nbsp = '␣',
+  precedes = '…',
+  tab = '» ',
+  trail = '·',
+}
 vim.opt.showmatch = true
 
 vim.opt.ignorecase = true
