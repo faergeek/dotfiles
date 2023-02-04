@@ -30,6 +30,7 @@ cmp.setup {
         buffer = '[buf]',
         calc = '[calc]',
         nvim_lsp = '[lsp]',
+        nvim_lsp_signature_help = '[sig]',
         path = '[path]',
         luasnip = '[snip]',
       },
@@ -57,6 +58,7 @@ cmp.setup {
         trailing_slash = true,
       },
     },
+    { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   }, {
