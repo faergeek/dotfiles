@@ -259,6 +259,16 @@ autocmd('Setup LSP', 'LspAttach', function(args)
     })
   end)
 
+  lsp_handle_capability(bufnr, client, 'implementationProvider', function()
+    keymap(
+      'LSP: [G]o to [i]mplementation',
+      'n',
+      'gi',
+      vim.lsp.buf.implementation,
+      { buffer = bufnr }
+    )
+  end)
+
   lsp_handle_capability(bufnr, client, 'documentSymbolProvider', function()
     keymap(
       'LSP: Document Symbols',
