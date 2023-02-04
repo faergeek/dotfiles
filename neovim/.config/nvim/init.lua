@@ -163,6 +163,7 @@ vim.opt.showmatch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.gdefault = true
+vim.opt.inccommand = 'split'
 
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
