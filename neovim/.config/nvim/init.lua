@@ -157,7 +157,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.list = true
-vim.opt.listchars = 'tab:» ,extends:…,precedes:…,trail:·,nbsp:␣'
+vim.opt.listchars =
+  'precedes:…,tab:» ,multispace:·,nbsp:␣,trail:·,extends:…,eol:⏎'
 vim.opt.showmatch = true
 
 vim.opt.ignorecase = true
