@@ -400,7 +400,8 @@ keymap('[D]ebug: Reset sizes', 'n', '<leader>d=', function()
   }
 end)
 
-keymap('Debug: Step over', 'n', '<C-j>', dap.step_over)
-keymap('Debug: Step into', 'n', '<C-l>', dap.step_into)
-keymap('Debug: Step out', 'n', '<C-h>', dap.step_out)
-keymap('Debug: Run to cursor', 'n', '<C-k>', dap.run_to_cursor)
+keymap('Debug: [S]tep over', 'n', 's]', dap.step_over)
+keymap('Debug: [S]tep back', 'n', 's[', dap.step_back)
+keymap('Debug: [S]tep into', 'n', 's>', dap.step_into)
+keymap('Debug: [S]tep out', 'n', 's<', dap.step_out)
+keymap('Debug: [S]tep to [c]ursor', 'n', 'sc', dap.run_to_cursor)
