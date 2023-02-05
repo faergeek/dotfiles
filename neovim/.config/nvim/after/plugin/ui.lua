@@ -62,6 +62,10 @@ local function format_diagnostic_verbose(diagnostic)
   )
 end
 
+local function lualine_window_number()
+  return tostring(vim.api.nvim_win_get_number(0))
+end
+
 require('lualine').setup {
   extensions = {
     'nvim-dap-ui',
@@ -110,6 +114,7 @@ require('lualine').setup {
     lualine_x = { require('tabline').tabline_tabs },
   },
   winbar = {
+    lualine_a = { lualine_window_number },
     lualine_b = {
       {
         'filename',
@@ -126,6 +131,7 @@ require('lualine').setup {
     },
   },
   inactive_winbar = {
+    lualine_a = { lualine_window_number },
     lualine_b = {
       {
         'filename',
