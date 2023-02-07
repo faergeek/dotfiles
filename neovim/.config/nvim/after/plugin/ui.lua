@@ -411,3 +411,5 @@ keymap('Debug: [S]tep back', 'n', 's[', dap.step_back)
 keymap('Debug: [S]tep into', 'n', 's>', dap.step_into)
 keymap('Debug: [S]tep out', 'n', 's<', dap.step_out)
 keymap('Debug: [S]tep to [c]ursor', 'n', 'sc', dap.run_to_cursor)
+
+require('which-key').setup()

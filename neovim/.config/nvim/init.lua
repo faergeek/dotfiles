@@ -38,6 +38,7 @@ require('packer').startup {
       'stevearc/oil.nvim',
       'rcarriga/nvim-dap-ui',
       'theHamsta/nvim-dap-virtual-text',
+      'folke/which-key.nvim',
     }
 
     -- after/plugin/sessions.lua
