@@ -52,7 +52,6 @@ require('packer').startup {
     -- after/plugin/editing.lua
     use {
       'nmac427/guess-indent.nvim',
-      'lukas-reineke/indent-blankline.nvim',
 
       'nvim-treesitter/nvim-treesitter',
       'nvim-treesitter/playground',
@@ -160,6 +159,7 @@ vim.opt.list = true
 vim.opt.listchars = {
   eol = '⏎',
   extends = '…',
+  leadmultispace = ' ',
   multispace = '·',
   nbsp = '␣',
   precedes = '…',

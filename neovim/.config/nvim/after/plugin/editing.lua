@@ -1,9 +1,5 @@
 require('guess-indent').setup()
 
-require('indent_blankline').setup {
-  show_current_context = true,
-}
-
 require('nvim-treesitter.configs').setup {
   autotag = {
     enable = true,
