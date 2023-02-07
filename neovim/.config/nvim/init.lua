@@ -75,11 +75,9 @@ require('packer').startup {
 
       'NvChad/nvim-colorizer.lua',
 
-      run = function()
-        pcall(require('nvim-treesitter.install').update {
-          with_sync = true,
-        })
-      end,
+      run = pcall(
+        require('nvim-treesitter.install').update { with_sync = true }
+      ),
     }
 
     -- after/plugin/mason.lua
