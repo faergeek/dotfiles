@@ -21,6 +21,7 @@ require('mason-lspconfig').setup {
     'eslint',
     'html',
     'jsonls',
+    'ocamllsp',
     'rust_analyzer',
     'stylelint_lsp',
     'sumneko_lua',

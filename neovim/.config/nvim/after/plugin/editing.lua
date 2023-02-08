@@ -28,6 +28,8 @@ require('nvim-treesitter.configs').setup {
     'lua',
     'markdown',
     'markdown_inline',
+    'ocaml',
+    'ocaml_interface',
     'proto',
     'query',
     'rust',
