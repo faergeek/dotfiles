@@ -2,9 +2,13 @@ local autocmd = require('faergeek.utils').autocmd
 local keymap = require('faergeek.utils').keymap
 
 require('tokyonight').setup {
-  dim_inactive = true,
   lualine_bold = true,
   sidebars = {},
+  styles = {
+    floats = 'transparent',
+    sidebars = 'transparent',
+  },
+  transparent = true,
 }
 
 vim.cmd.colorscheme 'tokyonight'
