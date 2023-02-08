@@ -157,7 +157,6 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.list = true
 vim.opt.listchars = {
-  eol = '⏎',
   extends = '…',
   leadmultispace = ' ',
   multispace = '·',
