@@ -1,3 +1,7 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+  if type pfetch 2&> /dev/null
+    function fish_greeting
+      PF_INFO="ascii os shell editor memory uptime palette" pfetch
+    end
+  end
 end
