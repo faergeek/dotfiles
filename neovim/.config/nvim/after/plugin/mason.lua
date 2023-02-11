@@ -16,6 +16,7 @@ require('mason').setup {
 
 require('mason-lspconfig').setup {
   ensure_installed = {
+    'bashls',
     'cssls',
     'cssmodules_ls',
     'eslint',
@@ -101,6 +102,7 @@ require('mason-lspconfig').setup_handlers {
 
 require('mason-null-ls').setup {
   ensure_installed = {
+    'beautysh',
     'prettier',
     'stylua',
   },
