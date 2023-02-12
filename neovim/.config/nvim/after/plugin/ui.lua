@@ -252,6 +252,13 @@ keymap(
   ':cclose<CR>:Trouble quickfix<CR>'
 )
 
+keymap(
+  '[T]rouble: [L]ocation List',
+  'n',
+  '<leader>tl',
+  ':lclose<CR>:Trouble loclist<CR>'
+)
+
 autocmd('Close trouble before vim exits', 'VimLeavePre', function()
   vim.cmd.TroubleClose()
   vim.cmd.cclose()
