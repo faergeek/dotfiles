@@ -245,7 +245,7 @@ end)
 
 keymap('LSP: [R]ename [S]ymbol', 'n', '<leader>rs', vim.lsp.buf.rename)
 keymap('LSP: Code [A]ction', { 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action)
-keymap('LSP: [G]o to [R]eferences', 'n', 'gr', ':Trouble lsp_references<CR>')
+keymap('LSP: [G]o to [R]eferences', 'n', 'gr', ':Telescope lsp_references<CR>')
 
 local function lsp_handle_capability(bufnr, client, capability, callback)
   local handled_flag_key = 'faergeek_lsp_attach_handled_' .. capability

@@ -1,6 +1,7 @@
 local telescope = require 'telescope'
 local builtin = require 'telescope.builtin'
 local themes = require 'telescope.themes'
+local trouble = require 'trouble.providers.telescope'
 
 require('plenary.filetype').add_file 'browserslist'
 require('plenary.filetype').add_file 'glsl'
@@ -14,6 +15,10 @@ telescope.setup {
       horizontal = {
         preview_width = 0.6,
       },
+    },
+    mappings = {
+      i = { ['<c-t>'] = trouble.open_with_trouble },
+      n = { ['<c-t>'] = trouble.open_with_trouble },
     },
     path_display = { shorten = 5 },
   },
