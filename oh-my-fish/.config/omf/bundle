@@ -1,5 +1,4 @@
 package android-sdk
-package brew
 package foreign-env
 package node-binpath
 package nvm
