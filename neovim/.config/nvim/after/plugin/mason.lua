@@ -76,11 +76,12 @@ require('mason-lspconfig').setup_handlers {
     }
   end,
   ['sumneko_lua'] = function()
-    lspconfig.sumneko_lua.setup {
+    lspconfig.lua_ls.setup {
       capabilities = capabilities,
       settings = {
         Lua = {
           completion = { callSnippet = 'Replace' },
+          format = { enable = false },
           runtime = { version = 'LuaJIT' },
           telemetry = { enable = false },
           workspace = { checkThirdParty = false },
