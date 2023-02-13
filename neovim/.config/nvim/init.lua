@@ -211,12 +211,12 @@ local keymap = require('faergeek.utils').keymap
 
 keymap('Nop', { 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-keymap('Move cursor up', 'n', 'k', "v:count == 0 ? 'gk' : 'k'", {
+keymap('Move cursor up', { 'n', 'v' }, 'k', "v:count == 0 ? 'gk' : 'k'", {
   expr = true,
   silent = true,
 })
 
-keymap('Move cursor down', 'n', 'j', "v:count == 0 ? 'gj' : 'j'", {
+keymap('Move cursor down', { 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'", {
   expr = true,
   silent = true,
 })
