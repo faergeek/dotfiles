@@ -22,10 +22,10 @@ require('mason-lspconfig').setup {
     'eslint',
     'html',
     'jsonls',
+    'lua_ls',
     'ocamllsp',
     'rust_analyzer',
     'stylelint_lsp',
-    'sumneko_lua',
     'tsserver',
   },
 }
@@ -64,18 +64,7 @@ require('mason-lspconfig').setup_handlers {
       },
     }
   end,
-  ['stylelint_lsp'] = function()
-    lspconfig.stylelint_lsp.setup {
-      capabilities = capabilities,
-      filetypes = { 'css' },
-      settings = {
-        stylelintplus = {
-          autoFixOnFormat = true,
-        },
-      },
-    }
-  end,
-  ['sumneko_lua'] = function()
+  ['lua_ls'] = function()
     lspconfig.lua_ls.setup {
       capabilities = capabilities,
       settings = {
@@ -85,6 +74,17 @@ require('mason-lspconfig').setup_handlers {
           runtime = { version = 'LuaJIT' },
           telemetry = { enable = false },
           workspace = { checkThirdParty = false },
+        },
+      },
+    }
+  end,
+  ['stylelint_lsp'] = function()
+    lspconfig.stylelint_lsp.setup {
+      capabilities = capabilities,
+      filetypes = { 'css' },
+      settings = {
+        stylelintplus = {
+          autoFixOnFormat = true,
         },
       },
     }
