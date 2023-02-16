@@ -56,6 +56,9 @@ require('mason-lspconfig').setup_handlers {
   ['jsonls'] = function()
     lspconfig.jsonls.setup {
       capabilities = capabilities,
+      init_options = {
+        provideFormatter = false,
+      },
       settings = {
         json = {
           schemas = require('schemastore').json.schemas(),
