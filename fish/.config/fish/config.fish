@@ -9,4 +9,6 @@ if status is-interactive
   end
 
   set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh
+
+  alias ls='exa --icons --git'
 end
