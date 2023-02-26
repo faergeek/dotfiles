@@ -10,5 +10,6 @@ if status is-interactive
 
   set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh
 
+  set -gx EXA_ICON_SPACING 2
   alias ls='exa --icons --git'
 end
