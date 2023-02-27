@@ -123,4 +123,12 @@ require('nvim-autopairs').setup {
 
 require('mini.surround').setup {}
 
-require('colorizer').setup {}
+require('colorizer').setup {
+  user_default_options = {
+    mode = 'virtualtext',
+    RRGGBBAA = true,
+    AARRGGBB = true,
+    rgb_fn = true,
+    hsl_fn = true,
+  },
+}
