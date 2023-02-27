@@ -224,8 +224,6 @@ keymap('Move cursor down', { 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'", {
 keymap('Move selection up', 'v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
 keymap('Move selection down', 'v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
 
-keymap('Join next line, preserving cursor position', 'n', 'J', 'mzJ`z')
-
 autocmd('Briefly highlight yanked text', 'TextYankPost', function()
   vim.highlight.on_yank {}
 end)
