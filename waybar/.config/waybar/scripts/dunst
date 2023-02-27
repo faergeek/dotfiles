@@ -1,0 +1,19 @@
+#!/bin/bash
+
+WAITING_COUNT=$(dunstctl count waiting)
+
+if [ "$WAITING_COUNT" != 0 ]
+then
+    cat << EOF
+{ "class": "have-waiting", "text": "󱅫 ${WAITING_COUNT}" }
+EOF
+elif dunstctl is-paused | grep -q "false"
+then
+    cat << EOF
+{ "text": "󰂞" }
+EOF
+else
+    cat << EOF
+{ "text": "󰂚" }
+EOF
+fi

@@ -1,0 +1,30 @@
+#!/usr/bin/env fish
+
+set -l name dim-screen
+
+function help_exit
+    echo "\
+usage: $name COMMAND [OPTIONS...]
+options:
+-d, --dim <target>          Dim screen to <target> brightness
+-r, --restore               Restore previously saved brightness\
+    "
+    exit 1
+end
+
+argparse --name=$name 'h/help' 'd/dim=' 'r/restore' -- $argv
+or help_exit
+
+set -l save "/tmp/brightness-before-dimming"
+
+if [ -n "$_flag_restore" ]
+    if [ -r $save ]
+        brightnessctl set (cat "$save")
+        rm $save
+    else
+        brightnessctl set 13108
+    end
+else
+    brightnessctl get > "$save"
+    brightnessctl set $_flag_dim
+end

@@ -1,0 +1,37 @@
+# vim:ft=dosini
+[options]
+background = checks
+suppress_default_binds = true
+
+[binds]
+q = quit
+
+<bracketleft> = prev
+<bracketright> = next
+gg = goto 1
+<Shift+G> = goto -1
+
+j = pan 0 -50
+k = pan 0 50
+h = pan 50 0
+l = pan -50 0
+
+i = zoom 1
+o = zoom -1
+
+# Rotate Clockwise by 90 degrees
+<Ctrl+r> = rotate by 90
+
+f = fullscreen
+d = overlay
+w = exec hyprctl hyprpaper preload $imv_current_file && hyprctl hyprpaper wallpaper eDP-1,$imv_current_file && hyprctl hyprpaper unload all
+1 = zoom actual
+0 = reset
+
+# Gif playback
+<period> = next_frame
+<space> = toggle_playing
+
+# Slideshow control
+t = slideshow +1
+<Shift+T> = slideshow -1

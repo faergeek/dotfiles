@@ -1,0 +1,112 @@
+// vim: ft=jsonc
+{
+  "layer": "top",
+  "margin": "8 8 0",
+  "spacing": 4,
+  "modules-left": ["wlr/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "tray",
+    "idle_inhibitor",
+    "cpu",
+    "temperature",
+    "custom/dunst",
+    "custom/playerctl",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    "upower",
+    "hyprland/language",
+    "clock"
+  ],
+  "bluetooth": {
+    "format": "",
+    "format-connected": "󰂱",
+    "on-click": "alacritty -e bluetoothctl",
+    "tooltip-format-connected-battery": "{device_enumerate}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_address})\t{device_battery_percentage}%"
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+  "cpu": {
+    "format": "{icon}",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "alacritty -e htop"
+  },
+  "custom/dunst": {
+    "exec": "~/.config/waybar/scripts/dunst",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 1,
+    "return-type": "json"
+  },
+  "custom/playerctl": {
+    "exec": "playerctl metadata -f '{{emoji(status)}}' && playerctl metadata -f '{{playerName}}: 󰝚 {{title}} ({{artist}})' && echo ''",
+    "exec-if": "playerctl -s status",
+    "interval": 10,
+    "on-click": "playerctl play-pause"
+  },
+  "hyprland/language": {
+    "format-en": "🇺🇸",
+    "format-ru": "🇷🇺"
+  },
+  "hyprland/window": {
+    "max-length": 50,
+    "separate-outputs": true
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰒳",
+      "deactivated": "󰒲"
+    }
+  },
+  "network": {
+    "format-wifi": "",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{essid}\t{ipaddr}",
+    "on-click": "nm-connection-editor"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "󰋎",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "hdmi": "󰡁",
+      "default": ["", "", ""]
+    },
+    "on-click": "alacritty -e pulsemixer",
+    "tooltip-format": "{icon} {desc}\t{volume}%"
+  },
+  "temperature": {
+    "format": "{temperatureC}°C "
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "upower": {
+    "format": " {percentage}",
+    "format-alt": " {percentage} {time}",
+    "icon-size": 14
+  },
+  "wlr/workspaces": {
+    "format": "{name} {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "󰣠",
+      "6": "󰡁",
+      "7": "󰡁",
+      "8": "󰡁",
+      "9": "󰡁",
+      "10": "󰡁",
+      "default": ""
+    },
+    "on-click": "activate",
+    "sort-by-number": true
+  }
+}

@@ -1,0 +1,80 @@
+* {
+  font-family: NotoSans Nerd Font;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: transparent;
+  color: #c0caf5;
+}
+
+.modules-left > widget > *,
+.modules-right > widget > * {
+  padding: 0 8px;
+  border-radius: 8px;
+  background: rgba(43, 48, 59, 0.25);
+}
+
+#workspaces {
+  color: #c0caf5;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+}
+
+#workspaces button {
+  border: 0;
+  padding: 0 8px;
+  border-radius: 0;
+  box-shadow: none;
+  background: rgba(43, 48, 59, 0.25);
+  color: inherit;
+  transition: none;
+}
+
+#workspaces button:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#workspaces button:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+#workspaces button:hover {
+  border: 0;
+  background: #64727d;
+  text-shadow: inherit;
+}
+
+#workspaces button.active {
+  background: #7aa2f7;
+  color: #1d202f;
+}
+
+#workspaces button.urgent {
+  background: #ff9e64;
+}
+
+#window {
+  padding: 0 8px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #ff9e64;
+}
+
+#custom-dunst.have-waiting,
+#idle_inhibitor.activated {
+  color: #ff9e64;
+}
+
+#language {
+  min-width: 20px;
+}
