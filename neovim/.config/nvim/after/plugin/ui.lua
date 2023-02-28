@@ -176,7 +176,7 @@ end)
 
 require('oil').setup()
 
-keymap('Oil: [P]arent directory', 'n', '-', require('oil').open_float)
+keymap('Oil', 'n', '-', require('oil').open)
 
 require('tabline').setup {
   enable = false,
