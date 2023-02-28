@@ -1,4 +1,4 @@
 lock 'swaylock --daemonize'
-before-sleep 'playerctl pause && loginctl lock-session'
+before-sleep 'loginctl lock-session && playerctl -s pause'
 timeout 120 '~/.config/swayidle/scripts/dim-screen --dim 1' resume '~/.config/swayidle/scripts/dim-screen --restore'
 timeout 130 'loginctl lock-session && hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
