@@ -39,6 +39,7 @@ require('nvim-treesitter.configs').setup {
     'typescript',
     'vim',
     'yaml',
+    'zig',
   },
   highlight = {
     additional_vim_regex_highlighting = false,

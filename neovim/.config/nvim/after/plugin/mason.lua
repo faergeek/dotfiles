@@ -27,6 +27,7 @@ require('mason-lspconfig').setup {
     'rust_analyzer',
     'stylelint_lsp',
     'tsserver',
+    'zls',
   },
 }
 
@@ -109,6 +110,7 @@ require('mason-null-ls').setup {
     'beautysh',
     'prettier',
     'stylua',
+    'zigfmt',
   },
 }
 
