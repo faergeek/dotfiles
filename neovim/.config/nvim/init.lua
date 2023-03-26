@@ -58,6 +58,7 @@ require('packer').startup {
       'nvim-treesitter/nvim-treesitter-context',
 
       'antonk52/vim-browserslist',
+      'rescript-lang/vim-rescript',
 
       {
         'kevinhwang91/nvim-ufo',

@@ -24,6 +24,7 @@ require('mason-lspconfig').setup {
     'jsonls',
     'lua_ls',
     'ocamllsp',
+    'rescriptls',
     'rust_analyzer',
     'stylelint_lsp',
     'tsserver',
@@ -109,6 +110,7 @@ require('mason-null-ls').setup {
   ensure_installed = {
     'beautysh',
     'prettier',
+    'rescript',
     'stylua',
     'zigfmt',
   },
