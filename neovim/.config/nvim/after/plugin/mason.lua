@@ -17,6 +17,7 @@ require('mason').setup {
 require('mason-lspconfig').setup {
   ensure_installed = {
     'bashls',
+    'clangd',
     'cssls',
     'cssmodules_ls',
     'eslint',
