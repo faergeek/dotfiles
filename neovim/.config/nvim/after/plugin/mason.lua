@@ -107,6 +107,8 @@ require('mason-lspconfig').setup_handlers {
   end,
 }
 
+local null_ls = require 'null-ls'
+
 require('mason-null-ls').setup {
   ensure_installed = {
     'beautysh',
@@ -115,54 +117,50 @@ require('mason-null-ls').setup {
     'stylua',
     'zigfmt',
   },
-}
-
-local null_ls = require 'null-ls'
-
-require('mason-null-ls').setup_handlers {
-  function(source_name, methods)
-    require 'mason-null-ls.automatic_setup'(source_name, methods)
-  end,
-  prettier = function()
-    null_ls.register(null_ls.builtins.formatting.prettier.with {
-      only_local = 'node_modules/.bin',
-    })
-  end,
+  handlers = {
+    function(source_name, methods)
+      require 'mason-null-ls.automatic_setup'(source_name, methods)
+    end,
+    prettier = function()
+      null_ls.register(null_ls.builtins.formatting.prettier.with {
+        only_local = 'node_modules/.bin',
+      })
+    end,
+  },
 }
 
 null_ls.setup()
+
+local dap = require 'dap'
 
 require('mason-nvim-dap').setup {
   ensure_installed = {
     'firefox',
     'node2',
   },
-}
+  handlers = {
+    firefox = function()
+      dap.adapters.firefox = {
+        command = 'firefox-debug-adapter',
+        type = 'executable',
+      }
+    end,
+    node2 = function()
+      dap.adapters.node2 = {
+        command = 'node-debug2-adapter',
+        type = 'executable',
+      }
 
-local dap = require 'dap'
+      local config = {
+        name = 'Node: Attach',
+        type = 'node2',
+        request = 'attach',
+      }
 
-require('mason-nvim-dap').setup_handlers {
-  firefox = function()
-    dap.adapters.firefox = {
-      command = 'firefox-debug-adapter',
-      type = 'executable',
-    }
-  end,
-  node2 = function()
-    dap.adapters.node2 = {
-      command = 'node-debug2-adapter',
-      type = 'executable',
-    }
-
-    local config = {
-      name = 'Node: Attach',
-      type = 'node2',
-      request = 'attach',
-    }
-
-    dap.configurations.javascript = { config }
-    dap.configurations.javascriptreact = { config }
-    dap.configurations.typescript = { config }
-    dap.configurations.typescriptreact = { config }
-  end,
+      dap.configurations.javascript = { config }
+      dap.configurations.javascriptreact = { config }
+      dap.configurations.typescript = { config }
+      dap.configurations.typescriptreact = { config }
+    end,
+  },
 }
