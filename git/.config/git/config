@@ -1,7 +1,6 @@
 [commit]
   gpgSign = true
 [core]
-  excludesfile = ~/.gitignore_global
   quotepath = false
 [fetch]
   prune = true
