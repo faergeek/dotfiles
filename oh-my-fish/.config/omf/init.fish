@@ -8,7 +8,3 @@ set -g theme_display_k8s_context yes
 set -g theme_color_scheme terminal2-dark
 set -g theme_display_node yes
 set -g theme_nerd_fonts yes
-
-# set nvim as an editor
-set -gx EDITOR nvim
-set -gx VISUAL nvim
