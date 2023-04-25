@@ -54,7 +54,6 @@ require('packer').startup {
       'nmac427/guess-indent.nvim',
 
       'nvim-treesitter/nvim-treesitter',
-      'nvim-treesitter/playground',
       'nvim-treesitter/nvim-treesitter-context',
 
       'antonk52/vim-browserslist',
