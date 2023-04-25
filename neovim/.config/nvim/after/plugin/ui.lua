@@ -1,17 +1,11 @@
 local autocmd = require('faergeek.utils').autocmd
 local keymap = require('faergeek.utils').keymap
 
-require('tokyonight').setup {
-  lualine_bold = true,
-  sidebars = {},
-  styles = {
-    floats = 'transparent',
-    sidebars = 'transparent',
-  },
-  transparent = true,
+require('catppuccin').setup {
+  flavour = 'frappe',
 }
 
-vim.cmd.colorscheme 'tokyonight'
+vim.cmd.colorscheme 'catppuccin'
 
 local function lualine_diff_source()
   local gitsigns = vim.fn.getbufvar(vim.fn.bufnr(), 'gitsigns_status_dict')
@@ -80,7 +74,7 @@ require('lualine').setup {
       winbar = { 'dap-repl', 'qf' },
     },
     globalstatus = true,
-    theme = 'tokyonight',
+    theme = 'catppuccin',
   },
   sections = {
     lualine_b = {
@@ -265,18 +259,8 @@ autocmd('Close trouble before vim exits', 'VimLeavePre', function()
   vim.cmd.lclose()
 end)
 
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = 'single',
-})
-
-vim.lsp.handlers['textDocument/signatureHelp'] =
-  vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = 'single',
-  })
-
 vim.diagnostic.config {
   float = {
-    border = 'single',
     format = format_diagnostic_verbose,
     scope = 'cursor',
   },

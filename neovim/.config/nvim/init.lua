@@ -22,9 +22,9 @@ require('packer').startup {
     use 'wbthomason/packer.nvim'
 
     -- after/plugin/ui.lua
+    use { 'catppuccin/nvim', as = 'catppuccin' }
     use {
       'nvim-tree/nvim-web-devicons',
-      'folke/tokyonight.nvim',
       'stevearc/dressing.nvim',
       'goolord/alpha-nvim',
       'nvim-lualine/lualine.nvim',
@@ -134,9 +134,8 @@ require('packer').startup {
 
   config = {
     display = {
-      prompt_border = 'single',
       open_fn = function()
-        return require('packer.util').float { border = 'single' }
+        return require('packer.util').float()
       end,
     },
   },

@@ -3,16 +3,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(
 )
 
 require('neodev').setup()
-
-require('mason').setup {
-  ui = {
-    border = 'single',
-  },
-}
-
-require('lspconfig.ui.windows').default_options = {
-  border = 'single',
-}
+require('mason').setup()
 
 local lspconfig = require 'lspconfig'
 
