@@ -10,6 +10,12 @@ require('mason').setup {
   },
 }
 
+require('lspconfig.ui.windows').default_options = {
+  border = 'single',
+}
+
+local lspconfig = require 'lspconfig'
+
 require('mason-lspconfig').setup {
   ensure_installed = {
     'bashls',
@@ -27,80 +33,73 @@ require('mason-lspconfig').setup {
     'tsserver',
     'zls',
   },
-}
-
-require('lspconfig.ui.windows').default_options = {
-  border = 'single',
-}
-
-local lspconfig = require 'lspconfig'
-
-require('mason-lspconfig').setup_handlers {
-  function(server_name)
-    lspconfig[server_name].setup {
-      capabilities = capabilities,
-    }
-  end,
-  ['eslint'] = function()
-    lspconfig.eslint.setup {
-      capabilities = capabilities,
-      settings = {
-        codeActionOnSave = {
-          enable = true,
-          mode = 'all',
+  handlers = {
+    function(server_name)
+      lspconfig[server_name].setup {
+        capabilities = capabilities,
+      }
+    end,
+    ['eslint'] = function()
+      lspconfig.eslint.setup {
+        capabilities = capabilities,
+        settings = {
+          codeActionOnSave = {
+            enable = true,
+            mode = 'all',
+          },
         },
-      },
-    }
-  end,
-  ['jsonls'] = function()
-    lspconfig.jsonls.setup {
-      capabilities = capabilities,
-      init_options = {
-        provideFormatter = false,
-      },
-      settings = {
-        json = {
-          schemas = require('schemastore').json.schemas(),
-          validate = { enable = true },
+      }
+    end,
+    ['jsonls'] = function()
+      lspconfig.jsonls.setup {
+        capabilities = capabilities,
+        init_options = {
+          provideFormatter = false,
         },
-      },
-    }
-  end,
-  ['lua_ls'] = function()
-    lspconfig.lua_ls.setup {
-      capabilities = capabilities,
-      settings = {
-        Lua = {
-          completion = { callSnippet = 'Replace' },
-          format = { enable = false },
-          runtime = { version = 'LuaJIT' },
-          telemetry = { enable = false },
-          workspace = { checkThirdParty = false },
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          },
         },
-      },
-    }
-  end,
-  ['stylelint_lsp'] = function()
-    lspconfig.stylelint_lsp.setup {
-      capabilities = capabilities,
-      filetypes = { 'css' },
-      settings = {
-        stylelintplus = {
-          autoFixOnFormat = true,
+      }
+    end,
+    ['lua_ls'] = function()
+      lspconfig.lua_ls.setup {
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            completion = { callSnippet = 'Replace' },
+            format = { enable = false },
+            runtime = { version = 'LuaJIT' },
+            telemetry = { enable = false },
+            workspace = { checkThirdParty = false },
+          },
         },
-      },
-    }
-  end,
-  ['tsserver'] = function()
-    lspconfig.tsserver.setup {
-      capabilities = capabilities,
-      settings = {
-        completions = {
-          completeFunctionCalls = true,
+      }
+    end,
+    ['stylelint_lsp'] = function()
+      lspconfig.stylelint_lsp.setup {
+        capabilities = capabilities,
+        filetypes = { 'css' },
+        settings = {
+          stylelintplus = {
+            autoFixOnFormat = true,
+          },
         },
-      },
-    }
-  end,
+      }
+    end,
+    ['tsserver'] = function()
+      lspconfig.tsserver.setup {
+        capabilities = capabilities,
+        settings = {
+          completions = {
+            completeFunctionCalls = true,
+          },
+        },
+      }
+    end,
+  },
 }
 
 local null_ls = require 'null-ls'
