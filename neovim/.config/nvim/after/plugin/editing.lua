@@ -58,13 +58,7 @@ require('nvim-treesitter.configs').setup {
   indent = { enable = true },
 }
 
-require('treesitter-context').setup {
-  patterns = {
-    css = {
-      'block',
-    },
-  },
-}
+require('treesitter-context').setup()
 
 require('Comment').setup {
   pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
