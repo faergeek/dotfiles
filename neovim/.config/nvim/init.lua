@@ -59,11 +59,6 @@ require('packer').startup {
       'antonk52/vim-browserslist',
       'rescript-lang/vim-rescript',
 
-      {
-        'kevinhwang91/nvim-ufo',
-        requires = 'kevinhwang91/promise-async',
-      },
-
       'JoosepAlviste/nvim-ts-context-commentstring',
       'numToStr/Comment.nvim',
 
@@ -181,12 +176,6 @@ vim.opt.linebreak = true
 vim.opt.showbreak = '↳ '
 vim.opt.cpoptions:append 'n'
 
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldlevelstart = 99
-vim.opt.foldcolumn = '1'
-vim.opt.fillchars = 'fold: ,foldopen:,foldsep: ,foldclose:'
-
 vim.opt.completeopt = { 'menuone', 'noselect' }
 vim.opt.showmode = false
 vim.opt.shortmess = 'aoOtTWcFS'
@@ -231,7 +220,6 @@ autocmd('Override options for terminal buffers', 'TermOpen', function()
   vim.opt_local.number = false
   vim.opt_local.relativenumber = false
   vim.opt_local.signcolumn = 'auto'
-  vim.opt_local.foldcolumn = '0'
 end)
 
 autocmd('Close terminal if job exited without an error', 'TermClose', function()
