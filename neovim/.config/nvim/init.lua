@@ -22,17 +22,16 @@ require('packer').startup {
     use 'wbthomason/packer.nvim'
 
     -- after/plugin/ui.lua
-    use { 'catppuccin/nvim', as = 'catppuccin' }
     use {
+      { 'catppuccin/nvim', as = 'catppuccin' },
       'nvim-tree/nvim-web-devicons',
       'stevearc/dressing.nvim',
-      'goolord/alpha-nvim',
+      { 'goolord/alpha-nvim', after = 'persisted.nvim' },
       'nvim-lualine/lualine.nvim',
       {
         'j-morano/buffer_manager.nvim',
         requires = 'nvim-lua/plenary.nvim',
       },
-      'kdheepak/tabline.nvim',
       'j-hui/fidget.nvim',
       'folke/trouble.nvim',
       'stevearc/oil.nvim',
@@ -44,9 +43,46 @@ require('packer').startup {
     -- after/plugin/sessions.lua
     use {
       'ethanholz/nvim-lastplace',
-      'rmagatti/auto-session',
-      'rmagatti/session-lens',
+      config = function()
+        require('nvim-lastplace').setup {
+          lastplace_ignore_buftype = { 'quickfix', 'nofile', 'help' },
+          lastplace_ignore_filetype = { 'gitcommit', 'gitrebase' },
+        }
+      end,
+    }
+
+    use {
       'MunifTanjim/exrc.nvim',
+      config = function()
+        require('exrc').setup {
+          files = {
+            '.nvim.lua',
+          },
+        }
+      end,
+    }
+
+    use {
+      'olimorris/persisted.nvim',
+      config = function()
+        require('persisted').setup {
+          autoload = true,
+          autosave = false,
+          silent = true,
+          use_git_branch = true,
+        }
+
+        require('telescope').load_extension 'persisted'
+
+        local keymap = require('faergeek.utils').keymap
+
+        keymap(
+          'Telescope [F]ind [S]essions',
+          'n',
+          '<leader>fs',
+          ':Telescope persisted<CR>'
+        )
+      end,
     }
 
     -- after/plugin/editing.lua

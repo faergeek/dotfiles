@@ -107,10 +107,6 @@ require('lualine').setup {
       'filetype',
     },
   },
-  tabline = {
-    lualine_a = { require('auto-session-library').current_session_name },
-    lualine_x = { require('tabline').tabline_tabs },
-  },
   winbar = {
     lualine_a = { lualine_window_number },
     lualine_b = {
@@ -172,27 +168,6 @@ require('oil').setup()
 
 keymap('Oil', 'n', '-', require('oil').open)
 
-require('tabline').setup {
-  enable = false,
-  options = {
-    show_bufnr = true,
-  },
-}
-
-keymap('[R]ename [T]ab', 'n', '<leader>rt', function()
-  vim.ui.input({ prompt = 'Enter new tab name: ' }, function(new_name)
-    if not new_name then
-      return
-    end
-
-    if new_name == '' then
-      vim.cmd.TablineTabRename(tostring(vim.api.nvim_get_current_tabpage()))
-    else
-      vim.cmd.TablineTabRename(new_name)
-    end
-  end)
-end)
-
 require('dressing').setup {
   input = {
     insert_only = false,
@@ -211,18 +186,6 @@ require('fidget').setup {
 }
 
 local theme = require 'alpha.themes.theta'
-
-theme.header.val = {
-  '                                                     ',
-  '  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ',
-  '  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ',
-  '  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ',
-  '  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ',
-  '  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ',
-  '  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
-  '                                                     ',
-  unpack(require 'alpha.fortune'()),
-}
 
 require('alpha').setup(theme.config)
 
