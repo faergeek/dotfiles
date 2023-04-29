@@ -67,9 +67,12 @@ require('packer').startup {
       config = function()
         require('persisted').setup {
           autoload = true,
-          autosave = false,
+          autosave = true,
           silent = true,
           use_git_branch = true,
+          should_autosave = function(arg)
+            return vim.bo.filetype ~= 'alpha'
+          end,
         }
 
         require('telescope').load_extension 'persisted'
