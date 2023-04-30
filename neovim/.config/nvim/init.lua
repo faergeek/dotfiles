@@ -40,7 +40,6 @@ require('packer').startup {
       'folke/which-key.nvim',
     }
 
-    -- after/plugin/sessions.lua
     use {
       'ethanholz/nvim-lastplace',
       config = function()
