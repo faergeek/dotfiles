@@ -70,7 +70,7 @@ require('packer').startup {
           autosave = true,
           silent = true,
           use_git_branch = true,
-          should_autosave = function(arg)
+          should_autosave = function()
             return vim.bo.filetype ~= 'alpha'
           end,
         }
