@@ -99,9 +99,7 @@ require('mason-null-ls').setup {
   ensure_installed = {
     'beautysh',
     'prettier',
-    'rescript',
     'stylua',
-    'zigfmt',
   },
   handlers = {
     function(source_name, methods)
