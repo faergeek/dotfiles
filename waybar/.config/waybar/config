@@ -52,7 +52,7 @@
     "format-ru": "🇷🇺"
   },
   "hyprland/window": {
-    "max-length": 50,
+    "max-length": 100,
     "separate-outputs": true
   },
   "idle_inhibitor": {
