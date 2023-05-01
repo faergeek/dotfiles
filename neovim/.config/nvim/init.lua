@@ -26,7 +26,7 @@ require('packer').startup {
       { 'catppuccin/nvim', as = 'catppuccin' },
       'nvim-tree/nvim-web-devicons',
       'stevearc/dressing.nvim',
-      { 'goolord/alpha-nvim', after = 'persisted.nvim' },
+      'goolord/alpha-nvim',
       'nvim-lualine/lualine.nvim',
       {
         'j-morano/buffer_manager.nvim',
@@ -58,32 +58,6 @@ require('packer').startup {
             '.nvim.lua',
           },
         }
-      end,
-    }
-
-    use {
-      'olimorris/persisted.nvim',
-      config = function()
-        require('persisted').setup {
-          autoload = true,
-          autosave = true,
-          silent = true,
-          use_git_branch = true,
-          should_autosave = function()
-            return vim.bo.filetype ~= 'alpha'
-          end,
-        }
-
-        require('telescope').load_extension 'persisted'
-
-        local keymap = require('faergeek.utils').keymap
-
-        keymap(
-          'Telescope [F]ind [S]essions',
-          'n',
-          '<leader>fs',
-          ':Telescope persisted<CR>'
-        )
       end,
     }
 
