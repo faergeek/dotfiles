@@ -2,7 +2,7 @@ window:
   opacity: 0.85
 font:
   normal:
-    family: FantasqueSansM Nerd Font
+    family: FantasqueSansMono Nerd Font
   size: 8.0
 cursor:
   style:
