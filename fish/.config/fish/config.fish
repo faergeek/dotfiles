@@ -8,7 +8,7 @@ if status is-interactive
     end
   end
 
-  set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh
+  set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 
   set -gx EXA_ICON_SPACING 2
   alias ls='exa --icons --git'
