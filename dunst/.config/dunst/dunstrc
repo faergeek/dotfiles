@@ -11,7 +11,7 @@ mouse_right_click = close_current
 
 offset = 16x16
 gap_size = 8
-font = NotoSans Nerd Font 10
+font = FantasqueSansM Nerd Font Propo 14
 frame_width = 1
 corner_radius = 8
 background = "#2b303b"
