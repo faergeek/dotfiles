@@ -13,5 +13,8 @@ if status is-interactive
   end
 
   set -gx EXA_ICON_SPACING 2
-  alias ls='exa --icons --git'
+
+  if type exa 2&> /dev/null
+    alias ls='exa --icons --git'
+  end
 end
