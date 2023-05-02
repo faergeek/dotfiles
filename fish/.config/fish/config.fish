@@ -8,7 +8,9 @@ if status is-interactive
     end
   end
 
-  set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+  if type gpgconf 2&> /dev/null
+    set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+  end
 
   set -gx EXA_ICON_SPACING 2
   alias ls='exa --icons --git'
