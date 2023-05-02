@@ -69,9 +69,12 @@
     }
   },
   "network": {
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰌙",
     "format-wifi": "",
-    "format-disconnected": "󰖪",
-    "tooltip-format": "{essid}\t{ipaddr}",
+    "tooltip-format": "{ipaddr} ({ifname})",
+    "tooltip-format-disconnected": "No network",
+    "tooltip-format-wifi": "{ipaddr} ({ifname}): {essid} ({frequency})",
     "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
