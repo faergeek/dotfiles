@@ -38,7 +38,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: #414559;
+  background: #cba6f7;
+  color: #414559;
 }
 
 #workspaces button.urgent {
