@@ -3,15 +3,19 @@
   "layer": "top",
   "margin": "8 8 0",
   "spacing": 4,
-  "modules-left": ["wlr/workspaces"],
-  "modules-center": ["hyprland/window"],
+  "modules-left": [
+    "wlr/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "mpris"
+  ],
   "modules-right": [
     "tray",
     "idle_inhibitor",
     "cpu",
     "temperature",
     "custom/dunst",
-    "custom/playerctl",
     "pulseaudio",
     "bluetooth",
     "network",
@@ -41,11 +45,13 @@
     "restart-interval": 1,
     "return-type": "json"
   },
-  "custom/playerctl": {
-    "exec": "playerctl metadata -f '{{emoji(status)}}' && playerctl metadata -f '{{playerName}}: 󰝚 {{title}} ({{artist}})' && echo ''",
-    "exec-if": "playerctl -s status",
-    "interval": 10,
-    "on-click": "playerctl play-pause"
+  "mpris": {
+    "format": "{status_icon} {artist} - {title}",
+    "status-icons": {
+      "paused": "",
+      "playing": "",
+      "stopped": ""
+    }
   },
   "hyprland/language": {
     "format-en": "🇺🇸",
