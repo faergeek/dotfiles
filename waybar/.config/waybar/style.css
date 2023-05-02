@@ -1,22 +1,17 @@
-* {
+window#waybar {
+  background: transparent;
+  color: #c6d0f5;
   font-family: FantasqueSansM Nerd Font Propo;
   font-size: 18px;
 }
 
-window#waybar {
-  background: transparent;
-  color: #c0caf5;
-}
-
-.modules-left > widget > *,
 .modules-right > widget > * {
-  padding: 0 8px;
+  padding: 2px 8px;
   border-radius: 8px;
-  background: rgba(43, 48, 59, 0.25);
+  background: #232634;
 }
 
 #workspaces {
-  color: #c0caf5;
   padding: 0;
   border-radius: 0;
   background: none;
@@ -24,10 +19,10 @@ window#waybar {
 
 #workspaces button {
   border: 0;
-  padding: 0 8px;
+  padding: 2px 8px;
   border-radius: 0;
   box-shadow: none;
-  background: rgba(43, 48, 59, 0.25);
+  background: #232634;
   color: inherit;
   transition: none;
 }
@@ -42,23 +37,19 @@ window#waybar {
   border-bottom-right-radius: 8px;
 }
 
-#workspaces button:hover {
-  border: 0;
-  background: #64727d;
-  text-shadow: inherit;
-}
-
 #workspaces button.active {
-  background: #7aa2f7;
-  color: #1d202f;
+  background: #414559;
 }
 
 #workspaces button.urgent {
-  background: #ff9e64;
+  background: #ef9f76;
 }
 
-#window {
-  padding: 0 8px;
+#window,
+#mpris {
+  padding: 0;
+  background: transparent;
+  text-shadow: 1px 1px 1px #232634;
 }
 
 #tray > .passive {
@@ -67,14 +58,10 @@ window#waybar {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #ff9e64;
+  background-color: #ef9f76;
 }
 
 #custom-dunst.have-waiting,
 #idle_inhibitor.activated {
-  color: #ff9e64;
-}
-
-#language {
-  min-width: 20px;
+  color: #ef9f76;
 }
