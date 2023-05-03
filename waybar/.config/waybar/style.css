@@ -37,9 +37,13 @@ window#waybar {
   border-bottom-right-radius: 8px;
 }
 
+#workspaces button.active,
+#workspaces button.urgent {
+  color: #414559;
+}
+
 #workspaces button.active {
   background: #cba6f7;
-  color: #414559;
 }
 
 #workspaces button.urgent {
