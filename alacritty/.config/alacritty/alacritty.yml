@@ -8,6 +8,9 @@ cursor:
   style:
     blinking: On
 
+mouse:
+  hide_when_typing: true
+
 # Catppuccin Frappe
 colors:
     # Default colors
