@@ -1,4 +1,3 @@
-package android-sdk
 package foreign-env
 package nvm
 package rustup
