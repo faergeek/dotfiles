@@ -36,7 +36,7 @@
     "tooltip-format": "{:%A, %d %B %Y}"
   },
   "cpu": {
-    "format": "{icon}",
+    "format": "{icon} ",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "on-click": "alacritty -e htop"
   },
