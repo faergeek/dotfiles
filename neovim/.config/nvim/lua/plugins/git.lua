@@ -12,6 +12,7 @@ return {
           vim.schedule(function() require('gitsigns').next_hunk() end)
           return '<Ignore>'
         end,
+        expr = true,
       },
       {
         desc = 'Git: Previous hunk',
@@ -22,6 +23,7 @@ return {
           vim.schedule(function() require('gitsigns').prev_hunk() end)
           return '<Ignore>'
         end,
+        expr = true,
       },
       {
         desc = 'Git: [H]unk [S]tage',
