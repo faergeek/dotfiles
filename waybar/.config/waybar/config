@@ -13,6 +13,7 @@
   "modules-right": [
     "tray",
     "idle_inhibitor",
+    "memory",
     "cpu",
     "temperature",
     "custom/dunst",
@@ -44,6 +45,10 @@
     "on-click": "dunstctl set-paused toggle",
     "restart-interval": 1,
     "return-type": "json"
+  },
+  "memory": {
+    "format": "{}% ",
+    "tooltip-format": "{used:0.1f}GiB/{total:0.1f}GiB used"
   },
   "mpris": {
     "format": "{status_icon} {artist} - {title}",
