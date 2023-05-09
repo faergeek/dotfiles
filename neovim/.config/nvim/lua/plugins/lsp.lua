@@ -112,17 +112,8 @@ return {
       'mason.nvim',
       {
         'jose-elias-alvarez/null-ls.nvim',
-        dependencies = {
-          'nvim-lua/plenary.nvim',
-          'lewis6991/gitsigns.nvim',
-        },
-        opts = function()
-          return {
-            sources = {
-              require('null-ls').builtins.code_actions.gitsigns,
-            },
-          }
-        end,
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        opts = {},
       },
     },
     opts = {
