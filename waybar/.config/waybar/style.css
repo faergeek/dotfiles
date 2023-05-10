@@ -40,6 +40,12 @@ window#waybar {
   color: #414559;
 }
 
+#workspaces button:hover {
+  box-shadow: inherit;
+  background: rgba(186, 187, 241, 0.5);
+  text-shadow: inherit;
+}
+
 #workspaces button.active {
   background: #babbf1;
 }
