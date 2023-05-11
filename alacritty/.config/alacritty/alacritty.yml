@@ -7,6 +7,7 @@ font:
 cursor:
   style:
     blinking: On
+  vi_mode_style: Block
 
 mouse:
   hide_when_typing: true
