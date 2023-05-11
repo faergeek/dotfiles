@@ -38,7 +38,7 @@
   "cpu": {
     "format": "{icon} ",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "alacritty -e htop"
+    "on-click": "alacritty -e btm"
   },
   "custom/dunst": {
     "exec": "~/.config/waybar/scripts/dunst",
@@ -48,7 +48,8 @@
   },
   "memory": {
     "format": "{}% ",
-    "tooltip-format": "{used:0.1f}GiB/{total:0.1f}GiB used"
+    "tooltip-format": "{used:0.1f}GiB/{total:0.1f}GiB used",
+    "on-click": "alacritty -e btm"
   },
   "mpris": {
     "format": "{status_icon} {artist} - {title}",
