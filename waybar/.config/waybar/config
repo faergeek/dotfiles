@@ -15,7 +15,6 @@
     "idle_inhibitor",
     "memory",
     "cpu",
-    "temperature",
     "custom/dunst",
     "pulseaudio",
     "bluetooth",
@@ -95,9 +94,6 @@
     },
     "on-click": "alacritty -e pulsemixer",
     "tooltip-format": "{icon} {desc}\t{volume}%"
-  },
-  "temperature": {
-    "format": "{temperatureC}°C "
   },
   "tray": {
     "spacing": 10
