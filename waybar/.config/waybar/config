@@ -15,7 +15,7 @@
     "idle_inhibitor",
     "memory",
     "cpu",
-    "custom/dunst",
+    "custom/swaync",
     "pulseaudio",
     "bluetooth",
     "network",
@@ -39,11 +39,19 @@
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "on-click": "alacritty -e btm"
   },
-  "custom/dunst": {
-    "exec": "~/.config/waybar/scripts/dunst",
-    "on-click": "dunstctl set-paused toggle",
-    "restart-interval": 1,
-    "return-type": "json"
+  "custom/swaync": {
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂚",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰂛"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -d -sw",
+    "escape": true
   },
   "memory": {
     "format": "{}% ",

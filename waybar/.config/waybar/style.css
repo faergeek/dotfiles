@@ -70,7 +70,8 @@ window#waybar {
   background-color: #ef9f76;
 }
 
-#custom-dunst.have-waiting,
+#custom-swaync.notification,
+#custom-swaync.dnd-notification,
 #idle_inhibitor.activated {
   color: #ef9f76;
 }
