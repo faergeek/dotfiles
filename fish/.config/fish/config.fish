@@ -8,10 +8,6 @@ if status is-interactive
     end
   end
 
-  if type gpgconf 2&> /dev/null
-    set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-  end
-
   set -gx EXA_ICON_SPACING 2
 
   if type exa 2&> /dev/null
