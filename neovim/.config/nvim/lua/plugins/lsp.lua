@@ -32,6 +32,7 @@ return {
           'rescriptls',
           'rust_analyzer',
           'stylelint_lsp',
+          'taplo',
           'tsserver',
           'yamlls',
           'zls',
