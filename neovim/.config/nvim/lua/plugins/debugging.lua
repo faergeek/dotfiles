@@ -65,7 +65,7 @@ return {
         'rcarriga/nvim-dap-ui',
         keys = {
           {
-            desc = '[D]ebug: [T]oggle UI',
+            desc = '[D]ebug: [U]I Toggle',
             '<leader>du',
             function() require('dapui').toggle() end,
           },
