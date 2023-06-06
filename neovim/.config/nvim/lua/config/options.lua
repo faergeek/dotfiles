@@ -41,7 +41,6 @@ vim.opt.termguicolors = true
 vim.opt.title = true
 vim.opt.undofile = true
 vim.opt.updatetime = 200
-vim.opt.wildmode = 'longest:full,full'
 
 vim.fn.sign_define {
   {
