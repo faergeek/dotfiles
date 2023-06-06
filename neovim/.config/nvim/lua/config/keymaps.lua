@@ -1,7 +1,5 @@
 local keymap = require('utils').keymap
 
-keymap('Help', 'n', '?', ':help ')
-
 keymap(
   'Move cursor up',
   { 'n', 'v' },
