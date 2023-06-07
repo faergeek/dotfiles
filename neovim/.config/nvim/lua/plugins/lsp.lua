@@ -1,5 +1,13 @@
 return {
-  { 'williamboman/mason.nvim', cmd = 'Mason', opts = {} },
+  {
+    'williamboman/mason.nvim',
+    cmd = 'Mason',
+    opts = {
+      ui = {
+        border = 'single',
+      },
+    },
+  },
   {
     'williamboman/mason-lspconfig.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
