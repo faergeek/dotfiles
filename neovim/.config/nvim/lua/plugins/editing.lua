@@ -7,6 +7,7 @@ return {
       'windwp/nvim-ts-autotag',
       'RRethy/nvim-treesitter-endwise',
       'andymass/vim-matchup',
+      'HiPhish/nvim-ts-rainbow2',
     },
     event = { 'BufReadPre', 'BufNewFile' },
     build = function()
@@ -40,6 +41,7 @@ return {
         },
       },
       indent = { enable = true },
+      rainbow = { enable = true },
     },
   },
   {
@@ -49,6 +51,12 @@ return {
     opts = { break_undo = false, check_ts = true },
   },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
+  { 'gpanders/nvim-parinfer', ft = 'lisp' },
+  {
+    'vlime/vlime',
+    ft = 'lisp',
+    config = function(plugin) vim.opt.rtp:append(plugin.dir .. '/vim') end,
+  },
   {
     'echasnovski/mini.surround',
     main = 'mini.surround',
