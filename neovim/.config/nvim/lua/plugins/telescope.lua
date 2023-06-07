@@ -86,8 +86,8 @@ return {
         silent = true,
       },
     },
-    config = function()
-      require('telescope').setup {
+    opts = function()
+      return {
         defaults = require('telescope.themes').get_ivy {
           dynamic_preview_title = true,
           file_ignore_patterns = { '^.git/' },
@@ -112,7 +112,9 @@ return {
           oldfiles = { only_cwd = true },
         },
       }
-
+    end,
+    config = function(_, opts)
+      require('telescope').setup(opts)
       pcall(require('telescope').load_extension, 'fzf')
       require('telescope').load_extension 'notify'
     end,
