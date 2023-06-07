@@ -2,7 +2,6 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     event = 'VeryLazy',
-    dependencies = { 'folke/noice.nvim' },
     opts = function()
       local opts = {
         extensions = { 'lazy', 'man', 'nvim-dap-ui', 'quickfix', 'trouble' },
@@ -16,10 +15,6 @@ return {
         },
         sections = {
           lualine_a = {
-            {
-              require('noice').api.status.mode.get,
-              cond = require('noice').api.status.mode.has,
-            },
             'mode',
             'selectioncount',
           },
