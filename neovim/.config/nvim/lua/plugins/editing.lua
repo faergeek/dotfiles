@@ -48,7 +48,10 @@ return {
     'windwp/nvim-autopairs',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = 'InsertEnter',
-    opts = { break_undo = false, check_ts = true },
+    opts = {
+      check_ts = true,
+      disable_filetype = { 'lisp', 'spectre_panel', 'TelescopePrompt' },
+    },
   },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
   { 'gpanders/nvim-parinfer', ft = 'lisp' },
