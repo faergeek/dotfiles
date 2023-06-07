@@ -8,25 +8,11 @@ return {
       flavour = 'frappe',
       transparent_background = true,
       integrations = {
-        alpha = true,
-        cmp = true,
-        dap = {
-          enabled = true,
-          enable_ui = true,
-        },
-        gitsigns = true,
+        fidget = true,
         lsp_trouble = true,
-        markdown = true,
         mason = true,
         mini = true,
         native_lsp = {
-          enabled = true,
-          virtual_text = {
-            errors = { 'italic' },
-            hints = { 'italic' },
-            warnings = { 'italic' },
-            information = { 'italic' },
-          },
           underlines = {
             errors = { 'undercurl' },
             hints = { 'undercurl' },
@@ -35,9 +21,7 @@ return {
           },
         },
         notify = true,
-        telescope = true,
-        treesitter = true,
-        ts_rainbow2 = true,
+        treesitter_context = true,
         which_key = true,
       },
     },
