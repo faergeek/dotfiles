@@ -1,5 +1,13 @@
 return {
-  { 'folke/which-key.nvim', event = 'VeryLazy', opts = {} },
+  {
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
+    opts = {},
+    config = function(_, opts)
+      require('which-key').setup(opts)
+      vim.opt.timeoutlen = 600
+    end,
+  },
   {
     'stevearc/oil.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
