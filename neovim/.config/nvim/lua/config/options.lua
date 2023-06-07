@@ -29,7 +29,6 @@ vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.shortmess:append { W = true, I = true, c = true }
 vim.opt.showbreak = '↳ '
-vim.opt.showmatch = true
 vim.opt.showmode = false
 vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = 'yes'
