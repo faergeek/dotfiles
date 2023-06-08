@@ -55,11 +55,7 @@ return {
   },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
   { 'gpanders/nvim-parinfer', ft = 'lisp' },
-  {
-    'vlime/vlime',
-    ft = 'lisp',
-    config = function(plugin) vim.opt.rtp:append(plugin.dir .. '/vim') end,
-  },
+  { 'Olical/conjure', ft = 'lisp' },
   {
     'echasnovski/mini.surround',
     main = 'mini.surround',
