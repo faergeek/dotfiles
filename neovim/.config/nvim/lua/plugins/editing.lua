@@ -63,28 +63,6 @@ return {
     opts = {},
   },
   {
-    'echasnovski/mini.ai',
-    event = { 'BufReadPre', 'BufNewFile' },
-    dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
-    opts = function()
-      local ai = require 'mini.ai'
-
-      return {
-        n_lines = 500,
-        custom_textobjects = {
-          b = ai.gen_spec.treesitter({
-            a = '@block.outer',
-            i = '@block.inner',
-          }, {}),
-          f = ai.gen_spec.treesitter(
-            { a = '@function.outer', i = '@function.inner' },
-            {}
-          ),
-        },
-      }
-    end,
-  },
-  {
     'numToStr/Comment.nvim',
     dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
     keys = {
