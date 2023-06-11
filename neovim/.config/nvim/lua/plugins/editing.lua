@@ -59,13 +59,11 @@ return {
   { 'Olical/conjure', ft = 'lisp' },
   {
     'echasnovski/mini.surround',
-    main = 'mini.surround',
     keys = { { 'sa', mode = { 'n', 'v' } }, 'sd', 'sr', 'sf', 'sF', 'sh', 'sn' },
     opts = {},
   },
   {
     'echasnovski/mini.ai',
-    main = 'mini.ai',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
     opts = function()
