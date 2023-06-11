@@ -18,14 +18,6 @@ return {
       auto_install = true,
       autotag = { enable = true },
       endwise = { enable = true },
-      ensure_installed = {
-        'bash',
-        'lua',
-        'markdown',
-        'markdown_inline',
-        'regex',
-        'vim',
-      },
       highlight = {
         additional_vim_regex_highlighting = false,
         enable = true,
