@@ -6,11 +6,13 @@ return {
       local opts = {
         extensions = { 'lazy', 'man', 'nvim-dap-ui', 'quickfix', 'trouble' },
         options = {
+          component_separators = { left = '', right = '' },
           disabled_filetypes = {
             statusline = { 'alpha' },
             winbar = { 'alpha', 'dap-repl', 'man', 'qf' },
           },
           globalstatus = true,
+          section_separators = { left = '', right = '' },
           theme = 'catppuccin',
         },
         sections = {
@@ -48,6 +50,11 @@ return {
           lualine_x = {
             {
               'diff',
+              symbols = {
+                added = ' ',
+                modified = '󰝤 ',
+                removed = ' ',
+              },
               source = function()
                 local gitsigns =
                   vim.fn.getbufvar(vim.fn.bufnr(), 'gitsigns_status_dict')
