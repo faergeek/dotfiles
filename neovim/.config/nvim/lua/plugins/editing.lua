@@ -40,6 +40,10 @@ return {
         },
       },
       indent = { enable = true },
+      matchup = {
+        enable = true,
+        include_match_words = false,
+      },
       rainbow = { enable = true },
     },
   },
