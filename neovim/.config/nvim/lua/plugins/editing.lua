@@ -7,6 +7,7 @@ return {
       'RRethy/nvim-treesitter-endwise',
       'andymass/vim-matchup',
       'HiPhish/nvim-ts-rainbow2',
+      'nvim-treesitter/playground',
     },
     event = { 'BufReadPre', 'BufNewFile' },
     build = function()
