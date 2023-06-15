@@ -34,3 +34,6 @@ keymap('LSP: Code [A]ction', { 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action)
 
 keymap('[B]uffer: Next', 'n', ']b', ':bnext<CR>', { silent = true })
 keymap('[B]uffer: Prev', 'n', '[b', ':bprev<CR>', { silent = true })
+
+keymap('[B]uffer: Next', 'n', ']t', 'gt', { silent = true })
+keymap('[B]uffer: Prev', 'n', '[t', 'gT', { silent = true })
