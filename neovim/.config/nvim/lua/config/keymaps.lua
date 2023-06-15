@@ -24,10 +24,13 @@ keymap('Dedent', 'v', '>', '>gv')
 
 keymap('Lazy', 'n', '<leader>l', '<cmd>:Lazy<cr>')
 
-keymap('Diagnostic: Next item', 'n', ']d', vim.diagnostic.goto_next)
-keymap('Diagnostic: Previous item', 'n', '[d', vim.diagnostic.goto_prev)
+keymap('[D]iagnostic: Next', 'n', ']d', vim.diagnostic.goto_next)
+keymap('[D]iagnostic: Prev', 'n', '[d', vim.diagnostic.goto_prev)
 
 keymap('[S]how [D]iagnostics', 'n', '<leader>sd', vim.diagnostic.open_float)
 
 keymap('LSP: [R]ename [S]ymbol', 'n', '<leader>rs', vim.lsp.buf.rename)
 keymap('LSP: Code [A]ction', { 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action)
+
+keymap('[B]uffer: Next', 'n', ']b', ':bnext<CR>', { silent = true })
+keymap('[B]uffer: Prev', 'n', '[b', ':bprev<CR>', { silent = true })
