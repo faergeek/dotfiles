@@ -53,6 +53,7 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = 'InsertEnter',
     opts = {
+      break_undo = false,
       check_ts = true,
       disable_filetype = { 'lisp', 'spectre_panel', 'TelescopePrompt' },
     },
