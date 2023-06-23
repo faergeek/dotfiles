@@ -17,16 +17,14 @@ return {
     },
     opts = {
       keymaps = {
-        ['?'] = 'actions.show_help',
+        ['g?'] = 'actions.show_help',
         ['<CR>'] = 'actions.select',
         ['<C-v>'] = 'actions.select_vsplit',
         ['<C-x>'] = 'actions.select_split',
-        ['<C-p>'] = 'actions.preview',
         ['q'] = 'actions.close',
         ['<C-l>'] = 'actions.refresh',
         ['-'] = 'actions.parent',
         ['~'] = 'actions.open_cwd',
-        ['g.'] = 'actions.toggle_hidden',
       },
       use_default_keymaps = false,
       view_options = {
