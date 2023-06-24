@@ -11,11 +11,11 @@ return {
   {
     'stevearc/oil.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    lazy = false,
     keys = {
       { desc = 'Oil', '-', ':Oil<CR>', silent = true },
     },
     opts = {
+      default_file_explorer = false,
       keymaps = {
         ['g?'] = 'actions.show_help',
         ['<CR>'] = 'actions.select',
