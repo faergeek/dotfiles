@@ -16,9 +16,6 @@ keymap(
   { expr = true, silent = true }
 )
 
-keymap('Move selection up', 'v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
-keymap('Move selection down', 'v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
-
 keymap('Indent', 'v', '<', '<gv')
 keymap('Dedent', 'v', '>', '>gv')
 
