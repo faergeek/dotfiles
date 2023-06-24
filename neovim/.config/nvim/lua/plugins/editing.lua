@@ -23,15 +23,6 @@ return {
         additional_vim_regex_highlighting = false,
         enable = true,
       },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<c-space>',
-          node_decremental = '<c-backspace>',
-          node_incremental = '<c-space>',
-          scope_incremental = '<c-s>',
-        },
-      },
       indent = { enable = true },
       matchup = {
         enable = true,
