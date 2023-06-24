@@ -16,9 +16,6 @@ keymap(
   { expr = true, silent = true }
 )
 
-keymap('Indent', 'v', '<', '<gv')
-keymap('Dedent', 'v', '>', '>gv')
-
 keymap('Lazy', 'n', '<leader>l', '<cmd>:Lazy<cr>')
 
 keymap('[D]iagnostic: Next', 'n', ']d', vim.diagnostic.goto_next)
