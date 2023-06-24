@@ -55,8 +55,23 @@ return {
     opts = {
       break_undo = false,
       check_ts = true,
-      disable_filetype = { 'lisp', 'spectre_panel', 'TelescopePrompt' },
+      disable_filetype = { 'spectre_panel', 'TelescopePrompt' },
     },
+    config = function(_, opts)
+      local autopairs = require 'nvim-autopairs'
+      autopairs.setup(opts)
+
+      local function disable_rule_for_ft(rule, ft)
+        if not rule.not_filetypes then rule.not_filetypes = {} end
+
+        table.insert(rule.not_filetypes, ft)
+      end
+
+      disable_rule_for_ft(autopairs.get_rules("'")[1], 'lisp')
+      disable_rule_for_ft(autopairs.get_rules('`')[1], 'lisp')
+
+      autopairs.force_attach()
+    end,
   },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
   { 'gpanders/nvim-parinfer', ft = 'lisp' },
