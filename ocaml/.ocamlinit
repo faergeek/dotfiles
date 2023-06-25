@@ -1,5 +1,1 @@
 #edit_mode_vi
-#require "core.top";;
-#require "ppx_jane";;
-open Base;;
-
