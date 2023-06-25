@@ -5,6 +5,7 @@ return {
   {
     'nvim-lua/plenary.nvim',
     dependencies = { 'antonk52/vim-browserslist' },
+    lazy = true,
     config = function()
       require('plenary.filetype').add_file 'browserslist'
       require('plenary.filetype').add_file 'glsl'
