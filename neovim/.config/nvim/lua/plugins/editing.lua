@@ -65,7 +65,7 @@ return {
     end,
   },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
-  { 'gpanders/nvim-parinfer', ft = 'lisp' },
+  { 'gpanders/nvim-parinfer', ft = { 'dune', 'lisp' } },
   { 'Olical/conjure', ft = 'lisp' },
   {
     'echasnovski/mini.surround',
