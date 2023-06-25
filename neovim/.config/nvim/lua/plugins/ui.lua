@@ -19,12 +19,9 @@ return {
       keymaps = {
         ['g?'] = 'actions.show_help',
         ['<CR>'] = 'actions.select',
-        ['<C-v>'] = 'actions.select_vsplit',
-        ['<C-x>'] = 'actions.select_split',
         ['q'] = 'actions.close',
-        ['<C-l>'] = 'actions.refresh',
+        ['='] = 'actions.refresh',
         ['-'] = 'actions.parent',
-        ['~'] = 'actions.open_cwd',
       },
       use_default_keymaps = false,
       view_options = {
