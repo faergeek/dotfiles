@@ -10,7 +10,6 @@ return {
         build = 'make',
       },
       'folke/trouble.nvim',
-      'rcarriga/nvim-notify',
     },
     keys = {
       {
@@ -35,12 +34,6 @@ return {
         desc = '[F]ind with [G]rep',
         '<leader>fg',
         ':Telescope live_grep<CR>',
-        silent = true,
-      },
-      {
-        desc = '[F]ind [N]otification',
-        '<leader>fn',
-        ':Telescope notify<CR>',
         silent = true,
       },
       {
@@ -116,7 +109,6 @@ return {
     config = function(_, opts)
       require('telescope').setup(opts)
       pcall(require('telescope').load_extension, 'fzf')
-      require('telescope').load_extension 'notify'
     end,
   },
 }
