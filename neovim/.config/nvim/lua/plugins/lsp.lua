@@ -17,7 +17,24 @@ return {
         opts = { experimental = { pathStrict = true } },
       },
       'mason.nvim',
-      'neovim/nvim-lspconfig',
+      {
+        'neovim/nvim-lspconfig',
+        dependencies = {
+          {
+            'j-hui/fidget.nvim',
+            tag = 'legacy',
+            opts = {
+              text = {
+                spinner = 'dots',
+              },
+              window = {
+                blend = 0,
+                relative = 'editor',
+              },
+            },
+          },
+        },
+      },
       'hrsh7th/cmp-nvim-lsp',
       'b0o/schemastore.nvim',
     },
