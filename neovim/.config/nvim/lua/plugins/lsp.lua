@@ -68,6 +68,14 @@ return {
               capabilities = capabilities,
             }
           end,
+          cssmodules_ls = function()
+            require('lspconfig').cssmodules_ls.setup {
+              capabilities = capabilities,
+              init_options = {
+                camelCase = false,
+              },
+            }
+          end,
           eslint = function()
             require('lspconfig').eslint.setup {
               capabilities = capabilities,
