@@ -43,12 +43,6 @@ return {
         silent = true,
       },
       {
-        desc = '[F]ind [R]eferences',
-        '<leader>fr',
-        ':Telescope lsp_references<CR>',
-        silent = true,
-      },
-      {
         desc = '[F]ind [H]elp',
         '<leader>fh',
         ':Telescope help_tags<CR>',

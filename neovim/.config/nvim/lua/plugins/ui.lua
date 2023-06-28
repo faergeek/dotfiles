@@ -77,6 +77,12 @@ return {
         silent = true,
       },
       {
+        desc = '[F]ind [R]eferences',
+        '<leader>fr',
+        ':Trouble lsp_references<CR>',
+        silent = true,
+      },
+      {
         desc = '[T]rouble: [Q]uickfix',
         '<leader>tq',
         ':cclose<CR>:Trouble quickfix<CR>',
