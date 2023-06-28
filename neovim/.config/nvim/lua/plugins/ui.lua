@@ -65,7 +65,7 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     keys = {
       {
-        desc = '[T]rouble: Open',
+        desc = '[T]rouble: [T]oggle',
         '<leader>tt',
         ':TroubleToggle<CR>',
         silent = true,
