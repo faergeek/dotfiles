@@ -65,18 +65,6 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     keys = {
       {
-        desc = '[T]rouble: [T]oggle',
-        '<leader>tt',
-        ':TroubleToggle<CR>',
-        silent = true,
-      },
-      {
-        desc = '[T]rouble: Workspace [D]iagnostics',
-        '<leader>td',
-        ':Trouble workspace_diagnostics<CR>',
-        silent = true,
-      },
-      {
         desc = '[F]ind [R]eferences',
         '<leader>fr',
         ':Trouble lsp_references<CR>',
