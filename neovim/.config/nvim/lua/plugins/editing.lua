@@ -6,7 +6,6 @@ return {
       'windwp/nvim-ts-autotag',
       'RRethy/nvim-treesitter-endwise',
       'andymass/vim-matchup',
-      'HiPhish/nvim-ts-rainbow2',
       'nvim-treesitter/playground',
     },
     event = { 'BufReadPre', 'BufNewFile' },
@@ -28,7 +27,6 @@ return {
         enable = true,
         include_match_words = false,
       },
-      rainbow = { enable = true },
     },
   },
   {
@@ -63,6 +61,10 @@ return {
 
       autopairs.force_attach()
     end,
+  },
+  {
+    'HiPhish/rainbow-delimiters.nvim',
+    url = 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
   },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
   { 'gpanders/nvim-parinfer', ft = { 'dune', 'lisp' } },
