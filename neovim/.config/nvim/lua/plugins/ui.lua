@@ -30,35 +30,29 @@ return {
     },
   },
   {
-    'akinsho/bufferline.nvim',
-    event = 'VeryLazy',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
+    'j-morano/buffer_manager.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
       {
-        desc = '[B]ufferline: [P]ick',
-        '<leader>bp',
-        ':BufferLinePick<CR>',
-        silent = true,
+        desc = 'Buffer Manager: [O]pen buffers',
+        '<leader>o',
+        function() require('buffer_manager.ui').toggle_quick_menu() end,
       },
       {
-        desc = '[B]ufferline: Pick [C]lose',
-        '<leader>bc',
-        ':BufferLinePickClose<CR>',
-        silent = true,
+        desc = '[B]uffer Manager: Next',
+        ']b',
+        function() require('buffer_manager.ui').nav_next() end,
+      },
+      {
+        desc = '[B]uffer Manager: Prev',
+        '[b',
+        function() require('buffer_manager.ui').nav_prev() end,
       },
     },
-    opts = function()
-      return {
-        highlights = require('catppuccin.groups.integrations.bufferline').get {
-          styles = { 'bold' },
-        },
-        options = {
-          separator_style = 'thin',
-        },
-      }
-    end,
+    opts = {
+      focus_alternate_buffer = true,
+      short_term_names = true,
+    },
   },
   {
     'folke/trouble.nvim',
