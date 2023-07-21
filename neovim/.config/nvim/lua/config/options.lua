@@ -31,7 +31,12 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 3
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
-vim.opt.shortmess:append { W = true, I = true, c = true }
+vim.opt.shortmess:append {
+  S = true,
+  W = true,
+  I = true,
+  c = true,
+}
 vim.opt.showbreak = '↳ '
 vim.opt.showmode = false
 vim.opt.sidescrolloff = 8

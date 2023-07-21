@@ -4,11 +4,11 @@ return {
     event = 'VeryLazy',
     opts = function()
       local opts = {
-        extensions = { 'lazy', 'man', 'nvim-dap-ui', 'quickfix', 'trouble' },
+        extensions = { 'lazy', 'man', 'quickfix', 'trouble' },
         options = {
           component_separators = { left = '', right = '' },
           disabled_filetypes = {
-            statusline = { 'alpha' },
+            statusline = { 'alpha', 'buffer_manager' },
             winbar = { 'alpha', 'dap-repl', 'man', 'qf' },
           },
           globalstatus = true,
@@ -21,17 +21,11 @@ return {
             'selectioncount',
           },
           lualine_b = { { 'b:gitsigns_head', icon = '' } },
-          lualine_c = {
-            {
-              'filename',
-              newfile_status = true,
-              path = 1,
-              symbols = { modified = '' },
-            },
-          },
-          lualine_x = {},
-          lualine_y = {},
+          lualine_c = {},
+          lualine_x = { 'searchcount' },
+          lualine_y = { 'location' },
           lualine_z = {
+            'progress',
             {
               require('lazy.status').updates,
               cond = require('lazy.status').has_updates,
@@ -41,9 +35,12 @@ return {
         winbar = {
           lualine_a = {
             function() return tostring(vim.api.nvim_win_get_number(0)) end,
+          },
+          lualine_b = {
             {
               'filename',
               newfile_status = true,
+              path = 1,
               symbols = { modified = '' },
             },
           },
@@ -69,12 +66,7 @@ return {
               end,
             },
             'diagnostics',
-            'encoding',
-            'fileformat',
-            'filetype',
           },
-          lualine_y = { 'location' },
-          lualine_z = { 'progress' },
         },
       }
 
