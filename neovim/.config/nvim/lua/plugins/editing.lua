@@ -68,6 +68,23 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
   },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
+  {
+    'Wansmer/treesj',
+    keys = {
+      {
+        desc = '[J]oin: Toggle',
+        '<leader>j',
+        ':TSJToggle<CR>',
+      },
+    },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup {
+        max_join_length = 500,
+        use_default_keymaps = false,
+      }
+    end,
+  },
   { 'gpanders/nvim-parinfer', ft = { 'dune', 'lisp' } },
   { 'Olical/conjure', ft = 'lisp' },
   {
