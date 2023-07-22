@@ -15,6 +15,9 @@
 [push]
   autoSetupRemote = true
   default = upstream
+[rebase]
+  autoSquash = true
+  autoStash = true
 [tag]
   sort = version:refname
 [user]
