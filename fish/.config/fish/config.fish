@@ -13,4 +13,6 @@ if status is-interactive
   if type exa 2&> /dev/null
     alias ls='exa --icons --git'
   end
+
+  alias less='less -RF'
 end
