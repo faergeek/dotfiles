@@ -4,6 +4,11 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.cpoptions:append 'n'
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = { 'number', 'screenline' }
+vim.opt.diffopt:append {
+  'algorithm:minimal',
+  'indent-heuristic',
+  'linematch:60',
+}
 vim.opt.expandtab = true
 vim.opt.gdefault = true
 vim.opt.guicursor =
