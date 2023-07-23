@@ -1,11 +1,20 @@
 [commit]
   gpgSign = true
 [core]
+  pager = delta
   quotepath = false
+[delta]
+  line-numbers = true
+  navigate = true
+  syntax-theme = Solarized (dark)
+[diff]
+  colorMoved = default
 [fetch]
   prune = true
 [init]
   defaultBranch = master
+[interactive]
+  diffFilter = delta --color-only
 [merge]
   tool = nvimdiff
 [mergetool "nvimdiff"]
