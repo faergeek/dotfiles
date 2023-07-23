@@ -1,3 +1,5 @@
+[alias]
+  graph = log --graph --oneline --all
 [commit]
   gpgSign = true
 [core]
