@@ -52,7 +52,7 @@ return {
         end,
       },
     },
-    opts = { history = true },
+    opts = {},
     config = function(_, opts) require('luasnip').config.set_config(opts) end,
   },
   {
