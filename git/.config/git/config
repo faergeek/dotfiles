@@ -16,9 +16,14 @@
 [interactive]
   diffFilter = delta --color-only
 [merge]
+  conflictStyle = zdiff3
   tool = nvimdiff
-[mergetool "nvimdiff"]
-  cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[mergetool]
+  hideResolved = true
+  keepBackup = false
+  writeToTemp = true
+[mergetool "vimdiff"]
+  layout = @LOCAL, REMOTE
 [pull]
   rebase = true
 [push]
