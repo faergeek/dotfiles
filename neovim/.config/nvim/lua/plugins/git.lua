@@ -83,7 +83,7 @@ return {
       },
     },
     opts = {
-      trouble = false,
+      linehl = true,
     },
   },
 }
