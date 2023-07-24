@@ -81,9 +81,12 @@ return {
         '<leader>gb',
         function() require('gitsigns').blame_line { full = true } end,
       },
+      {
+        desc = '[G]it: Toggle [L]ine Highlighting',
+        '<leader>gl',
+        function() require('gitsigns').toggle_linehl() end,
+      },
     },
-    opts = {
-      linehl = true,
-    },
+    opts = {},
   },
 }
