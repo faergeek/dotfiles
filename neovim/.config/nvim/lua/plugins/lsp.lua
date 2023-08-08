@@ -31,6 +31,13 @@ return {
             },
           },
         },
+        config = function()
+          local capabilities = require('cmp_nvim_lsp').default_capabilities(
+            vim.lsp.protocol.make_client_capabilities()
+          )
+
+          require('lspconfig').zls.setup { capabilities }
+        end,
       },
       'hrsh7th/cmp-nvim-lsp',
       'b0o/schemastore.nvim',
@@ -57,7 +64,6 @@ return {
           'taplo',
           'tsserver',
           'yamlls',
-          'zls',
         },
         handlers = {
           function(server_name)
