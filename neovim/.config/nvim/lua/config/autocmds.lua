@@ -127,19 +127,26 @@ autocmd('Setup LSP', 'LspAttach', function(event)
     client,
     'documentFormattingProvider',
     function()
-      vim.api.nvim_buf_create_user_command(event.buf, 'Format', function()
+      local function format()
         vim.lsp.buf.format {
           bufnr = event.buf,
           filter = function(c)
             return c.supports_method 'textDocument/formatting'
           end,
         }
-      end, { desc = 'Format current buffer using LSP' })
+      end
+
+      vim.api.nvim_buf_create_user_command(
+        event.buf,
+        'Format',
+        format,
+        { desc = 'Format current buffer using LSP' }
+      )
 
       autocmd(
         'Format file on save using LSP',
         'BufWritePre',
-        'Format',
+        format,
         { buffer = event.buf }
       )
     end
