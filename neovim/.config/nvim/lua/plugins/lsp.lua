@@ -67,13 +67,11 @@ return {
         },
         handlers = {
           function(server_name)
-            require('lspconfig')[server_name].setup {
-              capabilities = capabilities,
-            }
+            require('lspconfig')[server_name].setup { capabilities }
           end,
           cssmodules_ls = function()
             require('lspconfig').cssmodules_ls.setup {
-              capabilities = capabilities,
+              capabilities,
               init_options = {
                 camelCase = false,
               },
@@ -81,7 +79,7 @@ return {
           end,
           eslint = function()
             require('lspconfig').eslint.setup {
-              capabilities = capabilities,
+              capabilities,
               settings = {
                 codeActionOnSave = { enable = true, mode = 'all' },
               },
@@ -89,7 +87,7 @@ return {
           end,
           jsonls = function()
             require('lspconfig').jsonls.setup {
-              capabilities = capabilities,
+              capabilities,
               init_options = { provideFormatter = false },
               settings = {
                 json = {
@@ -101,7 +99,7 @@ return {
           end,
           lua_ls = function()
             require('lspconfig').lua_ls.setup {
-              capabilities = capabilities,
+              capabilities,
               settings = {
                 Lua = {
                   completion = { callSnippet = 'Replace' },
@@ -115,7 +113,7 @@ return {
           end,
           stylelint_lsp = function()
             require('lspconfig').stylelint_lsp.setup {
-              capabilities = capabilities,
+              capabilities,
               filetypes = { 'css' },
               settings = {
                 stylelintplus = { autoFixOnFormat = true },
@@ -124,7 +122,7 @@ return {
           end,
           tsserver = function()
             require('lspconfig').tsserver.setup {
-              capabilities = capabilities,
+              capabilities,
               settings = {
                 completions = { completeFunctionCalls = true },
               },
