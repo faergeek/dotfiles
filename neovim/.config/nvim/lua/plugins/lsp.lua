@@ -130,6 +130,7 @@ return {
           end,
           yamlls = function()
             require('lspconfig').yamlls.setup {
+              capabilities,
               settings = {
                 redhat = { telemetry = { enabled = false } },
                 yaml = { keyOrdering = false },
