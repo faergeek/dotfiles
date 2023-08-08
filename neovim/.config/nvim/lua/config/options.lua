@@ -49,6 +49,8 @@ vim.opt.title = true
 vim.opt.undofile = true
 vim.opt.updatetime = 200
 
+vim.g.zig_fmt_autosave = false
+
 vim.fn.sign_define {
   {
     text = '',
