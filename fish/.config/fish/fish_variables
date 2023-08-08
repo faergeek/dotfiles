@@ -52,4 +52,3 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/opt/homebrew/opt/python\x403\x2e10/libexec/bin\x1e/opt/homebrew/lib/ruby/gems/2\x2e7\x2e0/bin\x1e/opt/homebrew/opt/coreutils/libexec/gnubin
