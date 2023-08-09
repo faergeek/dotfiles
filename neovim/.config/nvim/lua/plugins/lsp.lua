@@ -36,7 +36,7 @@ return {
             vim.lsp.protocol.make_client_capabilities()
           )
 
-          require('lspconfig').zls.setup { capabilities }
+          require('lspconfig').zls.setup { capabilities = capabilities }
         end,
       },
       'hrsh7th/cmp-nvim-lsp',
