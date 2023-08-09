@@ -37,6 +37,10 @@ return {
           )
 
           require('lspconfig').zls.setup { capabilities = capabilities }
+
+          require('lspconfig').ocamllsp.setup {
+            capabilities = capabilities,
+          }
         end,
       },
       'hrsh7th/cmp-nvim-lsp',
@@ -57,7 +61,6 @@ return {
           'html',
           'jsonls',
           'lua_ls',
-          'ocamllsp',
           'rescriptls',
           'rust_analyzer',
           'stylelint_lsp',
