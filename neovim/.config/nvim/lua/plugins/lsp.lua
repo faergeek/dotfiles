@@ -88,6 +88,19 @@ return {
               settings = {
                 codeActionOnSave = { enable = true, mode = 'all' },
               },
+              on_attach = function(client)
+                client.server_capabilities.documentFormattingProvider = true
+              end,
+            }
+          end,
+          html = function()
+            require('lspconfig').html.setup {
+              capabilities = capabilities,
+              on_attach = function(client)
+                client.server_capabilities.documentFormattingProvider = false
+                client.server_capabilities.documentRangeFormattingProvider =
+                  false
+              end,
             }
           end,
           jsonls = function()
@@ -131,6 +144,11 @@ return {
               settings = {
                 completions = { completeFunctionCalls = true },
               },
+              on_attach = function(client)
+                client.server_capabilities.documentFormattingProvider = false
+                client.server_capabilities.documentRangeFormattingProvider =
+                  false
+              end,
             }
           end,
           yamlls = function()

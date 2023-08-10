@@ -108,20 +108,6 @@ autocmd('Setup LSP', 'LspAttach', function(event)
     end
   )
 
-  if client.name == 'eslint' then
-    client.server_capabilities.documentFormattingProvider = true
-  end
-
-  if client.name == 'html' then
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-  end
-
-  if client.name == 'tsserver' then
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-  end
-
   lsp_handle_capability(
     event.buf,
     client,
