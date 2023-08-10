@@ -4,7 +4,7 @@ return {
     event = 'VeryLazy',
     opts = function()
       local opts = {
-        extensions = { 'lazy', 'man', 'quickfix', 'trouble' },
+        extensions = { 'lazy', 'man', 'quickfix' },
         options = {
           component_separators = { left = '', right = '' },
           disabled_filetypes = {

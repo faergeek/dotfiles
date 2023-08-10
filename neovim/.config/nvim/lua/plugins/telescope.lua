@@ -9,7 +9,6 @@ return {
         cond = vim.fn.executable 'make' == 1,
         build = 'make',
       },
-      'folke/trouble.nvim',
     },
     keys = {
       {
@@ -82,14 +81,6 @@ return {
             width = 0.95,
             height = 0.95,
             horizontal = { preview_width = 0.6 },
-          },
-          mappings = {
-            i = {
-              ['<c-t>'] = require('trouble.providers.telescope').smart_open_with_trouble,
-            },
-            n = {
-              ['<c-t>'] = require('trouble.providers.telescope').smart_open_with_trouble,
-            },
           },
           path_display = { shorten = 5 },
         },

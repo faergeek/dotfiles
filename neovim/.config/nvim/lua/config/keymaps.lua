@@ -25,3 +25,8 @@ keymap('[S]how [D]iagnostics', 'n', '<leader>sd', vim.diagnostic.open_float)
 
 keymap('LSP: [R]ename [S]ymbol', 'n', '<leader>rs', vim.lsp.buf.rename)
 keymap('LSP: Code [A]ction', { 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action)
+
+keymap('[F]ind [R]eferences', 'n', '<leader>fr', vim.lsp.buf.references)
+
+keymap('[Q]uickfix: Next', 'n', ']q', vim.cmd.cnext, { silent = true })
+keymap('[Q]uickfix: Prev', 'n', '[q', vim.cmd.cprevious, { silent = true })

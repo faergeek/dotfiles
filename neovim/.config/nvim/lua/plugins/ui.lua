@@ -54,31 +54,4 @@ return {
       short_term_names = true,
     },
   },
-  {
-    'folke/trouble.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    keys = {
-      {
-        desc = '[F]ind [R]eferences',
-        '<leader>fr',
-        ':Trouble lsp_references<CR>',
-        silent = true,
-      },
-      {
-        desc = '[T]rouble: [Q]uickfix',
-        '<leader>tq',
-        ':cclose<CR>:Trouble quickfix<CR>',
-        silent = true,
-      },
-      {
-        desc = '[T]rouble: [L]ocation List',
-        '<leader>tl',
-        ':lclose<CR>:Trouble loclist<CR>',
-        silent = true,
-      },
-    },
-    opts = {
-      use_diagnostic_signs = true,
-    },
-  },
 }
