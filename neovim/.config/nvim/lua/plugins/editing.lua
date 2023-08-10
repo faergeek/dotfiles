@@ -62,11 +62,6 @@ return {
       autopairs.force_attach()
     end,
   },
-  {
-    'HiPhish/rainbow-delimiters.nvim',
-    url = 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-  },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
   {
     'Wansmer/treesj',
