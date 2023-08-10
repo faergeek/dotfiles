@@ -182,7 +182,6 @@ return {
     },
     opts = {
       ensure_installed = {
-        'beautysh',
         'prettier',
         'stylua',
       },
