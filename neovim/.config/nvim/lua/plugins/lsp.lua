@@ -141,6 +141,11 @@ return {
           tsserver = function()
             require('lspconfig').tsserver.setup {
               capabilities = capabilities,
+              init_options = {
+                preferences = {
+                  jsxAttributeCompletionStyle = 'braces',
+                },
+              },
               settings = {
                 completions = { completeFunctionCalls = true },
               },
