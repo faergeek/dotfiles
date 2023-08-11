@@ -93,16 +93,6 @@ return {
               end,
             }
           end,
-          html = function()
-            require('lspconfig').html.setup {
-              capabilities = capabilities,
-              on_attach = function(client)
-                client.server_capabilities.documentFormattingProvider = false
-                client.server_capabilities.documentRangeFormattingProvider =
-                  false
-              end,
-            }
-          end,
           jsonls = function()
             require('lspconfig').jsonls.setup {
               capabilities = capabilities,
@@ -149,11 +139,6 @@ return {
               settings = {
                 completions = { completeFunctionCalls = true },
               },
-              on_attach = function(client)
-                client.server_capabilities.documentFormattingProvider = false
-                client.server_capabilities.documentRangeFormattingProvider =
-                  false
-              end,
             }
           end,
           yamlls = function()
@@ -168,35 +153,5 @@ return {
         },
       }
     end,
-  },
-  {
-    'jayp0521/mason-null-ls.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    dependencies = {
-      'mason.nvim',
-      {
-        'jose-elias-alvarez/null-ls.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        opts = {},
-      },
-    },
-    opts = {
-      ensure_installed = {
-        'prettier',
-        'stylua',
-      },
-      handlers = {
-        function(source_name, methods)
-          require 'mason-null-ls.automatic_setup'(source_name, methods)
-        end,
-        prettier = function()
-          require('null-ls').register(
-            require('null-ls.builtins.formatting.prettier').with {
-              only_local = 'node_modules/.bin',
-            }
-          )
-        end,
-      },
-    },
   },
 }
