@@ -50,7 +50,6 @@ return {
       },
     },
     opts = {
-      focus_alternate_buffer = true,
       short_term_names = true,
     },
   },
