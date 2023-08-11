@@ -16,7 +16,10 @@ return {
     end,
     opts = {
       auto_install = true,
-      autotag = { enable = true },
+      autotag = {
+        enable = true,
+        enable_close_on_slash = false,
+      },
       endwise = { enable = true },
       highlight = {
         additional_vim_regex_highlighting = false,
