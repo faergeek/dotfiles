@@ -17,6 +17,7 @@ return {
       {
         'neovim/nvim-lspconfig',
         dependencies = {
+          'folke/neoconf.nvim',
           {
             'j-hui/fidget.nvim',
             tag = 'legacy',
