@@ -30,3 +30,6 @@ keymap('[F]ind [R]eferences', 'n', '<leader>fr', vim.lsp.buf.references)
 
 keymap('[Q]uickfix: Next', 'n', ']q', vim.cmd.cnext, { silent = true })
 keymap('[Q]uickfix: Prev', 'n', '[q', vim.cmd.cprevious, { silent = true })
+
+keymap('[Q]uickfix: Newer', 'n', ']Q', vim.cmd.cnewer, { silent = true })
+keymap('[Q]uickfix: Older', 'n', '[Q', vim.cmd.colder, { silent = true })
