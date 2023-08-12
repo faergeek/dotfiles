@@ -85,7 +85,7 @@ return {
           path_display = { shorten = 5 },
         },
         pickers = {
-          find_files = { hidden = true, no_ignore = true },
+          find_files = { hidden = true },
           live_grep = { additional_args = { '--hidden' } },
           oldfiles = { only_cwd = true },
         },
