@@ -136,9 +136,6 @@ return {
                   jsxAttributeCompletionStyle = 'braces',
                 },
               },
-              settings = {
-                completions = { completeFunctionCalls = true },
-              },
             }
           end,
           yamlls = function()
