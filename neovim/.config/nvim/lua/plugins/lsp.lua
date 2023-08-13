@@ -46,28 +46,6 @@ return {
       },
       'hrsh7th/cmp-nvim-lsp',
       'b0o/schemastore.nvim',
-      {
-        'whynothugo/lsp_lines.nvim',
-        url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-        opts = {
-          exclude_fts = { 'lazy' },
-        },
-        config = function(_, opts)
-          require('lsp_lines').setup()
-
-          local function is_excluded(bufnr)
-            return vim.tbl_contains(
-              opts.exclude_fts,
-              vim.api.nvim_buf_get_option(bufnr, 'filetype')
-            )
-          end
-
-          vim.diagnostic.config {
-            virtual_lines = function(_, bufnr) return not is_excluded(bufnr) end,
-            virtual_text = function(_, bufnr) return is_excluded(bufnr) end,
-          }
-        end,
-      },
     },
     opts = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities(
