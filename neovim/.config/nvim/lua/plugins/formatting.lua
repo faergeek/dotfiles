@@ -49,6 +49,7 @@ return {
       end
 
       return {
+        partial_update = 'diff',
         fallback_formatter = {
           formatters.lsp {},
         },
