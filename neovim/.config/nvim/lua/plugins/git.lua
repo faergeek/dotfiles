@@ -5,7 +5,7 @@ return {
     keys = {
       {
         desc = '[C]hange: Next',
-        mode = { 'n', 'v' },
+        mode = { 'n', 'x' },
         ']c',
         function()
           if vim.wo.diff then return ']c' end
@@ -16,7 +16,7 @@ return {
       },
       {
         desc = '[C]hange: Prev',
-        mode = { 'n', 'v' },
+        mode = { 'n', 'x' },
         '[c',
         function()
           if vim.wo.diff then return '[c' end
@@ -32,7 +32,7 @@ return {
       },
       {
         desc = '[H]unk [S]tage',
-        mode = 'v',
+        mode = 'x',
         '<leader>hs',
         function()
           require('gitsigns').stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
@@ -45,7 +45,7 @@ return {
       },
       {
         desc = '[H]unk [R]eset',
-        mode = 'v',
+        mode = 'x',
         '<leader>hr',
         function()
           require('gitsigns').reset_hunk { vim.fn.line '.', vim.fn.line 'v' }

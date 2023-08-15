@@ -87,7 +87,7 @@ return {
   { 'Olical/conjure', ft = 'lisp' },
   {
     'echasnovski/mini.surround',
-    keys = { { 'sa', mode = { 'n', 'v' } }, 'sd', 'sr', 'sf', 'sF', 'sh', 'sn' },
+    keys = { { 'sa', mode = { 'n', 'x' } }, 'sd', 'sr', 'sf', 'sF', 'sh', 'sn' },
     opts = {},
   },
   {
@@ -96,8 +96,8 @@ return {
     keys = {
       'gcc',
       'gbc',
-      { 'gc', mode = { 'n', 'v' } },
-      { 'gb', mode = { 'n', 'v' } },
+      { 'gc', mode = { 'n', 'x' } },
+      { 'gb', mode = { 'n', 'x' } },
       'gcO',
       'gco',
       'gcA',
