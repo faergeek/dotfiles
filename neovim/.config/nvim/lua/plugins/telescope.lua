@@ -67,12 +67,6 @@ return {
         silent = true,
       },
       {
-        desc = '[G]it [C]ommits',
-        '<leader>gc',
-        ':Telescope git_commits<CR>',
-        silent = true,
-      },
-      {
         desc = '[G]it: [B]ranches',
         '<leader>gb',
         ':Telescope git_branches<CR>',
