@@ -72,6 +72,12 @@ return {
         ':Telescope git_commits<CR>',
         silent = true,
       },
+      {
+        desc = '[G]it: [B]ranches',
+        '<leader>gb',
+        ':Telescope git_branches<CR>',
+        silent = true,
+      },
     },
     opts = function()
       return {
@@ -86,6 +92,16 @@ return {
           path_display = { shorten = 5 },
         },
         pickers = {
+          git_branches = {
+            mappings = {
+              i = {
+                ['<CR>'] = require('telescope.actions').git_switch_branch,
+              },
+              n = {
+                ['<CR>'] = require('telescope.actions').git_switch_branch,
+              },
+            },
+          },
           find_files = { hidden = true },
           live_grep = { additional_args = { '--hidden' } },
           oldfiles = { only_cwd = true },
