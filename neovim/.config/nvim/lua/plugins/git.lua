@@ -71,21 +71,6 @@ return {
         '<leader>hp',
         function() require('gitsigns').preview_hunk() end,
       },
-      {
-        desc = '[H]unk Preview [I]nline',
-        '<leader>hi',
-        ':Gitsigns preview_hunk_inline<CR>',
-      },
-      {
-        desc = '[G]it: [B]lame',
-        '<leader>gb',
-        function() require('gitsigns').blame_line { full = true } end,
-      },
-      {
-        desc = '[G]it: Toggle [L]ine Highlighting',
-        '<leader>gl',
-        function() require('gitsigns').toggle_linehl() end,
-      },
     },
     opts = {},
   },
