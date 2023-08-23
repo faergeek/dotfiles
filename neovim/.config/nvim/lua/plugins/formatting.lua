@@ -32,40 +32,24 @@ return {
         return expand_node_bin('prettier', '--stdin-filepath', '%')
       end
 
-      local function list(...)
-        local items = { ... }
-
-        return function()
-          local result = {}
-
-          for _, item in ipairs(items) do
-            if type(item) == 'function' then item = item() end
-
-            table.insert(result, item)
-          end
-
-          return result
-        end
-      end
-
       return {
         partial_update = 'diff',
         fallback_formatter = {
           formatters.lsp {},
         },
         formatter_by_ft = {
-          css = list(prettier),
+          css = { prettier },
           dune = { formatters.shell { cmd = { 'dune', 'format-dune-file' } } },
-          html = list(prettier),
-          javascript = list(eslint, prettier),
-          javascriptreact = list(eslint, prettier),
-          json = list(prettier),
-          jsonc = list(prettier),
+          html = { prettier },
+          javascript = { eslint, prettier },
+          javascriptreact = { eslint, prettier },
+          json = { prettier },
+          jsonc = { prettier },
           lua = { formatters.stylua },
-          markdown = list(prettier),
-          typescript = list(eslint, prettier),
-          typescriptreact = list(eslint, prettier),
-          yaml = list(prettier),
+          markdown = { prettier },
+          typescript = { eslint, prettier },
+          typescriptreact = { eslint, prettier },
+          yaml = { prettier },
         },
       }
     end,
