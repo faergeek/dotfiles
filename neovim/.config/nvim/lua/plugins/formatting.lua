@@ -33,7 +33,10 @@ return {
       end
 
       return {
-        partial_update = 'diff',
+        experiments = {
+          disable_restore_cursors = true,
+          partial_update = 'diff',
+        },
         fallback_formatter = {
           formatters.lsp {},
         },
