@@ -1,0 +1,20 @@
+set editing-mode vi
+set keyseq-timeout 100
+set menu-complete-display-prefix on
+set show-mode-in-prompt on
+
+"\C-l": clear-screen
+"\C-n": next-history
+"\C-p": previous-history
+"\C-a": beginning-of-line
+"\C-e": end-of-line
+"\C-f": forward-char
+"\C-b": backward-char
+
+$if term=linux
+  set vi-ins-mode-string \1\e[?0c\2
+  set vi-cmd-mode-string \1\e[?8c\2
+$else
+  set vi-ins-mode-string \1\e[6 q\2
+  set vi-cmd-mode-string \1\e[2 q\2
+$endif
