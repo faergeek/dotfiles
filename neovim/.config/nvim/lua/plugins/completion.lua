@@ -74,13 +74,6 @@ return {
       local cmp = require 'cmp'
 
       return {
-        enabled = function()
-          return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt'
-            or (
-              package.loaded['cmp_dap'] ~= nil
-              and require('cmp_dap').is_dap_buffer()
-            )
-        end,
         experimental = {
           ghost_text = {
             hl_group = 'LspCodeLens',

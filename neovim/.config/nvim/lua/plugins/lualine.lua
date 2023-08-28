@@ -9,7 +9,7 @@ return {
           component_separators = { left = '', right = '' },
           disabled_filetypes = {
             statusline = { 'alpha', 'buffer_manager' },
-            winbar = { 'alpha', 'dap-repl', 'man', 'qf' },
+            winbar = { 'alpha', 'man', 'qf' },
           },
           globalstatus = true,
           section_separators = { left = '', right = '' },
