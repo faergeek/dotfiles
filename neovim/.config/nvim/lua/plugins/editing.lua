@@ -22,7 +22,7 @@ return {
       },
       endwise = { enable = true },
       highlight = {
-        additional_vim_regex_highlighting = false,
+        additional_vim_regex_highlighting = { 'markdown' },
         enable = true,
       },
       indent = { enable = true },
