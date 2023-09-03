@@ -4,7 +4,7 @@
   "margin": "8 8 0",
   "spacing": 8,
   "modules-left": [
-    "wlr/workspaces",
+    "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
@@ -74,6 +74,18 @@
     "max-length": 100,
     "separate-outputs": true
   },
+  "hyprland/workspaces": {
+    "format": "{name} {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󰇮",
+      "4": "",
+      "default": ""
+    },
+    "show-special": true,
+    "on-click": "activate"
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -110,17 +122,5 @@
     "format": " {percentage}",
     "format-alt": " {percentage} {time}",
     "icon-size": 14
-  },
-  "wlr/workspaces": {
-    "format": "{name} {icon}",
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "󰇮",
-      "4": "",
-      "default": ""
-    },
-    "on-click": "activate",
-    "sort-by-number": true
   }
 }
