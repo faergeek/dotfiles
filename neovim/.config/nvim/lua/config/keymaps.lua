@@ -4,16 +4,16 @@ keymap(
   'Move cursor up',
   { 'n', 'x' },
   'k',
-  "v:count == 0 ? 'gk' : 'k'",
-  { expr = true, silent = true }
+  "v:count ? 'k' : 'gk'",
+  { expr = true }
 )
 
 keymap(
   'Move cursor down',
   { 'n', 'x' },
   'j',
-  "v:count == 0 ? 'gj' : 'j'",
-  { expr = true, silent = true }
+  "v:count ? 'j' : 'gj'",
+  { expr = true }
 )
 
 keymap('Lazy', 'n', '<leader>l', '<cmd>:Lazy<cr>')
