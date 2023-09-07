@@ -6,13 +6,11 @@ return {
       local opts = {
         extensions = { 'lazy', 'man', 'quickfix' },
         options = {
-          component_separators = { left = '', right = '' },
           disabled_filetypes = {
             statusline = { 'alpha', 'buffer_manager' },
             winbar = { 'alpha', 'man', 'qf' },
           },
           globalstatus = true,
-          section_separators = { left = '', right = '' },
           theme = 'catppuccin',
         },
         sections = {
@@ -20,12 +18,15 @@ return {
             'mode',
             'selectioncount',
           },
-          lualine_b = { { 'b:gitsigns_head', icon = '' } },
-          lualine_c = {},
-          lualine_x = { 'searchcount' },
-          lualine_y = { 'location' },
+          lualine_b = {
+            { 'b:gitsigns_head', icon = '' },
+          },
+          lualine_c = {
+            { 'filename', newfile_status = true, path = 1 },
+          },
+          lualine_x = { '%S' },
+          lualine_y = { 'searchcount' },
           lualine_z = {
-            'progress',
             {
               require('lazy.status').updates,
               cond = require('lazy.status').has_updates,
@@ -35,23 +36,12 @@ return {
         winbar = {
           lualine_a = {
             function() return tostring(vim.api.nvim_win_get_number(0)) end,
+            { 'filename', newfile_status = true },
           },
-          lualine_b = {
-            {
-              'filename',
-              newfile_status = true,
-              path = 1,
-              symbols = { modified = '' },
-            },
-          },
-          lualine_x = {
+          lualine_b = { 'location' },
+          lualine_y = {
             {
               'diff',
-              symbols = {
-                added = ' ',
-                modified = '󰝤 ',
-                removed = ' ',
-              },
               source = function()
                 local gitsigns =
                   vim.fn.getbufvar(vim.fn.bufnr(), 'gitsigns_status_dict')
@@ -67,6 +57,7 @@ return {
             },
             'diagnostics',
           },
+          lualine_z = { 'progress' },
         },
       }
 
