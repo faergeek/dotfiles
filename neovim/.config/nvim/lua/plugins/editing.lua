@@ -63,6 +63,7 @@ return {
     end,
   },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
+  { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
   {
     'Wansmer/treesj',
     keys = {

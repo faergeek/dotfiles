@@ -43,6 +43,7 @@
   "telescope.nvim": { "branch": "0.1.x", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
   "treesj": { "branch": "main", "commit": "bff8c32b826e188fa558e94c7c93ac17a8ef0365" },
   "vim-browserslist": { "branch": "main", "commit": "c5d73ce0b1503ca6ad3f6dde58a3a49a9d6aa7e3" },
+  "vim-lastplace": { "branch": "master", "commit": "bb3191b134ade9d1f01014e17c3df91e8911dd5c" },
   "vim-matchup": { "branch": "master", "commit": "582cbc8c2dc311deb7a03f7d505d52544c36d4b6" },
   "vim-rescript": { "branch": "master", "commit": "8128c04ad69487b449936a6fa73ea6b45338391e" },
   "vim-startuptime": { "branch": "master", "commit": "454b3de856b7bd298700de33d79774ca9b9e3875" },
