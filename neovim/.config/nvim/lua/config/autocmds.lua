@@ -72,7 +72,7 @@ autocmd('Setup LSP', 'LspAttach', function(event)
       keymap(
         'LSP: [G]o to [i]mplementation',
         'n',
-        'gi',
+        '<leader>gi',
         vim.lsp.buf.implementation,
         { buffer = event.buf }
       )
