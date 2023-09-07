@@ -24,6 +24,13 @@ autocmd(
   function() vim.cmd 'tabdo wincmd =' end
 )
 
+autocmd('Disable concealing in help', 'FileType', function()
+  vim.wo.conceallevel = 0
+  vim.wo.concealcursor = ''
+end, {
+  pattern = { 'help' },
+})
+
 autocmd('Close certain filetypes with just <q>', 'FileType', function(event)
   vim.bo[event.buf].buflisted = false
   vim.keymap.set('n', 'q', ':q<CR>', { buffer = event.buf, silent = true })
