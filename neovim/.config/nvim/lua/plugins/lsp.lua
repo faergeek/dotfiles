@@ -135,6 +135,29 @@ return {
                   jsxAttributeCompletionStyle = 'braces',
                 },
               },
+              handlers = {
+                ['_typescript.rename'] = function(_, result, ctx)
+                  if not result then return {} end
+
+                  local client = vim.lsp.get_client_by_id(ctx.client_id)
+
+                  if client then
+                    vim.lsp.util.jump_to_location({
+                      uri = result.textDocument.uri,
+                      range = {
+                        start = result.position,
+                        ['end'] = result.position,
+                      },
+                    }, client.offset_encoding, true)
+
+                    vim.lsp.buf.rename(nil, {
+                      filter = function(c) return c == client end,
+                    })
+                  end
+
+                  return {}
+                end,
+              },
             }
           end,
           yamlls = function()
