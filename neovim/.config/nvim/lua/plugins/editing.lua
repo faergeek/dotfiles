@@ -89,6 +89,11 @@ return {
     opts = {},
   },
   {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    lazy = true,
+    opts = {},
+  },
+  {
     'numToStr/Comment.nvim',
     dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
     keys = {
