@@ -8,6 +8,7 @@ vim.opt.diffopt:append {
   'indent-heuristic',
 }
 vim.opt.expandtab = true
+vim.opt.fixeol = false
 vim.opt.gdefault = true
 vim.opt.guicursor =
   'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:blinkwait300-blinkon200-blinkoff150'
