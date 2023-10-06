@@ -25,13 +25,8 @@ return {
             { 'filename', newfile_status = true, path = 1 },
           },
           lualine_x = { '%S' },
-          lualine_y = { 'searchcount' },
-          lualine_z = {
-            {
-              require('lazy.status').updates,
-              cond = require('lazy.status').has_updates,
-            },
-          },
+          lualine_y = {},
+          lualine_z = { 'searchcount' },
         },
         winbar = {
           lualine_a = {
