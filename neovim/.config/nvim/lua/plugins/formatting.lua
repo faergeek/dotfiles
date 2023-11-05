@@ -34,6 +34,7 @@ return {
 
       return {
         experiments = {
+          adjust_cursor_position = true,
           disable_restore_cursors = true,
           partial_update = 'diff',
         },
