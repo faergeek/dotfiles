@@ -62,7 +62,6 @@ return {
           'html',
           'jsonls',
           'lua_ls',
-          'rescriptls',
           'rust_analyzer',
           'stylelint_lsp',
           'taplo',
