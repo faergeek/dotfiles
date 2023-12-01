@@ -1,4 +1,5 @@
 [Default]
 early_exit=true
 paint_mode=arrow
+save_dir=$HOME/Загрузки
 show_panel=true
