@@ -8,10 +8,10 @@ if status is-interactive
     end
   end
 
-  set -gx EXA_ICON_SPACING 2
+  set -gx EZA_ICON_SPACING 2
 
-  if type exa 2&> /dev/null
-    alias ls='exa --icons --git'
+  if type eza 2&> /dev/null
+    alias ls='eza --icons --git'
   end
 
   alias less='less -RF'
