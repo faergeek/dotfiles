@@ -1,5 +1,10 @@
 if status is-interactive
+  # used by pacdiff
+  set -gx DIFFPROG='nvim -d'
+
   set -gx TEALDEER_CONFIG_DIR ~/.config/tealdeer
+
+  # customize the info shown by pfetch
   set -gx PF_INFO "ascii os host kernel shell editor uptime pkgs memory palette"
 
   if type pfetch 2&> /dev/null
