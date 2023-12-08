@@ -1,6 +1,6 @@
 if status is-interactive
   # used by pacdiff
-  set -gx DIFFPROG='nvim -d'
+  set -gx DIFFPROG 'nvim -d'
 
   set -gx TEALDEER_CONFIG_DIR ~/.config/tealdeer
 
