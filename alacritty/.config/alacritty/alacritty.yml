@@ -2,6 +2,7 @@ window:
   opacity: 0.85
   option_as_alt: "Both"
 font:
+  builtin_box_drawing: false
   normal:
     family: FantasqueSansM Nerd Font
   size: 12.0
