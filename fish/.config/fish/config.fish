@@ -1,4 +1,7 @@
 if status is-interactive
+  set -gx EDITOR nvim
+  set -gx VISUAL nvim
+
   # used by pacdiff
   set -gx DIFFPROG 'nvim -d'
 
