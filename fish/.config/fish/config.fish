@@ -16,8 +16,6 @@ if status is-interactive
     end
   end
 
-  set -gx EZA_ICON_SPACING 2
-
   if type eza 2&> /dev/null
     alias ls='eza --icons --git'
   end
