@@ -10,4 +10,5 @@ return {
       require('plenary.filetype').add_file 'glsl'
     end,
   },
+  { 'fladson/vim-kitty' },
 }
