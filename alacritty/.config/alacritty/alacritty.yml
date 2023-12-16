@@ -1,5 +1,6 @@
 window:
   opacity: 0.85
+  option_as_alt: "Both"
 font:
   normal:
     family: FantasqueSansM Nerd Font
