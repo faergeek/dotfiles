@@ -1,6 +1,8 @@
+@import "./frappe.css";
+
 window#waybar {
   background: transparent;
-  color: #c6d0f5;
+  color: @text;
   font-family: FantasqueSansM Nerd Font Propo;
   font-size: 18px;
 }
@@ -37,28 +39,28 @@ window#waybar {
 
 #workspaces button.active,
 #workspaces button.urgent {
-  color: #414559;
+  color: @surface0;
 }
 
 #workspaces button:hover {
   box-shadow: inherit;
-  background: rgba(186, 187, 241, 0.5);
+  background: alpha(@lavender, 0.5);
   text-shadow: inherit;
 }
 
 #workspaces button.active {
-  background: #babbf1;
+  background: @lavender;
 }
 
 #workspaces button.urgent {
-  background: #ef9f76;
+  background: @peach;
 }
 
 #window,
 #mpris {
   padding: 0;
   background: transparent;
-  text-shadow: 1px 1px 1px #232634;
+  text-shadow: 1px 1px 1px @crust;
 }
 
 #tray > .passive {
@@ -67,11 +69,11 @@ window#waybar {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #ef9f76;
+  background-color: @peach;
 }
 
 #custom-swaync.notification,
 #custom-swaync.dnd-notification,
 #idle_inhibitor.activated {
-  color: #ef9f76;
+  color: @peach;
 }
