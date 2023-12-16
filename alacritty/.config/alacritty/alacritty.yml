@@ -5,7 +5,7 @@ font:
   builtin_box_drawing: false
   normal:
     family: FantasqueSansM Nerd Font
-  size: 12.0
+  size: 16.0
 cursor:
   style:
     blinking: On
