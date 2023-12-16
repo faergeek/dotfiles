@@ -26,7 +26,7 @@
   "bluetooth": {
     "format": "",
     "format-connected": "󰂱",
-    "on-click": "alacritty -e bluetoothctl",
+    "on-click": "kitty -e bluetoothctl",
     "tooltip-format-connected-battery": "{device_enumerate}",
     "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_address})\t{device_battery_percentage}%"
   },
@@ -37,7 +37,7 @@
   "cpu": {
     "format": "{icon} ",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "alacritty -e btm"
+    "on-click": "kitty -e btm"
   },
   "custom/swaync": {
     "format": "{icon}",
@@ -56,7 +56,7 @@
   "memory": {
     "format": "{}% ",
     "tooltip-format": "{used:0.1f}GiB/{total:0.1f}GiB used",
-    "on-click": "alacritty -e btm"
+    "on-click": "kitty -e btm"
   },
   "mpris": {
     "format": "{status_icon} {artist} - {title}",
@@ -112,7 +112,7 @@
       "hdmi": "󰡁",
       "default": ["", "", ""]
     },
-    "on-click": "alacritty -e pulsemixer",
+    "on-click": "kitty -e pulsemixer",
     "tooltip-format": "{icon} {desc}\t{volume}%"
   },
   "tray": {
