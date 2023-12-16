@@ -21,6 +21,4 @@ if status is-interactive
   if type eza 2&> /dev/null
     alias ls='eza --icons --git'
   end
-
-  alias less='less -RF'
 end
