@@ -59,21 +59,6 @@ autocmd('Setup LSP', 'LspAttach', function(event)
   lsp_handle_capability(
     event.buf,
     client,
-    'hoverProvider',
-    function()
-      keymap(
-        'LSP: Hover Documentation',
-        'n',
-        'K',
-        vim.lsp.buf.hover,
-        { buffer = event.buf }
-      )
-    end
-  )
-
-  lsp_handle_capability(
-    event.buf,
-    client,
     'documentHighlightProvider',
     function()
       autocmd(

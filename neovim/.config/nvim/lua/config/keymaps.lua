@@ -23,6 +23,7 @@ keymap('[D]iagnostic: Prev', 'n', '[d', vim.diagnostic.goto_prev)
 
 keymap('[S]how [D]iagnostics', 'n', '<leader>sd', vim.diagnostic.open_float)
 
+keymap('LSP: Hover Documentation', 'n', 'K', vim.lsp.buf.hover)
 keymap('LSP: [R]ename [S]ymbol', 'n', '<leader>rs', vim.lsp.buf.rename)
 keymap('LSP: Code [A]ction', { 'n', 'x' }, '<leader>a', vim.lsp.buf.code_action)
 
