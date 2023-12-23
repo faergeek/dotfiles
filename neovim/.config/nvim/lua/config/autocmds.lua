@@ -74,21 +74,6 @@ autocmd('Setup LSP', 'LspAttach', function(event)
   lsp_handle_capability(
     event.buf,
     client,
-    'implementationProvider',
-    function()
-      keymap(
-        'LSP: [G]o to [i]mplementation',
-        'n',
-        '<leader>gi',
-        vim.lsp.buf.implementation,
-        { buffer = event.buf }
-      )
-    end
-  )
-
-  lsp_handle_capability(
-    event.buf,
-    client,
     'documentHighlightProvider',
     function()
       autocmd(
