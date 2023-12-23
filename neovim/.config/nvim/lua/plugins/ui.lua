@@ -53,4 +53,15 @@ return {
       short_term_names = true,
     },
   },
+  {
+    'kevinhwang91/nvim-bqf',
+    ft = 'qf',
+    opts = {
+      auto_resize_height = true,
+      preview = {
+        winblend = 0,
+        wrap = true,
+      },
+    },
+  },
 }
