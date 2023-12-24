@@ -23,6 +23,7 @@ return {
         ['='] = 'actions.refresh',
         ['-'] = 'actions.parent',
       },
+      lsp_rename_autosave = true,
       use_default_keymaps = false,
       view_options = {
         show_hidden = true,
