@@ -67,6 +67,8 @@ return {
           local stats = require('lazy').stats()
 
           startup_time.val = '💤 lazy.nvim loaded '
+            .. stats.loaded
+            .. '/'
             .. stats.count
             .. ' plugins in '
             .. (math.floor(stats.startuptime * 100 + 0.5) / 100)
@@ -76,7 +78,7 @@ return {
         end,
         {
           once = true,
-          pattern = 'LazyVimStarted',
+          pattern = 'VeryLazy',
         }
       )
 
