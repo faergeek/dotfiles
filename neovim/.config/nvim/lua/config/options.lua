@@ -26,8 +26,8 @@ vim.opt.listchars = {
   trail = '·',
 }
 vim.opt.number = true
-_G.quickfixtextfunc = require('utils').quickfixtextfunc
-vim.opt.quickfixtextfunc = '{info -> v:lua._G.quickfixtextfunc(info)}'
+vim.opt.quickfixtextfunc =
+  "{info -> v:lua.require('utils').quickfixtextfunc(info)}"
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 3
 vim.opt.shiftround = true
