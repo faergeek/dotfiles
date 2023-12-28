@@ -2,6 +2,11 @@ local M = {}
 
 local group = vim.api.nvim_create_augroup('config', { clear = true })
 
+--- @param desc string
+--- @param event object
+--- @param callbackOrCommand string | function
+--- @param opts? table<string, any>
+--- @return number
 function M.autocmd(desc, event, callbackOrCommand, opts)
   opts = opts or {}
   opts.desc = desc
@@ -13,7 +18,7 @@ function M.autocmd(desc, event, callbackOrCommand, opts)
     opts.callback = callbackOrCommand
   end
 
-  vim.api.nvim_create_autocmd(event, opts)
+  return vim.api.nvim_create_autocmd(event, opts)
 end
 
 function M.keymap(desc, modes, lhs, rhs, opts)

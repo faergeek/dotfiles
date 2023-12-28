@@ -30,6 +30,15 @@ vim.opt.quickfixtextfunc =
   "{info -> v:lua.require('utils').quickfixtextfunc(info)}"
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 3
+vim.opt.sessionoptions = {
+  'buffers',
+  'curdir',
+  'help',
+  'skiprtp',
+  'tabpages',
+  'terminal',
+  'winsize',
+}
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 0
 vim.opt.shortmess:append {

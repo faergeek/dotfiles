@@ -5,8 +5,7 @@ return {
       'nvim-tree/nvim-web-devicons',
       'nvim-lua/plenary.nvim',
     },
-    event = 'VimEnter',
-    cond = vim.fn.argc() == 0,
+    lazy = true,
     config = function()
       local alpha = require 'alpha'
 
