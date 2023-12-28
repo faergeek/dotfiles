@@ -156,7 +156,7 @@ return {
                       local file_button_el = button(
                         sc,
                         ico_txt .. short_fn,
-                        ':edit ' .. fn .. '' .. '<CR>'
+                        ':edit ' .. vim.fn.fnameescape(fn) .. '' .. '<CR>'
                       )
 
                       local fn_start = short_fn:match '.*[/\\]'
