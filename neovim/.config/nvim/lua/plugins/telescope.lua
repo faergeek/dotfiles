@@ -77,7 +77,6 @@ return {
       return {
         defaults = require('telescope.themes').get_ivy {
           dynamic_preview_title = true,
-          file_ignore_patterns = { '^.git/' },
           layout_config = {
             width = 0.95,
             height = 0.95,
@@ -96,8 +95,23 @@ return {
               },
             },
           },
-          find_files = { hidden = true },
-          live_grep = { additional_args = { '--hidden' } },
+          find_files = {
+            find_command = {
+              'fd',
+              '--type',
+              'f',
+              '--hidden',
+              '--no-ignore',
+              '--exclude',
+              'node_modules',
+              '--exclude',
+              '.git',
+            },
+          },
+          live_grep = {
+            additional_args = { '--hidden', '--no-ignore' },
+            glob_pattern = { '!**/node_modules/**', '!**/.git/**' },
+          },
           oldfiles = { only_cwd = true },
         },
       }
