@@ -44,6 +44,7 @@ return {
         formatter_by_ft = {
           css = { prettier },
           dune = { formatters.shell { cmd = { 'dune', 'format-dune-file' } } },
+          fish = { formatters.shell { cmd = { 'fish_indent' } } },
           html = { prettier },
           javascript = { eslint, prettier },
           javascriptreact = { eslint, prettier },
