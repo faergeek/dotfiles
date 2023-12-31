@@ -21,9 +21,6 @@ set -gx LESS -RF
 # pacdiff
 set -gx DIFFPROG 'nvim -d'
 
-# rustup
-set PATH ~/.cargo/bin $PATH
-
 if status is-interactive
     fish_hybrid_key_bindings
     fish_config theme choose "Catppuccin Frappe"
