@@ -33,24 +33,19 @@ return {
           },
         },
         config = function()
-          local capabilities = require('cmp_nvim_lsp').default_capabilities(
-            vim.lsp.protocol.make_client_capabilities()
-          )
+          local capabilities = require('cmp_nvim_lsp').default_capabilities()
+          local lspconfig = require 'lspconfig'
 
-          require('lspconfig').zls.setup { capabilities = capabilities }
-
-          require('lspconfig').ocamllsp.setup {
-            capabilities = capabilities,
-          }
+          lspconfig.ocamllsp.setup { capabilities = capabilities }
+          lspconfig.zls.setup { capabilities = capabilities }
         end,
       },
       'hrsh7th/cmp-nvim-lsp',
       'b0o/schemastore.nvim',
     },
     opts = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities(
-        vim.lsp.protocol.make_client_capabilities()
-      )
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local lspconfig = require 'lspconfig'
 
       return {
         ensure_installed = {
@@ -70,12 +65,12 @@ return {
         },
         handlers = {
           function(server_name)
-            require('lspconfig')[server_name].setup {
+            lspconfig[server_name].setup {
               capabilities = capabilities,
             }
           end,
           cssmodules_ls = function()
-            require('lspconfig').cssmodules_ls.setup {
+            lspconfig.cssmodules_ls.setup {
               capabilities = capabilities,
               init_options = {
                 camelCase = false,
@@ -83,7 +78,7 @@ return {
             }
           end,
           eslint = function()
-            require('lspconfig').eslint.setup {
+            lspconfig.eslint.setup {
               capabilities = capabilities,
               settings = {
                 codeActionOnSave = { enable = true, mode = 'all' },
@@ -94,7 +89,7 @@ return {
             }
           end,
           jsonls = function()
-            require('lspconfig').jsonls.setup {
+            lspconfig.jsonls.setup {
               capabilities = capabilities,
               init_options = { provideFormatter = false },
               settings = {
@@ -106,7 +101,7 @@ return {
             }
           end,
           lua_ls = function()
-            require('lspconfig').lua_ls.setup {
+            lspconfig.lua_ls.setup {
               capabilities = capabilities,
               settings = {
                 Lua = {
@@ -118,7 +113,7 @@ return {
             }
           end,
           stylelint_lsp = function()
-            require('lspconfig').stylelint_lsp.setup {
+            lspconfig.stylelint_lsp.setup {
               capabilities = capabilities,
               filetypes = { 'css' },
               settings = {
@@ -127,7 +122,7 @@ return {
             }
           end,
           tsserver = function()
-            require('lspconfig').tsserver.setup {
+            lspconfig.tsserver.setup {
               capabilities = capabilities,
               init_options = {
                 preferences = {
@@ -160,7 +155,7 @@ return {
             }
           end,
           yamlls = function()
-            require('lspconfig').yamlls.setup {
+            lspconfig.yamlls.setup {
               capabilities = capabilities,
               settings = {
                 redhat = { telemetry = { enabled = false } },
