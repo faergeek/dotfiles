@@ -21,6 +21,7 @@ return {
         enable_close_on_slash = false,
       },
       endwise = { enable = true },
+      ensure_installed = { 'markdown_inline' },
       highlight = { enable = true },
       indent = { enable = true },
       matchup = {
