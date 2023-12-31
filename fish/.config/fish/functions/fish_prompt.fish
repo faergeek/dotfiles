@@ -1,9 +1,7 @@
-function _fish_prompt_format_cmd_duration \
-    --description='Format milliseconds to a human readable format' \
-    --argument-names \
-    milliseconds
+function fish_prompt
+    set --local exit_code $status
 
-    if test "$milliseconds" -ge 5000
+    if test "$CMD_DURATION" -ge 5000
         set --local second 1000
         set --local minute (math "60 * $second")
         set --local hour (math "60 * $minute")
@@ -13,27 +11,21 @@ function _fish_prompt_format_cmd_duration \
 
         printf '󱦟 '
 
-        if [ $milliseconds -ge $day ]
-            printf '%sd ' (math --scale=0 "$milliseconds / $day")
+        if [ $CMD_DURATION -ge $day ]
+            printf '%sd ' (math --scale=0 "$CMD_DURATION / $day")
         end
 
-        if [ $milliseconds -ge $hour ]
-            printf '%sh ' (math --scale=0 "$milliseconds % $day / $hour ")
+        if [ $CMD_DURATION -ge $hour ]
+            printf '%sh ' (math --scale=0 "$CMD_DURATION % $day / $hour ")
         end
 
-        if [ $milliseconds -ge $minute ]
-            printf '%sm ' (math --scale=0 "$milliseconds % $hour / $minute ")
+        if [ $CMD_DURATION -ge $minute ]
+            printf '%sm ' (math --scale=0 "$CMD_DURATION % $hour / $minute ")
         end
 
-        printf '%s.' (math --scale=0 "$milliseconds % $minute / $second")
-        printf '%ss\n' (math --scale=0 "$milliseconds % $second")
+        printf '%s.' (math --scale=0 "$CMD_DURATION % $minute / $second")
+        printf '%ss\n' (math --scale=0 "$CMD_DURATION % $second")
     end
-end
-
-function fish_prompt
-    set --local exit_code $status
-
-    _fish_prompt_format_cmd_duration $CMD_DURATION
 
     if not [ -z "$SSH_CONNECTION" ]
         prompt_login
