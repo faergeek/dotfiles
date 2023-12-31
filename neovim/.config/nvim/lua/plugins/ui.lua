@@ -3,10 +3,7 @@ return {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     opts = {},
-    config = function(_, opts)
-      require('which-key').setup(opts)
-      vim.opt.timeoutlen = 600
-    end,
+    init = function() vim.opt.timeoutlen = 300 end,
   },
   {
     'stevearc/oil.nvim',
