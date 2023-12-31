@@ -6,6 +6,7 @@
   pager = delta
   quotepath = false
 [delta]
+  hyperlinks = true
   line-numbers = true
   navigate = true
   syntax-theme = Solarized (dark)
