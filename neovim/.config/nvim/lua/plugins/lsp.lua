@@ -47,22 +47,31 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require 'lspconfig'
 
-      return {
-        ensure_installed = {
-          'bashls',
+      local ensure_installed = {
+        'bashls',
+        'cssls',
+        'cssmodules_ls',
+        'eslint',
+        'html',
+        'jsonls',
+        'stylelint_lsp',
+        'tsserver',
+        'yamlls',
+      }
+
+      local uv = vim.uv or vim.loop
+
+      if uv.os_uname().machine ~= 'armv7l' then
+        vim.list_extend(ensure_installed, {
           'clangd',
-          'cssls',
-          'cssmodules_ls',
-          'eslint',
-          'html',
-          'jsonls',
           'lua_ls',
           'rust_analyzer',
-          'stylelint_lsp',
           'taplo',
-          'tsserver',
-          'yamlls',
-        },
+        })
+      end
+
+      return {
+        ensure_installed = ensure_installed,
         handlers = {
           function(server_name)
             lspconfig[server_name].setup {
