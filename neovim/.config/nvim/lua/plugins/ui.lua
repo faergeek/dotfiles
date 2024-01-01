@@ -49,6 +49,7 @@ return {
     },
     opts = {
       short_term_names = true,
+      width = 0.9,
     },
   },
   {
