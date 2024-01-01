@@ -6,7 +6,6 @@ return {
     priority = 1000,
     opts = {
       flavour = 'frappe',
-      transparent_background = true,
       integrations = {
         fidget = true,
         mason = true,
@@ -35,7 +34,6 @@ return {
       input = {
         insert_only = false,
         start_in_insert = false,
-        win_options = { winblend = 0 },
       },
     },
   },

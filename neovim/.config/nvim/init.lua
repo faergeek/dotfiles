@@ -35,7 +35,4 @@ require('lazy').setup('plugins', {
       },
     },
   },
-  ui = {
-    border = 'single',
-  },
 })

@@ -2,11 +2,7 @@ return {
   {
     'williamboman/mason.nvim',
     cmd = 'Mason',
-    opts = {
-      ui = {
-        border = 'single',
-      },
-    },
+    opts = {},
   },
   {
     'williamboman/mason-lspconfig.nvim',
@@ -26,7 +22,6 @@ return {
                 spinner = 'dots',
               },
               window = {
-                blend = 0,
                 relative = 'editor',
               },
             },

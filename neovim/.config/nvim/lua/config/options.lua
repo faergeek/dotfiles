@@ -90,10 +90,5 @@ vim.fn.sign_define {
 }
 
 vim.diagnostic.config {
-  float = { border = 'single' },
   severity_sort = true,
 }
-
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = 'single',
-})
