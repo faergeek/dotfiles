@@ -120,6 +120,17 @@ return {
     end,
   },
   {
+    'echasnovski/mini.jump2d',
+    keys = {
+      {
+        desc = 'Jump',
+        '<CR>',
+        function() require('mini.jump2d').start() end,
+      },
+    },
+    opts = {},
+  },
+  {
     'NvChad/nvim-colorizer.lua',
     event = { 'BufReadPre', 'BufNewFile' },
     opts = {
