@@ -44,21 +44,6 @@ return {
       check_ts = true,
       disable_filetype = { 'spectre_panel', 'TelescopePrompt' },
     },
-    config = function(_, opts)
-      local autopairs = require 'nvim-autopairs'
-      autopairs.setup(opts)
-
-      local function disable_rule_for_ft(rule, ft)
-        if not rule.not_filetypes then rule.not_filetypes = {} end
-
-        table.insert(rule.not_filetypes, ft)
-      end
-
-      disable_rule_for_ft(autopairs.get_rules("'")[1], 'lisp')
-      disable_rule_for_ft(autopairs.get_rules('`')[1], 'lisp')
-
-      autopairs.force_attach()
-    end,
   },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
   { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
@@ -79,8 +64,7 @@ return {
       }
     end,
   },
-  { 'gpanders/nvim-parinfer', ft = { 'dune', 'lisp' } },
-  { 'Olical/conjure', ft = 'lisp' },
+  { 'gpanders/nvim-parinfer', ft = { 'dune' } },
   {
     'echasnovski/mini.surround',
     keys = {
