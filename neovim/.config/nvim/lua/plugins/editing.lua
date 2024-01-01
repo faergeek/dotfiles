@@ -83,7 +83,15 @@ return {
   { 'Olical/conjure', ft = 'lisp' },
   {
     'echasnovski/mini.surround',
-    keys = { { 'sa', mode = { 'n', 'x' } }, 'sd', 'sr', 'sf', 'sF', 'sh', 'sn' },
+    keys = {
+      { desc = 'Add surrounding', 'sa', mode = { 'n', 'x' } },
+      { desc = 'Delete surrounding', 'sd' },
+      { desc = 'Find left surrounding', 'sF' },
+      { desc = 'Find right surrounding', 'sf' },
+      { desc = 'Highlight surrounding', 'sh' },
+      { desc = 'Update `MiniSurround.config.n_lines`', 'sn' },
+      { desc = 'Replace surrounding', 'sr' },
+    },
     opts = {},
   },
   {
