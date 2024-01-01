@@ -4,11 +4,7 @@ return {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        cond = vim.fn.executable 'make' == 1,
-        build = 'make',
-      },
+      'nvim-telescope/telescope-fzy-native.nvim',
     },
     cmd = 'Telescope',
     keys = {
@@ -110,7 +106,7 @@ return {
     end,
     config = function(_, opts)
       require('telescope').setup(opts)
-      pcall(require('telescope').load_extension, 'fzf')
+      require('telescope').load_extension 'fzy_native'
     end,
   },
 }
