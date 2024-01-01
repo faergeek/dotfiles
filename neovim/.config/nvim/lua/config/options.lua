@@ -66,33 +66,7 @@ vim.opt.updatetime = 200
 
 vim.g.zig_fmt_autosave = false
 
-vim.fn.sign_define {
-  {
-    text = '',
-    name = 'DiagnosticSignError',
-    numhl = 'DiagnosticSignError',
-    texthl = 'DiagnosticSignError',
-  },
-  {
-    text = '',
-    name = 'DiagnosticSignWarn',
-    numhl = 'DiagnosticSignWarn',
-    texthl = 'DiagnosticSignWarn',
-  },
-  {
-    text = '',
-    name = 'DiagnosticSignHint',
-    numhl = 'DiagnosticSignHint',
-    texthl = 'DiagnosticSignHint',
-  },
-  {
-    text = '',
-    name = 'DiagnosticSignInfo',
-    numhl = 'DiagnosticSignInfo',
-    texthl = 'DiagnosticSignInfo',
-  },
-}
-
 vim.diagnostic.config {
   severity_sort = true,
+  signs = false,
 }
