@@ -49,6 +49,7 @@ return {
         'eslint',
         'html',
         'jsonls',
+        'marksman',
         'stylelint_lsp',
         'tsserver',
         'yamlls',
