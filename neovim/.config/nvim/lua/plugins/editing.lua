@@ -103,13 +103,13 @@ return {
     'numToStr/Comment.nvim',
     dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
     keys = {
-      'gcc',
-      'gbc',
-      { 'gc', mode = { 'n', 'x' } },
-      { 'gb', mode = { 'n', 'x' } },
-      'gcO',
-      'gco',
-      'gcA',
+      { desc = 'Comment toggle current line', 'gcc' },
+      { desc = 'Comment toggle linewise (visual)', 'gc', mode = { 'n', 'x' } },
+      { desc = 'Comment toggle current block', 'gbc' },
+      { desc = 'Comment toggle blockwise (visual)', 'gb', mode = { 'n', 'x' } },
+      { desc = 'Comment insert end of line', 'gcA' },
+      { desc = 'Comment insert above', 'gcO' },
+      { desc = 'Comment insert below', 'gco' },
     },
     opts = function()
       return {
