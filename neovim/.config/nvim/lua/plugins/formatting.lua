@@ -1,7 +1,14 @@
 return {
   {
     'elentok/format-on-save.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufWritePre' },
+    cmd = {
+      'Format',
+      'FormatDebugOff',
+      'FormatDebugOn',
+      'FormatOff',
+      'FormatOn',
+    },
     opts = function()
       local formatters = require 'format-on-save.formatters'
 
