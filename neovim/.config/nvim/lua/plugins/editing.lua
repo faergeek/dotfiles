@@ -99,7 +99,7 @@ return {
     keys = {
       {
         desc = 'Jump',
-        '<CR>',
+        '<leader><leader>',
         function() require('mini.jump2d').start() end,
       },
     },
