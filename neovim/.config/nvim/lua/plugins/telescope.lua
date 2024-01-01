@@ -75,15 +75,7 @@ return {
     },
     opts = function()
       return {
-        defaults = require('telescope.themes').get_ivy {
-          dynamic_preview_title = true,
-          layout_config = {
-            width = 0.95,
-            height = 0.95,
-            horizontal = { preview_width = 0.6 },
-          },
-          path_display = { shorten = 5 },
-        },
+        defaults = require('telescope.themes').get_ivy(),
         pickers = {
           git_branches = {
             mappings = {
