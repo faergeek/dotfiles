@@ -61,7 +61,7 @@ return {
         silent = true,
       },
       {
-        desc = '[G]it [S]tatus',
+        desc = '[G]it: [S]tatus',
         '<leader>gs',
         ':Telescope git_status<CR>',
         silent = true,
