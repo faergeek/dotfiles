@@ -31,11 +31,6 @@ return {
     },
   },
   {
-    'nvim-treesitter/nvim-treesitter-context',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    event = { 'BufReadPre', 'BufNewFile' },
-  },
-  {
     'windwp/nvim-autopairs',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = 'InsertEnter',
