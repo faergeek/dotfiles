@@ -19,6 +19,7 @@ return {
         ['q'] = 'actions.close',
         ['='] = 'actions.refresh',
         ['-'] = 'actions.parent',
+        ['gx'] = 'actions.open_external',
       },
       lsp_rename_autosave = true,
       use_default_keymaps = false,
