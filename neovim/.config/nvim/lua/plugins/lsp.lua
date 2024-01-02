@@ -14,18 +14,7 @@ return {
         'neovim/nvim-lspconfig',
         dependencies = {
           'folke/neoconf.nvim',
-          {
-            'j-hui/fidget.nvim',
-            tag = 'legacy',
-            opts = {
-              text = {
-                spinner = 'dots',
-              },
-              window = {
-                relative = 'editor',
-              },
-            },
-          },
+          { 'j-hui/fidget.nvim', opts = {} },
         },
         config = function()
           local capabilities = require('cmp_nvim_lsp').default_capabilities()
