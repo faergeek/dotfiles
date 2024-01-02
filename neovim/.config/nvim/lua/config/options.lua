@@ -15,6 +15,7 @@ vim.opt.fillchars = {
 vim.opt.fixeol = false
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldmethod = 'expr'
+vim.opt.foldlevelstart = 99
 vim.opt.guicursor =
   'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:blinkwait300-blinkon200-blinkoff150'
 vim.opt.ignorecase = true
