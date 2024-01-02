@@ -35,7 +35,16 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = { 'BufReadPre', 'BufNewFile' },
   },
-  { 'echasnovski/mini.pairs', event = 'InsertEnter', opts = {} },
+  {
+    'windwp/nvim-autopairs',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = 'InsertEnter',
+    opts = {
+      break_undo = false,
+      check_ts = true,
+      disable_filetype = { 'spectre_panel', 'TelescopePrompt' },
+    },
+  },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
   { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
   {
