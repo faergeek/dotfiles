@@ -38,7 +38,6 @@ return {
         'eslint',
         'html',
         'jsonls',
-        'marksman',
         'stylelint_lsp',
         'tsserver',
         'yamlls',
@@ -50,6 +49,7 @@ return {
         vim.list_extend(ensure_installed, {
           'clangd',
           'lua_ls',
+          'marksman',
           'rust_analyzer',
           'taplo',
         })
