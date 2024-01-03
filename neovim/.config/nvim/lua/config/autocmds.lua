@@ -29,6 +29,15 @@ end, {
   pattern = { 'help' },
 })
 
+autocmd(
+  'Disable signcolumn in man',
+  'FileType',
+  function() vim.wo.signcolumn = 'auto' end,
+  {
+    pattern = { 'man' },
+  }
+)
+
 autocmd('Close certain filetypes with just <q>', 'FileType', function(event)
   vim.bo[event.buf].buflisted = false
   vim.keymap.set('n', 'q', ':q<CR>', { buffer = event.buf, silent = true })
