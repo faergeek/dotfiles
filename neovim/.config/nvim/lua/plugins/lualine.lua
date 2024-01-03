@@ -5,7 +5,7 @@ return {
     event = 'VeryLazy',
     opts = function()
       local opts = {
-        extensions = { 'lazy', 'man', 'quickfix' },
+        extensions = { 'lazy', 'man', 'mason', 'quickfix' },
         options = {
           disabled_filetypes = {
             statusline = { 'alpha', 'buffer_manager' },
