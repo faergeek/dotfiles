@@ -29,6 +29,7 @@ if status is-interactive
     fish_config theme choose "Catppuccin Frappe"
 
     set -gx fish_cursor_external line blink
+    set -gx GPG_TTY (tty)
 
     # eza
     if type -q eza
