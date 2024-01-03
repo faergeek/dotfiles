@@ -30,6 +30,17 @@ keymap('LSP: Hover Documentation', 'n', 'K', vim.lsp.buf.hover)
 keymap('LSP: [R]ename [S]ymbol', 'n', '<leader>rs', vim.lsp.buf.rename)
 keymap('LSP: Code [A]ction', { 'n', 'x' }, '<leader>a', vim.lsp.buf.code_action)
 
+keymap('LSP: Document Symbols', 'n', 'gO', function()
+  local nr = vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
+
+  vim.lsp.buf.document_symbol {
+    on_list = function(options)
+      vim.fn.setloclist(nr, {}, ' ', options)
+      vim.cmd.windo { range = { nr }, args = { 'lopen' } }
+    end,
+  }
+end)
+
 keymap('[F]ind [R]eferences', 'n', '<leader>fr', vim.lsp.buf.references)
 
 keymap('[Q]uickfix: Next', 'n', ']q', vim.cmd.cnext, { silent = true })
