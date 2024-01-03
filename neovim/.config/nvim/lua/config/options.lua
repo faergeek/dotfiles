@@ -11,8 +11,11 @@ vim.opt.diffopt:append {
 vim.opt.expandtab = true
 vim.opt.fillchars = {
   diff = ' ',
+  foldclose = '',
+  foldopen = '',
 }
 vim.opt.fixeol = false
+vim.opt.foldcolumn = 'auto:9'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldlevelstart = 99
