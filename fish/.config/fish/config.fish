@@ -31,6 +31,10 @@ if status is-interactive
     set -gx fish_cursor_external line blink
     set -gx GPG_TTY (tty)
 
+    if not set -q SSH_AUTH_SOCK
+        set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
+    end
+
     # eza
     if type -q eza
         alias ls='eza --icons'
