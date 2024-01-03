@@ -28,6 +28,8 @@ if status is-interactive
     fish_hybrid_key_bindings
     fish_config theme choose "Catppuccin Frappe"
 
+    set -gx fish_cursor_external line blink
+
     # eza
     if type -q eza
         alias ls='eza --icons'

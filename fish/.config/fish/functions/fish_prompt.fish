@@ -66,4 +66,6 @@ function fish_prompt
 
     set_color normal
     printf ' '
+
+    fish_vi_cursor
 end
