@@ -6,7 +6,8 @@ local function autosave_on()
   if autosave_autocmd_id then return end
 
   autosave_autocmd_id =
-    autocmd('Save session before exit', 'VimLeavePre', 'SessionSave')
+    -- HACK: 'sleep 1m' is a work around https://github.com/neovim/neovim/issues/21856
+    autocmd('Save session before exit', 'VimLeavePre', 'SessionSave | sleep 1m')
 end
 
 local function autosave_off()
@@ -16,54 +17,75 @@ local function autosave_off()
   autosave_autocmd_id = nil
 end
 
-local function get_session_path_base()
-  local dirname = vim.fn.expand(vim.fn.stdpath 'state' .. '/sessions/')
-  vim.fn.mkdir(dirname, 'p')
-  return dirname .. vim.fn.getcwd():gsub('/', '%%')
+local function get_branch_name()
+  local git_branch =
+    vim.fn.system 'git rev-parse --abbrev-ref HEAD 2> /dev/null'
+
+  if vim.v.shell_error ~= 0 then return nil end
+
+  return (git_branch:gsub('\n+$', ''))
 end
 
-local function get_session_filename() return get_session_path_base() .. '.vim' end
-local function get_buffers_filename() return get_session_path_base() .. '.bm' end
+local function is_truthy(v) return v end
+
+local function get_session_filenames()
+  local components = {
+    vim.fn.getcwd(),
+    get_branch_name(),
+  }
+
+  local dirname = vim.fn.expand(vim.fn.stdpath 'state' .. '/sessions/')
+  vim.fn.mkdir(dirname, 'p')
+
+  local filename = dirname
+    .. table.concat(vim.tbl_filter(is_truthy, components), '@'):gsub('/', '_')
+
+  return {
+    buffers = filename .. '.bm',
+    session = filename .. '.vim',
+  }
+end
 
 local function save_session()
-  vim.cmd('mksession! ' .. vim.fn.fnameescape(get_session_filename()))
-  require('buffer_manager.ui').save_menu_to_file(get_buffers_filename())
+  local filenames = get_session_filenames()
+
+  vim.cmd('mksession! ' .. vim.fn.fnameescape(filenames.session))
+  require('buffer_manager.ui').save_menu_to_file(filenames.buffers)
   autosave_on()
 end
 
 local function restore_session()
-  local session_filename = get_session_filename()
+  local filenames = get_session_filenames()
 
-  if vim.fn.filereadable(session_filename) == 1 then
-    vim.cmd('silent source ' .. vim.fn.fnameescape(session_filename))
+  if vim.fn.filereadable(filenames.session) == 1 then
+    vim.cmd('silent source ' .. vim.fn.fnameescape(filenames.session))
     autosave_on()
   else
     require('alpha').start()
   end
 
-  local buffers_filename = get_buffers_filename()
-
-  if vim.fn.filereadable(buffers_filename) == 1 then
-    require('buffer_manager.ui').load_menu_from_file(buffers_filename)
+  if vim.fn.filereadable(filenames.buffers) == 1 then
+    require('buffer_manager.ui').load_menu_from_file(filenames.buffers)
   end
 end
 
 local function delete_session()
   autosave_off()
 
-  local session_filename = get_session_filename()
-  if vim.fn.filewritable(session_filename) == 1 then
-    vim.fn.delete(session_filename)
+  local filenames = get_session_filenames()
+
+  if vim.fn.filewritable(filenames.session) == 1 then
+    vim.fn.delete(filenames.session)
   end
 
-  local buffers_filename = get_buffers_filename()
-  if vim.fn.filewritable(buffers_filename) == 1 then
-    vim.fn.delete(buffers_filename)
+  if vim.fn.filewritable(filenames.buffers) == 1 then
+    vim.fn.delete(filenames.buffers)
   end
 end
 
-vim.api.nvim_create_user_command('SessionSave', save_session, {})
-vim.api.nvim_create_user_command('SessionDelete', delete_session, {})
+local cmd_opts = { bar = true }
+vim.api.nvim_create_user_command('SessionSave', save_session, cmd_opts)
+vim.api.nvim_create_user_command('SessionDelete', delete_session, cmd_opts)
 
 local function should_restore_session_or_show_dashboard()
   if vim.fn.argc() ~= 0 then return false end
