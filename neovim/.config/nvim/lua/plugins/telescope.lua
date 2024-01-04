@@ -66,27 +66,11 @@ return {
         ':Telescope git_status<CR>',
         silent = true,
       },
-      {
-        desc = '[G]it: [B]ranches',
-        '<leader>gb',
-        ':Telescope git_branches<CR>',
-        silent = true,
-      },
     },
     opts = function()
       return {
         defaults = require('telescope.themes').get_ivy(),
         pickers = {
-          git_branches = {
-            mappings = {
-              i = {
-                ['<CR>'] = require('telescope.actions').git_switch_branch,
-              },
-              n = {
-                ['<CR>'] = require('telescope.actions').git_switch_branch,
-              },
-            },
-          },
           find_files = {
             find_command = {
               'fd',
