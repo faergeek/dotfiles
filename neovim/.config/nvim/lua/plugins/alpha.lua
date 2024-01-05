@@ -140,7 +140,7 @@ return {
 
                     local function file_button(fn, sc)
                       local short_fn =
-                        vim.F.if_nil(vim.fn.fnamemodify(fn, ':.'), fn)
+                        vim.F.if_nil(vim.fn.fnamemodify(fn, ':p:~:.'), fn)
                       local fb_hl = {}
                       local ico, hl = require('nvim-web-devicons').get_icon(
                         fn,
