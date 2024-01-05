@@ -28,7 +28,12 @@ if status is-interactive
     fish_hybrid_key_bindings
     fish_config theme choose "Catppuccin Frappe"
 
-    set -gx fish_cursor_external line blink
+    set fish_cursor_default block blink
+    set fish_cursor_insert line blink
+    set fish_cursor_replace underscore blink
+    set fish_cursor_replace_one $fish_cursor_replace
+    set fish_cursor_external $fish_cursor_insert
+
     set -gx GPG_TTY (tty)
 
     if not set -q SSH_AUTH_SOCK
