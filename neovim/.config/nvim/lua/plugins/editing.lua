@@ -5,7 +5,6 @@ return {
     dependencies = {
       'windwp/nvim-ts-autotag',
       'RRethy/nvim-treesitter-endwise',
-      'nvim-treesitter/playground',
     },
     event = { 'BufReadPre', 'BufNewFile' },
     build = function()
