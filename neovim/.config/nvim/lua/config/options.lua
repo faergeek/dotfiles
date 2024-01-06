@@ -7,6 +7,7 @@ vim.opt.cursorlineopt = { 'number', 'screenline' }
 vim.opt.diffopt:append {
   'algorithm:patience',
   'indent-heuristic',
+  'linematch:60',
 }
 vim.opt.expandtab = true
 vim.opt.fillchars = {
