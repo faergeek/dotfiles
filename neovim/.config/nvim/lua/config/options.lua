@@ -11,7 +11,7 @@ vim.opt.diffopt:append {
 }
 vim.opt.expandtab = true
 vim.opt.fillchars = {
-  diff = ' ',
+  diff = '╱',
 }
 vim.opt.fixeol = false
 vim.opt.guicursor =
