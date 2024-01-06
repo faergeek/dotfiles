@@ -5,7 +5,6 @@ return {
     dependencies = {
       'windwp/nvim-ts-autotag',
       'RRethy/nvim-treesitter-endwise',
-      'andymass/vim-matchup',
       'nvim-treesitter/playground',
     },
     event = { 'BufReadPre', 'BufNewFile' },
@@ -24,10 +23,6 @@ return {
       ensure_installed = { 'markdown_inline' },
       highlight = { enable = true },
       indent = { enable = true },
-      matchup = {
-        enable = true,
-        include_match_words = false,
-      },
     },
   },
   {

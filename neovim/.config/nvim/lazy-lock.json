@@ -46,7 +46,6 @@
   "vim-browserslist": { "branch": "main", "commit": "c5d73ce0b1503ca6ad3f6dde58a3a49a9d6aa7e3" },
   "vim-kitty": { "branch": "main", "commit": "891475671feebc4bf0f29f0a0987067913a81686" },
   "vim-lastplace": { "branch": "master", "commit": "aaaf3dc8bbe496c3242a4b4635154ccc9414d357" },
-  "vim-matchup": { "branch": "master", "commit": "2550178c43464134ce65328da458905f70dbe041" },
   "vim-startuptime": { "branch": "master", "commit": "454b3de856b7bd298700de33d79774ca9b9e3875" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
