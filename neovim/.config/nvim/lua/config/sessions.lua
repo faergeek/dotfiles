@@ -6,8 +6,7 @@ local function autosave_on()
   if autosave_autocmd_id then return end
 
   autosave_autocmd_id =
-    -- HACK: 'sleep 1m' is a work around https://github.com/neovim/neovim/issues/21856
-    autocmd('Save session before exit', 'VimLeavePre', 'SessionSave | sleep 1m')
+    autocmd('Save session before exit', 'VimLeavePre', 'SessionSave')
 end
 
 local function autosave_off()
@@ -29,20 +28,23 @@ end
 local function is_truthy(v) return v end
 
 local function get_session_filenames()
-  local components = {
-    vim.fn.getcwd(),
-    get_branch_name(),
-  }
+  local session_filename = vim.v.this_session
 
-  local dirname = vim.fn.expand(vim.fn.stdpath 'state' .. '/sessions/')
-  vim.fn.mkdir(dirname, 'p')
+  if session_filename == '' then
+    local components = { vim.fn.getcwd(), get_branch_name() }
 
-  local filename = dirname
-    .. table.concat(vim.tbl_filter(is_truthy, components), '@'):gsub('/', '_')
+    local filename =
+      table.concat(vim.tbl_filter(is_truthy, components), '@'):gsub('/', '_')
+
+    local dirname = vim.fn.expand(vim.fn.stdpath 'state' .. '/sessions/')
+    vim.fn.mkdir(dirname, 'p')
+
+    session_filename = dirname .. filename .. '.vim'
+  end
 
   return {
-    buffers = filename .. '.bm',
-    session = filename .. '.vim',
+    buffers = (session_filename:gsub('.vim$', '.bm')),
+    session = session_filename,
   }
 end
 
@@ -83,9 +85,8 @@ local function delete_session()
   end
 end
 
-local cmd_opts = { bar = true }
-vim.api.nvim_create_user_command('SessionSave', save_session, cmd_opts)
-vim.api.nvim_create_user_command('SessionDelete', delete_session, cmd_opts)
+vim.api.nvim_create_user_command('SessionSave', save_session, {})
+vim.api.nvim_create_user_command('SessionDelete', delete_session, {})
 
 local function should_restore_session_or_show_dashboard()
   if vim.fn.argc() ~= 0 then return false end
