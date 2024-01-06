@@ -93,15 +93,14 @@ return {
     end,
   },
   {
-    'echasnovski/mini.jump2d',
+    'rlane/pounce.nvim',
     keys = {
       {
         desc = 'Jump',
         '<leader><leader>',
-        function() require('mini.jump2d').start() end,
+        '<Cmd>Pounce<CR>',
       },
     },
-    opts = {},
   },
   {
     'NvChad/nvim-colorizer.lua',
