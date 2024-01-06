@@ -12,9 +12,13 @@ autocmd(
   function() vim.opt_local.signcolumn = 'auto' end
 )
 
-autocmd('Close terminal if job exited without an error', 'TermClose', function()
-  if vim.v.event.status == 0 then vim.api.nvim_buf_delete(0, {}) end
-end)
+autocmd(
+  'Close terminal if job exited without an error',
+  'TermClose',
+  function(event)
+    if vim.v.event.status == 0 then vim.api.nvim_buf_delete(event.buf, {}) end
+  end
+)
 
 autocmd(
   'Resize windows when terminal resizes',
