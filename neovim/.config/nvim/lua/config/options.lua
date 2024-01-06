@@ -44,7 +44,6 @@ vim.opt.scrolloff = 3
 vim.opt.sessionoptions = {
   'buffers',
   'curdir',
-  'folds',
   'help',
   'skiprtp',
   'tabpages',
