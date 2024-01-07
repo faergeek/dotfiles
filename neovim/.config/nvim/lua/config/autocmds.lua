@@ -75,13 +75,6 @@ end, {
   },
 })
 
-autocmd(
-  'Enable spell checking for certain filetypes',
-  'FileType',
-  function() vim.opt_local.spell = true end,
-  { pattern = { 'gitcommit', 'markdown' } }
-)
-
 local function supports_document_highlights(client)
   return client.server_capabilities.documentHighlightProvider
 end

@@ -58,6 +58,7 @@ vim.opt.showmode = false
 vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true
+vim.opt.spell = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.tabstop = 2
