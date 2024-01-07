@@ -4,7 +4,7 @@ return {
     version = '1.*',
     keys = {
       {
-        desc = 'LuaSnip: Choise forward',
+        desc = 'LuaSnip: Choice forward',
         mode = 'i',
         '<C-n>',
         function()
@@ -14,7 +14,7 @@ return {
         end,
       },
       {
-        desc = 'LuaSnip: Choise backward',
+        desc = 'LuaSnip: Choice backward',
         mode = 'i',
         '<C-p>',
         function()
