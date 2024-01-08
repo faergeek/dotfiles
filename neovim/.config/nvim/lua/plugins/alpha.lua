@@ -55,7 +55,7 @@ return {
       local startup_time = {
         type = 'text',
         val = '💤 lazy.nvim is loading...',
-        opts = { hl = 'AlphaHeaderLabel' },
+        opts = { hl = 'AlphaHeaderLabel', shrink_margin = false },
       }
 
       require('utils').autocmd(
