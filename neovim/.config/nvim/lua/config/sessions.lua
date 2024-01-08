@@ -36,14 +36,21 @@ local function get_session_filenames()
     local filename =
       table.concat(vim.tbl_filter(is_truthy, components), '@'):gsub('/', '_')
 
-    local dirname = vim.fn.expand(vim.fn.stdpath 'state' .. '/sessions/')
+    local dirname = vim.fn.stdpath 'state' .. '/sessions/'
     vim.fn.mkdir(dirname, 'p')
 
     session_filename = dirname .. filename .. '.vim'
   end
 
+  local buffers_dirname = vim.fn.stdpath 'state' .. '/buffers/'
+  vim.fn.mkdir(buffers_dirname, 'p')
+
+  local buffers_filename = buffers_dirname
+    .. vim.fn.fnamemodify(session_filename, ':t:r')
+    .. '.buffers'
+
   return {
-    buffers = (session_filename:gsub('.vim$', '.bm')),
+    buffers = buffers_filename,
     session = session_filename,
   }
 end
