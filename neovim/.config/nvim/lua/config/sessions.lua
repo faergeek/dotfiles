@@ -95,19 +95,18 @@ end
 vim.api.nvim_create_user_command('SessionSave', save_session, {})
 vim.api.nvim_create_user_command('SessionDelete', delete_session, {})
 
-local function should_restore_session_or_show_dashboard()
+local function should_restore_session()
   if vim.fn.argc() ~= 0 then return false end
 
-  local lines = vim.api.nvim_buf_get_lines(0, 0, 2, false)
-  if #lines > 1 or (#lines == 1 and lines[1]:len() > 0) then return false end
+  if vim.api.nvim_buf_line_count(0) > 1 or #vim.fn.getline(1) ~= 0 then
+    return false
+  end
 
   for _, buf_id in pairs(vim.api.nvim_list_bufs()) do
     if vim.api.nvim_buf_is_loaded(buf_id) then return false end
   end
 
   for _, arg in pairs(vim.v.argv) do
-    if arg == '--startuptime' then return true end
-
     if
       arg == '-b'
       or arg == '-c'
@@ -121,7 +120,7 @@ local function should_restore_session_or_show_dashboard()
   return true
 end
 
-if should_restore_session_or_show_dashboard() then
+if should_restore_session() then
   autocmd('Restore session on startup', 'VimEnter', restore_session, {
     once = true,
     nested = true,
