@@ -52,7 +52,6 @@ return {
           'marksman',
           'rust_analyzer',
           'taplo',
-          'typos_lsp',
         })
       end
 
