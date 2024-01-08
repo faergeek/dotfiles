@@ -34,19 +34,15 @@ autocmd(
 )
 
 autocmd('Disable concealing in help', 'FileType', function()
-  vim.wo.conceallevel = 0
-  vim.wo.concealcursor = ''
-end, {
-  pattern = { 'help' },
-})
+  vim.opt_local.conceallevel = 0
+  vim.opt_local.concealcursor = ''
+end, { pattern = { 'help' } })
 
 autocmd(
   'Disable signcolumn in man',
   'FileType',
-  function() vim.wo.signcolumn = 'auto' end,
-  {
-    pattern = { 'man' },
-  }
+  function() vim.opt_local.signcolumn = 'auto' end,
+  { pattern = { 'man' } }
 )
 
 autocmd('Close certain filetypes with just <q>', 'FileType', function(event)
