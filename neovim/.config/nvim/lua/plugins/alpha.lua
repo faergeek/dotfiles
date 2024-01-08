@@ -5,7 +5,6 @@ return {
       'nvim-tree/nvim-web-devicons',
       'nvim-lua/plenary.nvim',
     },
-    lazy = true,
     config = function()
       local alpha = require 'alpha'
 

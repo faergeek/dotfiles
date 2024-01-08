@@ -62,8 +62,6 @@ local function restore_session()
   if vim.fn.filereadable(filenames.session) == 1 then
     vim.cmd('silent source ' .. vim.fn.fnameescape(filenames.session))
     autosave_on()
-  else
-    require('alpha').start()
   end
 
   if vim.fn.filereadable(filenames.buffers) == 1 then
