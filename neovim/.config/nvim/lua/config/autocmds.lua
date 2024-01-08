@@ -26,17 +26,6 @@ autocmd(
   function() vim.cmd 'tabdo wincmd =' end
 )
 
-autocmd('Disable relativenumber on cmdline enter', 'CmdlineEnter', function()
-  if vim.opt.number:get() then
-    vim.opt.relativenumber = false
-    vim.cmd.redraw()
-  end
-end)
-
-autocmd('Enable relativenumber on cmdline leave', 'CmdlineLeave', function()
-  if vim.opt.number:get() then vim.opt.relativenumber = true end
-end)
-
 autocmd(
   'Set filetype for .env files',
   { 'BufNewFile', 'BufRead' },
