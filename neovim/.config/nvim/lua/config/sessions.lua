@@ -83,6 +83,8 @@ local function delete_session()
   if vim.fn.filewritable(filenames.buffers) == 1 then
     vim.fn.delete(filenames.buffers)
   end
+
+  vim.v.this_session = ''
 end
 
 vim.api.nvim_create_user_command('SessionSave', save_session, {})
