@@ -2,6 +2,14 @@ return {
   {
     'folke/which-key.nvim',
     event = 'VeryLazy',
+    keys = {
+      {
+        -- See: https://github.com/folke/which-key.nvim/issues/476
+        desc = 'Workaround for which-key not showing up on <localleader>',
+        '<localleader>',
+        function() require('which-key').show(vim.g.maplocalleader) end,
+      },
+    },
     opts = {},
     init = function() vim.opt.timeoutlen = 300 end,
   },
