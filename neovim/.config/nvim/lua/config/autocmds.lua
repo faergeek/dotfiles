@@ -6,11 +6,10 @@ autocmd(
   function() vim.highlight.on_yank {} end
 )
 
-autocmd(
-  'Override options for terminal buffers',
-  'TermOpen',
-  function() vim.opt_local.signcolumn = 'auto' end
-)
+autocmd('Override options for terminal buffers', 'TermOpen', function()
+  vim.opt_local.spell = false
+  vim.opt_local.signcolumn = 'auto'
+end)
 
 autocmd(
   'Close terminal if job exited without an error',
