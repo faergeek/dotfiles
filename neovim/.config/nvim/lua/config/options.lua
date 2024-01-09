@@ -77,6 +77,9 @@ vim.diagnostic.config {
 }
 
 vim.filetype.add {
+  filename = {
+    ['todo.txt'] = 'todotxt',
+  },
   pattern = {
     ['.env%..+'] = 'sh',
   },
