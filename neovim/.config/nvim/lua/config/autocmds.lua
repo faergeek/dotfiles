@@ -25,13 +25,6 @@ autocmd(
   function() vim.cmd 'tabdo wincmd =' end
 )
 
-autocmd(
-  'Set filetype for .env files',
-  { 'BufNewFile', 'BufRead' },
-  function() vim.opt.filetype = 'sh' end,
-  { pattern = { '.env', '.env.*' } }
-)
-
 autocmd('Disable concealing in help', 'FileType', function()
   vim.opt_local.conceallevel = 0
   vim.opt_local.concealcursor = ''

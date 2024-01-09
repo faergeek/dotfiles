@@ -75,3 +75,9 @@ vim.diagnostic.config {
   severity_sort = true,
   signs = false,
 }
+
+vim.filetype.add {
+  pattern = {
+    ['.env%..+'] = 'sh',
+  },
+}
