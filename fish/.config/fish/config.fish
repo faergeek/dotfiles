@@ -1,7 +1,7 @@
 # set neovim as an editor and a man pager
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx MANPAGER nvim -c 'Man!' -o -
+set -gx MANPAGER nvim +Man!
 
 # asdf
 source ~/.asdf/asdf.fish
