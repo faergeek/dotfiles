@@ -61,8 +61,10 @@ keymap('Sort tasks', 'n', '<localleader>s', ':%sort<CR>', km_opts)
 keymap('Sort tasks', 'x', '<localleader>s', ':sort<CR>', km_opts)
 
 keymap('Remove completed tasks', 'n', '<localleader>d', function()
-  for lnum, line in ipairs(vim.api.nvim_buf_get_lines(0, 0, -1, true)) do
-    if line:match '^x ' then
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, true)
+
+  for lnum = #lines, 1, -1 do
+    if lines[lnum]:match '^x ' then
       vim.api.nvim_buf_set_lines(0, lnum - 1, lnum, true, {})
     end
   end
