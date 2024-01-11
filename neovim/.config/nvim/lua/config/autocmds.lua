@@ -30,10 +30,19 @@ autocmd('Disable concealing in help', 'FileType', function()
   vim.opt_local.concealcursor = ''
 end, { pattern = { 'help' } })
 
-autocmd('Set options specific to Man', 'FileType', function()
-  vim.opt_local.spell = false
-  vim.opt_local.signcolumn = 'auto'
-end, { pattern = { 'man' } })
+autocmd(
+  'Set options specific to Man',
+  'FileType',
+  function() vim.opt_local.signcolumn = 'auto' end,
+  { pattern = { 'man' } }
+)
+
+autocmd(
+  'Disable spell checking in certain file types',
+  'FileType',
+  function() vim.opt_local.spell = false end,
+  { pattern = { 'man', 'qf' } }
+)
 
 autocmd('Close certain filetypes with just <q>', 'FileType', function(event)
   vim.bo[event.buf].buflisted = false
