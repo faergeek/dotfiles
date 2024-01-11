@@ -1,6 +1,8 @@
+ESLint
 auth
 bitwarden
 checkbox
+config
 const
 deps
 desc
@@ -9,6 +11,7 @@ fn
 neovim
 param
 params
+quickfix
 repo
 syncthing
 todo
