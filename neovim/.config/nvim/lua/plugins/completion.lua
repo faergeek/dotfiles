@@ -92,12 +92,6 @@ return {
 
               return vim_item
             end,
-            menu = {
-              buffer = '[buf]',
-              nvim_lsp = '[lsp]',
-              path = '[path]',
-              luasnip = '[snip]',
-            },
             mode = 'symbol',
           },
         },
