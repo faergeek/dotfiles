@@ -83,14 +83,11 @@ return {
           format = require('lspkind').cmp_format {
             before = function(entry, vim_item)
               if vim.tbl_contains({ 'path' }, entry.source.name) then
-                local icon, hl_group = require('nvim-web-devicons').get_icon(
+                local icon = require('nvim-web-devicons').get_icon(
                   entry:get_completion_item().label
                 )
 
-                if icon then
-                  vim_item.kind = icon
-                  vim_item.kind_hl_group = hl_group
-                end
+                if icon then vim_item.abbr = icon .. ' ' .. vim_item.abbr end
               end
 
               return vim_item
