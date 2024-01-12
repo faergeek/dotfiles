@@ -41,7 +41,7 @@ autocmd(
   'Disable spell checking in certain file types',
   'FileType',
   function() vim.opt_local.spell = false end,
-  { pattern = { 'man', 'qf' } }
+  { pattern = { 'gitrebase', 'man', 'qf' } }
 )
 
 autocmd('Close certain filetypes with just <q>', 'FileType', function(event)
