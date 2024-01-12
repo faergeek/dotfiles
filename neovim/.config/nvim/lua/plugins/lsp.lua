@@ -99,7 +99,6 @@ return {
               capabilities = capabilities,
               settings = {
                 Lua = {
-                  completion = { callSnippet = 'Replace' },
                   format = { enable = false },
                   workspace = { checkThirdParty = false },
                 },
