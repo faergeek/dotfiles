@@ -77,13 +77,13 @@ return {
           expand = function(args) require('luasnip').lsp_expand(args.body) end,
         },
         sources = cmp.config.sources({
+          { name = 'luasnip' },
           {
             name = 'path',
             options = { label_trailing_slash = true, trailing_slash = true },
           },
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
-          { name = 'luasnip' },
         }, {
           { name = 'buffer' },
         }),
