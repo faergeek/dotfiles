@@ -5,36 +5,6 @@ return {
     build = 'make install_jsregexp',
     keys = {
       {
-        desc = 'LuaSnip: Choice forward',
-        mode = 'i',
-        '<C-n>',
-        function()
-          if require('luasnip').choice_active() then
-            require('luasnip').change_choice(1)
-          end
-        end,
-      },
-      {
-        desc = 'LuaSnip: Choice backward',
-        mode = 'i',
-        '<C-p>',
-        function()
-          if require('luasnip').choice_active() then
-            require('luasnip').change_choice(-1)
-          end
-        end,
-      },
-      {
-        desc = 'LuaSnip: Expand snippet',
-        mode = { 'i', 's' },
-        '<C-y>',
-        function()
-          if require('luasnip').expandable() then
-            require('luasnip').expand {}
-          end
-        end,
-      },
-      {
         desc = 'LuaSnip: Jump forward',
         mode = { 'i', 's' },
         '<C-f>',
