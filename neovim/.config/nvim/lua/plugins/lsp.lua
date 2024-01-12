@@ -118,11 +118,6 @@ return {
           tsserver = function()
             lspconfig.tsserver.setup {
               capabilities = capabilities,
-              init_options = {
-                preferences = {
-                  jsxAttributeCompletionStyle = 'braces',
-                },
-              },
               handlers = {
                 ['_typescript.rename'] = function(_, result, ctx)
                   if not result then return {} end
