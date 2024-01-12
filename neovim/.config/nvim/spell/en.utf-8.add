@@ -1,5 +1,7 @@
 ESLint
 auth
+autocommand
+autocommands
 bitwarden
 checkbox
 config
@@ -8,6 +10,9 @@ deps
 desc
 eslint
 fn
+keymap
+keymaps
+lua
 neovim
 param
 params
