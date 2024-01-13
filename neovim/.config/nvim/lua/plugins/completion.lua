@@ -3,28 +3,52 @@ return {
     'L3MON4D3/LuaSnip',
     version = '2.*',
     build = 'make install_jsregexp',
-    keys = {
-      {
-        desc = 'LuaSnip: Jump forward',
-        mode = { 'i', 's' },
-        '<C-f>',
-        function()
-          if require('luasnip').jumpable(1) then require('luasnip').jump(1) end
-        end,
-      },
-      {
-        desc = 'LuaSnip: Jump backward',
-        mode = { 'i', 's' },
-        '<C-b>',
-        function()
-          if require('luasnip').jumpable(-1) then
-            require('luasnip').jump(-1)
-          end
-        end,
-      },
+    keys = function()
+      local ls = require 'luasnip'
+
+      return {
+        {
+          desc = 'LuaSnip: Jump forward',
+          mode = { 'i', 's' },
+          '<C-f>',
+          function()
+            if ls.jumpable(1) then ls.jump(1) end
+          end,
+        },
+        {
+          desc = 'LuaSnip: Jump backward',
+          mode = { 'i', 's' },
+          '<C-b>',
+          function()
+            if ls.jumpable(-1) then ls.jump(-1) end
+          end,
+        },
+      }
+    end,
+    opts = {
+      update_events = { 'TextChanged', 'TextChangedI' },
     },
-    opts = {},
-    config = function(_, opts) require('luasnip').setup(opts) end,
+    config = function(_, opts)
+      local ls = require 'luasnip'
+
+      ls.setup(opts)
+
+      ls.filetype_extend('javascriptreact', {
+        'javascript',
+      })
+
+      ls.filetype_extend('typescript', {
+        'javascript',
+      })
+
+      ls.filetype_extend('typescriptreact', {
+        'javascript',
+        'javascriptreact',
+        'typescript',
+      })
+
+      require('luasnip.loaders.from_lua').lazy_load()
+    end,
   },
   {
     'hrsh7th/nvim-cmp',
