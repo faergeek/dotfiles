@@ -44,20 +44,26 @@ autocmd(
   { pattern = { 'gitrebase', 'man', 'qf' } }
 )
 
-autocmd('Close certain filetypes with just <q>', 'FileType', function(event)
-  vim.bo[event.buf].buflisted = false
-  vim.keymap.set('n', 'q', ':q<CR>', { buffer = event.buf, silent = true })
-end, {
-  pattern = {
-    'checkhealth',
-    'help',
-    'lspinfo',
-    'man',
-    'qf',
-    'query',
-    'startuptime',
-  },
-})
+autocmd(
+  'Mark certain filetype buffers as unlisted',
+  'FileType',
+  function(event) vim.bo[event.buf].buflisted = false end,
+  { pattern = { 'checkhealth' } }
+)
+
+autocmd(
+  'Close certain filetype buffers with just <q>',
+  'FileType',
+  function(event) vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = event.buf }) end,
+  {
+    pattern = {
+      'checkhealth',
+      'help',
+      'qf',
+      'startuptime',
+    },
+  }
+)
 
 local function supports_document_highlights(client)
   return client.server_capabilities.documentHighlightProvider
