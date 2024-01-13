@@ -1,4 +1,5 @@
 local autocmd = require('utils').autocmd
+local buf_is_empty = require('utils').buf_is_empty
 
 local autosave_autocmd_id = nil
 
@@ -100,9 +101,7 @@ vim.api.nvim_create_user_command('SessionDelete', delete_session, {})
 local function should_restore_session()
   if vim.fn.argc() ~= 0 then return false end
 
-  if vim.api.nvim_buf_line_count(0) > 1 or #vim.fn.getline(1) ~= 0 then
-    return false
-  end
+  if not buf_is_empty(0) then return false end
 
   for _, buf_id in pairs(vim.api.nvim_list_bufs()) do
     if vim.api.nvim_buf_is_loaded(buf_id) then return false end

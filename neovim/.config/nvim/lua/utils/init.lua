@@ -33,6 +33,15 @@ function M.keymap(desc, mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
+function M.buf_is_empty(bufnr)
+  vim.validate { bufnr = { bufnr, 'number', true } }
+
+  if not bufnr or bufnr == 0 then bufnr = vim.api.nvim_get_current_buf() end
+
+  return vim.api.nvim_buf_line_count(bufnr) < 2
+    and #vim.fn.getbufoneline(bufnr, 1) == 0
+end
+
 function M.quickfixtextfunc(info)
   local items = info.quickfix == 1
       and vim.fn.getqflist({
