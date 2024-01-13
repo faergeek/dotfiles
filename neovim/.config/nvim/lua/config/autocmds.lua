@@ -60,6 +60,7 @@ autocmd(
       'checkhealth',
       'help',
       'qf',
+      'query',
       'startuptime',
     },
   }
