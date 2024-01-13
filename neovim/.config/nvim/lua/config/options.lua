@@ -67,7 +67,6 @@ vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.updatetime = 200
-vim.opt.virtualedit = { 'block' }
 vim.opt.wildoptions:append { 'fuzzy' }
 
 vim.g.zig_fmt_autosave = false
