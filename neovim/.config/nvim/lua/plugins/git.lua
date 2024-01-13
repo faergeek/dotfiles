@@ -6,70 +6,56 @@ return {
       {
         desc = '[C]hange: Next',
         mode = { 'n', 'x' },
-        ']c',
-        function()
-          if vim.wo.diff then return ']c' end
-          vim.schedule(function() require('gitsigns').next_hunk() end)
-          return '<Ignore>'
-        end,
         expr = true,
+        silent = true,
+        ']c',
+        function() return vim.wo.diff and ']c' or '<Cmd>Gitsigns next_hunk<CR>' end,
       },
       {
         desc = '[C]hange: Prev',
         mode = { 'n', 'x' },
-        '[c',
-        function()
-          if vim.wo.diff then return '[c' end
-          vim.schedule(function() require('gitsigns').prev_hunk() end)
-          return '<Ignore>'
-        end,
         expr = true,
+        silent = true,
+        '[c',
+        function() return vim.wo.diff and '[c' or '<Cmd>Gitsigns prev_hunk<CR>' end,
       },
       {
         desc = '[H]unk [S]tage',
+        mode = { 'n', 'x' },
+        silent = true,
         '<leader>hs',
-        function() require('gitsigns').stage_hunk() end,
-      },
-      {
-        desc = '[H]unk [S]tage',
-        mode = 'x',
-        '<leader>hs',
-        function()
-          require('gitsigns').stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end,
+        ':Gitsigns stage_hunk<CR>',
       },
       {
         desc = '[H]unk [R]eset',
+        mode = { 'n', 'x' },
+        silent = true,
         '<leader>hr',
-        function() require('gitsigns').reset_hunk() end,
-      },
-      {
-        desc = '[H]unk [R]eset',
-        mode = 'x',
-        '<leader>hr',
-        function()
-          require('gitsigns').reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end,
+        ':Gitsigns reset_hunk<CR>',
       },
       {
         desc = '[H]unk [U]ndo',
+        silent = true,
         '<leader>hu',
-        function() require('gitsigns').undo_stage_hunk() end,
+        '<Cmd>Gitsigns undo_stage_hunk<CR>',
       },
       {
         desc = '[H]unks [S]tage',
+        silent = true,
         '<leader>hS',
-        function() require('gitsigns').stage_buffer() end,
+        '<Cmd>Gitsigns stage_buffer<CR>',
       },
       {
         desc = '[H]unks [R]eset',
+        silent = true,
         '<leader>hR',
-        function() require('gitsigns').reset_buffer() end,
+        '<Cmd>Gitsigns reset_buffer<CR>',
       },
       {
         desc = '[H]unk [P]review',
+        silent = true,
         '<leader>hp',
-        function() require('gitsigns').preview_hunk() end,
+        '<Cmd>Gitsigns preview_hunk<CR>',
       },
     },
     opts = {},
