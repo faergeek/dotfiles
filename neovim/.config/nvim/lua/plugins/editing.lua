@@ -108,6 +108,11 @@ return {
         '<leader><leader>',
         '<Cmd>Pounce<CR>',
       },
+      {
+        desc = 'Repeat Jump',
+        '<leader><leader><leader>',
+        '<Cmd>PounceRepeat<CR>',
+      },
     },
   },
   {
