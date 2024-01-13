@@ -48,3 +48,9 @@ keymap('[Q]uickfix: Prev', 'n', '[q', vim.cmd.cprevious, { silent = true })
 
 keymap('[Q]uickfix: Newer', 'n', ']Q', vim.cmd.cnewer, { silent = true })
 keymap('[Q]uickfix: Older', 'n', '[Q', vim.cmd.colder, { silent = true })
+
+keymap('Loclist ([W]in): Next', 'n', ']w', vim.cmd.lnext, { silent = true })
+keymap('Loclist ([W]in): Prev', 'n', '[w', vim.cmd.lprevious, { silent = true })
+
+keymap('Loclist ([W]in): Newer', 'n', ']W', vim.cmd.lnewer, { silent = true })
+keymap('Loclist ([W]in): Older', 'n', '[W', vim.cmd.lolder, { silent = true })
