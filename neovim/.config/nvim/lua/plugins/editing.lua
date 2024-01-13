@@ -50,7 +50,7 @@ return {
       {
         desc = '[J]oin: Toggle',
         '<leader>j',
-        ':TSJToggle<CR>',
+        '<Cmd>TSJToggle<CR>',
       },
     },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },

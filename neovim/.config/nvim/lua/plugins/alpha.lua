@@ -100,7 +100,7 @@ return {
           { type = 'padding', val = 1 },
           {
             type = 'group',
-            val = { button('e', 'New file', ':enew<CR>') },
+            val = { button('e', 'New file', '<Cmd>enew<CR>') },
           },
           {
             type = 'group',
@@ -153,7 +153,7 @@ return {
                       local file_button_el = button(
                         sc,
                         ico_txt .. short_fn,
-                        ':edit ' .. vim.fn.fnameescape(fn) .. '' .. '<CR>'
+                        '<Cmd>edit ' .. vim.fn.fnameescape(fn) .. '' .. '<CR>'
                       )
 
                       local fn_start = short_fn:match '.*[/\\]'
@@ -189,7 +189,7 @@ return {
           { type = 'padding', val = 1 },
           {
             type = 'group',
-            val = { button('q', 'Quit', ':q<CR>') },
+            val = { button('q', 'Quit', '<Cmd>q<CR>') },
           },
         },
       }

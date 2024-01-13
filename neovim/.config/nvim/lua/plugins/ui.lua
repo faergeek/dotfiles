@@ -17,7 +17,7 @@ return {
     'stevearc/oil.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     keys = {
-      { desc = 'Oil', '-', ':Oil<CR>', silent = true },
+      { desc = 'Oil', '-', '<Cmd>Oil<CR>', silent = true },
     },
     opts = {
       default_file_explorer = false,
