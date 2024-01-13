@@ -2,18 +2,17 @@ return {
   {
     'folke/neoconf.nvim',
     cmd = 'Neoconf',
-    dependencies = {
+    opts = {},
+  },
+  {
+    'faergeek/neomakery.nvim',
+    dependencies = { 'folke/neoconf.nvim' },
+    keys = {
       {
-        'faergeek/neomakery.nvim',
-        keys = {
-          {
-            desc = 'Neomakery: [M]ake',
-            '<leader>m',
-            function() require('neomakery').show_menu() end,
-          },
-        },
+        desc = 'Neomakery: [M]ake',
+        '<leader>m',
+        function() require('neomakery').show_menu() end,
       },
     },
-    opts = {},
   },
 }
