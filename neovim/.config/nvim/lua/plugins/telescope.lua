@@ -60,12 +60,6 @@ return {
         ':Telescope keymaps<CR>',
         silent = true,
       },
-      {
-        desc = '[G]it: [S]tatus',
-        '<leader>gs',
-        ':Telescope git_status<CR>',
-        silent = true,
-      },
     },
     opts = function()
       return {

@@ -60,4 +60,47 @@ return {
     },
     opts = {},
   },
+  {
+    'sindrets/diffview.nvim',
+    cmd = {
+      'DiffviewLog',
+      'DiffviewOpen',
+      'DiffviewClose',
+      'DiffviewRefresh',
+      'DiffviewFocusFiles',
+      'DiffviewFileHistory',
+      'DiffviewToggleFiles',
+    },
+    keys = {
+      {
+        desc = '[G]it: [S]tatus',
+        '<leader>gs',
+        '<Cmd>DiffviewOpen<CR>',
+      },
+      {
+        desc = '[G]it: [F]ile [H]istory',
+        '<leader>gfh',
+        '<Cmd>DiffviewFileHistory %<CR>',
+      },
+      {
+        desc = '[G]it: [H]istory',
+        '<leader>gh',
+        '<Cmd>DiffviewFileHistory<CR>',
+      },
+      {
+        desc = 'Close Diffview using q',
+        ft = { 'DiffviewFiles', 'DiffviewFileHistory' },
+        'q',
+        '<Cmd>DiffviewClose<CR>',
+      },
+    },
+    opts = {
+      file_panel = {
+        win_config = {
+          position = 'bottom',
+          height = 16,
+        },
+      },
+    },
+  },
 }
