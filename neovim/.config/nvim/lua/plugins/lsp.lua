@@ -192,7 +192,23 @@ return {
               capabilities = capabilities,
               settings = {
                 redhat = { telemetry = { enabled = false } },
-                yaml = { keyOrdering = false },
+                yaml = {
+                  keyOrdering = false,
+                  schemaStore = {
+                    enable = false,
+                    url = '',
+                  },
+                  schemas = require('schemastore').yaml.schemas {
+                    extra = {
+                      {
+                        description = 'sqls schema',
+                        fileMatch = 'sqls/config.yml',
+                        name = 'sqls',
+                        url = 'https://raw.githubusercontent.com/sqls-server/sqls/master/schema.json',
+                      },
+                    },
+                  },
+                },
               },
             }
           end,
