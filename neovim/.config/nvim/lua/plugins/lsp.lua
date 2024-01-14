@@ -117,6 +117,14 @@ return {
                 local km_opts = { buffer = bufnr }
 
                 keymap(
+                  'Switch [C]onnection',
+                  'n',
+                  '<localleader>c',
+                  '<Cmd>SqlsSwitchConnection<CR>',
+                  km_opts
+                )
+
+                keymap(
                   'Execute query in paragraph',
                   'n',
                   '<localleader>e',
