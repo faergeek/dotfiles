@@ -47,6 +47,7 @@ autocmd(
       'kitty',
       'man',
       'qf',
+      'sqls_output',
     },
   }
 )
@@ -68,6 +69,7 @@ autocmd(
       'help',
       'qf',
       'query',
+      'sqls_output',
       'startuptime',
     },
   }

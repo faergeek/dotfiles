@@ -41,6 +41,7 @@
   "pounce.nvim": { "branch": "master", "commit": "0c044cad69571d57d8f64a41cca95332859b6abc" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "739a034046465d2b100151037401c24c42cb09cf" },
   "schemastore.nvim": { "branch": "main", "commit": "d9de9914da37b54a53edec6923e1893c2262e236" },
+  "sqls.nvim": { "branch": "main", "commit": "4b1274b5b44c48ce784aac23747192f5d9d26207" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "treesj": { "branch": "main", "commit": "1d6e89f4790aa04eaae38fa9460a3ee191961c96" },

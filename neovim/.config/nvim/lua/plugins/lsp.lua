@@ -26,6 +26,7 @@ return {
       },
       'hrsh7th/cmp-nvim-lsp',
       'b0o/schemastore.nvim',
+      'nanotee/sqls.nvim',
     },
     opts = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -38,6 +39,7 @@ return {
         'eslint',
         'html',
         'jsonls',
+        'sqls',
         'stylelint_lsp',
         'tsserver',
         'yamlls',
@@ -103,6 +105,41 @@ return {
                   workspace = { checkThirdParty = false },
                 },
               },
+            }
+          end,
+          sqls = function()
+            lspconfig.sqls.setup {
+              capabilities = capabilities,
+              on_attach = function(client, bufnr)
+                require('sqls').on_attach(client, bufnr)
+
+                local keymap = require('utils').keymap
+                local km_opts = { buffer = bufnr }
+
+                keymap(
+                  'Execute query in paragraph',
+                  'n',
+                  '<localleader>e',
+                  "<Cmd>'{,'}SqlsExecuteQuery<CR>",
+                  km_opts
+                )
+
+                keymap(
+                  'Execute query in paragraph',
+                  'x',
+                  '<localleader>e',
+                  ':SqlsExecuteQuery<CR>',
+                  km_opts
+                )
+
+                keymap(
+                  'Execute query in buffer',
+                  'n',
+                  '<localleader>f',
+                  '<Cmd>SqlsExecuteQuery<CR>',
+                  km_opts
+                )
+              end,
             }
           end,
           stylelint_lsp = function()
