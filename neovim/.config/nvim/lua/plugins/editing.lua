@@ -125,4 +125,16 @@ return {
     },
   },
   { 'HiPhish/rainbow-delimiters.nvim', event = 'VeryLazy' },
+  {
+    -- TODO: remove once nvim 0.10.0 is released
+    -- https://github.com/neovim/neovim/issues/23231
+    'chrishrb/gx.nvim',
+    event = 'VeryLazy',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {
+      handler_options = {
+        search_engine = 'duckduckgo',
+      },
+    },
+  },
 }
