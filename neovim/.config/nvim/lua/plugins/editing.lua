@@ -6,7 +6,6 @@ return {
       'windwp/nvim-ts-autotag',
       'RRethy/nvim-treesitter-endwise',
     },
-    event = 'VeryLazy',
     build = function()
       local ts_update =
         require('nvim-treesitter.install').update { with_sync = true }
@@ -35,7 +34,6 @@ return {
   {
     'nvim-treesitter/nvim-treesitter-context',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    event = 'VeryLazy',
     opts = {
       max_lines = 8,
     },
@@ -123,7 +121,6 @@ return {
   },
   {
     'NvChad/nvim-colorizer.lua',
-    event = 'VeryLazy',
     opts = {
       user_default_options = {
         css = true,
@@ -132,7 +129,7 @@ return {
       },
     },
   },
-  { 'HiPhish/rainbow-delimiters.nvim', event = 'VeryLazy' },
+  'HiPhish/rainbow-delimiters.nvim',
   {
     -- TODO: remove once nvim 0.10.0 is released
     -- https://github.com/neovim/neovim/issues/23231

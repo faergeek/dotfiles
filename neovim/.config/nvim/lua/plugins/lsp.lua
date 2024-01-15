@@ -6,7 +6,7 @@ return {
   },
   {
     'williamboman/mason-lspconfig.nvim',
-    event = 'VeryLazy',
+    event = 'BufEnter',
     dependencies = {
       { 'folke/neodev.nvim', opts = {} },
       'mason.nvim',
