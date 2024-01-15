@@ -1,4 +1,5 @@
 ESLint
+api
 auth
 autocommand
 autocommands
@@ -17,6 +18,7 @@ lua
 neovim
 param
 params
+parsers
 quickfix
 repo
 syncthing
