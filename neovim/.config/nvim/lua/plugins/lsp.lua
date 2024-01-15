@@ -6,7 +6,7 @@ return {
   },
   {
     'williamboman/mason-lspconfig.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = 'VeryLazy',
     dependencies = {
       { 'folke/neodev.nvim', opts = {} },
       'mason.nvim',

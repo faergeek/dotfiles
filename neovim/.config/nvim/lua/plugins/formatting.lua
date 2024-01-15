@@ -1,7 +1,7 @@
 return {
   {
     'elentok/format-on-save.nvim',
-    event = { 'BufWritePre' },
+    event = 'BufWritePre',
     cmd = {
       'Format',
       'FormatDebugOff',
