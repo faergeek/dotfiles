@@ -61,21 +61,15 @@ return {
         'Update start up time on dashboard',
         'User',
         function()
-          local stats = require('lazy').stats()
-
-          startup_time.val = '💤 lazy.nvim loaded '
-            .. stats.loaded
-            .. '/'
-            .. stats.count
-            .. ' plugins in '
-            .. (math.floor(stats.startuptime * 100 + 0.5) / 100)
+          startup_time.val = '💤 lazy.nvim loaded in '
+            .. (math.floor(require('lazy').stats().startuptime * 100 + 0.5) / 100)
             .. 'ms'
 
           alpha.redraw()
         end,
         {
           once = true,
-          pattern = 'VeryLazy',
+          pattern = 'LazyVimStarted',
         }
       )
 
