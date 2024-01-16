@@ -16,7 +16,7 @@ set -gx FZF_DEFAULT_OPTS "\
 
 # less
 set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
-set -gx LESS -RF
+set -gx LESS -RFS
 
 # opam
 source ~/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
