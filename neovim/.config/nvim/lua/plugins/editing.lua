@@ -44,6 +44,7 @@ return {
         'lua',
         'markdown_inline',
         'query',
+        'regex',
         'vim',
         'vimdoc',
       },
