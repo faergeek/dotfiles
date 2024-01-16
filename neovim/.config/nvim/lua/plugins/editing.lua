@@ -6,6 +6,26 @@ return {
       'windwp/nvim-ts-autotag',
       'RRethy/nvim-treesitter-endwise',
     },
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    cmd = {
+      'TSBufDisable',
+      'TSBufEnable',
+      'TSBufToggle',
+      'TSConfigInfo',
+      'TSDisable',
+      'TSEditQuery',
+      'TSEditQueryUserAfter',
+      'TSEnable',
+      'TSInstall',
+      'TSInstallFromGrammar',
+      'TSInstallInfo',
+      'TSInstallSync',
+      'TSModuleInfo',
+      'TSToggle',
+      'TSUninstall',
+      'TSUpdate',
+      'TSUpdateSync',
+    },
     build = function()
       local ts_update =
         require('nvim-treesitter.install').update { with_sync = true }
@@ -34,6 +54,12 @@ return {
   {
     'nvim-treesitter/nvim-treesitter-context',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    cmd = {
+      'TSContextDisable',
+      'TSContextEnable',
+      'TSContextToggle',
+    },
     opts = {
       max_lines = 8,
     },
@@ -121,6 +147,13 @@ return {
   },
   {
     'NvChad/nvim-colorizer.lua',
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    cmd = {
+      'ColorizerAttachToBuffer',
+      'ColorizerDetachFromBuffer',
+      'ColorizerReloadAllBuffers',
+      'ColorizerToggle',
+    },
     opts = {
       user_default_options = {
         css = true,
@@ -129,7 +162,10 @@ return {
       },
     },
   },
-  'HiPhish/rainbow-delimiters.nvim',
+  {
+    'HiPhish/rainbow-delimiters.nvim',
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+  },
   {
     -- TODO: remove once nvim 0.10.0 is released
     -- https://github.com/neovim/neovim/issues/23231

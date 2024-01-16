@@ -6,7 +6,16 @@ return {
   },
   {
     'williamboman/mason-lspconfig.nvim',
-    event = 'BufEnter',
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    cmd = {
+      'LspInfo',
+      'LspInstall',
+      'LspLog',
+      'LspRestart',
+      'LspStart',
+      'LspStop',
+      'LspUninstall',
+    },
     dependencies = {
       { 'folke/neodev.nvim', opts = {} },
       'mason.nvim',
