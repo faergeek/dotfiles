@@ -47,6 +47,7 @@ autocmd(
       'kitty',
       'man',
       'qf',
+      'samba',
       'sqls_output',
     },
   }
