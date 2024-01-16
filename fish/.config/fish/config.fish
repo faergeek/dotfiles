@@ -25,6 +25,9 @@ source ~/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 # pacdiff
 set -gx DIFFPROG 'nvim -d'
 
+# tealdeer
+set -gx TEALDEER_CONFIG_DIR ~/.config/tealdeer
+
 if status is-interactive
     fish_hybrid_key_bindings
     fish_config theme choose "Catppuccin Frappe"
