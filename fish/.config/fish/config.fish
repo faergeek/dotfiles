@@ -15,6 +15,7 @@ set -gx FZF_DEFAULT_OPTS "\
 --cycle --layout=reverse --border --height=90% --preview-window=wrap --marker='*'"
 
 # less
+set -gx PAGER less
 set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
 set -gx LESS -RFS
 
