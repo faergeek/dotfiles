@@ -12,13 +12,20 @@ deps
 desc
 eslint
 fn
+html
+http
+https
+init
 keymap
 keymaps
+localhost
 lua
 neovim
 param
 params
 parsers
+polyfill
+polyfills
 quickfix
 repo
 syncthing
@@ -27,3 +34,4 @@ txt
 utf
 util
 utils
+vite
