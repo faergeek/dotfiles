@@ -5,9 +5,11 @@ autocommand
 autocommands
 bitwarden
 checkbox
+cli
 config
 configs
 const
+css
 cwd
 deps
 desc
@@ -37,3 +39,4 @@ utf
 util
 utils
 vite
+youtube
