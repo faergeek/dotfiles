@@ -1,4 +1,5 @@
 ESLint
+OCaml
 api
 auth
 autocommand
@@ -13,12 +14,16 @@ css
 cwd
 deps
 desc
+dom
 eslint
+exercism
 fn
 html
 http
 https
 init
+js
+json
 keymap
 keymaps
 localhost
@@ -34,6 +39,7 @@ quickfix
 repo
 syncthing
 todo
+transpiling
 txt
 utf
 util
