@@ -21,6 +21,7 @@ keymaps
 localhost
 lua
 neovim
+npm
 param
 params
 parsers
