@@ -1,4 +1,3 @@
-vim.opt.backupcopy = 'yes'
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.cpoptions:append 'n'
