@@ -5,6 +5,7 @@ api
 auth
 autocommand
 autocommands
+autocomplete
 bitwarden
 checkbox
 cli
