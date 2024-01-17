@@ -28,6 +28,7 @@ json
 keymap
 keymaps
 localhost
+lsp
 lua
 neovim
 npm
