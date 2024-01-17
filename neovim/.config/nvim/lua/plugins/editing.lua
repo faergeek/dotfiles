@@ -42,6 +42,7 @@ return {
         'c',
         'jsdoc',
         'lua',
+        'luap',
         'markdown_inline',
         'query',
         'regex',
