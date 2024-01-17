@@ -1,3 +1,4 @@
 /fish/.config/fish/fish_variables
 /git/.config/git/config.local
 /neovim/.config/nvim/spell/*.spl
+/neovim/.config/nvim/spell/*.sug

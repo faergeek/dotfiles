@@ -1,8 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
-vim.cmd('silent mkspell! ' .. vim.fn.stdpath 'config' .. '/spell/en.utf-8.add')
-
+require 'config.spell'
 require 'config.options'
 require 'config.keymaps'
 require 'config.autocmds'
@@ -29,6 +28,7 @@ require('lazy').setup('plugins', {
       disabled_plugins = {
         'gzip',
         'netrwPlugin',
+        'spellfile',
         'tarPlugin',
         'tohtml',
         'tutor',
