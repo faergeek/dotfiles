@@ -1,5 +1,6 @@
 ESLint
 OCaml
+REPLs
 api
 auth
 autocommand
@@ -30,16 +31,20 @@ localhost
 lua
 neovim
 npm
+nvim
 param
 params
 parsers
 polyfill
 polyfills
 quickfix
+repl
+repls
 repo
 syncthing
 todo
 transpiling
+treesitter
 txt
 utf
 util
