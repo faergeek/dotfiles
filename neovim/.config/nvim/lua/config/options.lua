@@ -59,6 +59,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true
 vim.opt.spell = true
+vim.opt.spellfile = vim.fn.stdpath 'config' .. '/spell/words.add'
 vim.opt.spelllang = 'en_us,ru_ru'
 vim.opt.spelloptions:append { 'camel' }
 vim.opt.splitbelow = true

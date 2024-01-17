@@ -2,7 +2,7 @@ local autocmd = require('utils').autocmd
 
 local spell_dir = vim.fn.stdpath 'config' .. '/spell'
 
-vim.cmd('silent mkspell! ' .. spell_dir .. '/en.utf-8.add')
+vim.cmd('silent mkspell! ' .. spell_dir .. '/words.add')
 
 local function ensure_spellfile(fname)
   local fpath = spell_dir .. '/' .. fname
