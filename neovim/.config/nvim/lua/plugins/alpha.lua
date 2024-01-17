@@ -124,7 +124,7 @@ return {
 
                       if
                         (vim.fn.filereadable(v) == 1)
-                        and vim.startswith(v, vim.fn.getcwd())
+                        and vim.startswith(v, vim.fn.getcwd() .. '/')
                         and not ignore(v, get_extension(v))
                       then
                         oldfiles[#oldfiles + 1] = v
