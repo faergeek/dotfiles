@@ -8,6 +8,7 @@ checkbox
 config
 configs
 const
+cwd
 deps
 desc
 eslint
