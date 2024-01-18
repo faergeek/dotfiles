@@ -169,11 +169,6 @@ return {
     },
   },
   {
-    'HiPhish/rainbow-delimiters.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
-  },
-  {
     -- TODO: remove once nvim 0.10.0 is released
     -- https://github.com/neovim/neovim/issues/23231
     'chrishrb/gx.nvim',
