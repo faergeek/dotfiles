@@ -109,6 +109,7 @@ return {
   },
   {
     'JoosepAlviste/nvim-ts-context-commentstring',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     lazy = true,
     opts = {},
   },
@@ -166,6 +167,7 @@ return {
   },
   {
     'HiPhish/rainbow-delimiters.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
   },
   {
