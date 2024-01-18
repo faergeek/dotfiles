@@ -79,6 +79,25 @@ return {
       disable_filetype = { 'spectre_panel', 'TelescopePrompt' },
     },
   },
+  {
+    'RRethy/vim-illuminate',
+    keys = {
+      {
+        desc = 'Next [R]eference',
+        ']r',
+        function() require('illuminate').goto_next_reference() end,
+      },
+      {
+        desc = 'Previous [R]eference',
+        '[r',
+        function() require('illuminate').goto_prev_reference() end,
+      },
+    },
+    opts = {
+      providers = { 'lsp', 'treesitter' },
+    },
+    config = function(_, opts) require('illuminate').configure(opts) end,
+  },
   { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
   { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
   {

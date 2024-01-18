@@ -75,24 +75,3 @@ autocmd(
     },
   }
 )
-
-local function supports_document_highlights(client)
-  return client.server_capabilities.documentHighlightProvider
-end
-
-autocmd('Document Highlight', 'CursorHold', function(event)
-  local clients = vim.lsp.get_active_clients {
-    bufnr = event.buf,
-  }
-
-  local supported =
-    not vim.tbl_isempty(vim.tbl_filter(supports_document_highlights, clients))
-
-  if supported then vim.lsp.buf.document_highlight() end
-end)
-
-autocmd(
-  'Clear All the References',
-  'CursorMoved',
-  function() vim.lsp.buf.clear_references() end
-)
