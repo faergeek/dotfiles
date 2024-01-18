@@ -42,7 +42,7 @@ function fish_prompt
     set --global --export __fish_git_prompt_showstashstate true
     set --global --export __fish_git_prompt_showuntrackedfiles true
     set --global --export __fish_git_prompt_showupstream auto
-    fish_git_prompt
+    fish_vcs_prompt
 
     printf '\n'
 
