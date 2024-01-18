@@ -4,6 +4,7 @@ return {
     main = 'nvim-treesitter.configs',
     dependencies = {
       'RRethy/nvim-treesitter-endwise',
+      'nvim-treesitter/nvim-treesitter-textobjects',
     },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = {
@@ -46,6 +47,58 @@ return {
       },
       highlight = { enable = true },
       indent = { enable = true },
+      textobjects = {
+        lsp_interop = {
+          enable = true,
+          peek_definition_code = {
+            ['<leader>p'] = {
+              desc = 'Pick definition',
+              query = '@function.outer,@variable',
+            },
+          },
+        },
+        move = {
+          enable = true,
+          goto_next_start = {
+            [']f'] = {
+              desc = 'Next function start',
+              query = '@function.outer',
+            },
+          },
+          goto_previous_start = {
+            ['[f'] = {
+              desc = 'Previous function start',
+              query = '@function.outer',
+            },
+          },
+          goto_next_end = {
+            [']F'] = {
+              desc = 'Next function end',
+              query = '@function.outer',
+            },
+          },
+          goto_previous_end = {
+            ['[F'] = {
+              desc = 'Previous function end',
+              query = '@function.outer',
+            },
+          },
+        },
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ['af'] = {
+              desc = 'a function',
+              query = '@function.outer',
+            },
+            ['if'] = {
+              desc = 'inner function',
+              query = '@function.inner',
+            },
+          },
+        },
+      },
     },
   },
   {
