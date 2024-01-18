@@ -3,7 +3,6 @@ return {
     'nvim-treesitter/nvim-treesitter',
     main = 'nvim-treesitter.configs',
     dependencies = {
-      'windwp/nvim-ts-autotag',
       'RRethy/nvim-treesitter-endwise',
     },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
@@ -33,10 +32,6 @@ return {
     end,
     opts = {
       auto_install = true,
-      autotag = {
-        enable = true,
-        enable_close_on_slash = false,
-      },
       endwise = { enable = true },
       ensure_installed = {
         'c',
@@ -51,6 +46,14 @@ return {
       },
       highlight = { enable = true },
       indent = { enable = true },
+    },
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    opts = {
+      enable_close_on_slash = true,
     },
   },
   {
