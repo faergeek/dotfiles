@@ -6,6 +6,7 @@ auth
 autocommand
 autocommands
 autocomplete
+backend
 bitwarden
 checkbox
 cli
@@ -20,6 +21,7 @@ dom
 eslint
 exercism
 fn
+frontend
 html
 http
 https
