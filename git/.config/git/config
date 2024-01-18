@@ -8,7 +8,6 @@
 [delta]
   hyperlinks = true
   line-numbers = true
-  navigate = true
   syntax-theme = Solarized (dark)
 [diff]
   colorMoved = default
