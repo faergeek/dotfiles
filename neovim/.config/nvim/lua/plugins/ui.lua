@@ -41,17 +41,17 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
       {
-        desc = 'Buffer Manager: [O]pen buffers',
+        desc = 'Buffer Manager',
         '<leader>o',
         function() require('buffer_manager.ui').toggle_quick_menu() end,
       },
       {
-        desc = '[B]uffer Manager: Next',
+        desc = 'Next buffer',
         ']b',
         function() require('buffer_manager.ui').nav_next() end,
       },
       {
-        desc = '[B]uffer Manager: Prev',
+        desc = 'Previous buffer',
         '[b',
         function() require('buffer_manager.ui').nav_prev() end,
       },

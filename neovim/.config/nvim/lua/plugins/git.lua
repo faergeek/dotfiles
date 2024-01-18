@@ -4,7 +4,7 @@ return {
     event = 'VeryLazy',
     keys = {
       {
-        desc = '[C]hange: Next',
+        desc = 'Next change',
         mode = { 'n', 'x' },
         expr = true,
         silent = true,
@@ -12,7 +12,7 @@ return {
         function() return vim.wo.diff and ']c' or '<Cmd>Gitsigns next_hunk<CR>' end,
       },
       {
-        desc = '[C]hange: Prev',
+        desc = 'Previous change',
         mode = { 'n', 'x' },
         expr = true,
         silent = true,
@@ -20,39 +20,39 @@ return {
         function() return vim.wo.diff and '[c' or '<Cmd>Gitsigns prev_hunk<CR>' end,
       },
       {
-        desc = '[H]unk [S]tage',
+        desc = 'Hunk Stage',
         mode = { 'n', 'x' },
         silent = true,
         '<leader>hs',
         ':Gitsigns stage_hunk<CR>',
       },
       {
-        desc = '[H]unk [R]eset',
+        desc = 'Hunk Reset',
         mode = { 'n', 'x' },
         silent = true,
         '<leader>hr',
         ':Gitsigns reset_hunk<CR>',
       },
       {
-        desc = '[H]unk [U]ndo',
+        desc = 'Hunk Undo',
         silent = true,
         '<leader>hu',
         '<Cmd>Gitsigns undo_stage_hunk<CR>',
       },
       {
-        desc = '[H]unks [S]tage',
+        desc = 'Stage Buffer',
         silent = true,
         '<leader>hS',
         '<Cmd>Gitsigns stage_buffer<CR>',
       },
       {
-        desc = '[H]unks [R]eset',
+        desc = 'Reset Buffer',
         silent = true,
         '<leader>hR',
         '<Cmd>Gitsigns reset_buffer<CR>',
       },
       {
-        desc = '[H]unk [P]review',
+        desc = 'Hunk Preview',
         silent = true,
         '<leader>hp',
         '<Cmd>Gitsigns preview_hunk<CR>',
@@ -73,17 +73,17 @@ return {
     },
     keys = {
       {
-        desc = '[G]it: [S]tatus',
+        desc = 'Git: Status',
         '<leader>gs',
         '<Cmd>DiffviewOpen<CR>',
       },
       {
-        desc = '[G]it: [F]ile [H]istory',
+        desc = 'Git: File History',
         '<leader>gfh',
         '<Cmd>DiffviewFileHistory %<CR>',
       },
       {
-        desc = '[G]it: [H]istory',
+        desc = 'Git: History',
         '<leader>gh',
         '<Cmd>DiffviewFileHistory<CR>',
       },

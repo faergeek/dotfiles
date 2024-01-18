@@ -126,7 +126,7 @@ return {
                 local km_opts = { buffer = bufnr }
 
                 keymap(
-                  'Switch [C]onnection',
+                  'Switch Connection',
                   'n',
                   '<localleader>c',
                   '<Cmd>SqlsSwitchConnection<CR>',

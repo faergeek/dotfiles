@@ -9,7 +9,7 @@ return {
     dependencies = { 'folke/neoconf.nvim' },
     keys = {
       {
-        desc = 'Neomakery: [M]ake',
+        desc = 'Neomakery: Make',
         '<leader>m',
         function() require('neomakery').show_menu() end,
       },

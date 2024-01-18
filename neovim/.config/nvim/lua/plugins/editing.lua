@@ -83,12 +83,12 @@ return {
     'RRethy/vim-illuminate',
     keys = {
       {
-        desc = 'Next [R]eference',
+        desc = 'Next Reference',
         ']r',
         function() require('illuminate').goto_next_reference() end,
       },
       {
-        desc = 'Previous [R]eference',
+        desc = 'Previous Reference',
         '[r',
         function() require('illuminate').goto_prev_reference() end,
       },
@@ -105,7 +105,7 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     keys = {
       {
-        desc = '[J]oin: Toggle',
+        desc = 'Split/Join',
         '<leader>j',
         '<Cmd>TSJToggle<CR>',
       },
