@@ -80,6 +80,7 @@ return {
   { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
   {
     'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     keys = {
       {
         desc = '[J]oin: Toggle',
@@ -87,7 +88,6 @@ return {
         '<Cmd>TSJToggle<CR>',
       },
     },
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = {
       max_join_length = 500,
       use_default_keymaps = false,
@@ -174,8 +174,8 @@ return {
     -- TODO: remove once nvim 0.10.0 is released
     -- https://github.com/neovim/neovim/issues/23231
     'chrishrb/gx.nvim',
-    keys = { { 'gx', '<Cmd>Browse<CR>', mode = { 'n', 'x' } } },
     dependencies = { 'nvim-lua/plenary.nvim' },
+    keys = { { 'gx', '<Cmd>Browse<CR>', mode = { 'n', 'x' } } },
     opts = {
       handlers = {
         brewfile = false,
