@@ -134,6 +134,7 @@ return {
   },
   {
     'RRethy/vim-illuminate',
+    event = 'LspAttach',
     keys = {
       {
         desc = 'Next Reference',
@@ -147,7 +148,7 @@ return {
       },
     },
     opts = {
-      providers = { 'lsp', 'treesitter' },
+      providers = { 'lsp' },
     },
     config = function(_, opts) require('illuminate').configure(opts) end,
   },
