@@ -39,6 +39,7 @@ nvim
 param
 params
 parsers
+pnpm
 polyfill
 polyfills
 quickfix
