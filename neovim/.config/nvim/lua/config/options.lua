@@ -53,6 +53,7 @@ vim.opt.shortmess:append {
 vim.opt.showbreak = '↳ '
 vim.opt.showcmdloc = 'statusline'
 vim.opt.showmode = false
+vim.opt.showtabline = 0
 vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true

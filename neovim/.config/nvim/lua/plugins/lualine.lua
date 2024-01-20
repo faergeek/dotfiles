@@ -14,22 +14,59 @@ return {
         theme = 'catppuccin',
       },
       sections = {
-        lualine_a = {
-          'mode',
-          'selectioncount',
-        },
+        lualine_a = { 'mode', 'selectioncount' },
         lualine_b = {
-          { 'b:gitsigns_head', icon = '' },
+          {
+            'tabs',
+            show_modified_status = false,
+            use_mode_colors = true,
+          },
         },
-        lualine_c = {},
+        lualine_c = {
+          {
+            'filename',
+            cond = function()
+              return not vim.tbl_contains({
+                'buffer_manager',
+                'help',
+                'man',
+                'oil',
+                'qf',
+                'TelescopePrompt',
+              }, vim.opt.filetype:get())
+            end,
+            newfile_status = true,
+            path = 1,
+          },
+          {
+            function() return 'Buffer Manager' end,
+            cond = function()
+              return vim.tbl_contains(
+                { 'buffer_manager' },
+                vim.opt.filetype:get()
+              )
+            end,
+          },
+          {
+            function()
+              return vim.fn.fnamemodify(
+                require('oil').get_current_dir(),
+                ':p:~:.'
+              )
+            end,
+            cond = function()
+              return vim.tbl_contains({ 'oil' }, vim.opt.filetype:get())
+            end,
+          },
+        },
         lualine_x = {},
-        lualine_y = {},
-        lualine_z = { 'searchcount' },
+        lualine_y = { 'searchcount' },
+        lualine_z = { { 'b:gitsigns_head', icon = '' } },
       },
       winbar = {
         lualine_a = {
           { 'filetype', colored = false, icon_only = true },
-          { 'filename', newfile_status = true, path = 1 },
+          { 'filename', newfile_status = true },
         },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
@@ -37,25 +74,12 @@ return {
       inactive_winbar = {
         lualine_a = {
           { 'filetype', colored = false, icon_only = true },
-          { 'filename', newfile_status = true, path = 1 },
+          { 'filename', newfile_status = true },
         },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
       extensions = {
-        {
-          filetypes = { 'buffer_manager' },
-          sections = {
-            lualine_a = {
-              'mode',
-              'selectioncount',
-            },
-            lualine_b = {
-              function() return 'Buffer Manager' end,
-            },
-            lualine_z = { 'searchcount' },
-          },
-        },
         {
           filetypes = { 'help' },
           winbar = {
@@ -86,12 +110,10 @@ return {
             lualine_a = {
               function() return '' end,
               function()
-                local ok, oil = pcall(require, 'oil')
-                if ok then
-                  return vim.fn.fnamemodify(oil.get_current_dir(), ':p:~:.')
-                else
-                  return ''
-                end
+                return vim.fn.fnamemodify(
+                  require('oil').get_current_dir(),
+                  ':p:~:h:t'
+                )
               end,
             },
             lualine_y = { 'progress' },
@@ -108,9 +130,8 @@ return {
                   or 'Quickfix List'
               end,
             },
-            lualine_b = {
-              'w:quickfix_title',
-            },
+            lualine_b = { 'w:quickfix_title' },
+            lualine_y = { 'progress' },
             lualine_z = { 'location' },
           },
         },
