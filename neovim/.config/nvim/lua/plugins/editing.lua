@@ -155,7 +155,7 @@ return {
     },
     config = function(_, opts) require('illuminate').configure(opts) end,
   },
-  { 'nmac427/guess-indent.nvim', event = 'BufReadPre', opts = {} },
+  { 'Darazaki/indent-o-matic', event = 'BufReadPre', opts = {} },
   { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
   {
     'Wansmer/treesj',
