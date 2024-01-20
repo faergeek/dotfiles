@@ -123,14 +123,17 @@ return {
     },
   },
   {
-    'windwp/nvim-autopairs',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    'echasnovski/mini.pairs',
     event = 'InsertEnter',
-    opts = {
-      break_undo = false,
-      check_ts = true,
-      disable_filetype = { 'spectre_panel', 'TelescopePrompt' },
-    },
+    init = function()
+      require('utils').autocmd(
+        'Disable mini.pairs for certain file types',
+        'FileType',
+        'let b:minipairs_disable = v:true',
+        { pattern = { 'TelescopePrompt' } }
+      )
+    end,
+    opts = {},
   },
   {
     'RRethy/vim-illuminate',
