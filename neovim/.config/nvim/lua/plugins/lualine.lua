@@ -60,8 +60,8 @@ return {
           },
         },
         lualine_x = {},
-        lualine_y = { 'searchcount' },
-        lualine_z = { { 'b:gitsigns_head', icon = '' } },
+        lualine_y = {},
+        lualine_z = { 'searchcount' },
       },
       winbar = {
         lualine_a = {
