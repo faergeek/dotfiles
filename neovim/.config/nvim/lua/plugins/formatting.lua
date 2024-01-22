@@ -37,6 +37,12 @@ return {
 
       local function prettier()
         return expand_node_bin('prettier', '--stdin-filepath', '%')
+          or formatters.if_file_exists {
+            pattern = { '.prettierrc', '.prettierrc.*', 'prettier.config.*' },
+            formatter = formatters.shell {
+              cmd = { 'prettier', '--stdin-filepath', '%' },
+            },
+          }
       end
 
       return {
