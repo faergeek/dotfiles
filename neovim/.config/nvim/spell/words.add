@@ -10,6 +10,7 @@ backend
 bitwarden
 checkbox
 cli
+cmd
 config
 configs
 const
