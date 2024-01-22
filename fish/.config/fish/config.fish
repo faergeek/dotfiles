@@ -25,6 +25,9 @@ source ~/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 # pacdiff
 set -gx DIFFPROG 'nvim -d'
 
+# rustup
+set -gx PATH ~/.cargo/bin:$PATH
+
 # tealdeer
 set -gx TEALDEER_CONFIG_DIR ~/.config/tealdeer
 
