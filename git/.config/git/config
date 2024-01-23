@@ -2,6 +2,7 @@
   graph = log --graph --oneline
 [commit]
   gpgSign = true
+  verbose = 2
 [core]
   pager = delta
   quotepath = false
