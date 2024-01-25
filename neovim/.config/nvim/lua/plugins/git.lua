@@ -58,7 +58,9 @@ return {
         '<Cmd>Gitsigns preview_hunk<CR>',
       },
     },
-    opts = {},
+    opts = {
+      attach_to_untracked = true,
+    },
   },
   {
     'sindrets/diffview.nvim',
