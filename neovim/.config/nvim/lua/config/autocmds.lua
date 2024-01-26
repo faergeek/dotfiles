@@ -43,12 +43,12 @@ autocmd(
   function() vim.opt_local.spell = false end,
   {
     pattern = {
+      'dbout',
       'gitrebase',
       'kitty',
       'man',
       'qf',
       'samba',
-      'sqls_output',
     },
   }
 )
@@ -67,10 +67,10 @@ autocmd(
   {
     pattern = {
       'checkhealth',
+      'dbout',
       'help',
       'qf',
       'query',
-      'sqls_output',
       'startuptime',
     },
   }
