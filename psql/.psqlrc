@@ -1,3 +1,4 @@
 \set QUIET 1
-\pset pager always
 \pset linestyle unicode
+\pset null 󰟢
+\pset pager always
