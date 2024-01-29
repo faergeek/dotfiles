@@ -25,7 +25,6 @@
 [mergetool]
   hideResolved = true
   keepBackup = false
-  writeToTemp = true
 [mergetool "vimdiff"]
   layout = @LOCAL, REMOTE
 [pull]
