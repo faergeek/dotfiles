@@ -18,9 +18,9 @@ return {
     dependencies = { 'tpope/vim-dadbod' },
     ft = { 'sql', 'mysql', 'plsql' },
     config = function()
-      require('cmp').setup.buffer {
+      require('cmp').setup.filetype({ 'sql', 'mysql', 'plsql' }, {
         sources = { { name = 'vim-dadbod-completion' } },
-      }
+      })
     end,
   },
 }
