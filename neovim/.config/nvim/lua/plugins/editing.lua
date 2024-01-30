@@ -26,11 +26,7 @@ return {
       'TSUpdate',
       'TSUpdateSync',
     },
-    build = function()
-      local ts_update =
-        require('nvim-treesitter.install').update { with_sync = true }
-      ts_update()
-    end,
+    build = ':TSUpdate',
     opts = {
       auto_install = true,
       endwise = { enable = true },
