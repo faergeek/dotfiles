@@ -4,8 +4,9 @@ return {
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
-    config = function()
+    opts = function()
       local alpha = require 'alpha'
+      local autocmd = require('utils').autocmd
 
       local function button(sc, val, keybind)
         return {
@@ -57,24 +58,33 @@ return {
         opts = { hl = 'AlphaHeaderLabel', shrink_margin = false },
       }
 
-      require('utils').autocmd(
-        'Update start up time on dashboard',
-        'User',
-        function()
-          startup_time.val = '💤 lazy.nvim loaded in '
-            .. (math.floor(require('lazy').stats().startuptime * 100 + 0.5) / 100)
-            .. 'ms'
+      autocmd('Update start up time on dashboard', 'User', function()
+        startup_time.val = '💤 lazy.nvim loaded in '
+          .. (math.floor(require('lazy').stats().startuptime * 100 + 0.5) / 100)
+          .. 'ms'
 
-          alpha.redraw()
-        end,
-        {
-          once = true,
-          pattern = 'LazyVimStarted',
-        }
-      )
+        alpha.redraw()
+      end, {
+        once = true,
+        pattern = 'LazyVimStarted',
+      })
 
-      local config = {
-        opts = { margin = 3 },
+      if vim.o.filetype == 'lazy' then
+        vim.cmd.close()
+
+        autocmd(
+          'Show lazy once alpha is ready',
+          'User',
+          function() require('lazy').show() end,
+          {
+            once = true,
+            pattern = 'AlphaReady',
+          }
+        )
+      end
+
+      return {
+        opts = { margin = 2 },
         layout = {
           { type = 'padding', val = 1 },
           {
@@ -187,22 +197,6 @@ return {
           },
         },
       }
-
-      if vim.o.filetype == 'lazy' then
-        vim.cmd.close()
-
-        require('utils').autocmd(
-          'Show lazy once alpha is ready',
-          'User',
-          function() require('lazy').show() end,
-          {
-            once = true,
-            pattern = 'AlphaReady',
-          }
-        )
-      end
-
-      alpha.setup(config)
     end,
   },
 }
