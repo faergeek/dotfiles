@@ -3,7 +3,7 @@ local M = {}
 local group = vim.api.nvim_create_augroup('config', { clear = true })
 
 --- @param desc string
---- @param event object
+--- @param event string | string[]
 --- @param callbackOrCommand string | function
 --- @param opts? table<string, any>
 --- @return number
