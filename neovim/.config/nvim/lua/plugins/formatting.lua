@@ -65,6 +65,11 @@ return {
           jsonc = { prettier },
           lua = { formatters.stylua },
           markdown = { prettier },
+          sql = {
+            formatters.shell {
+              cmd = { 'sql-formatter', '--language', 'postgresql' },
+            },
+          },
           typescript = { eslint, prettier },
           typescriptreact = { eslint, prettier },
           yaml = { prettier },
