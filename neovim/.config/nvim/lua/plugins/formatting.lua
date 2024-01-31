@@ -1,6 +1,6 @@
 return {
   {
-    'elentok/format-on-save.nvim',
+    'faergeek/format-on-save.nvim',
     event = 'BufWritePre',
     cmd = {
       'Format',
