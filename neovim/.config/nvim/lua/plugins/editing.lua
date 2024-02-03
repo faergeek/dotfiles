@@ -25,7 +25,7 @@ return {
       'TSUpdate',
       'TSUpdateSync',
     },
-    build = ':TSUpdateSync',
+    build = ':TSUpdate',
     opts = {
       auto_install = true,
       endwise = { enable = true },
