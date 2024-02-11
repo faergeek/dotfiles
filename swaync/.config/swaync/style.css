@@ -19,23 +19,13 @@
 
 .widget-title,
 .widget-dnd,
-.widget-volume,
-.control-center .notification-row .notification {
+.widget-volume {
   margin-right: 16px;
   margin-left: 16px;
 }
 
 .widget-title {
   margin-top: 0;
-}
-
-.control-center .notification-row:hover,
-.control-center .notification-row:focus {
-  background: transparent;
-}
-
-.control-center .notification-row:focus .notification-default-action {
-  box-shadow: inset 0 0 2px 2px #a6d189;
 }
 
 .widget-volume {
@@ -45,4 +35,39 @@
 
 .widget-volume scale {
   padding: 0;
+}
+
+.notification-group {
+  border-radius: 8px;
+}
+
+.notification-group-headers {
+  margin: 0;
+}
+
+.notification-group-header {
+  font-size: inherit;
+}
+
+.notification-group-buttons {
+  margin-right: 0;
+}
+
+.notification-group-buttons .image-button {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+}
+
+.notification-content {
+  padding: 12px;
+}
+
+.notification-default-action:hover .notification-content,
+.notification-default-action:focus .notification-content,
+.notification-group:hover,
+.notification-group:focus {
+  background: transparent;
+  box-shadow: inset 0 0 2px 1px #a6d189;
 }
