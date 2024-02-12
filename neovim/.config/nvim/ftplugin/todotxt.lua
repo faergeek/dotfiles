@@ -1,55 +1,80 @@
 local keymap = require('utils').keymap
 local km_opts = { buffer = true }
 
-keymap('Mark task as done', { 'n', 'x' }, '<localleader>x', function()
-  local lnum = vim.fn.getpos('.')[2]
+vim.api.nvim_buf_create_user_command(0, 'SetPriority', function(args)
+  local new_priority = args.fargs[1]
+  local line1 = args.line1
+  local line2 = args.line2
 
-  vim.api.nvim_buf_set_text(
-    0,
-    lnum - 1,
-    0,
-    lnum - 1,
-    (vim.fn.getline(lnum):match '^%(%w%)%s+' or ''):len(),
-    { 'x ' .. vim.fn.strftime '%Y-%m-%d' .. ' ' }
-  )
-end, km_opts)
+  for lnum = line1, line2 do
+    local priority = vim.fn.getline(lnum):match '^%((%w)%)%s+'
 
----@param new_priority string|nil
-local function set_priority(new_priority)
-  local lnum = vim.fn.getpos('.')[2]
-  local priority = vim.fn.getline(lnum):match '^%((%w)%)%s+'
-
-  if priority then
-    if new_priority then
-      vim.api.nvim_buf_set_text(0, lnum - 1, 1, lnum - 1, 2, { new_priority })
-    else
-      vim.api.nvim_buf_set_text(0, lnum - 1, 0, lnum - 1, 4, {})
+    if priority then
+      if new_priority then
+        vim.api.nvim_buf_set_text(0, lnum - 1, 1, lnum - 1, 2, { new_priority })
+      else
+        vim.api.nvim_buf_set_text(0, lnum - 1, 0, lnum - 1, 4, {})
+      end
+    elseif new_priority then
+      vim.api.nvim_buf_set_text(
+        0,
+        lnum - 1,
+        0,
+        lnum - 1,
+        0,
+        { '(' .. new_priority .. ') ' }
+      )
     end
-  elseif new_priority then
+  end
+end, {
+  desc = 'Set todo item priority to a specified value',
+  nargs = '?',
+  range = true,
+})
+
+vim.api.nvim_buf_create_user_command(0, 'Done', function(args)
+  for lnum = args.line1, args.line2 do
     vim.api.nvim_buf_set_text(
       0,
       lnum - 1,
       0,
       lnum - 1,
-      0,
-      { '(' .. new_priority .. ') ' }
+      (vim.fn.getline(lnum):match '^%(%w%)%s+' or ''):len(),
+      { 'x ' .. vim.fn.strftime '%Y-%m-%d' .. ' ' }
     )
   end
-end
+end, {
+  desc = 'Mark task as done',
+  range = true,
+})
 
 for i = ('A'):byte(), ('Z'):byte() do
   local priority = string.char(i)
 
   keymap(
     'Set task priority to ' .. priority,
-    'n',
+    { 'n', 'x' },
     '<localleader>p' .. priority:lower(),
-    function() set_priority(priority) end,
+    ':SetPriority ' .. priority .. '<CR>',
     km_opts
   )
 end
 
-keymap('Remove priority', 'n', '<localleader>p-', set_priority, km_opts)
+keymap(
+  'Remove priority',
+  { 'n', 'x' },
+  '<localleader>p-',
+  ':SetPriority<CR>',
+  km_opts
+)
+
+keymap(
+  'Mark task as done',
+  { 'n', 'x' },
+  '<localleader>x',
+  ':Done<CR>',
+  km_opts
+)
 
 keymap('Sort tasks', 'n', '<localleader>s', ':%sort<CR>', km_opts)
 keymap('Sort tasks', 'x', '<localleader>s', ':sort<CR>', km_opts)
