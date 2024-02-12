@@ -1,12 +1,6 @@
 local keymap = require('utils').keymap
 local km_opts = { buffer = true }
 
-local insert_date = "<C-r>=strftime('%Y-%m-%d')<CR> "
-local new_todo_desc = 'Start a new todo item'
-keymap(new_todo_desc, 'i', '<CR>', '<CR>' .. insert_date, km_opts)
-keymap(new_todo_desc, 'n', 'o', 'o' .. insert_date, km_opts)
-keymap(new_todo_desc, 'n', 'O', 'O' .. insert_date, km_opts)
-
 keymap('Mark task as done', { 'n', 'x' }, '<localleader>x', function()
   local lnum = vim.fn.getpos('.')[2]
 
