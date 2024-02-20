@@ -4,5 +4,3 @@
   name = John Doe
   email = john@doe.com
   signingkey =
-
-; vim: ft=gitconfig

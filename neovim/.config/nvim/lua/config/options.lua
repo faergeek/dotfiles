@@ -81,6 +81,10 @@ vim.filetype.add {
     ['todo.txt'] = 'todotxt',
   },
   pattern = {
-    ['.env%..+'] = 'sh',
+    ['%.env%..+'] = 'sh',
+    ['.*/%.config/git/.*'] = 'gitconfig',
+    ['.*/%.config/hypr/.*'] = 'hyprlang',
+    ['.*/%.config/imv/config'] = 'dosini',
+    ['.*/%.config/waybar/config'] = 'jsonc',
   },
 }

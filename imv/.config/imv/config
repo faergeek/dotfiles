@@ -1,4 +1,3 @@
-# vim:ft=dosini
 [options]
 background = checks
 suppress_default_binds = true
