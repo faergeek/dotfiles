@@ -1,3 +1,0 @@
-lock 'swaylock --daemonize'
-before-sleep 'loginctl lock-session && playerctl -s pause'
-timeout 300 'loginctl lock-session'
