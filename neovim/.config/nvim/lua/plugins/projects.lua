@@ -1,12 +1,12 @@
 return {
   {
     'folke/neoconf.nvim',
+    dependencies = { 'faergeek/neomakery.nvim' },
     cmd = 'Neoconf',
     opts = {},
   },
   {
     'faergeek/neomakery.nvim',
-    dependencies = { 'folke/neoconf.nvim' },
     keys = {
       {
         desc = 'Neomakery: Make',
