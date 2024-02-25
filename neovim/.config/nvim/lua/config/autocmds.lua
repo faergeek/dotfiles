@@ -67,6 +67,8 @@ autocmd(
   {
     pattern = {
       'checkhealth',
+      'dap-float',
+      'dap-repl',
       'dbout',
       'help',
       'qf',

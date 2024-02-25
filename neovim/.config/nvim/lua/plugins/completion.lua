@@ -64,11 +64,31 @@ return {
 
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
+
+      {
+        'rcarriga/cmp-dap',
+        dependencies = { 'hrsh7th/nvim-cmp' },
+        ft = { 'dap-repl', 'dapui_watches', 'dapui_hover' },
+        config = function()
+          require('cmp').setup.filetype(
+            { 'dap-repl', 'dapui_watches', 'dapui_hover' },
+            {
+              sources = {
+                { name = 'dap' },
+              },
+            }
+          )
+        end,
+      },
     },
     opts = function()
       local cmp = require 'cmp'
 
       return {
+        enabled = function()
+          return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt'
+            or require('cmp_dap').is_dap_buffer()
+        end,
         experimental = {
           ghost_text = {
             hl_group = 'LspCodeLens',
