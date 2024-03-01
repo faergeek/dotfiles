@@ -122,6 +122,10 @@ return {
                         type = 'string',
                         default = '${workspaceFolder}',
                       },
+                      port = {
+                        type = 'number',
+                        default = 9229,
+                      },
                     },
                     required = { 'cwd' },
                   },
@@ -225,6 +229,7 @@ return {
           type = 'pwa-node',
           request = 'attach',
           cwd = function() return neoconf.get('dap', { node = {} }).node.cwd end,
+          port = function() return neoconf.get('dap', { node = {} }).node.port end,
         })
       end
     end,
