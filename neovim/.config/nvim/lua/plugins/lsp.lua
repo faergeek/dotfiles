@@ -11,18 +11,34 @@ return {
     },
     opts = {},
   },
+  { 'folke/neodev.nvim', lazy = true, opts = {} },
+  { 'j-hui/fidget.nvim', lazy = true, opts = {} },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      'folke/neoconf.nvim',
+      'j-hui/fidget.nvim',
+    },
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
+    config = function()
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local lspconfig = require 'lspconfig'
+
+      lspconfig.ocamllsp.setup { capabilities = capabilities }
+      lspconfig.zls.setup { capabilities = capabilities }
+    end,
+  },
   {
     'williamboman/mason-lspconfig.nvim',
     dependencies = {
-      { 'folke/neodev.nvim', opts = {} },
+      'folke/neodev.nvim',
       'mason.nvim',
-      'hrsh7th/cmp-nvim-lsp',
       'b0o/schemastore.nvim',
+      'neovim/nvim-lspconfig',
     },
-    cmd = {
-      'LspInstall',
-      'LspUninstall',
-    },
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    cmd = { 'LspInstall', 'LspUninstall' },
     opts = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require 'lspconfig'
@@ -156,29 +172,6 @@ return {
           end,
         },
       }
-    end,
-  },
-  {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      'folke/neoconf.nvim',
-      { 'j-hui/fidget.nvim', opts = {} },
-      'williamboman/mason-lspconfig.nvim',
-    },
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
-    cmd = {
-      'LspInfo',
-      'LspLog',
-      'LspRestart',
-      'LspStart',
-      'LspStop',
-    },
-    config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local lspconfig = require 'lspconfig'
-
-      lspconfig.ocamllsp.setup { capabilities = capabilities }
-      lspconfig.zls.setup { capabilities = capabilities }
     end,
   },
 }
