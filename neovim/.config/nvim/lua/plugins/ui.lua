@@ -29,7 +29,9 @@ return {
         ['-'] = 'actions.parent',
         ['gx'] = 'actions.open_external',
       },
-      lsp_rename_autosave = true,
+      lsp_file_methods = {
+        autosave_changes = true,
+      },
       use_default_keymaps = false,
       view_options = {
         show_hidden = true,
