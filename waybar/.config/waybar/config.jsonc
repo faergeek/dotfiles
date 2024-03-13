@@ -2,13 +2,8 @@
   "layer": "top",
   "margin": "8 8 0",
   "spacing": 8,
-  "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/window"
-  ],
-  "modules-center": [
-    "mpris"
-  ],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["mpris"],
   "modules-right": [
     "tray",
     "idle_inhibitor",
