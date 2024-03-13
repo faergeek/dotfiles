@@ -13,7 +13,6 @@
     "pulseaudio",
     "bluetooth",
     "network",
-    "upower",
     "hyprland/language",
     "clock"
   ],
@@ -112,10 +111,5 @@
   },
   "tray": {
     "spacing": 10
-  },
-  "upower": {
-    "format": " {percentage}",
-    "format-alt": " {percentage} {time}",
-    "icon-size": 14
   }
 }
