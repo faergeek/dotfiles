@@ -77,6 +77,9 @@ vim.diagnostic.config {
 }
 
 vim.filetype.add {
+  extension = {
+    mli = 'ocamlinterface',
+  },
   filename = {
     ['todo.txt'] = 'todotxt',
   },
