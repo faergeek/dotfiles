@@ -7,13 +7,6 @@ set -gx MANPAGER nvim +Man!
 source ~/.asdf/asdf.fish
 source ~/.asdf/completions/asdf.fish
 
-# fzf options
-set -gx FZF_DEFAULT_OPTS "\
---color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
---color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
---color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284 \
---cycle --layout=reverse --border --height=90% --preview-window=wrap --marker='*'"
-
 # less
 set -gx PAGER less
 set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
