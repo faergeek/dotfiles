@@ -1,3 +1,5 @@
+local is_rpi = require('utils').is_rpi
+
 return {
   {
     'williamboman/mason.nvim',
@@ -57,7 +59,7 @@ return {
 
       local uv = vim.uv or vim.loop
 
-      if uv.os_uname().machine ~= 'armv7l' then
+      if not is_rpi then
         vim.list_extend(ensure_installed, {
           'clangd',
           'lua_ls',
