@@ -1,3 +1,5 @@
+local is_rpi = require('utils').is_rpi
+
 return {
   {
     'nvim-telescope/telescope.nvim',
@@ -8,6 +10,11 @@ return {
         'nvim-telescope/telescope-fzf-native.nvim',
         cond = vim.fn.executable 'make' == 1,
         build = 'make',
+        enabled = is_rpi,
+      },
+      {
+        'nvim-telescope/telescope-fzy-native.nvim',
+        enabled = not is_rpi,
       },
     },
     cmd = 'Telescope',
@@ -88,7 +95,12 @@ return {
     end,
     config = function(_, opts)
       require('telescope').setup(opts)
-      pcall(require('telescope').load_extension, 'fzf')
+
+      if is_rpi then
+        pcall(require('telescope').load_extension, 'fzf')
+      else
+        pcall(require('telescope').load_extension, 'fzy_native')
+      end
     end,
   },
 }
