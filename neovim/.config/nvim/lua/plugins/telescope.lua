@@ -6,16 +6,7 @@ return {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        cond = vim.fn.executable 'make' == 1,
-        build = 'make',
-        enabled = is_rpi,
-      },
-      {
-        'nvim-telescope/telescope-fzy-native.nvim',
-        enabled = not is_rpi,
-      },
+      'nvim-telescope/telescope-fzy-native.nvim',
     },
     cmd = 'Telescope',
     keys = {
@@ -95,12 +86,7 @@ return {
     end,
     config = function(_, opts)
       require('telescope').setup(opts)
-
-      if is_rpi then
-        pcall(require('telescope').load_extension, 'fzf')
-      else
-        pcall(require('telescope').load_extension, 'fzy_native')
-      end
+      pcall(require('telescope').load_extension, 'fzy_native')
     end,
   },
 }
