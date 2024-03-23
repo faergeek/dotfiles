@@ -81,6 +81,7 @@ vim.filetype.add {
     mli = 'ocamlinterface',
   },
   filename = {
+    ['Tiltfile'] = 'starlark',
     ['todo.txt'] = 'todotxt',
   },
   pattern = {
