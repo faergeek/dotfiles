@@ -81,7 +81,7 @@ vim.filetype.add {
     mli = 'ocamlinterface',
   },
   filename = {
-    ['Tiltfile'] = 'starlark',
+    ['Tiltfile'] = 'tiltfile',
     ['todo.txt'] = 'todotxt',
   },
   pattern = {
@@ -92,3 +92,5 @@ vim.filetype.add {
     ['.*/%.config/waybar/config'] = 'jsonc',
   },
 }
+
+vim.treesitter.language.register('starlark', 'tiltfile')

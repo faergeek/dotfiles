@@ -28,6 +28,7 @@ return {
       local lspconfig = require 'lspconfig'
 
       lspconfig.ocamllsp.setup { capabilities = capabilities }
+      lspconfig.tilt_ls.setup { capabilities = capabilities }
       lspconfig.zls.setup { capabilities = capabilities }
     end,
   },
