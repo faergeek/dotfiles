@@ -122,12 +122,19 @@ return {
                         type = 'string',
                         default = '${workspaceFolder}',
                       },
+                      localRoot = {
+                        type = 'string',
+                        default = '${workspaceFolder}',
+                      },
                       port = {
                         type = 'number',
                         default = 9229,
                       },
+                      remoteRoot = {
+                        type = 'string',
+                        default = '${workspaceFolder}',
+                      },
                     },
-                    required = { 'cwd' },
                   },
                 },
               })
@@ -228,8 +235,18 @@ return {
           name = 'Node: Debug',
           type = 'pwa-node',
           request = 'attach',
-          cwd = function() return neoconf.get('dap', { node = {} }).node.cwd end,
+          cwd = function()
+            local node = neoconf.get('dap', { node = {} }).node
+
+            return node.cwd or node.localRoot or '${workspaceFolder}'
+          end,
+          localRoot = function()
+            return neoconf.get('dap', { node = {} }).node.localRoot
+          end,
           port = function() return neoconf.get('dap', { node = {} }).node.port end,
+          remoteRoot = function()
+            return neoconf.get('dap', { node = {} }).node.remoteRoot
+          end,
         })
       end
     end,
