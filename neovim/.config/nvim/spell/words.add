@@ -14,6 +14,7 @@ cmd
 config
 configs
 const
+corepack
 css
 cwd
 deps
@@ -48,6 +49,7 @@ readme
 repl
 repls
 repo
+runtime
 scrollback
 syncthing
 todo
