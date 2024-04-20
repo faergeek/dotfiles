@@ -1,5 +1,73 @@
 return {
   {
+    'tpope/vim-fugitive',
+    dependencies = {
+      'chrishrb/gx.nvim',
+      'tpope/vim-rhubarb',
+    },
+    cmd = {
+      'G',
+      'GBrowse',
+      'GDelete',
+      'GMove',
+      'GRemove',
+      'GRename',
+      'GUnlink',
+      'Gcd',
+      'Gclog',
+      'Gdiffsplit',
+      'Gdrop',
+      'Gedit',
+      'Ggrep',
+      'Ghdiffsplit',
+      'Git',
+      'Glcd',
+      'Glgrep',
+      'Gllog',
+      'Gpedit',
+      'Gread',
+      'Gsplit',
+      'Gtabedit',
+      'Gvdiffsplit',
+      'Gvsplit',
+      'Gwq',
+      'Gwrite',
+    },
+    keys = {
+      {
+        desc = 'Git: Status',
+        '<leader>gs',
+        '<Cmd>Git<CR>',
+      },
+      {
+        desc = 'Git: Blame',
+        '<leader>gb',
+        '<Cmd>Git blame<CR>',
+      },
+      {
+        desc = 'Git: Difftool',
+        '<leader>gd',
+        '<Cmd>tabnew +Git\\ difftool<CR>',
+      },
+      {
+        desc = 'Git: File Log',
+        '<leader>gfl',
+        '<Cmd>Git log %<CR>',
+      },
+      {
+        desc = 'Git: Log',
+        '<leader>gl',
+        '<Cmd>Git log<CR>',
+      },
+      {
+        desc = 'Git: External',
+        mode = { 'n', 'x' },
+        '<leader>gx',
+        ':GBrowse<CR>',
+      },
+    },
+  },
+  {
     'lewis6991/gitsigns.nvim',
     event = 'VeryLazy',
     keys = {
@@ -60,49 +128,6 @@ return {
     },
     opts = {
       attach_to_untracked = true,
-    },
-  },
-  {
-    'sindrets/diffview.nvim',
-    cmd = {
-      'DiffviewLog',
-      'DiffviewOpen',
-      'DiffviewClose',
-      'DiffviewRefresh',
-      'DiffviewFocusFiles',
-      'DiffviewFileHistory',
-      'DiffviewToggleFiles',
-    },
-    keys = {
-      {
-        desc = 'Git: Status',
-        '<leader>gs',
-        '<Cmd>DiffviewOpen<CR>',
-      },
-      {
-        desc = 'Git: File History',
-        '<leader>gfh',
-        '<Cmd>DiffviewFileHistory %<CR>',
-      },
-      {
-        desc = 'Git: History',
-        '<leader>gh',
-        '<Cmd>DiffviewFileHistory<CR>',
-      },
-      {
-        desc = 'Close Diffview using q',
-        ft = { 'DiffviewFiles', 'DiffviewFileHistory' },
-        'q',
-        '<Cmd>DiffviewClose<CR>',
-      },
-    },
-    opts = {
-      file_panel = {
-        win_config = {
-          position = 'bottom',
-          height = 16,
-        },
-      },
     },
   },
 }

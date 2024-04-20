@@ -44,6 +44,7 @@ autocmd(
   {
     pattern = {
       'dbout',
+      'git',
       'gitrebase',
       'kitty',
       'man',
@@ -70,6 +71,9 @@ autocmd(
       'dap-float',
       'dap-repl',
       'dbout',
+      'fugitive',
+      'fugitiveblame',
+      'git',
       'help',
       'qf',
       'query',

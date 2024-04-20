@@ -6,8 +6,6 @@ local autosave_autocmd_id = nil
 local function autosave_on()
   if autosave_autocmd_id then return end
 
-  autocmd('Close Diffview before exit', 'VimLeavePre', 'DiffviewClose')
-
   autosave_autocmd_id =
     autocmd('Save session before exit', 'VimLeavePre', 'SessionSave')
 end
