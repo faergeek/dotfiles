@@ -3,9 +3,18 @@ return {
     'goolord/alpha-nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
+      {
+        'rubiin/fortune.nvim',
+        opts = {
+          {
+            max_width = 70,
+            display_format = 'mixed',
+            content_type = 'mixed',
+          },
+        },
+      },
     },
     opts = function()
-      local alpha = require 'alpha'
       local autocmd = require('utils').autocmd
 
       local function button(sc, val, keybind)
@@ -13,8 +22,7 @@ return {
           type = 'button',
           val = val,
           opts = {
-            align_shortcut = 'left',
-            cursor = 1,
+            align_shortcut = 'right',
             hl_shortcut = {
               { 'AlphaButtons', 0, 1 },
               { 'AlphaShortcut', 1, #sc + 1 },
@@ -26,9 +34,10 @@ return {
               keybind,
               { noremap = true, silent = true, nowait = true },
             },
-            position = 'left',
+            position = 'center',
             shortcut = '[' .. sc .. '] ',
             shrink_margin = false,
+            width = 70,
           },
           on_press = function()
             vim.api.nvim_feedkeys(
@@ -52,23 +61,6 @@ return {
         return ext
       end
 
-      local startup_time = {
-        type = 'text',
-        val = '💤 lazy.nvim is loading...',
-        opts = { hl = 'AlphaHeaderLabel', shrink_margin = false },
-      }
-
-      autocmd('Update start up time on dashboard', 'User', function()
-        startup_time.val = '💤 lazy.nvim loaded in '
-          .. (math.floor(require('lazy').stats().startuptime * 100 + 0.5) / 100)
-          .. 'ms'
-
-        alpha.redraw()
-      end, {
-        once = true,
-        pattern = 'LazyVimStarted',
-      })
-
       if vim.o.filetype == 'lazy' then
         vim.cmd.close()
 
@@ -84,37 +76,39 @@ return {
       end
 
       return {
-        opts = { margin = 2 },
+        opts = { margin = 1 },
         layout = {
           { type = 'padding', val = 1 },
           {
             type = 'text',
             val = {
-              '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
-              '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
-              '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
-              '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
-              '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
-              '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
+              [[                                                                   ]],
+              [[      ████ ██████           █████      ██                    ]],
+              [[     ███████████             █████                            ]],
+              [[     █████████ ███████████████████ ███   ███████████  ]],
+              [[    █████████  ███    █████████████ █████ ██████████████  ]],
+              [[   █████████ ██████████ █████████ █████ █████ ████ █████  ]],
+              [[ ███████████ ███    ███ █████████ █████ █████ ████ █████ ]],
+              [[██████  █████████████████████ ████ █████ █████ ████ ██████]],
             },
-            opts = { hl = 'AlphaHeader', shrink_margin = false },
-          },
-          { type = 'padding', val = 1 },
-          startup_time,
-          { type = 'padding', val = 1 },
-          {
-            type = 'group',
-            val = { button('e', 'New file', '<Cmd>enew<CR>') },
+            opts = {
+              hl = {
+                { { 'AlphaShortcut', 0, -1 } },
+                { { 'AlphaHeader', 0, 62 }, { 'AlphaShortcut', 62, -1 } },
+                { { 'AlphaHeader', 0, 65 }, { 'AlphaShortcut', 65, -1 } },
+                { { 'AlphaHeader', 0, 92 }, { 'AlphaShortcut', 92, -1 } },
+                { { 'AlphaHeader', 0, 85 }, { 'AlphaShortcut', 85, -1 } },
+                { { 'AlphaHeader', 0, 98 }, { 'AlphaShortcut', 98, -1 } },
+                { { 'AlphaHeader', 0, 97 }, { 'AlphaShortcut', 97, -1 } },
+                { { 'AlphaHeader', 0, 107 }, { 'AlphaShortcut', 107, -1 } },
+              },
+              position = 'center',
+              shrink_margin = false,
+            },
           },
           {
             type = 'group',
             val = {
-              { type = 'padding', val = 1 },
-              {
-                type = 'text',
-                val = 'Recent files',
-                opts = { hl = 'AlphaFooter', shrink_margin = false },
-              },
               { type = 'padding', val = 1 },
               {
                 type = 'group',
@@ -141,8 +135,10 @@ return {
                     end
 
                     local function file_button(fn, sc)
-                      local short_fn =
-                        vim.F.if_nil(vim.fn.fnamemodify(fn, ':p:~:.'), fn)
+                      local short_fn = vim.fn.fnamemodify(
+                        fn,
+                        ':p:~:.:gs?\\([.]*[^/]\\)[^/]*/?\\1/?'
+                      )
                       local fb_hl = {}
                       local ico, hl = require('nvim-web-devicons').get_icon(
                         fn,
@@ -152,7 +148,7 @@ return {
 
                       if hl then table.insert(fb_hl, { hl, 0, #ico }) end
 
-                      local ico_txt = ico .. '  '
+                      local ico_txt = ico .. ' '
 
                       local file_button_el = button(
                         sc,
@@ -192,8 +188,13 @@ return {
           },
           { type = 'padding', val = 1 },
           {
-            type = 'group',
-            val = { button('q', 'Quit', '<Cmd>q<CR>') },
+            type = 'text',
+            val = require('fortune').get_fortune(),
+            opts = {
+              hl = 'AlphaFooter',
+              position = 'center',
+              shrink_margin = false,
+            },
           },
         },
       }
