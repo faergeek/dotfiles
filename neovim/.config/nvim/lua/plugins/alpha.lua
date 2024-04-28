@@ -6,11 +6,9 @@ return {
       {
         'rubiin/fortune.nvim',
         opts = {
-          {
-            max_width = 70,
-            display_format = 'mixed',
-            content_type = 'mixed',
-          },
+          max_width = 70,
+          display_format = 'mixed',
+          content_type = 'mixed',
         },
       },
     },
