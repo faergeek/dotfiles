@@ -1,5 +1,3 @@
-local is_rpi = require('utils').is_rpi
-
 return {
   {
     'nvim-telescope/telescope.nvim',
