@@ -60,7 +60,7 @@ function M.quickfixtextfunc(info)
     if fname == '' then
       fname = '[No Name]'
     else
-      fname = vim.fn.fnamemodify(fname, ':p:~:.')
+      fname = vim.fn.fnamemodify(fname, ':p:~:.:gs?\\([.]*[^/]\\)[^/]*/?\\1/?')
     end
 
     return fname
