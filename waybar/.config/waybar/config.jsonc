@@ -24,8 +24,7 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_address})\t{device_battery_percentage}%"
   },
   "clock": {
-    "format": "{:%H:%M}",
-    "tooltip-format": "{:%A, %d %B %Y}"
+    "format": "{:L%a %d %B %H:%M}"
   },
   "cpu": {
     "format": "{icon} ",
