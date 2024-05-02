@@ -53,7 +53,8 @@ return {
         '<leader>df',
         function()
           local widgets = require 'dap.ui.widgets'
-          widgets.centered_float(widgets.frames, { wrap = false })
+          local sidebar = widgets.sidebar(widgets.frames, { wrap = false })
+          sidebar.open()
         end,
       },
       {
