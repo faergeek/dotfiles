@@ -60,7 +60,13 @@ return {
           },
         },
         lualine_x = {},
-        lualine_y = {},
+        lualine_y = {
+          function()
+            local dap_status = require('dap').status()
+
+            return dap_status ~= '' and '󰃤 ' .. dap_status or ''
+          end,
+        },
         lualine_z = { 'searchcount' },
       },
       winbar = {
