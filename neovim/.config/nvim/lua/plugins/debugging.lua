@@ -3,12 +3,12 @@ return {
     'mfussenegger/nvim-dap',
     keys = {
       {
-        desc = '[D]ebug: [B]reakpoint Toggle',
+        desc = 'Debug: Breakpoint Toggle',
         '<leader>db',
         function() require('dap').toggle_breakpoint() end,
       },
       {
-        desc = '[D]ebug: [B]reakpoint Condition',
+        desc = 'Debug: Breakpoint Condition',
         '<leader>dB',
         function()
           vim.ui.input(
@@ -22,7 +22,7 @@ return {
         end,
       },
       {
-        desc = '[D]ebug: [L]og Point',
+        desc = 'Debug: Log Point',
         '<leader>dl',
         function()
           vim.ui.input({ prompt = 'Log point message: ' }, function(message)
@@ -33,23 +33,23 @@ return {
         end,
       },
       {
-        desc = '[D]ebug: [C]ontinue',
+        desc = 'Debug: Continue',
         '<leader>dc',
         function() require('dap').continue() end,
       },
       {
-        desc = '[D]ebug: Toggle [R]EPL',
+        desc = 'Debug: Toggle REPL',
         '<leader>dr',
         function() require('dap').repl.toggle() end,
       },
       {
-        desc = '[D]ebug: [H]over',
+        desc = 'Debug: Hover',
         mode = { 'n', 'x' },
         '<leader>dh',
         function() require('dap.ui.widgets').hover(nil, { wrap = false }) end,
       },
       {
-        desc = '[D]ebug: [S]tack',
+        desc = 'Debug: Frames',
         '<leader>df',
         function()
           local widgets = require 'dap.ui.widgets'
@@ -60,20 +60,20 @@ return {
       {
         '<leader>do',
         function() require('dap').step_over() end,
-        desc = '[D]ebug: Step [O]ver',
+        desc = 'Debug: Step Over',
       },
       {
         '<leader>di',
         function() require('dap').step_into() end,
-        desc = '[D]ebug: Step [I]nto',
+        desc = 'Debug: Step Into',
       },
       {
         '<leader>dO',
         function() require('dap').step_out() end,
-        desc = '[D]ebug: Step [O]ut',
+        desc = 'Debug: Step Out',
       },
       {
-        desc = '[D]ebug: List [A]ll Breakpoints',
+        desc = 'Debug: List All Breakpoints',
         '<leader>da',
         function()
           require('dap').list_breakpoints(true)
@@ -81,7 +81,7 @@ return {
         end,
       },
       {
-        desc = '[D]ebug: [T]erminate',
+        desc = 'Debug: Terminate',
         '<leader>dt',
         function() require('dap').terminate() end,
       },
