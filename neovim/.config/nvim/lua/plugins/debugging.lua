@@ -51,11 +51,7 @@ return {
       {
         desc = 'Debug: Frames',
         '<leader>df',
-        function()
-          local widgets = require 'dap.ui.widgets'
-          local sidebar = widgets.sidebar(widgets.frames, { wrap = false })
-          sidebar.open()
-        end,
+        function() require('utils.dap').frames_sidebar.toggle() end,
       },
       {
         '<leader>do',
