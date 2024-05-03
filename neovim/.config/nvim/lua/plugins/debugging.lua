@@ -172,7 +172,7 @@ return {
           {
             'microsoft/vscode-js-debug',
             build = table.concat({
-              'rm -f .nvmrc',
+              'echo 18.19.0 > .nvmrc',
               'npm i --ignore-scripts --legacy-peer-deps --no-audit --no-fund',
               'npx gulp vsDebugServerBundle',
               'rm -rf out',
