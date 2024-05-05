@@ -59,7 +59,9 @@ return {
     },
     opts = function()
       return {
-        defaults = require('telescope.themes').get_ivy(),
+        defaults = require('telescope.themes').get_ivy {
+          dynamic_preview_title = true,
+        },
         pickers = {
           find_files = {
             find_command = {
