@@ -19,12 +19,6 @@ autocmd(
   end
 )
 
-autocmd(
-  'Resize windows when terminal resizes',
-  'VimResized',
-  function() vim.cmd 'tabdo wincmd =' end
-)
-
 autocmd('Disable concealing in help', 'FileType', function()
   vim.opt_local.conceallevel = 0
   vim.opt_local.concealcursor = ''
