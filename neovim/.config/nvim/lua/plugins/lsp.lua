@@ -50,6 +50,7 @@ return {
         'bashls',
         'cssls',
         'cssmodules_ls',
+        'dockerls',
         'eslint',
         'html',
         'jsonls',
@@ -82,6 +83,14 @@ return {
               init_options = {
                 camelCase = false,
               },
+            }
+          end,
+          dockerls = function()
+            lspconfig.dockerls.setup {
+              capabilities = capabilities,
+              on_attach = function(client)
+                client.server_capabilities.semanticTokensProvider = nil
+              end,
             }
           end,
           eslint = function()
