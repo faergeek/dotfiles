@@ -58,8 +58,6 @@ return {
         'yamlls',
       }
 
-      local uv = vim.uv or vim.loop
-
       if not is_rpi then
         vim.list_extend(ensure_installed, {
           'clangd',
