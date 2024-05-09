@@ -80,6 +80,18 @@ return {
           )
         end,
       },
+
+      {
+        'mtoohey31/cmp-fish',
+        ft = 'fish',
+        config = function()
+          require('cmp').setup.filetype({ 'fish' }, {
+            sources = {
+              { name = 'fish' },
+            },
+          })
+        end,
+      },
     },
     opts = function()
       local cmp = require 'cmp'
