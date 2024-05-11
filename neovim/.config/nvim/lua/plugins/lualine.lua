@@ -29,7 +29,9 @@ return {
               return not vim.tbl_contains({
                 'buffer_manager',
                 'help',
+                'lazy',
                 'man',
+                'mason',
                 'oil',
                 'qf',
                 'TelescopePrompt',
