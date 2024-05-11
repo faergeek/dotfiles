@@ -8,7 +8,7 @@ return {
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
           statusline = { 'alpha' },
-          winbar = { 'alpha' },
+          winbar = { 'alpha', 'dbui' },
         },
         globalstatus = true,
         theme = 'catppuccin',
@@ -28,6 +28,7 @@ return {
             cond = function()
               return not vim.tbl_contains({
                 'buffer_manager',
+                'dbui',
                 'help',
                 'lazy',
                 'man',
