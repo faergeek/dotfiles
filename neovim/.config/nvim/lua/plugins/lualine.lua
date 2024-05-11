@@ -29,6 +29,8 @@ return {
               return not vim.tbl_contains({
                 'buffer_manager',
                 'dbui',
+                'fugitive',
+                'git',
                 'help',
                 'lazy',
                 'man',
@@ -80,6 +82,16 @@ return {
         lualine_z = { 'location' },
       },
       extensions = {
+        {
+          filetypes = { 'fugitive', 'fugitiveblame', 'git' },
+          winbar = {
+            lualine_a = {
+              function() return ' ' .. vim.fn.FugitiveHead() end,
+            },
+            lualine_y = { 'progress' },
+            lualine_z = { 'location' },
+          },
+        },
         {
           filetypes = { 'help' },
           winbar = {
