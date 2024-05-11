@@ -41,15 +41,6 @@ return {
             path = 1,
           },
           {
-            function() return 'Buffer Manager' end,
-            cond = function()
-              return vim.tbl_contains(
-                { 'buffer_manager' },
-                vim.opt.filetype:get()
-              )
-            end,
-          },
-          {
             function()
               return vim.fn.fnamemodify(
                 require('oil').get_current_dir(),
