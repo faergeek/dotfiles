@@ -47,7 +47,7 @@ return {
       {
         desc = 'Git: Difftool',
         '<leader>gd',
-        '<Cmd>tabnew +Git\\ difftool<CR>',
+        '<Cmd>Gvdiffsplit<CR>',
       },
       {
         desc = 'Git: File Log',
