@@ -25,7 +25,7 @@
   hideResolved = true
   keepBackup = false
 [mergetool "vimdiff"]
-  layout = LOCAL, MERGED, REMOTE + LOCAL,BASE,REMOTE / MERGED
+  layout = @LOCAL, REMOTE + LOCAL, MERGED, REMOTE + LOCAL,BASE,REMOTE / MERGED
 [pull]
   rebase = true
 [push]
