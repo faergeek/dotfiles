@@ -16,9 +16,6 @@ keymap(
   { expr = true }
 )
 
-keymap('Next tab', 'n', ']t', vim.cmd.tabnext)
-keymap('Previous tab', 'n', '[t', vim.cmd.tabprevious)
-
 keymap('Lazy', 'n', '<leader>l', '<Cmd>Lazy<CR>')
 
 keymap('Next diagnostic', 'n', ']d', vim.diagnostic.goto_next)
