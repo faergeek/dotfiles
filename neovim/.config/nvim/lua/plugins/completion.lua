@@ -140,7 +140,7 @@ return {
         sources = cmp.config.sources({
           {
             name = 'path',
-            options = { label_trailing_slash = true, trailing_slash = true },
+            option = { trailing_slash = true },
           },
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
