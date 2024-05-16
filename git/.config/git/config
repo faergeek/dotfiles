@@ -36,6 +36,7 @@
   autoStash = true
   updateRefs = true
 [rerere]
+  autoUpdate = true
   enabled = true
 [tag]
   sort = version:refname
