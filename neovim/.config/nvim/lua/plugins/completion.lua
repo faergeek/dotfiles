@@ -70,14 +70,13 @@ return {
         dependencies = { 'hrsh7th/nvim-cmp' },
         ft = { 'dap-repl', 'dapui_watches', 'dapui_hover' },
         config = function()
-          require('cmp').setup.filetype(
-            { 'dap-repl', 'dapui_watches', 'dapui_hover' },
-            {
-              sources = {
-                { name = 'dap' },
-              },
-            }
-          )
+          local cmp = require 'cmp'
+
+          cmp.setup.filetype({ 'dap-repl', 'dapui_watches', 'dapui_hover' }, {
+            sources = cmp.config.sources {
+              { name = 'dap' },
+            },
+          })
         end,
       },
 
@@ -85,8 +84,10 @@ return {
         'mtoohey31/cmp-fish',
         ft = 'fish',
         config = function()
-          require('cmp').setup.filetype({ 'fish' }, {
-            sources = {
+          local cmp = require 'cmp'
+
+          cmp.setup.filetype({ 'fish' }, {
+            sources = cmp.config.sources {
               { name = 'fish' },
             },
           })
