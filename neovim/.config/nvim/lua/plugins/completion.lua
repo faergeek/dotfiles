@@ -90,6 +90,16 @@ return {
 
           cmp.setup.filetype({ 'fish' }, {
             sources = cmp.config.sources({
+              {
+                name = 'path',
+                option = {
+                  get_cwd = function()
+                    vim.print 'get_cwd'
+                    return vim.fn.getcwd()
+                  end,
+                  trailing_slash = true,
+                },
+              },
               { name = 'fish' },
             }, {
               { name = 'buffer' },
