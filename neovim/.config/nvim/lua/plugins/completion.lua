@@ -73,9 +73,11 @@ return {
           local cmp = require 'cmp'
 
           cmp.setup.filetype({ 'dap-repl', 'dapui_watches', 'dapui_hover' }, {
-            sources = cmp.config.sources {
+            sources = cmp.config.sources({
               { name = 'dap' },
-            },
+            }, {
+              { name = 'buffer' },
+            }),
           })
         end,
       },
@@ -87,9 +89,11 @@ return {
           local cmp = require 'cmp'
 
           cmp.setup.filetype({ 'fish' }, {
-            sources = cmp.config.sources {
+            sources = cmp.config.sources({
               { name = 'fish' },
-            },
+            }, {
+              { name = 'buffer' },
+            }),
           })
         end,
       },
