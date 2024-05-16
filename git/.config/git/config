@@ -13,6 +13,7 @@
   colorMoved = default
   algorithm = patience
 [fetch]
+  all = true
   prune = true
   pruneTags = true
 [init]
