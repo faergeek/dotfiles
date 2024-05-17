@@ -6,18 +6,38 @@ return {
       local function winnr() return '󰕰 ' .. vim.fn.winnr() end
       local function bufnr() return '󱔗 ' .. vim.fn.bufnr() end
 
+      local function lualine_c(filename_opts)
+        filename_opts = filename_opts or {}
+
+        return {
+          {
+            'filetype',
+            icon_only = true,
+            separator = '',
+            padding = { left = 1, right = 0 },
+          },
+          {
+            'filename',
+            file_status = filename_opts.file_status,
+            padding = 0,
+            path = filename_opts.fullpath and 1,
+            separator = '',
+          },
+        }
+      end
+
       local sections = {
         lualine_a = { winnr },
         lualine_b = { bufnr },
-        lualine_c = { { 'filename', path = 1 } },
-        lualine_x = { 'filetype' },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' },
+        lualine_c = lualine_c { fullpath = true },
+        lualine_x = { 'searchcount' },
+        lualine_y = { 'location', 'progress' },
+        lualine_z = { { 'FugitiveHead', icon = '' } },
       }
 
       return {
         options = {
-          disabled_filetypes = { 'dbui', 'fugitiveblame' },
+          disabled_filetypes = { 'alpha', 'dbui', 'fugitiveblame' },
           theme = 'catppuccin',
         },
         tabline = {
@@ -25,54 +45,40 @@ return {
             'mode',
             'selectioncount',
             function() return vim.fn.fnamemodify(vim.fn.getcwd(), ':p:~:h') end,
-            { 'branch', icon = '' },
           },
           lualine_b = {
-            {
-              'tabs',
-              show_modified_status = false,
-              use_mode_colors = true,
-            },
-          },
-          lualine_y = {
             function()
               local dap_status = require('dap').status()
 
               return dap_status ~= '' and '󰃤 ' .. dap_status or ''
             end,
           },
-          lualine_z = { 'searchcount' },
+          lualine_z = {
+            {
+              'tabs',
+              show_modified_status = false,
+              use_mode_colors = true,
+            },
+          },
         },
         sections = sections,
         inactive_sections = sections,
         extensions = {
           {
             filetypes = { 'fugitive', 'fugitiveblame', 'git' },
-            sections = {
-              lualine_a = { winnr },
-              lualine_b = { bufnr },
-              lualine_c = {},
-              lualine_x = { 'filetype' },
-              lualine_y = { 'progress' },
-              lualine_z = { 'location' },
-            },
+            sections = vim.tbl_extend('force', sections, {
+              lualine_c = { function() return 'Fugitive' end },
+            }),
           },
           {
             filetypes = { 'help', 'man' },
-            sections = {
-              lualine_a = { winnr },
-              lualine_b = { bufnr },
-              lualine_c = { { 'filename', file_status = false } },
-              lualine_x = { 'filetype' },
-              lualine_y = { 'progress' },
-              lualine_z = { 'location' },
-            },
+            sections = vim.tbl_extend('force', sections, {
+              lualine_c = lualine_c { file_status = false },
+            }),
           },
           {
             filetypes = { 'oil' },
-            sections = {
-              lualine_a = { winnr },
-              lualine_b = { bufnr },
+            sections = vim.tbl_extend('force', sections, {
               lualine_c = {
                 {
                   function()
@@ -81,31 +87,21 @@ return {
                       ':p:~:.'
                     )
                   end,
-                  cond = function()
-                    return vim.tbl_contains({ 'oil' }, vim.opt.filetype:get())
-                  end,
+                  icon = {
+                    '',
+                    color = {
+                      fg = require('catppuccin.palettes').get_palette('frappe').maroon,
+                    },
+                  },
                 },
               },
-              lualine_x = { 'filetype' },
-              lualine_y = { 'progress' },
-              lualine_z = { 'location' },
-            },
+            }),
           },
           {
             filetypes = { 'qf' },
-            sections = {
-              lualine_a = {
-                function()
-                  return vim.fn.getloclist(0, { filewinid = 1 }).filewinid ~= 0
-                      and 'Location List'
-                    or 'Quickfix List'
-                end,
-              },
-              lualine_b = { 'w:quickfix_title' },
-              lualine_x = { 'filetype' },
-              lualine_y = { 'progress' },
-              lualine_z = { 'location' },
-            },
+            sections = vim.tbl_extend('force', sections, {
+              lualine_c = { 'w:quickfix_title' },
+            }),
           },
         },
       }
