@@ -11,11 +11,14 @@ autocmd('Override options for terminal buffers', 'TermOpen', function()
   vim.opt_local.signcolumn = 'auto'
 end)
 
+-- TODO: remove once Neovim 0.10 is available on all machines
 autocmd(
   'Close terminal if job exited without an error',
   'TermClose',
   function(event)
-    if vim.v.event.status == 0 then vim.api.nvim_buf_delete(event.buf, {}) end
+    if vim.v.event.status == 0 and vim.api.nvim_buf_is_loaded(event.buf) then
+      vim.api.nvim_buf_delete(event.buf, {})
+    end
   end
 )
 
