@@ -14,13 +14,9 @@ return {
     opts = {},
   },
   { 'folke/neodev.nvim', lazy = true, opts = {} },
-  { 'j-hui/fidget.nvim', lazy = true, opts = {} },
   {
     'neovim/nvim-lspconfig',
-    dependencies = {
-      'folke/neoconf.nvim',
-      'j-hui/fidget.nvim',
-    },
+    dependencies = { 'folke/neoconf.nvim' },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
     config = function()

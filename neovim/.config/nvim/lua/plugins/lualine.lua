@@ -1,7 +1,10 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+      'arkav/lualine-lsp-progress',
+    },
     opts = function()
       local function winnr() return '󰕰 ' .. vim.fn.winnr() end
       local function bufnr() return '󱔗 ' .. vim.fn.bufnr() end
@@ -53,6 +56,7 @@ return {
               return dap_status ~= '' and '󰃤 ' .. dap_status or ''
             end,
           },
+          lualine_x = { 'lsp_progress' },
           lualine_z = {
             {
               'tabs',

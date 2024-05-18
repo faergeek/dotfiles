@@ -7,7 +7,6 @@ return {
     opts = {
       flavour = 'frappe',
       integrations = {
-        fidget = true,
         mason = true,
         mini = true,
         native_lsp = {
