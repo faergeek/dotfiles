@@ -1,3 +1,4 @@
+local autocmd = require('utils').autocmd
 local keymap = require('utils').keymap
 
 keymap(
@@ -31,6 +32,20 @@ keymap('LSP: Code Action', { 'n', 'x' }, '<leader>a', vim.lsp.buf.code_action)
 
 keymap('Find References', 'n', '<leader>fr', vim.lsp.buf.references)
 keymap('Find Implementations', 'n', '<leader>fi', vim.lsp.buf.implementation)
+
+-- TODO: remove condition once neovim 0.10 is available on all relevant machines
+if vim.lsp.inlay_hint then
+  keymap('Show inlay hints until cursor is moved', 'n', '<leader>i', function()
+    vim.lsp.inlay_hint.enable(true)
+
+    autocmd(
+      'Hide inlay hint once cursor is moved',
+      'CursorMoved',
+      function() vim.lsp.inlay_hint.enable(false) end,
+      { once = true }
+    )
+  end)
+end
 
 keymap('Next quickfix item', 'n', ']q', vim.cmd.cnext)
 keymap('Previous quickfix item', 'n', '[q', vim.cmd.cprevious)
