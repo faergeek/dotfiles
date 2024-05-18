@@ -30,9 +30,9 @@ return {
         lualine_a = { winnr },
         lualine_b = { bufnr },
         lualine_c = lualine_c { fullpath = true },
-        lualine_x = { 'searchcount' },
-        lualine_y = { 'location', 'progress' },
-        lualine_z = { { 'FugitiveHead', icon = '' } },
+        lualine_x = { 'searchcount', { 'FugitiveHead', icon = '' } },
+        lualine_y = { 'location' },
+        lualine_z = { 'progress' },
       }
 
       return {
