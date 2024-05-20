@@ -3,7 +3,6 @@ return {
     'tpope/vim-fugitive',
     lazy = false,
     dependencies = {
-      'chrishrb/gx.nvim',
       'tpope/vim-rhubarb',
     },
     cmd = {

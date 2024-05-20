@@ -186,20 +186,4 @@ return {
       },
     },
   },
-  {
-    -- TODO: remove once nvim 0.10.0 is released
-    -- https://github.com/neovim/neovim/issues/23231
-    'chrishrb/gx.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = { { 'gx', '<Cmd>Browse<CR>', mode = { 'n', 'x' } } },
-    opts = {
-      handlers = {
-        brewfile = false,
-        github = false,
-        package_json = false,
-        plugin = false,
-        search = false,
-      },
-    },
-  },
 }

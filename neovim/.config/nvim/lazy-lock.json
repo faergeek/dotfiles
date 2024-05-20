@@ -15,7 +15,6 @@
   "format-on-save.nvim": { "branch": "main", "commit": "da7e9a9a36f22e83f33150a7e3efa171e655fa73" },
   "fortune.nvim": { "branch": "master", "commit": "12644a2939e5db8144f3fcbc77ce6adc684ed565" },
   "gitsigns.nvim": { "branch": "main", "commit": "805610a9393fa231f2c2b49cb521bfa413fadb3d" },
-  "gx.nvim": { "branch": "main", "commit": "cf6ed6ba86ffe4e3f51a898c03a05023b7a2fe48" },
   "indent-o-matic": { "branch": "master", "commit": "4d11e98f523d3c4500b1dc33f0d1a248a4f69719" },
   "lazy.nvim": { "branch": "main", "commit": "0de782a6b0ffba599dbd332a4019d852564bf28c" },
   "lspkind.nvim": { "branch": "master", "commit": "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf" },

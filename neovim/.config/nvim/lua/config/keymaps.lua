@@ -19,14 +19,6 @@ keymap(
 
 keymap('Lazy', 'n', '<leader>l', '<Cmd>Lazy<CR>')
 
--- TODO: remove once neovim 0.10 is available on all relevant machines
-keymap('Next diagnostic', 'n', ']d', vim.diagnostic.goto_next)
-keymap('Previous diagnostic', 'n', '[d', vim.diagnostic.goto_prev)
-
-keymap('Show Diagnostics', 'n', '<C-W>d', vim.diagnostic.open_float)
-
-keymap('LSP: Hover', 'n', 'K', vim.lsp.buf.hover)
--- /TODO
 keymap('LSP: Rename Symbol', 'n', '<leader>rs', vim.lsp.buf.rename)
 keymap('LSP: Code Action', { 'n', 'x' }, '<leader>a', vim.lsp.buf.code_action)
 
