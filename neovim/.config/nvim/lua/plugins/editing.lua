@@ -48,7 +48,6 @@ return {
   },
   {
     'windwp/nvim-ts-autotag',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     opts = {
       enable_close_on_slash = true,
@@ -69,7 +68,6 @@ return {
   },
   {
     'windwp/nvim-autopairs',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = 'InsertEnter',
     opts = {
       break_undo = false,
