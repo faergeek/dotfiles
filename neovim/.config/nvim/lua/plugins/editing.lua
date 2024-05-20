@@ -71,11 +71,7 @@ return {
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
-    opts = {
-      break_undo = false,
-      check_ts = true,
-      disable_filetype = { 'spectre_panel', 'TelescopePrompt' },
-    },
+    opts = { break_undo = false },
   },
   {
     'RRethy/vim-illuminate',
