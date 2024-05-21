@@ -54,6 +54,11 @@ return {
         function() require('utils.dap').frames_sidebar.toggle() end,
       },
       {
+        desc = 'Debug: Scopes',
+        '<leader>ds',
+        function() require('utils.dap').scopes_sidebar.toggle() end,
+      },
+      {
         '<leader>do',
         function() require('dap').step_over() end,
         desc = 'Debug: Step Over',

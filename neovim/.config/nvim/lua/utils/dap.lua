@@ -7,4 +7,9 @@ M.frames_sidebar = widgets.sidebar(widgets.frames, {
   wrap = false,
 })
 
+M.scopes_sidebar = widgets.sidebar(widgets.scopes, {
+  winfixwidth = true,
+  wrap = false,
+})
+
 return M
