@@ -84,9 +84,6 @@ return {
           dockerls = function()
             lspconfig.dockerls.setup {
               capabilities = capabilities,
-              on_attach = function(client)
-                client.server_capabilities.semanticTokensProvider = nil
-              end,
             }
           end,
           eslint = function()
@@ -95,9 +92,6 @@ return {
               settings = {
                 codeActionOnSave = { enable = true, mode = 'all' },
               },
-              on_attach = function(client)
-                client.server_capabilities.documentFormattingProvider = true
-              end,
             }
           end,
           jsonls = function()

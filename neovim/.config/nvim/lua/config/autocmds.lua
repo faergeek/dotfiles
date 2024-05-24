@@ -67,3 +67,15 @@ autocmd(
     },
   }
 )
+
+autocmd('Setup LSP clients', 'LspAttach', function(args)
+  local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+  if client then
+    if client.name == 'eslint' then
+      client.server_capabilities.documentFormattingProvider = true
+    elseif client.name == 'dockerls' then
+      client.server_capabilities.semanticTokensProvider = nil
+    end
+  end
+end)
