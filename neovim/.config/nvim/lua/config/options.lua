@@ -16,7 +16,10 @@ vim.opt.diffopt:append {
 }
 vim.opt.expandtab = true
 vim.opt.fillchars = {
-  diff = '╱',
+  diff = ' ',
+  fold = ' ',
+  foldclose = '',
+  foldopen = '',
 }
 vim.opt.fixeol = false
 vim.opt.guicursor =
