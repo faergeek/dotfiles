@@ -33,7 +33,7 @@ return {
         lualine_a = { winnr },
         lualine_b = { bufnr },
         lualine_c = lualine_c { fullpath = true },
-        lualine_x = { 'searchcount', { 'FugitiveHead', icon = '' } },
+        lualine_x = { 'searchcount' },
         lualine_y = { 'location' },
         lualine_z = { 'progress' },
       }
@@ -69,9 +69,9 @@ return {
         inactive_sections = sections,
         extensions = {
           {
-            filetypes = { 'fugitive', 'fugitiveblame', 'git' },
+            filetypes = { 'fugitive', 'git' },
             sections = vim.tbl_extend('force', sections, {
-              lualine_c = { function() return 'Fugitive' end },
+              lualine_c = { { 'FugitiveHead', icon = '' } },
             }),
           },
           {
