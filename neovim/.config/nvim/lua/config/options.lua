@@ -22,6 +22,7 @@ vim.opt.fillchars = {
   foldopen = '',
 }
 vim.opt.fixeol = false
+vim.opt.foldtext = ''
 vim.opt.guicursor =
   'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:blinkwait300-blinkon200-blinkoff150'
 vim.opt.ignorecase = true
