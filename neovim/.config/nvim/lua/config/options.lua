@@ -5,6 +5,7 @@ vim.opt.belloff = {
   'operator',
   'showmatch',
 }
+vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.cpoptions:append 'n'
