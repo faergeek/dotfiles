@@ -86,10 +86,9 @@ return {
               lualine_c = {
                 {
                   function()
-                    return vim.fn.fnamemodify(
-                      require('oil').get_current_dir(),
-                      ':p:~:.'
-                    )
+                    local dir = require('oil').get_current_dir()
+
+                    return dir and vim.fn.fnamemodify(dir, ':p:~:.')
                   end,
                   icon = {
                     '',
