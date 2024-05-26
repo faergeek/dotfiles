@@ -6,6 +6,10 @@ return {
     opts = {},
   },
   {
+    'tpope/vim-dispatch',
+    cmd = { 'Dispatch', 'Make' },
+  },
+  {
     'faergeek/neomakery.nvim',
     keys = {
       {
