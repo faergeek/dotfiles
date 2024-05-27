@@ -66,32 +66,25 @@ function M.quickfixtextfunc(info)
     return fname
   end
 
-  local fname_limit = 1
-  local lnum_limit = 1
-  local col_limit = 1
+  local first_col_limit = 1
+
+  local function format_first_col(item)
+    return get_item_fname(item) .. ':' .. item.lnum .. ':' .. item.col
+  end
 
   for _, item in ipairs(items) do
-    local fname = get_item_fname(item)
-    local lnum = '' .. item.lnum
-    local col = '' .. item.col
+    local first_col = format_first_col(item)
 
-    if #fname > fname_limit then fname_limit = #fname end
-    if #lnum > lnum_limit then lnum_limit = #lnum end
-    if #col > col_limit then col_limit = #col end
+    if #first_col > first_col_limit then first_col_limit = #first_col end
   end
 
   local function format_item(item)
     if item.valid == 1 then
-      local fname = get_item_fname(item)
-      local lnum = '' .. item.lnum
-      local col = '' .. item.col
+      local first_col = format_first_col(item)
 
-      return ('%s | %s:%s | %s %s'):format(
-        fname .. string.rep(' ', fname_limit - #fname),
-        string.rep(' ', lnum_limit - #lnum) .. lnum,
-        col .. string.rep(' ', col_limit - #col),
-        item.type == '' and '' or ' ' .. item.type:sub(1, 1):upper(),
-        item.text:gsub('^%s+', '')
+      return ('%s │ %s'):format(
+        first_col .. string.rep(' ', first_col_limit - #first_col),
+        (item.type == '' and '' or item.type:upper() .. ' ') .. item.text
       )
     else
       return item.text
