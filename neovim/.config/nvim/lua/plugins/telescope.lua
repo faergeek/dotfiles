@@ -60,6 +60,7 @@ return {
       return {
         defaults = require('telescope.themes').get_ivy {
           dynamic_preview_title = true,
+          path_display = { 'filename_first' },
         },
         pickers = {
           find_files = {
