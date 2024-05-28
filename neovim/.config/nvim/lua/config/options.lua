@@ -1,10 +1,3 @@
-vim.opt.belloff = {
-  'backspace',
-  'cursor',
-  'error',
-  'operator',
-  'showmatch',
-}
 vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
