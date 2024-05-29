@@ -23,7 +23,14 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require 'lspconfig'
 
-      lspconfig.ocamllsp.setup { capabilities = capabilities }
+      lspconfig.ocamllsp.setup {
+        capabilities = capabilities,
+        settings = {
+          extendedHover = { enable = true },
+          inlayHints = { enable = true },
+          syntaxDocumentation = { enable = true },
+        },
+      }
       lspconfig.tilt_ls.setup { capabilities = capabilities }
       lspconfig.zls.setup { capabilities = capabilities }
     end,
