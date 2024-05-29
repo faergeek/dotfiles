@@ -138,12 +138,23 @@ return {
             mode = 'symbol',
           },
         },
-        mapping = cmp.mapping.preset.insert {
-          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-d>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete {},
-          ['<C-e>'] = cmp.mapping.abort(),
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+        mapping = {
+          ['<C-/>'] = {
+            i = function()
+              if cmp.visible_docs() then
+                cmp.close_docs()
+              else
+                cmp.open_docs()
+              end
+            end,
+          },
+          ['<C-u>'] = { i = cmp.mapping.scroll_docs(-4) },
+          ['<C-d>'] = { i = cmp.mapping.scroll_docs(4) },
+          ['<C-Space>'] = { i = cmp.mapping.complete {} },
+          ['<C-e>'] = { i = cmp.mapping.abort() },
+          ['<C-y>'] = { i = cmp.mapping.confirm { select = false } },
+          ['<C-n>'] = { i = cmp.mapping.select_next_item() },
+          ['<C-p>'] = { i = cmp.mapping.select_prev_item() },
         },
         snippet = {
           expand = function(args) require('luasnip').lsp_expand(args.body) end,
