@@ -51,9 +51,13 @@ return {
           },
           lualine_b = {
             function()
-              local dap_status = require('dap').status()
+              if package.loaded['dap'] then
+                local dap_status = require('dap').status()
 
-              return dap_status ~= '' and '󰃤 ' .. dap_status or ''
+                return dap_status ~= '' and '󰃤 ' .. dap_status or ''
+              else
+                return ''
+              end
             end,
           },
           lualine_x = { 'lsp_progress' },
