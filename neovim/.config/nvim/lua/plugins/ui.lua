@@ -60,6 +60,7 @@ return {
       },
     },
     opts = {
+      line_keys = '',
       width = 0.9,
     },
   },
