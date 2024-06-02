@@ -13,7 +13,7 @@ return {
     },
     opts = {},
   },
-  { 'folke/neodev.nvim', lazy = true, opts = {} },
+  { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
   {
     'neovim/nvim-lspconfig',
     dependencies = { 'folke/neoconf.nvim' },
@@ -38,7 +38,6 @@ return {
   {
     'williamboman/mason-lspconfig.nvim',
     dependencies = {
-      'folke/neodev.nvim',
       'mason.nvim',
       'b0o/schemastore.nvim',
       'neovim/nvim-lspconfig',
