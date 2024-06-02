@@ -6,7 +6,7 @@ return {
       {
         desc = 'Debug: Breakpoint Toggle',
         '<leader>db',
-        function() require('dap').toggle_breakpoint() end,
+        '<Cmd>DapToggleBreakpoint<CR>',
       },
       {
         desc = 'Debug: Breakpoint Condition',
@@ -36,12 +36,17 @@ return {
       {
         desc = 'Debug: Continue',
         '<leader>dc',
-        function() require('dap').continue() end,
+        '<Cmd>DapContinue<CR>',
+      },
+      {
+        desc = 'Debug: New',
+        '<leader>dn',
+        '<Cmd>DapNew<CR>',
       },
       {
         desc = 'Debug: Toggle REPL',
         '<leader>dr',
-        function() require('dap').repl.toggle() end,
+        '<Cmd>DapToggleRepl<CR>',
       },
       {
         desc = 'Debug: Hover',
@@ -60,19 +65,19 @@ return {
         function() require('utils.dap').scopes_sidebar.toggle() end,
       },
       {
-        '<leader>do',
-        function() require('dap').step_over() end,
         desc = 'Debug: Step Over',
+        '<leader>do',
+        '<Cmd>DapStepOver<CR>',
       },
       {
-        '<leader>di',
-        function() require('dap').step_into() end,
         desc = 'Debug: Step Into',
+        '<leader>di',
+        '<Cmd>DapStepInto<CR>',
       },
       {
-        '<leader>dO',
-        function() require('dap').step_out() end,
         desc = 'Debug: Step Out',
+        '<leader>dO',
+        '<Cmd>DapStepOut<CR>',
       },
       {
         desc = 'Debug: List All Breakpoints',
@@ -85,7 +90,7 @@ return {
       {
         desc = 'Debug: Terminate',
         '<leader>dt',
-        function() require('dap').terminate() end,
+        '<Cmd>DapTerminate<CR>',
       },
     },
     dependencies = {
