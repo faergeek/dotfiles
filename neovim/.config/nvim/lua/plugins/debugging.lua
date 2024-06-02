@@ -103,28 +103,6 @@ return {
           ensure_installed = {
             'firefox',
           },
-          handlers = {
-            function(config) require('mason-nvim-dap').default_setup(config) end,
-            firefox = function(config)
-              local neoconf = require 'neoconf'
-
-              config.configurations = {
-                {
-                  name = 'Firefox: Debug',
-                  request = 'attach',
-                  type = 'firefox',
-                  url = function()
-                    return neoconf.get('dap', { firefox = {} }).firefox.url
-                  end,
-                  webRoot = function()
-                    return neoconf.get('dap', { firefox = {} }).firefox.webRoot
-                  end,
-                },
-              }
-
-              require('mason-nvim-dap').default_setup(config)
-            end,
-          },
         },
       },
       {
@@ -149,6 +127,10 @@ return {
       },
     },
     config = function()
+      require('dap').providers.configs['custom-neoconf'] = function()
+        return require('neoconf').get 'debuggers'
+      end
+
       vim.fn.sign_define {
         {
           text = '',
@@ -177,36 +159,6 @@ return {
           texthl = 'DapUIBreakpointsDisabledLine',
         },
       }
-
-      local dap = require 'dap'
-      local neoconf = require 'neoconf'
-
-      for _, language in ipairs {
-        'javascript',
-        'javascriptreact',
-        'typescript',
-        'typescriptreact',
-      } do
-        dap.configurations[language] = dap.configurations[language] or {}
-
-        table.insert(dap.configurations[language], {
-          name = 'Node: Debug',
-          type = 'pwa-node',
-          request = 'attach',
-          cwd = function()
-            local node = neoconf.get('dap', { node = {} }).node
-
-            return node.cwd or node.localRoot or '${workspaceFolder}'
-          end,
-          localRoot = function()
-            return neoconf.get('dap', { node = {} }).node.localRoot
-          end,
-          port = function() return neoconf.get('dap', { node = {} }).node.port end,
-          remoteRoot = function()
-            return neoconf.get('dap', { node = {} }).node.remoteRoot
-          end,
-        })
-      end
     end,
   },
 }
