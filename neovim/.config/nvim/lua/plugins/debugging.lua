@@ -103,6 +103,14 @@ return {
           ensure_installed = {
             'firefox',
           },
+          handlers = {
+            function(config)
+              require('mason-nvim-dap').default_setup {
+                adapters = config.adapters,
+                name = config.name,
+              }
+            end,
+          },
         },
       },
       {
