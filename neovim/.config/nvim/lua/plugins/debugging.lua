@@ -93,6 +93,7 @@ return {
       },
     },
     dependencies = {
+      { 'theHamsta/nvim-dap-virtual-text', opts = {} },
       {
         'jay-babu/mason-nvim-dap.nvim',
         dependencies = {
