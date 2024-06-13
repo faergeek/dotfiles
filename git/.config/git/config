@@ -1,4 +1,5 @@
 [alias]
+  amend = "!git commit --amend --date=\"$(date -R)\""
   graph = log --graph --oneline
 [commit]
   gpgSign = true
