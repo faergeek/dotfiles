@@ -14,7 +14,7 @@
   "dressing.nvim": { "branch": "master", "commit": "e3714c8049b2243e792492c4149e4cc395c68eb9" },
   "format-on-save.nvim": { "branch": "main", "commit": "da7e9a9a36f22e83f33150a7e3efa171e655fa73" },
   "fortune.nvim": { "branch": "master", "commit": "57ac0b96f58180eab8c0293b7bd0bb5f834433fc" },
-  "gitsigns.nvim": { "branch": "main", "commit": "de18f6b749f6129eb9042a2038590872df4c94a9" },
+  "gitsigns.nvim": { "branch": "main", "commit": "75dc649106827183547d3bedd4602442340d2f7f" },
   "indent-o-matic": { "branch": "master", "commit": "4d11e98f523d3c4500b1dc33f0d1a248a4f69719" },
   "lazy.nvim": { "branch": "main", "commit": "eb4957442e3182f051b0ae11da32e06d22c190e3" },
   "lazydev.nvim": { "branch": "main", "commit": "7cbb524c85f87017df9c1ea2377a1d840ad8ed51" },
