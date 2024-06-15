@@ -35,11 +35,11 @@ return {
     'fn',
     fmt(
       [[
-      function{}({}) {{
+      function {}({}) {{
         {}
       }}
       ]],
-      { ls.i(1), ls.i(2), ls.i(0) }
+      { ls.i(1, 'name'), ls.i(2), ls.i(0) }
     )
   ),
   ls.s(
