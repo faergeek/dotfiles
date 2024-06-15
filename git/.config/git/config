@@ -12,7 +12,6 @@
   side-by-side = true
   syntax-theme = Catppuccin-frappe
 [diff]
-  colorMoved = default
   algorithm = patience
 [fetch]
   all = true
