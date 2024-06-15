@@ -22,7 +22,6 @@
 [interactive]
   diffFilter = delta --color-only
 [merge]
-  conflictStyle = zdiff3
   tool = nvimdiff
 [mergetool]
   hideResolved = true
