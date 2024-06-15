@@ -10,7 +10,7 @@
   hyperlinks = true
   line-numbers = true
   side-by-side = true
-  syntax-theme = Solarized (dark)
+  syntax-theme = Catppuccin-frappe
 [diff]
   colorMoved = default
   algorithm = patience
