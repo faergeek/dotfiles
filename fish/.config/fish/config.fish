@@ -37,7 +37,6 @@ if status is-interactive
         set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
     end
 
-    # eza
     if type -q eza
         alias ls='eza --icons'
     end
