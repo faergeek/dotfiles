@@ -9,6 +9,7 @@
 [delta]
   hyperlinks = true
   line-numbers = true
+  side-by-side = true
   syntax-theme = Solarized (dark)
 [diff]
   colorMoved = default
