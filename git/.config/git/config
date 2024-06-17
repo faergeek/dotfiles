@@ -4,6 +4,7 @@
 [commit]
   gpgSign = true
 [core]
+  fsmonitor = true
   pager = delta
   quotepath = false
   untrackedCache = true
