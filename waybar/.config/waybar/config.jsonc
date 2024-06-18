@@ -14,7 +14,8 @@
     "bluetooth",
     "network",
     "hyprland/language",
-    "clock"
+    "clock",
+    "custom/lock"
   ],
   "bluetooth": {
     "format": "",
@@ -30,6 +31,11 @@
     "format": "{icon} ",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "on-click": "kitty -e btm"
+  },
+  "custom/lock": {
+    "format": "",
+    "on-click": "loginctl lock-session",
+    "tooltip-format": "Lock session"
   },
   "custom/swaync": {
     "format": "{icon}",
