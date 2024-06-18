@@ -15,7 +15,8 @@
     "network",
     "hyprland/language",
     "clock",
-    "custom/lock"
+    "custom/lock",
+    "custom/exit"
   ],
   "bluetooth": {
     "format": "",
@@ -36,6 +37,11 @@
     "format": "",
     "on-click": "loginctl lock-session",
     "tooltip-format": "Lock session"
+  },
+  "custom/exit": {
+    "format": "",
+    "on-click": "hyprctl dispatch exit",
+    "tooltip-format": "Exit"
   },
   "custom/swaync": {
     "format": "{icon}",
