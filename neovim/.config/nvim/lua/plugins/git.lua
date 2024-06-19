@@ -121,6 +121,7 @@ return {
     },
     opts = {
       attach_to_untracked = true,
+      current_line_blame = true,
       signs_staged_enable = false,
     },
   },
