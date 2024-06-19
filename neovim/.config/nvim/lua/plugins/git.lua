@@ -44,7 +44,7 @@ return {
         '<Cmd>Git blame<CR>',
       },
       {
-        desc = 'Git: Difftool',
+        desc = 'Git: Diff',
         '<leader>gd',
         '<Cmd>Gvdiffsplit<CR>',
       },
