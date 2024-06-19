@@ -1,4 +1,5 @@
 local autocmd = require('utils').autocmd
+local keymap = require('utils').keymap
 
 autocmd(
   'Briefly highlight yanked text',
@@ -50,20 +51,34 @@ autocmd(
 autocmd(
   'Close certain filetype buffers with just <q>',
   'FileType',
-  function(event) vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = event.buf }) end,
+  function(event)
+    keymap('Close', 'n', 'q', '<Cmd>q<CR>', { buffer = event.buf })
+  end,
   {
     pattern = {
       'checkhealth',
       'dap-float',
       'dap-repl',
       'dbout',
-      'fugitive',
-      'fugitiveblame',
       'git',
       'help',
       'qf',
       'query',
       'startuptime',
+    },
+  }
+)
+
+autocmd(
+  'Map q to gq',
+  'FileType',
+  function(event)
+    keymap('Close', 'n', 'q', 'gq', { buffer = event.buf, remap = true })
+  end,
+  {
+    pattern = {
+      'fugitive',
+      'fugitiveblame',
     },
   }
 )
