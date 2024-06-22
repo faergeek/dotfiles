@@ -12,7 +12,7 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "dressing.nvim": { "branch": "master", "commit": "6741f1062d3dc6e4755367a7e9b347b553623f04" },
-  "format-on-save.nvim": { "branch": "main", "commit": "da7e9a9a36f22e83f33150a7e3efa171e655fa73" },
+  "format-on-save.nvim": { "branch": "main", "commit": "4c748be4f63e199b42589020dc4c0081580d881a" },
   "fortune.nvim": { "branch": "master", "commit": "470bcb2292f4fba68724cddc39b07c96e5e3e732" },
   "gitsigns.nvim": { "branch": "main", "commit": "8df63f2ddc615feb71fd4aee45a4cee022876df1" },
   "indent-o-matic": { "branch": "master", "commit": "4d11e98f523d3c4500b1dc33f0d1a248a4f69719" },
