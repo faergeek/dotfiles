@@ -62,6 +62,7 @@ autocmd(
       'dbout',
       'git',
       'help',
+      'man',
       'qf',
       'query',
       'startuptime',
