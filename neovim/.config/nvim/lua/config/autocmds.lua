@@ -12,12 +12,10 @@ autocmd('Override options for terminal buffers', 'TermOpen', function()
   vim.opt_local.signcolumn = 'auto'
 end)
 
-autocmd(
-  'Disable concealing in help',
-  'FileType',
-  function() vim.opt_local.concealcursor = '' end,
-  { pattern = { 'help' } }
-)
+autocmd('Disable concealing in help', 'FileType', function()
+  vim.opt_local.conceallevel = 0
+  vim.opt_local.concealcursor = ''
+end, { pattern = { 'help' } })
 
 autocmd(
   'Set options specific to Man',
