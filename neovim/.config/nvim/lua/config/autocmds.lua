@@ -20,13 +20,6 @@ autocmd(
 )
 
 autocmd(
-  'Enable concealing in markdown',
-  'FileType',
-  function() vim.opt_local.conceallevel = 2 end,
-  { pattern = { 'markdown' } }
-)
-
-autocmd(
   'Set options specific to Man',
   'FileType',
   function() vim.opt_local.signcolumn = 'auto' end,
