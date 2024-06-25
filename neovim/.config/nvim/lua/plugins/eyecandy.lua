@@ -8,7 +8,6 @@ return {
       flavour = 'frappe',
       integrations = {
         mason = true,
-        mini = true,
         native_lsp = {
           underlines = {
             errors = { 'undercurl' },
