@@ -19,6 +19,7 @@ vim.opt.fixeol = false
 vim.opt.foldtext = ''
 vim.opt.guicursor =
   'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:blinkwait300-blinkon200-blinkoff150'
+vim.opt.guifont = 'FantasqueSansM Nerd Font'
 vim.opt.ignorecase = true
 vim.opt.inccommand = 'split'
 vim.opt.jumpoptions = 'view'

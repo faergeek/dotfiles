@@ -45,7 +45,6 @@ require('lazy').setup('plugins', {
         'netrwPlugin',
         'spellfile',
         'tarPlugin',
-        'tohtml',
         'tutor',
         'zipPlugin',
       },
