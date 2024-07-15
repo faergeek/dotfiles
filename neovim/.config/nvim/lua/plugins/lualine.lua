@@ -98,7 +98,7 @@ return {
                   icon = {
                     '',
                     color = {
-                      fg = require('catppuccin.palettes').get_palette('frappe').maroon,
+                      fg = require('catppuccin.palettes').get_palette('frappe').blue,
                     },
                   },
                 },
