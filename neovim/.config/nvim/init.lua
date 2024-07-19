@@ -22,12 +22,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.api.nvim_create_user_command(
-  'Browse',
-  function(input) vim.ui.open(input.fargs[1]) end,
-  { nargs = 1 }
-)
-
 require('lazy').setup('plugins', {
   change_detection = {
     notify = false,
