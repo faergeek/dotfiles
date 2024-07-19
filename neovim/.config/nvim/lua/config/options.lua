@@ -15,6 +15,7 @@ vim.opt.fillchars = {
   foldclose = '',
   foldopen = '',
 }
+vim.opt.foldcolumn = 'auto:1'
 vim.opt.fixeol = false
 vim.opt.foldtext = ''
 vim.opt.guicursor =
