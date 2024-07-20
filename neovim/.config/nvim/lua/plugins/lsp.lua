@@ -1,5 +1,3 @@
-local is_rpi = require('utils').is_rpi
-
 return {
   {
     'williamboman/mason.nvim',
@@ -48,31 +46,24 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require 'lspconfig'
 
-      local ensure_installed = {
-        'bashls',
-        'cssls',
-        'cssmodules_ls',
-        'dockerls',
-        'eslint',
-        'html',
-        'jsonls',
-        'stylelint_lsp',
-        'tsserver',
-        'yamlls',
-      }
-
-      if not is_rpi then
-        vim.list_extend(ensure_installed, {
+      return {
+        ensure_installed = {
+          'bashls',
           'clangd',
+          'cssls',
+          'cssmodules_ls',
+          'dockerls',
+          'eslint',
+          'html',
+          'jsonls',
           'lua_ls',
           'marksman',
           'rust_analyzer',
+          'stylelint_lsp',
           'taplo',
-        })
-      end
-
-      return {
-        ensure_installed = ensure_installed,
+          'tsserver',
+          'yamlls',
+        },
         handlers = {
           function(server_name)
             lspconfig[server_name].setup {

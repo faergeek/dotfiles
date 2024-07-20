@@ -1,8 +1,4 @@
-local uv = vim.uv or vim.loop
-
 local M = {}
-
-M.is_rpi = uv.os_uname().machine == 'armv7l'
 
 local group = vim.api.nvim_create_augroup('config', { clear = true })
 
