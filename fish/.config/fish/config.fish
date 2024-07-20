@@ -5,8 +5,10 @@ set -gx MANPAGER nvim +Man!
 set -gx MANWIDTH 80
 
 # asdf
-source ~/.asdf/asdf.fish
-source ~/.asdf/completions/asdf.fish
+if [ -d ~/.asdf ]
+    source ~/.asdf/asdf.fish
+    source ~/.asdf/completions/asdf.fish
+end
 
 # less
 set -gx PAGER less
@@ -14,7 +16,9 @@ set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
 set -gx LESS -RFS
 
 # opam
-source ~/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
+if [ -d ~/.opam ]
+    source ~/.opam/opam-init/init.fish
+end
 
 # pacdiff
 set -gx DIFFPROG 'nvim -d'
