@@ -93,10 +93,7 @@ return {
               {
                 name = 'path',
                 option = {
-                  get_cwd = function()
-                    vim.print 'get_cwd'
-                    return vim.fn.getcwd()
-                  end,
+                  get_cwd = function() return vim.fn.getcwd() end,
                   trailing_slash = true,
                 },
               },
