@@ -22,6 +22,7 @@ return {
       },
       lsp_file_methods = {
         autosave_changes = true,
+        timeout_ms = 10000,
       },
       skip_confirm_for_simple_edits = true,
       use_default_keymaps = false,
