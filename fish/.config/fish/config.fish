@@ -10,6 +10,9 @@ if [ -d ~/.asdf ]
     source ~/.asdf/completions/asdf.fish
 end
 
+# ghcup
+set -gx PATH $HOME/.cabal/bin ~/.ghcup/bin $PATH
+
 # less
 set -gx PAGER less
 set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
