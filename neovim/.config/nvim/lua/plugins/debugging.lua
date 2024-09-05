@@ -102,35 +102,30 @@ return {
         opts = {
           ensure_installed = {
             'firefox',
+            'js',
           },
           handlers = {
-            function(config)
+            firefox = function()
               require('mason-nvim-dap').default_setup {
-                adapters = config.adapters,
-                name = config.name,
+                adapters = {
+                  command = 'firefox-debug-adapter',
+                  type = 'executable',
+                },
+                name = 'firefox',
+              }
+            end,
+            js = function()
+              require('mason-nvim-dap').default_setup {
+                adapters = {
+                  executable = { command = 'js-debug-adapter' },
+                  host = 'localhost',
+                  port = '8123',
+                  type = 'server',
+                },
+                name = 'pwa-node',
               }
             end,
           },
-        },
-      },
-      {
-        'mxsdev/nvim-dap-vscode-js',
-        dependencies = {
-          {
-            'microsoft/vscode-js-debug',
-            build = table.concat({
-              'echo 18.19.0 > .nvmrc',
-              'npm i --ignore-scripts --legacy-peer-deps --no-audit --no-fund',
-              'npx gulp vsDebugServerBundle',
-              'rm -rf out',
-              'mv dist out',
-              'git checkout .',
-            }, ' && '),
-          },
-        },
-        opts = {
-          adapters = { 'pwa-node' },
-          debugger_path = vim.fn.stdpath 'data' .. '/lazy/vscode-js-debug',
         },
       },
     },
