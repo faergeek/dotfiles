@@ -127,7 +127,7 @@ return {
             }
           end,
           tsserver = function()
-            lspconfig.tsserver.setup {
+            lspconfig.ts_ls.setup {
               capabilities = capabilities,
               handlers = {
                 ['_typescript.rename'] = function(_, result, ctx)
