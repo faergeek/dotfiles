@@ -72,6 +72,7 @@ vim.opt.spelllang = 'en_us,ru_ru'
 vim.opt.spelloptions:append { 'camel' }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.switchbuf:append { 'useopen' }
 vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.undofile = true
