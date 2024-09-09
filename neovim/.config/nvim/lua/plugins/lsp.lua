@@ -81,11 +81,6 @@ return {
               },
             }
           end,
-          dockerls = function()
-            lspconfig.dockerls.setup {
-              capabilities = capabilities,
-            }
-          end,
           eslint = function()
             lspconfig.eslint.setup {
               capabilities = capabilities,
