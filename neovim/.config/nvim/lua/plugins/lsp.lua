@@ -64,7 +64,7 @@ return {
           'rust_analyzer',
           'stylelint_lsp',
           'taplo',
-          'tsserver',
+          'ts_ls',
           'yamlls',
         },
         handlers = {
@@ -126,7 +126,7 @@ return {
               },
             }
           end,
-          tsserver = function()
+          ts_ls = function()
             lspconfig.ts_ls.setup {
               capabilities = capabilities,
               handlers = {
