@@ -169,20 +169,9 @@ return {
     },
   },
   {
-    'NvChad/nvim-colorizer.lua',
+    'brenoprata10/nvim-highlight-colors',
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
-    cmd = {
-      'ColorizerAttachToBuffer',
-      'ColorizerDetachFromBuffer',
-      'ColorizerReloadAllBuffers',
-      'ColorizerToggle',
-    },
-    opts = {
-      user_default_options = {
-        css = true,
-        RRGGBBAA = true,
-        AARRGGBB = true,
-      },
-    },
+    cmd = { 'HighlightColors' },
+    opts = {},
   },
 }
