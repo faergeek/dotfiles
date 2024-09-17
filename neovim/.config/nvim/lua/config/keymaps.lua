@@ -47,3 +47,9 @@ keymap('Previous quickfix list', 'n', '[Q', vim.cmd.colder)
 for i = 1, 9, 1 do
   keymap('Jump to a window', 'n', '<C-' .. i .. '>', '<C-w>' .. i .. 'w')
 end
+
+keymap('Next loclist item', 'n', ']w', vim.cmd.lnext)
+keymap('Previous loclist item', 'n', '[w', vim.cmd.lprevious)
+
+keymap('Next loclist', 'n', ']W', vim.cmd.lnewer)
+keymap('Previous loclist', 'n', '[W', vim.cmd.lolder)
