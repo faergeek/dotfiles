@@ -45,5 +45,5 @@ keymap('Next quickfix list', 'n', ']Q', vim.cmd.cnewer)
 keymap('Previous quickfix list', 'n', '[Q', vim.cmd.colder)
 
 for i = 1, 9, 1 do
-  keymap('Previous quickfix list', 'n', '<C-' .. i .. '>', '<C-w>' .. i .. 'w')
+  keymap('Jump to a window', 'n', '<C-' .. i .. '>', '<C-w>' .. i .. 'w')
 end
