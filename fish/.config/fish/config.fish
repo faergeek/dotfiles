@@ -48,8 +48,4 @@ if status is-interactive
     if type -q eza
         alias ls='eza --icons'
     end
-
-    if [ "$TERM" = xterm-kitty ]
-        alias ssh="kitten ssh"
-    end
 end
