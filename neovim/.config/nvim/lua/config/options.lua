@@ -127,7 +127,6 @@ vim.filetype.add {
     ['.*/%.config/git/config%.local'] = 'gitconfig',
     ['.*/%.config/git/config%.local%.example'] = 'gitconfig',
     ['.*/%.config/hypr/.*%.conf'] = 'hyprlang',
-    ['.*/%.config/imv/config'] = 'dosini',
     ['.*/%.config/waybar/config'] = 'jsonc',
   },
 }
