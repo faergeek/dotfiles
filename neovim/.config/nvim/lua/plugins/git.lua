@@ -40,8 +40,9 @@ return {
       },
       {
         desc = 'Git: Blame',
+        mode = { 'n', 'x' },
         '<leader>gb',
-        '<Cmd>Git blame<CR>',
+        ':Git blame<CR>',
       },
       {
         desc = 'Git: Diff',
