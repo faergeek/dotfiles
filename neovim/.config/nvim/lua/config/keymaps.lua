@@ -38,18 +38,18 @@ if vim.lsp.inlay_hint then
   end)
 end
 
-keymap('Next quickfix item', 'n', ']q', vim.cmd.cnext)
-keymap('Previous quickfix item', 'n', '[q', vim.cmd.cprevious)
+keymap('Next quickfix item', 'n', ']q', '<Cmd>cnext<CR>')
+keymap('Previous quickfix item', 'n', '[q', '<Cmd>cprevious<CR>')
 
-keymap('Next quickfix list', 'n', ']Q', vim.cmd.cnewer)
-keymap('Previous quickfix list', 'n', '[Q', vim.cmd.colder)
+keymap('Next quickfix list', 'n', ']Q', '<Cmd>cnewer<CR>')
+keymap('Previous quickfix list', 'n', '[Q', '<Cmd>colder<CR>')
 
 for i = 1, 9, 1 do
   keymap('Jump to a window', 'n', '<C-' .. i .. '>', '<C-w>' .. i .. 'w')
 end
 
-keymap('Next loclist item', 'n', ']w', vim.cmd.lnext)
-keymap('Previous loclist item', 'n', '[w', vim.cmd.lprevious)
+keymap('Next loclist item', 'n', ']w', '<Cmd>lnext<CR>')
+keymap('Previous loclist item', 'n', '[w', '<Cmd>lprevious<CR>')
 
-keymap('Next loclist', 'n', ']W', vim.cmd.lnewer)
-keymap('Previous loclist', 'n', '[W', vim.cmd.lolder)
+keymap('Next loclist', 'n', ']W', '<Cmd>lnewer<CR>')
+keymap('Previous loclist', 'n', '[W', '<Cmd>lolder<CR>')
