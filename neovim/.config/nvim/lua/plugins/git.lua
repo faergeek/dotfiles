@@ -64,6 +64,7 @@ return {
         mode = { 'n', 'x' },
         '<leader>gx',
         ':GBrowse<CR>',
+        silent = true,
       },
     },
   },
