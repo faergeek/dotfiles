@@ -60,7 +60,7 @@ vim.opt.shortmess:append {
   c = true,
 }
 vim.opt.showbreak = '↳ '
-vim.opt.showcmdloc = 'statusline'
+vim.opt.showcmd = false
 vim.opt.showmatch = true
 vim.opt.showmode = false
 vim.opt.showtabline = 0
