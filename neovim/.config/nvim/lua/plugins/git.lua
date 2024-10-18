@@ -66,6 +66,13 @@ return {
         ':GBrowse<CR>',
         silent = true,
       },
+      {
+        desc = 'Git: Yank External URL',
+        mode = { 'n', 'x' },
+        '<leader>gy',
+        ':GBrowse!<CR>',
+        silent = true,
+      },
     },
   },
   {
