@@ -12,7 +12,6 @@
     "custom/swaync",
     "pulseaudio",
     "bluetooth",
-    "network",
     "hyprland/language",
     "clock"
   ],
@@ -87,15 +86,6 @@
       "activated": "󰒳",
       "deactivated": "󰒲"
     }
-  },
-  "network": {
-    "format-ethernet": "󰈀",
-    "format-disconnected": "󰌙",
-    "format-wifi": "",
-    "tooltip-format": "{ipaddr} ({ifname})",
-    "tooltip-format-disconnected": "No network",
-    "tooltip-format-wifi": "{ipaddr} ({ifname}): {essid} ({frequency})",
-    "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
     "format": "{icon}",
