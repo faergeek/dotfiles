@@ -135,7 +135,6 @@ return {
                       uri = result.textDocument.uri,
                       range = {
                         start = result.position,
-                        ['end'] = result.position,
                       },
                     }, client.offset_encoding)
 
