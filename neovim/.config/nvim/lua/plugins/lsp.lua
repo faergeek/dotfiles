@@ -137,7 +137,7 @@ return {
                         start = result.position,
                         ['end'] = result.position,
                       },
-                    }, client.offset_encoding, true)
+                    }, client.offset_encoding)
 
                     vim.lsp.buf.rename(nil, {
                       filter = function(c) return c == client end,
