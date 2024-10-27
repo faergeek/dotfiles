@@ -48,7 +48,7 @@ return {
   },
   {
     'windwp/nvim-ts-autotag',
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    event = 'InsertEnter',
     opts = {
       opts = {
         enable_close_on_slash = true,
