@@ -95,7 +95,15 @@ return {
   },
   {
     'tpope/vim-dispatch',
-    cmd = { 'Dispatch', 'Make' },
+    cmd = {
+      'AbortDispatch',
+      'Copen',
+      'Dispatch',
+      'FocusDispatch',
+      'Make',
+      'Spawn',
+      'Start',
+    },
   },
   {
     'faergeek/neomakery.nvim',
