@@ -39,7 +39,6 @@ autocmd(
     pattern = {
       'dbout',
       'git',
-      'gitrebase',
       'kitty',
       'man',
       'qf',
