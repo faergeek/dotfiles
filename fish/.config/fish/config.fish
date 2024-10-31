@@ -8,6 +8,8 @@ set -gx MANWIDTH 80
 if [ -d ~/.asdf ]
     source ~/.asdf/asdf.fish
     source ~/.asdf/completions/asdf.fish
+
+    set -gx ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY latest_installed
 end
 
 # ghcup
