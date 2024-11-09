@@ -60,6 +60,14 @@ return {
         '<Cmd>Git log<CR>',
       },
       {
+        desc = 'Git: Log',
+        mode = { 'x' },
+        expr = true,
+        silent = true,
+        '<leader>gl',
+        '":Git log -L" . line("v") . "," . line(".") . ":" . "%<CR>"',
+      },
+      {
         desc = 'Git: External',
         mode = { 'n', 'x' },
         '<leader>gx',
