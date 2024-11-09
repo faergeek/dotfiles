@@ -39,7 +39,6 @@ autocmd(
     pattern = {
       'dbout',
       'git',
-      'kitty',
       'man',
       'qf',
       'samba',
