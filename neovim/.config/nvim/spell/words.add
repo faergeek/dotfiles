@@ -11,9 +11,11 @@ backend
 bitwarden
 bootable
 btrfs
+catppuccin
 checkbox
 cli
 cmd
+conf
 config
 configs
 const
@@ -29,8 +31,10 @@ exercism
 ext2
 ext3
 ext4
+filetype
 fn
 frontend
+github
 gitrebase
 html
 http
@@ -72,6 +76,7 @@ sudo
 syncthing
 systemd
 terminfo
+titlebar
 todo
 transpiling
 treesitter
