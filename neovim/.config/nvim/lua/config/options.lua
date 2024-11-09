@@ -107,7 +107,6 @@ vim.diagnostic.config {
       return '●'
     end,
     spacing = 0,
-    source = true,
   },
 }
 
