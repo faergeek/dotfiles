@@ -44,6 +44,12 @@ return {
         silent = true,
       },
       {
+        desc = 'Find Man Pages',
+        '<leader>fm',
+        '<Cmd>Telescope man_pages<CR>',
+        silent = true,
+      },
+      {
         desc = 'Find Commands',
         '<leader>fc',
         '<Cmd>Telescope commands<CR>',
