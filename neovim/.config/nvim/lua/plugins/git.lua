@@ -43,6 +43,7 @@ return {
         mode = { 'n', 'x' },
         '<leader>gb',
         ':Git blame<CR>',
+        silent = true,
       },
       {
         desc = 'Git: Diff',
