@@ -107,7 +107,7 @@ return {
               settings = {
                 Lua = {
                   format = { enable = false },
-                  hint = { enable = true },
+                  hint = { enable = true, setType = true },
                   workspace = { checkThirdParty = false },
                 },
               },
