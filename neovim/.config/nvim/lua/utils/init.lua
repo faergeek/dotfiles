@@ -62,34 +62,48 @@ function M.quickfixtextfunc(info)
     return fname
   end
 
-  local first_col_limit = 1
+  local function is_valid(item) return item.valid == 1 end
 
-  local function format_first_col(item)
-    return get_item_fname(item) .. ':' .. item.lnum .. ':' .. item.col
+  local fname_col_width = 1
+  local function format_fname_col(item)
+    return is_valid(item) and get_item_fname(item) or ''
+  end
+
+  local pos_col_width = 1
+  local function format_pos_col(item)
+    return is_valid(item) and ('%d:%d'):format(item.lnum, item.col) or ''
   end
 
   for _, item in ipairs(items) do
-    local first_col = format_first_col(item)
-
-    if #first_col > first_col_limit then first_col_limit = #first_col end
+    fname_col_width = math.max(fname_col_width, #format_fname_col(item))
+    pos_col_width = math.max(pos_col_width, #format_pos_col(item))
   end
 
-  local function format_item(item)
-    if item.valid == 1 then
-      local first_col = format_first_col(item)
+  local format_str = (
+    '%-'
+    .. fname_col_width
+    .. 's ┃ %'
+    .. pos_col_width
+    .. 's ┃ %-1s %s'
+  )
 
-      return ('%s │ %s'):format(
-        first_col .. string.rep(' ', first_col_limit - #first_col),
-        (item.type == '' and '' or item.type:upper() .. ' ') .. item.text
-      )
-    else
-      return item.text
-    end
-  end
+  local type_to_icon = {
+    E = '',
+    W = '',
+  }
 
   return vim.tbl_map(
-    format_item,
-    vim.list_slice(items, info.start_idx, info.end_idx)
+    function(item)
+      return format_str
+        :format(
+          format_fname_col(item),
+          format_pos_col(item),
+          type_to_icon[item.type:upper()] or '',
+          item.text:gsub('\n', ' ')
+        )
+        :sub(1, 1000)
+    end,
+    items
   )
 end
 
