@@ -9,7 +9,7 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     event = 'VeryLazy',
     keys = {
-      { desc = 'Oil', '-', '<Cmd>Oil<CR>', silent = true },
+      { desc = 'Oil', '-', '<Cmd>Oil<CR>' },
     },
     opts = {
       keymaps = {
