@@ -45,7 +45,7 @@
 [tag]
   sort = version:refname
 [user]
-  name = Sergey Slipchenko
+  name = Sergei Slipchenko
   email = faergeek@gmail.com
   signingkey = C62F5F3B582FE89A226EA5F6375ECA0AF0329782
 
