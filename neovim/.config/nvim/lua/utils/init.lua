@@ -79,32 +79,24 @@ function M.quickfixtextfunc(info)
     pos_col_width = math.max(pos_col_width, #format_pos_col(item))
   end
 
-  local format_str = (
-    '%-'
-    .. fname_col_width
-    .. 's ┃ %'
-    .. pos_col_width
-    .. 's ┃ %-1s %s'
-  )
-
   local type_to_icon = {
     E = '',
     W = '',
   }
 
-  return vim.tbl_map(
-    function(item)
-      return format_str
-        :format(
-          format_fname_col(item),
-          format_pos_col(item),
-          type_to_icon[item.type:upper()] or '',
-          item.text:gsub('\n', ' ')
-        )
-        :sub(1, 1000)
-    end,
-    items
-  )
+  return vim.tbl_map(function(item)
+    local fname_col = format_fname_col(item)
+    local pos_col = format_pos_col(item)
+
+    return ('%s ┃ %s ┃ %-1s %s')
+      :format(
+        fname_col .. string.rep(' ', fname_col_width - #fname_col),
+        string.rep(' ', pos_col_width - #pos_col) .. pos_col,
+        type_to_icon[item.type:upper()] or '',
+        item.text:gsub('\n', ' ')
+      )
+      :sub(1, 1000)
+  end, items)
 end
 
 function M.kitty_scrollback(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
