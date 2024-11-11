@@ -13,8 +13,21 @@ return {
   },
   { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
   {
+    'j-hui/fidget.nvim',
+    opts = {
+      notification = {
+        window = {
+          winblend = 0,
+        },
+      },
+    },
+  },
+  {
     'neovim/nvim-lspconfig',
-    dependencies = { 'folke/neoconf.nvim' },
+    dependencies = {
+      'folke/neoconf.nvim',
+      'j-hui/fidget.nvim',
+    },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
     config = function()

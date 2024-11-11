@@ -4,7 +4,6 @@ return {
     event = 'VeryLazy',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      'arkav/lualine-lsp-progress',
     },
     opts = function()
       local function winnr() return '󰕰 ' .. vim.fn.winnr() end
@@ -61,7 +60,6 @@ return {
               end
             end,
           },
-          lualine_x = { 'lsp_progress' },
           lualine_z = {
             {
               'tabs',
