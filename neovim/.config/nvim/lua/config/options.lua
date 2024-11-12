@@ -54,7 +54,6 @@ vim.opt.sessionoptions = {
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 0
 vim.opt.shortmess:append {
-  S = true,
   W = true,
   I = true,
   c = true,
@@ -63,7 +62,6 @@ vim.opt.showbreak = '↳ '
 vim.opt.showcmd = false
 vim.opt.showmatch = true
 vim.opt.showmode = false
-vim.opt.showtabline = 0
 vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true

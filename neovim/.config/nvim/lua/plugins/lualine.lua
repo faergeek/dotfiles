@@ -6,82 +6,56 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     opts = function()
-      local function winnr() return '󰕰 ' .. vim.fn.winnr() end
-      local function bufnr() return '󱔗 ' .. vim.fn.bufnr() end
-
-      local function lualine_c(filename_opts)
-        filename_opts = filename_opts or {}
-
-        return {
-          {
-            'filetype',
-            icon_only = true,
-            separator = '',
-            padding = { left = 1, right = 0 },
-          },
-          {
-            'filename',
-            file_status = filename_opts.file_status,
-            padding = 0,
-            path = filename_opts.fullpath and 1,
-            separator = '',
-          },
-        }
-      end
-
       local sections = {
-        lualine_a = { winnr },
-        lualine_b = { bufnr },
-        lualine_c = lualine_c { fullpath = true },
-        lualine_x = { 'searchcount' },
-        lualine_y = { 'location' },
-        lualine_z = { 'progress' },
+        lualine_a = { function() return '󰕰 ' .. vim.fn.winnr() end },
+        lualine_b = { function() return '󱔗 ' .. vim.fn.bufnr() end },
+        lualine_c = { { 'filename', path = 1, shorting_target = 0 } },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
       }
 
       return {
         options = {
-          disabled_filetypes = { 'alpha', 'dbui', 'fugitiveblame' },
+          always_divide_middle = false,
+          component_separators = { left = '', right = '' },
+          disabled_filetypes = { 'dbui', 'fugitiveblame' },
+          section_separators = { left = '', right = '' },
           theme = 'catppuccin',
         },
         tabline = {
           lualine_a = {
-            'mode',
+            { icon = '', 'mode' },
             'selectioncount',
-            function() return vim.fn.fnamemodify(vim.fn.getcwd(), ':p:~:h') end,
+            'branch',
           },
           lualine_b = {
-            function()
-              if package.loaded['dap'] then
-                local dap_status = require('dap').status()
-
-                return dap_status ~= '' and '󰃤 ' .. dap_status or ''
-              else
-                return ''
-              end
-            end,
-          },
-          lualine_z = {
             {
               'tabs',
+              mode = 1,
               show_modified_status = false,
               use_mode_colors = true,
+              fmt = function(_, context) return '󰓩 ' .. context.tabnr end,
             },
           },
+          lualine_c = {
+            {
+              icon = '󰃤',
+              function()
+                return package.loaded['dap'] and require('dap').status() or ''
+              end,
+            },
+          },
+          lualine_x = {},
+          lualine_y = { 'location' },
+          lualine_z = { 'progress' },
         },
         sections = sections,
         inactive_sections = sections,
         extensions = {
           {
-            filetypes = { 'fugitive', 'git' },
-            sections = vim.tbl_extend('force', sections, {
-              lualine_c = { { 'FugitiveHead', icon = '' } },
-            }),
-          },
-          {
-            filetypes = { 'help', 'man' },
-            sections = vim.tbl_extend('force', sections, {
-              lualine_c = lualine_c { file_status = false },
-            }),
+            filetypes = { 'alpha', 'fugitive', 'git' },
+            sections = vim.tbl_extend('force', sections, { lualine_c = {} }),
           },
           {
             filetypes = { 'oil' },
@@ -89,16 +63,11 @@ return {
               lualine_c = {
                 {
                   function()
-                    local dir = require('oil').get_current_dir()
-
-                    return dir and vim.fn.fnamemodify(dir, ':p:~:.')
+                    return vim.fn.fnamemodify(
+                      require('oil').get_current_dir() or '',
+                      ':p:~:.:h'
+                    )
                   end,
-                  icon = {
-                    '',
-                    color = {
-                      fg = require('catppuccin.palettes').get_palette('frappe').blue,
-                    },
-                  },
                 },
               },
             }),
