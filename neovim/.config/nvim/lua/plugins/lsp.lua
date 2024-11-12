@@ -14,6 +14,7 @@ return {
   { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
   {
     'j-hui/fidget.nvim',
+    event = 'LspAttach',
     opts = {
       notification = {
         window = {
