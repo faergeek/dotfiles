@@ -3,28 +3,28 @@ return {
     'L3MON4D3/LuaSnip',
     version = '2.*',
     build = 'make install_jsregexp',
-    keys = function()
-      local ls = require 'luasnip'
+    keys = {
+      {
+        desc = 'LuaSnip: Jump forward',
+        mode = { 'i', 's' },
+        '<C-f>',
+        function()
+          local ls = require 'luasnip'
 
-      return {
-        {
-          desc = 'LuaSnip: Jump forward',
-          mode = { 'i', 's' },
-          '<C-f>',
-          function()
-            if ls.jumpable(1) then ls.jump(1) end
-          end,
-        },
-        {
-          desc = 'LuaSnip: Jump backward',
-          mode = { 'i', 's' },
-          '<C-b>',
-          function()
-            if ls.jumpable(-1) then ls.jump(-1) end
-          end,
-        },
-      }
-    end,
+          if ls.jumpable(1) then ls.jump(1) end
+        end,
+      },
+      {
+        desc = 'LuaSnip: Jump backward',
+        mode = { 'i', 's' },
+        '<C-b>',
+        function()
+          local ls = require 'luasnip'
+
+          if ls.jumpable(-1) then ls.jump(-1) end
+        end,
+      },
+    },
     opts = {
       update_events = { 'TextChanged', 'TextChangedI' },
     },
