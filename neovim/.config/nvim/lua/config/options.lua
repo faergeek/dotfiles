@@ -50,15 +50,14 @@ vim.opt.shortmess:append {
   c = true,
 }
 vim.opt.showbreak = '↳ '
-vim.opt.showcmd = false
 vim.opt.showmatch = true
-vim.opt.showmode = false
 vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.switchbuf = { 'usetab', 'newtab' }
+vim.opt.tabline = '%!v:lua.tabline()'
 vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.undofile = true

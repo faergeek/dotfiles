@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
+require 'config.status'
 require 'config.spell'
 require 'config.options'
 require 'config.keymaps'
