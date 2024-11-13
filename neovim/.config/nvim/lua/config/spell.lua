@@ -7,7 +7,7 @@ vim.cmd('silent mkspell! ' .. spell_dir .. '/words.add')
 local function ensure_spellfile(fname)
   local fpath = spell_dir .. '/' .. fname
 
-  if not vim.loop.fs_stat(fpath) then
+  if not vim.uv.fs_stat(fpath) then
     vim.notify('Downloading ' .. fname .. '...', vim.log.levels.INFO)
 
     vim.fn.system {
