@@ -164,26 +164,4 @@ return {
       }
     end,
   },
-  {
-    'oysandvik94/curl.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    cmd = {
-      'CurlClose',
-      'CurlCollection',
-      'CurlOpen',
-    },
-    keys = {
-      {
-        desc = 'Curl: Open Global',
-        '<leader>cog',
-        '<Cmd>CurlOpen global<CR>',
-      },
-      {
-        desc = 'Curl: Close',
-        '<leader>cc',
-        '<Cmd>CurlClose<CR>',
-      },
-    },
-    opts = {},
-  },
 }
