@@ -15,6 +15,12 @@ end
 # ghcup
 set -gx PATH $HOME/.cabal/bin ~/.ghcup/bin $PATH
 
+# turn off husky
+#
+# For anyone ever arguing about that
+# https://www.youtube.com/watch?v=LL01pLjcR5s
+set -gx HUSKY 0
+
 # less
 set -gx PAGER less
 set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
