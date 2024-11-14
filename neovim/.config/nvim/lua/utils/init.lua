@@ -100,11 +100,6 @@ function M.quickfixtextfunc(info)
 end
 
 function M.kitty_scrollback(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
-  require('lualine').hide {
-    place = { 'statusline', 'tabline', 'winbar' },
-    unhide = false,
-  }
-
   vim.opt.cmdheight = 0
   vim.cmd [[
     hi! TermCursor guifg=NONE guibg=NONE gui=NONE cterm=NONE
