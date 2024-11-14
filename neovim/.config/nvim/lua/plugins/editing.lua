@@ -47,15 +47,6 @@ return {
     },
   },
   {
-    'windwp/nvim-ts-autotag',
-    event = 'InsertEnter',
-    opts = {
-      opts = {
-        enable_close_on_slash = true,
-      },
-    },
-  },
-  {
     'nvim-treesitter/nvim-treesitter-context',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
