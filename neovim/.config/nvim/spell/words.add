@@ -51,7 +51,6 @@ linux
 localhost
 lsp
 lua
-lualine
 mdns
 mkosi
 neovim
