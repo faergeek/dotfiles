@@ -4,6 +4,7 @@ return {
     main = 'nvim-treesitter.configs',
     dependencies = {
       'RRethy/nvim-treesitter-endwise',
+      'nvim-treesitter/nvim-treesitter-textobjects',
     },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = {
@@ -44,6 +45,42 @@ return {
       },
       highlight = { enable = true },
       indent = { enable = true },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ['ac'] = {
+              desc = 'A comment',
+              query = '@comment.outer',
+            },
+            ['af'] = {
+              desc = 'A function',
+              query = '@function.outer',
+            },
+            ['if'] = {
+              desc = 'Inner function',
+              query = '@function.inner',
+            },
+            ['ai'] = {
+              desc = 'An if',
+              query = '@conditional.outer',
+            },
+            ['ii'] = {
+              desc = 'Inner if',
+              query = '@conditional.inner',
+            },
+            ['al'] = {
+              desc = 'A loop',
+              query = '@loop.outer',
+            },
+            ['il'] = {
+              desc = 'Inner loop',
+              query = '@loop.inner',
+            },
+          },
+        },
+      },
     },
   },
   {
