@@ -58,6 +58,11 @@ return {
         '<leader>fw',
         '<Cmd>Telescope grep_string<CR>',
       },
+      {
+        desc = 'Find fileTypes',
+        '<leader>ft',
+        '<Cmd>Telescope filetypes<CR>',
+      },
     },
     opts = function()
       return {
