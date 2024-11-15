@@ -1,10 +1,5 @@
 return {
   {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
-    opts = {},
-  },
-  {
     'stevearc/oil.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     event = 'VeryLazy',

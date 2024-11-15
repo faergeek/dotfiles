@@ -55,6 +55,5 @@
   "vim-kitty": { "branch": "main", "commit": "ceaae754267f9578b6313890596ee34a19c00dad" },
   "vim-lastplace": { "branch": "master", "commit": "e58cb0df716d3c88605ae49db5c4741db8b48aa9" },
   "vim-rhubarb": { "branch": "master", "commit": "ee69335de176d9325267b0fd2597a22901d927b1" },
-  "vim-startuptime": { "branch": "master", "commit": "ac2cccb5be617672add1f4f3c0a55ce99ba34e01" },
-  "which-key.nvim": { "branch": "main", "commit": "68e37e12913a66b60073906f5d3f14dee0de19f2" }
+  "vim-startuptime": { "branch": "master", "commit": "ac2cccb5be617672add1f4f3c0a55ce99ba34e01" }
 }
