@@ -52,6 +52,12 @@ return {
         '<leader>fk',
         '<Cmd>Telescope keymaps<CR>',
       },
+      {
+        desc = 'Find Word',
+        mode = { 'n', 'x' },
+        '<leader>fw',
+        '<Cmd>Telescope grep_string<CR>',
+      },
     },
     opts = function()
       return {
