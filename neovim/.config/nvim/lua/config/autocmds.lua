@@ -24,12 +24,6 @@ autocmd(
   { pattern = { 'man' } }
 )
 
-autocmd(
-  'Set statusline',
-  'FileType',
-  function() vim.opt_local.statusline = '%!v:lua.statusline()' end
-)
-
 autocmd('Enable spell checking by default', 'FileType', function()
   vim.opt_local.spell = true
   vim.opt_local.spellfile = vim.fn.stdpath 'config' .. '/spell/words.add'
