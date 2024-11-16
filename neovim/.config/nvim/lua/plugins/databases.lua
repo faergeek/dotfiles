@@ -27,7 +27,10 @@ return {
   },
   {
     'kristijanhusak/vim-dadbod-completion',
-    dependencies = { 'tpope/vim-dadbod' },
+    dependencies = {
+      'tpope/vim-dadbod',
+      'hrsh7th/nvim-cmp',
+    },
     ft = { 'sql', 'mysql', 'plsql' },
     config = function()
       local cmp = require 'cmp'
