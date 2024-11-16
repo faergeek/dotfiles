@@ -1,6 +1,7 @@
 ESLint
 OCaml
 REPLs
+VPS
 api
 auth
 autocmd
@@ -38,6 +39,7 @@ frontend
 fullscreen
 github
 gitrebase
+haskell
 html
 http
 https
@@ -53,6 +55,7 @@ lsp
 lua
 mdns
 mkosi
+monad
 neovim
 npm
 nss
@@ -81,6 +84,7 @@ systemd
 terminfo
 titlebar
 todo
+toolchain
 transpiling
 treesitter
 txt
