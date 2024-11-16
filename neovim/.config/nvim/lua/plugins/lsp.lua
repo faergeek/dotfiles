@@ -27,7 +27,7 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       'folke/neoconf.nvim',
-      'j-hui/fidget.nvim',
+      'hrsh7th/cmp-nvim-lsp',
     },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
