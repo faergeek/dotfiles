@@ -44,10 +44,6 @@ keymap('Previous quickfix item', 'n', '[q', '<Cmd>cprevious<CR>')
 keymap('Next quickfix list', 'n', ']Q', '<Cmd>cnewer<CR>')
 keymap('Previous quickfix list', 'n', '[Q', '<Cmd>colder<CR>')
 
-for i = 1, 9, 1 do
-  keymap('Jump to a window', 'n', '<C-' .. i .. '>', '<C-w>' .. i .. 'w')
-end
-
 keymap('Next loclist item', 'n', ']w', '<Cmd>lnext<CR>')
 keymap('Previous loclist item', 'n', '[w', '<Cmd>lprevious<CR>')
 
