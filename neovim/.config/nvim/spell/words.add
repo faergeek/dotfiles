@@ -74,6 +74,7 @@ repo
 rpi
 runtime
 scrollback
+scrollbar
 sudo
 syncthing
 systemd
