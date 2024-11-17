@@ -71,7 +71,6 @@ return {
           'dockerls',
           'eslint',
           'html',
-          'hyprls',
           'jsonls',
           'lua_ls',
           'marksman',
