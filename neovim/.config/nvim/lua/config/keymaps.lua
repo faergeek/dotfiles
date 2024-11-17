@@ -34,18 +34,16 @@ end)
 keymap('Find References', 'n', '<leader>fr', vim.lsp.buf.references)
 keymap('Find Implementations', 'n', '<leader>fi', vim.lsp.buf.implementation)
 
-if vim.lsp.inlay_hint then
-  keymap('Show inlay hints until cursor is moved', 'n', '<leader>i', function()
-    vim.lsp.inlay_hint.enable(true)
+keymap('Show inlay hints until cursor is moved', 'n', '<leader>i', function()
+  vim.lsp.inlay_hint.enable(true)
 
-    autocmd(
-      'Hide inlay hint once cursor is moved',
-      'CursorMoved',
-      function() vim.lsp.inlay_hint.enable(false) end,
-      { once = true }
-    )
-  end)
-end
+  autocmd(
+    'Hide inlay hint once cursor is moved',
+    'CursorMoved',
+    function() vim.lsp.inlay_hint.enable(false) end,
+    { once = true }
+  )
+end)
 
 keymap('Next quickfix item', 'n', ']q', '<Cmd>cnext<CR>')
 keymap('Previous quickfix item', 'n', '[q', '<Cmd>cprevious<CR>')
