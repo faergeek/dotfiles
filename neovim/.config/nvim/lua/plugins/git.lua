@@ -42,7 +42,7 @@ return {
         desc = 'Git: Blame',
         mode = { 'n', 'x' },
         '<leader>gb',
-        ':Git blame<CR>',
+        ':Git blame -wC<CR>',
         silent = true,
       },
       {
@@ -140,6 +140,9 @@ return {
     opts = {
       attach_to_untracked = true,
       current_line_blame = true,
+      current_line_blame_opts = {
+        extra_opts = { '-wC' },
+      },
       signs_staged_enable = false,
     },
   },
