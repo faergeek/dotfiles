@@ -110,7 +110,6 @@ function M.kitty_scrollback(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.list = false
   vim.opt.number = false
   vim.opt.relativenumber = false
-  vim.opt.scrollback = INPUT_LINE_NUMBER + CURSOR_LINE
   vim.opt.scrolloff = 0
   vim.opt.signcolumn = 'no'
 
