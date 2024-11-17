@@ -94,6 +94,14 @@ return {
               },
             }
           end,
+          dockerls = function()
+            lspconfig.dockerls.setup {
+              capabilities,
+              on_attach = function(client)
+                client.server_capabilities.semanticTokensProvider = nil
+              end,
+            }
+          end,
           eslint = function()
             lspconfig.eslint.setup {
               capabilities = capabilities,
