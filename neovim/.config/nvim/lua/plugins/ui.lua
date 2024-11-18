@@ -27,9 +27,8 @@ return {
     },
   },
   {
-    'faergeek/buffer_manager.nvim',
+    'j-morano/buffer_manager.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    branch = 'improve-indicators',
     keys = {
       {
         desc = 'Buffer Manager',
