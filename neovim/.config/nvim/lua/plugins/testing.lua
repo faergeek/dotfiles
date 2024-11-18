@@ -8,12 +8,9 @@ return {
       'nvim-treesitter/nvim-treesitter',
       'marilari88/neotest-vitest',
       'nvim-neotest/neotest-jest',
-      'thenbe/neotest-playwright',
     },
     cmd = {
       'Neotest',
-      'NeotestPlaywrightProject',
-      'NeotestPlaywrightRefresh',
     },
     keys = {
       {
@@ -55,37 +52,12 @@ return {
         'q',
         '<Cmd>q<CR>',
       },
-      {
-        desc = 'Test: Playwright Project',
-        '<leader>tpp',
-        '<Cmd>NeotestPlaywrightProject<CR>',
-      },
-      {
-        desc = 'Test: Playwright Refresh',
-        '<leader>tpr',
-        '<Cmd>NeotestPlaywrightRefresh<CR>',
-      },
-      {
-        desc = 'Test: Playwright Attachment',
-        '<leader>tpa',
-        function() require('neotest').playwright.attachment() end,
-      },
     },
     opts = function()
       return {
         adapters = {
           require 'neotest-vitest',
           require 'neotest-jest',
-          require('neotest-playwright').adapter {
-            options = {
-              enable_dynamic_test_discovery = true,
-              persist_project_selection = true,
-              preset = 'debug',
-            },
-          },
-        },
-        consumers = {
-          playwright = require('neotest-playwright.consumers').consumers,
         },
         output = {
           open_on_run = false,
