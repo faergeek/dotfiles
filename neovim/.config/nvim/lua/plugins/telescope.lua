@@ -3,7 +3,7 @@ return {
     'nvim-telescope/telescope.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-fzy-native.nvim',
+      { 'natecraddock/telescope-zf-native.nvim', lazy = true },
     },
     cmd = 'Telescope',
     keys = {
@@ -92,7 +92,7 @@ return {
     end,
     config = function(_, opts)
       require('telescope').setup(opts)
-      pcall(require('telescope').load_extension, 'fzy_native')
+      pcall(require('telescope').load_extension, 'zf-native')
     end,
   },
 }
