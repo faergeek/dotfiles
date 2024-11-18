@@ -80,11 +80,12 @@ return {
               '.git',
             },
           },
+          grep_string = {
+            additional_args = { '--hidden', '--glob', '!**/.git/**' },
+          },
           live_grep = {
             additional_args = { '--hidden' },
-            glob_pattern = {
-              '!**/.git/**',
-            },
+            glob_pattern = { '!**/.git/**' },
           },
           oldfiles = { only_cwd = true },
         },
