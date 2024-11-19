@@ -146,17 +146,46 @@ return {
   },
   { 'gpanders/nvim-parinfer', ft = { 'dune' } },
   {
-    'echasnovski/mini.surround',
+    'kylechui/nvim-surround',
     keys = {
-      { desc = 'Add surrounding', 'sa', mode = { 'n', 'x' } },
-      { desc = 'Delete surrounding', 'sd' },
-      { desc = 'Find left surrounding', 'sF' },
-      { desc = 'Find right surrounding', 'sf' },
-      { desc = 'Highlight surrounding', 'sh' },
-      { desc = 'Update `MiniSurround.config.n_lines`', 'sn' },
-      { desc = 'Replace surrounding', 'sr' },
+      {
+        desc = 'Add a surrounding pair around a motion (normal mode)',
+        'sa',
+      },
+      {
+        desc = 'Add a surrounding pair around the current line (normal mode)',
+        'sA',
+      },
+      {
+        desc = 'Add a surrounding pair around a visual selection',
+        mode = 'x',
+        'sa',
+      },
+      {
+        desc = 'Delete a surrounding pair',
+        'sd',
+      },
+      {
+        desc = 'Change a surrounding pair',
+        'sr',
+      },
     },
-    opts = {},
+    opts = {
+      keymaps = {
+        insert = false,
+        insert_line = false,
+        normal = 'sa',
+        normal_cur = 'sA',
+        normal_line = false,
+        normal_cur_line = false,
+        visual = 'sa',
+        visual_line = false,
+        delete = 'sd',
+        change = 'sr',
+        change_line = false,
+      },
+      move_cursor = 'sticky',
+    },
   },
   {
     'JoosepAlviste/nvim-ts-context-commentstring',

@@ -17,6 +17,7 @@ return {
             information = { 'undercurl' },
           },
         },
+        nvim_surround = true,
         treesitter_context = true,
         which_key = true,
       },
