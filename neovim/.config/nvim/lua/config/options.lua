@@ -62,6 +62,7 @@ vim.opt.tabline = '%!v:lua.tabline()'
 vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.undofile = true
+vim.opt.wildignorecase = true
 vim.opt.wildoptions:append { 'fuzzy' }
 
 vim.g.qf_disable_statusline = true
