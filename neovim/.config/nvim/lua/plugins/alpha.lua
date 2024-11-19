@@ -118,7 +118,7 @@ return {
                   )
 
                   local keybind = '<Cmd>edit '
-                    .. vim.fn.fnameescape(path)
+                    .. vim.fn.fnameescape(vim.fn.fnamemodify(path, ':p:~:.'))
                     .. '<CR>'
 
                   local ico, ico_hl = require('nvim-web-devicons').get_icon(
