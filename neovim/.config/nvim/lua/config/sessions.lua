@@ -1,5 +1,4 @@
 local autocmd = require('utils').autocmd
-local buf_is_empty = require('utils').buf_is_empty
 
 local autosave_autocmd_id = nil
 
@@ -56,28 +55,15 @@ local function get_session_filenames()
   }
 end
 
-local function save_session()
+vim.api.nvim_create_user_command('SessionSave', function()
   local filenames = get_session_filenames()
 
   vim.cmd('mksession! ' .. vim.fn.fnameescape(filenames.session))
   require('buffer_manager.ui').save_menu_to_file(filenames.buffers)
   autosave_on()
-end
+end, {})
 
-local function restore_session()
-  local filenames = get_session_filenames()
-
-  if vim.fn.filereadable(filenames.session) == 1 then
-    vim.cmd('silent source ' .. vim.fn.fnameescape(filenames.session))
-    autosave_on()
-  end
-
-  if vim.fn.filereadable(filenames.buffers) == 1 then
-    require('buffer_manager.ui').load_menu_from_file(filenames.buffers)
-  end
-end
-
-local function delete_session()
+vim.api.nvim_create_user_command('SessionDelete', function()
   autosave_off()
 
   local filenames = get_session_filenames()
@@ -91,37 +77,19 @@ local function delete_session()
   end
 
   vim.v.this_session = ''
-end
+end, {})
 
-vim.api.nvim_create_user_command('SessionSave', save_session, {})
-vim.api.nvim_create_user_command('SessionDelete', delete_session, {})
+if vim.fn.argc() == 0 then
+  autocmd('Restore session on startup', 'VimEnter', function()
+    local filenames = get_session_filenames()
 
-local function should_restore_session()
-  if vim.fn.argc() ~= 0 then return false end
-
-  if not buf_is_empty(0) then return false end
-
-  for _, buf_id in pairs(vim.api.nvim_list_bufs()) do
-    if vim.api.nvim_buf_is_loaded(buf_id) then return false end
-  end
-
-  for _, arg in pairs(vim.v.argv) do
-    if
-      arg == '-b'
-      or arg == '-c'
-      or vim.startswith(arg, '+')
-      or arg == '-S'
-    then
-      return false
+    if vim.fn.filereadable(filenames.session) == 1 then
+      vim.cmd('silent source ' .. vim.fn.fnameescape(filenames.session))
+      autosave_on()
     end
-  end
 
-  return true
-end
-
-if should_restore_session() then
-  autocmd('Restore session on startup', 'VimEnter', restore_session, {
-    once = true,
-    nested = true,
-  })
+    if vim.fn.filereadable(filenames.buffers) == 1 then
+      require('buffer_manager.ui').load_menu_from_file(filenames.buffers)
+    end
+  end, { once = true, nested = true })
 end
