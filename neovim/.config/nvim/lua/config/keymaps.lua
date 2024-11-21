@@ -1,4 +1,3 @@
-local autocmd = require('utils').autocmd
 local keymap = require('utils').keymap
 
 keymap(
@@ -34,16 +33,12 @@ end)
 keymap('Find References', 'n', '<leader>fr', vim.lsp.buf.references)
 keymap('Find Implementations', 'n', '<leader>fi', vim.lsp.buf.implementation)
 
-keymap('Show inlay hints until cursor is moved', 'n', '<leader>i', function()
-  vim.lsp.inlay_hint.enable(true)
-
-  autocmd(
-    'Hide inlay hint once cursor is moved',
-    'CursorMoved',
-    function() vim.lsp.inlay_hint.enable(false) end,
-    { once = true }
-  )
-end)
+keymap(
+  'Show inlay hints until cursor is moved',
+  'n',
+  '<leader>i',
+  require 'utils.inlay-hint-keymap'
+)
 
 keymap('Next quickfix item', 'n', ']q', '<Cmd>cnext<CR>')
 keymap('Previous quickfix item', 'n', '[q', '<Cmd>cprevious<CR>')
