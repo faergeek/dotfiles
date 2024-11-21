@@ -37,7 +37,7 @@ vim.opt.listchars = {
 }
 vim.opt.number = true
 vim.opt.quickfixtextfunc =
-  "{info -> v:lua.require('utils').quickfixtextfunc(info)}"
+  "{info -> v:lua.require('utils.quickfixtextfunc')(info)}"
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.sessionoptions = { 'tabpages', 'winsize' }
