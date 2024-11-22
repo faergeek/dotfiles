@@ -67,7 +67,7 @@ return {
           markdown = { prettier },
           sql = {
             formatters.shell {
-              cmd = { 'sql-formatter', '--language', 'postgresql' },
+              cmd = { 'sql-formatter' },
             },
           },
           typescript = { eslint, prettier },
