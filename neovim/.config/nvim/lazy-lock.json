@@ -16,7 +16,6 @@
   "format-on-save.nvim": { "branch": "main", "commit": "4c748be4f63e199b42589020dc4c0081580d881a" },
   "fortune.nvim": { "branch": "master", "commit": "29a99fbf887a2d48693f1eaa1893f84cde60af54" },
   "gitsigns.nvim": { "branch": "main", "commit": "5f808b5e4fef30bd8aca1b803b4e555da07fc412" },
-  "hererocks": { "branch": "master", "commit": "c9c5444dea1e07e005484014a8231aa667be30b6" },
   "indent-o-matic": { "branch": "master", "commit": "4d11e98f523d3c4500b1dc33f0d1a248a4f69719" },
   "lazy.nvim": { "branch": "main", "commit": "56ead98e05bb37a4ec28930a54d836d033cf00f2" },
   "lazydev.nvim": { "branch": "main", "commit": "f59bd14a852ca43db38e3662395354cb2a9b13e0" },
