@@ -73,18 +73,12 @@ return {
       return {
         ensure_installed = {
           'bashls',
-          'clangd',
           'cssls',
-          'cssmodules_ls',
-          'dockerls',
           'eslint',
           'html',
           'jsonls',
           'lua_ls',
           'marksman',
-          'rust_analyzer',
-          'stylelint_lsp',
-          'taplo',
           'ts_ls',
           'yamlls',
         },
