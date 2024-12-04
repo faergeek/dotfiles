@@ -54,6 +54,8 @@ if status is-interactive
     end
 
     if type -q eza
-        alias ls='eza --icons'
+        alias ls='eza --icons --hyperlink'
+    else
+        alias ls='ls --color=auto --hyperlink=auto'
     end
 end
