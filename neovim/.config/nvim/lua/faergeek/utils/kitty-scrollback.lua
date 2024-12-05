@@ -14,6 +14,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.relativenumber = false
   vim.opt.scrolloff = 0
   vim.opt.signcolumn = 'no'
+  vim.opt.spell = false
 
   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
   local line_count = #lines
