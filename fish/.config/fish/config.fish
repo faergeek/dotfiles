@@ -34,6 +34,13 @@ end
 # pacdiff
 set -gx DIFFPROG 'nvim -d'
 
+# pnpm
+set -gx PNPM_HOME $HOME/.local/share/pnpm
+
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+
 # tealdeer
 set -gx TEALDEER_CONFIG_DIR ~/.config/tealdeer
 
