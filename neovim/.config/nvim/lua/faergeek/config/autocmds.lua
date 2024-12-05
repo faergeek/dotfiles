@@ -26,13 +26,6 @@ autocmd(
   { pattern = { 'man' } }
 )
 
-autocmd('Enable spell checking by default', 'FileType', function()
-  vim.opt_local.spell = true
-  vim.opt_local.spellfile = vim.fn.stdpath 'config' .. '/spell/words.add'
-  vim.opt_local.spelllang = 'en_us,ru_ru'
-  vim.opt_local.spelloptions:append { 'camel', 'noplainbuffer' }
-end)
-
 autocmd(
   'Disable spell checking in certain file types',
   'FileType',
