@@ -83,6 +83,8 @@ if vim.env.SSH_TTY then
   }
 end
 
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
 vim.g.qf_disable_statusline = true
 vim.g.zig_fmt_autosave = false
 

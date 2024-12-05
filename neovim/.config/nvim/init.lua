@@ -1,6 +1,3 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
-
 require 'faergeek.config.status'
 require 'faergeek.config.spell'
 require 'faergeek.config.options'
