@@ -66,7 +66,7 @@ return {
       if vim.o.filetype == 'lazy' then
         vim.cmd.close()
 
-        require('utils').autocmd(
+        require('faergeek.utils').autocmd(
           'Show lazy once alpha is ready',
           'User',
           function() require('lazy').show() end,

@@ -1,4 +1,4 @@
-local keymap = require('utils').keymap
+local keymap = require('faergeek.utils').keymap
 
 keymap(
   'Move cursor up',
@@ -37,7 +37,7 @@ keymap(
   'Show inlay hints until cursor is moved',
   'n',
   '<leader>i',
-  require 'utils.inlay-hint-keymap'
+  require 'faergeek.utils.inlay-hint-keymap'
 )
 
 keymap('Next quickfix item', 'n', ']q', '<Cmd>cnext<CR>')

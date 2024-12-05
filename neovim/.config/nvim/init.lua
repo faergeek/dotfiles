@@ -1,12 +1,12 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
-require 'config.status'
-require 'config.spell'
-require 'config.options'
-require 'config.keymaps'
-require 'config.autocmds'
-require 'config.sessions'
+require 'faergeek.config.status'
+require 'faergeek.config.spell'
+require 'faergeek.config.options'
+require 'faergeek.config.keymaps'
+require 'faergeek.config.autocmds'
+require 'faergeek.config.sessions'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 
@@ -23,7 +23,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('plugins', {
+require('lazy').setup('faergeek.plugins', {
   change_detection = {
     notify = false,
   },

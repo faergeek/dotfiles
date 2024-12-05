@@ -1,4 +1,4 @@
-local keymap = require('utils').keymap
+local keymap = require('faergeek.utils').keymap
 local km_opts = { buffer = true }
 
 vim.api.nvim_buf_create_user_command(0, 'SetPriority', function(args)

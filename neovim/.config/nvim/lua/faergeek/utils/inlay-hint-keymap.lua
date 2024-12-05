@@ -1,4 +1,4 @@
-local autocmd = require('utils').autocmd
+local autocmd = require('faergeek.utils').autocmd
 
 ---@type number|nil
 local inlay_hint_autocmd_id

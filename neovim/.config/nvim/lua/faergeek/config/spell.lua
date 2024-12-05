@@ -1,4 +1,4 @@
-local autocmd = require('utils').autocmd
+local autocmd = require('faergeek.utils').autocmd
 
 local spell_dir = vim.fn.stdpath 'config' .. '/spell'
 

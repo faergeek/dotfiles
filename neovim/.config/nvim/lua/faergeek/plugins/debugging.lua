@@ -56,12 +56,12 @@ return {
       {
         desc = 'Debug: Frames',
         '<leader>df',
-        function() require('utils.dap').frames_sidebar.toggle() end,
+        function() require('faergeek.utils.dap').frames_sidebar.toggle() end,
       },
       {
         desc = 'Debug: Scopes',
         '<leader>ds',
-        function() require('utils.dap').scopes_sidebar.toggle() end,
+        function() require('faergeek.utils.dap').scopes_sidebar.toggle() end,
       },
       {
         desc = 'Debug: Step Over',

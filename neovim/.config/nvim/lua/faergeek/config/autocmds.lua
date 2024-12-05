@@ -1,5 +1,5 @@
-local autocmd = require('utils').autocmd
-local keymap = require('utils').keymap
+local autocmd = require('faergeek.utils').autocmd
+local keymap = require('faergeek.utils').keymap
 
 autocmd(
   'Briefly highlight yanked text',
