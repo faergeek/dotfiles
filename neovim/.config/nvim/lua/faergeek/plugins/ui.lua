@@ -17,9 +17,9 @@ return {
             information = { 'undercurl' },
           },
         },
+        neotest = true,
         nvim_surround = true,
-        treesitter_context = true,
-        which_key = true,
+        pounce = true,
       },
     },
     config = function(_, opts)
