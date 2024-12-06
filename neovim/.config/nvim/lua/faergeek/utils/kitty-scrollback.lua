@@ -3,11 +3,6 @@ local keymap = require('faergeek.utils').keymap
 
 return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.cmdheight = 0
-  vim.cmd [[
-    hi! TermCursor guifg=NONE guibg=NONE gui=NONE cterm=NONE
-    hi! TermCursorNC guifg=NONE guibg=NONE gui=NONE cterm=NONE
-  ]]
-  vim.opt.guicursor = 'a:noCursor'
   vim.opt.laststatus = 0
   vim.opt.list = false
   vim.opt.number = false
@@ -15,6 +10,11 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.scrolloff = 0
   vim.opt.signcolumn = 'no'
   vim.opt.spell = false
+
+  vim.cmd [[
+    hi! TermCursor guifg=NONE guibg=NONE gui=NONE cterm=NONE
+    hi! TermCursorNC guifg=NONE guibg=NONE gui=NONE cterm=NONE
+  ]]
 
   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
   local line_count = #lines
