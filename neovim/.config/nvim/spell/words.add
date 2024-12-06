@@ -2,6 +2,7 @@ ESLint
 OCaml
 REPLs
 VPS
+anonymized
 api
 auth
 autocmd
@@ -16,6 +17,7 @@ catppuccin
 checkbox
 cli
 cmd
+combobox
 conf
 config
 configs
@@ -27,6 +29,7 @@ deps
 desc
 dom
 dosini
+dropdown
 eslint
 exercism
 ext2
@@ -69,6 +72,7 @@ polkit
 polyfill
 polyfills
 progs
+qa
 quickfix
 readme
 repl
