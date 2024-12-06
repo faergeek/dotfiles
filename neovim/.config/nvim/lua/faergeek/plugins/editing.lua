@@ -32,7 +32,6 @@ return {
       endwise = { enable = true },
       ensure_installed = {
         'diff',
-        'git_rebase',
         'jsdoc',
         'luap',
         'markdown_inline',
