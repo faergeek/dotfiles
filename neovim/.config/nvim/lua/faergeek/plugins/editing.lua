@@ -113,12 +113,7 @@ return {
         function() require('illuminate').goto_prev_reference() end,
       },
     },
-    opts = {
-      providers = {
-        'lsp',
-        'treesitter',
-      },
-    },
+    opts = {},
     config = function(_, opts) require('illuminate').configure(opts) end,
   },
   { 'Darazaki/indent-o-matic', event = 'BufReadPre', opts = {} },
