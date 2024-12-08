@@ -138,43 +138,55 @@ return {
     'kylechui/nvim-surround',
     keys = {
       {
+        desc = 'Add a surrounding pair around the cursor (insert mode)',
+        mode = 'i',
+        '<C-g>s',
+      },
+      {
+        desc = 'Add a surrounding pair around the cursor, on new lines (insert mode)',
+        mode = 'i',
+        '<C-g>S',
+      },
+      {
         desc = 'Add a surrounding pair around a motion (normal mode)',
-        'sa',
+        'ys',
       },
       {
         desc = 'Add a surrounding pair around the current line (normal mode)',
-        'sA',
+        'yss',
+      },
+      {
+        desc = 'Add a surrounding pair around a motion, on new lines (normal mode)',
+        'yS',
+      },
+      {
+        desc = 'Add a surrounding pair around the current line, on new lines (normal mode)',
+        'ySS',
       },
       {
         desc = 'Add a surrounding pair around a visual selection',
         mode = 'x',
-        'sa',
+        'S',
+      },
+      {
+        desc = 'Add a surrounding pair around a visual selection, on new lines',
+        mode = 'x',
+        'gS',
       },
       {
         desc = 'Delete a surrounding pair',
-        'sd',
+        'ds',
       },
       {
         desc = 'Change a surrounding pair',
-        'sr',
+        'cs',
+      },
+      {
+        desc = 'Change a surrounding pair, putting replacements on new lines',
+        'cS',
       },
     },
-    opts = {
-      keymaps = {
-        insert = false,
-        insert_line = false,
-        normal = 'sa',
-        normal_cur = 'sA',
-        normal_line = false,
-        normal_cur_line = false,
-        visual = 'sa',
-        visual_line = false,
-        delete = 'sd',
-        change = 'sr',
-        change_line = false,
-      },
-      move_cursor = 'sticky',
-    },
+    opts = {},
   },
   {
     'folke/ts-comments.nvim',
