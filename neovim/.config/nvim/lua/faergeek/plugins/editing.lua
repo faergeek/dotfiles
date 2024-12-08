@@ -186,13 +186,13 @@ return {
     keys = {
       {
         desc = 'Jump',
-        mode = { 'n', 'x' },
+        mode = { 'n', 'x', 'o' },
         '<leader><leader>',
         '<Cmd>Pounce<CR>',
       },
       {
         desc = 'Repeat Jump',
-        mode = { 'n', 'x' },
+        mode = { 'n', 'x', 'o' },
         '<leader><leader><leader>',
         '<Cmd>PounceRepeat<CR>',
       },
