@@ -61,7 +61,6 @@ autocmd(
       'dap-repl',
       'dbout',
       'git',
-      'help',
       'man',
       'qf',
       'query',
@@ -69,6 +68,12 @@ autocmd(
     },
   }
 )
+
+autocmd('Close help buffers with just <q>', 'BufReadPost', function(event)
+  if vim.bo[event.buf].buftype ~= 'help' then return end
+
+  keymap('Close', 'n', 'q', '<Cmd>q<CR>', { buffer = event.buf })
+end)
 
 autocmd(
   'Map q to gq',
