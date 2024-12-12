@@ -6,7 +6,6 @@
 [core]
   pager = delta
   quotepath = false
-  untrackedCache = true
 [delta]
   hyperlinks = true
   line-numbers = true
