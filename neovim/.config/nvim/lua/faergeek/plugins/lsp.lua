@@ -79,6 +79,7 @@ return {
           'jsonls',
           'lua_ls',
           'marksman',
+          'tailwindcss',
           'ts_ls',
           'yamlls',
         },
@@ -142,6 +143,20 @@ return {
               filetypes = { 'css' },
               settings = {
                 stylelintplus = { autoFixOnFormat = true },
+              },
+            }
+          end,
+          tailwindcss = function()
+            lspconfig.tailwindcss.setup {
+              settings = {
+                tailwindCSS = {
+                  experimental = {
+                    classRegex = {
+                      { 'cva\\(([^)]*)\\)', '["\'`]([^"\'`]*).*?["\'`]' },
+                      { 'cx\\(([^)]*)\\)', "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+                    },
+                  },
+                },
               },
             }
           end,
