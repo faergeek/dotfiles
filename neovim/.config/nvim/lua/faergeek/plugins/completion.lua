@@ -65,6 +65,8 @@ return {
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
 
+      'brenoprata10/nvim-highlight-colors',
+
       {
         'rcarriga/cmp-dap',
         dependencies = { 'hrsh7th/nvim-cmp' },
@@ -120,20 +122,34 @@ return {
           },
         },
         formatting = {
-          format = require('lspkind').cmp_format {
-            before = function(entry, vim_item)
-              if vim.tbl_contains({ 'path' }, entry.source.name) then
-                local icon = require('nvim-web-devicons').get_icon(
-                  entry:get_completion_item().label
-                )
+          fields = { 'kind', 'abbr', 'menu' },
+          format = function(entry, item)
+            local color_item = require('nvim-highlight-colors').format(
+              entry,
+              { kind = item.kind }
+            )
 
-                if icon then vim_item.abbr = icon .. ' ' .. vim_item.abbr end
+            item =
+              require('lspkind').cmp_format { mode = 'symbol' }(entry, item)
+
+            if color_item.abbr_hl_group then
+              item.kind_hl_group = color_item.abbr_hl_group
+              item.kind = color_item.abbr
+            end
+
+            if vim.tbl_contains({ 'path' }, entry.source.name) then
+              local icon, hl_group = require('nvim-web-devicons').get_icon(
+                entry:get_completion_item().label
+              )
+
+              if icon then
+                item.kind = icon
+                item.kind_hl_group = hl_group
               end
+            end
 
-              return vim_item
-            end,
-            mode = 'symbol',
-          },
+            return item
+          end,
         },
         mapping = {
           ['<C-/>'] = {
