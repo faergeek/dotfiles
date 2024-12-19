@@ -2,8 +2,20 @@
   color: #c6d0f5;
 }
 
+.text-button,
+.image-button {
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+
+.text-button:hover,
+.image-button:hover {
+  box-shadow: none;
+  background: #232634;
+}
+
 #control-center-window {
-  background: transparent;
   font-family: FantasqueSansM Nerd Font Propo;
   font-size: 18px;
 }
@@ -19,29 +31,35 @@
 
 .widget-title,
 .widget-dnd,
-.widget-volume {
+.widget-mpris {
   margin-right: 16px;
   margin-left: 16px;
+}
+
+.widget-mpris-player {
+  margin: 8px 16px;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.8);
 }
 
 .widget-title {
   margin-top: 0;
 }
 
-.widget-volume {
-  padding: 0;
-  background: transparent;
-}
-
-.widget-volume scale {
-  padding: 0;
-}
-
 .notification-group {
+  margin-right: 12px;
+  margin-left: 12px;
   border-radius: 8px;
 }
 
-.notification-group-headers {
+.notification-group:focus {
+  outline: 0;
+  box-shadow: inset 0 0 2px 1px #a6d189;
+}
+
+.notification-group-headers,
+.notification-group-buttons {
   margin: 0;
 }
 
@@ -49,25 +67,10 @@
   font-size: inherit;
 }
 
-.notification-group-buttons {
-  margin-right: 0;
-}
-
-.notification-group-buttons .image-button {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: none;
+.notification-background {
+  padding: 4px;
 }
 
 .notification-content {
   padding: 12px;
-}
-
-.notification-default-action:hover .notification-content,
-.notification-default-action:focus .notification-content,
-.notification-group:hover,
-.notification-group:focus {
-  background: transparent;
-  box-shadow: inset 0 0 2px 1px #a6d189;
 }

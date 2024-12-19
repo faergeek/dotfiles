@@ -1,7 +1,6 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "cssPriority": "application",
-  "widgets": ["title", "dnd", "volume", "notifications"],
+  "widgets": ["mpris", "title", "dnd", "notifications"],
   "widget-config": {
     "title": {
       "text": "Уведомления",
