@@ -1,6 +1,6 @@
 [commit]
-  gpgSign = false
+	gpgSign = false
 [user]
-  name = John Doe
-  email = john@doe.com
-  signingkey =
+	name = John Doe
+	email = john@doe.com
+	signingkey =

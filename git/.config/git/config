@@ -1,55 +1,55 @@
 [alias]
-  amend = "!git commit --amend --date=\"$(date -R)\""
-  graph = log --graph --oneline
+	amend = "!git commit --amend --date=\"$(date -R)\""
+	graph = log --graph --oneline
 [commit]
-  gpgSign = true
+	gpgSign = true
 [core]
-  pager = delta
-  quotepath = false
+	pager = delta
+	quotepath = false
 [delta]
-  hyperlinks = true
-  line-numbers = true
-  side-by-side = true
-  syntax-theme = Catppuccin-frappe
+	hyperlinks = true
+	line-numbers = true
+	side-by-side = true
+	syntax-theme = Catppuccin-frappe
 [diff]
-  algorithm = patience
-  colorMoved = default
-  colorMovedWS = allow-indentation-change
+	algorithm = patience
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
 [fetch]
-  all = true
-  prune = true
-  pruneTags = true
+	all = true
+	prune = true
+	pruneTags = true
 [init]
-  defaultBranch = master
+	defaultBranch = master
 [interactive]
-  diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [log]
-  date = local
+	date = local
 [merge]
-  tool = nvimdiff
+	tool = nvimdiff
 [mergetool]
-  hideResolved = true
-  keepBackup = false
+	hideResolved = true
+	keepBackup = false
 [mergetool "nvimdiff"]
-  layout = @LOCAL, REMOTE + LOCAL, MERGED, REMOTE + LOCAL,BASE,REMOTE / MERGED
+	layout = @LOCAL, REMOTE + LOCAL, MERGED, REMOTE + LOCAL,BASE,REMOTE / MERGED
 [pull]
-  rebase = true
+	rebase = true
 [push]
-  autoSetupRemote = true
-  default = upstream
+	autoSetupRemote = true
+	default = upstream
 [rebase]
-  autoSquash = true
-  autoStash = true
-  updateRefs = true
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
 [rerere]
-  autoUpdate = true
-  enabled = true
+	autoUpdate = true
+	enabled = true
 [tag]
-  sort = version:refname
+	sort = version:refname
 [user]
-  name = Sergei Slipchenko
-  email = faergeek@gmail.com
-  signingkey = C62F5F3B582FE89A226EA5F6375ECA0AF0329782
+	name = Sergei Slipchenko
+	email = faergeek@gmail.com
+	signingkey = C62F5F3B582FE89A226EA5F6375ECA0AF0329782
 
 [include]
-  path = config.local
+	path = config.local
