@@ -16,8 +16,6 @@ keymap(
   { expr = true }
 )
 
-keymap('Lazy', 'n', '<leader>l', '<Cmd>Lazy<CR>')
-
 keymap('LSP: Rename Symbol', 'n', '<leader>rs', vim.lsp.buf.rename)
 keymap('LSP: Code Action', { 'n', 'x' }, '<leader>a', vim.lsp.buf.code_action)
 

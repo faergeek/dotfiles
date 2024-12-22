@@ -63,20 +63,6 @@ return {
         return ext
       end
 
-      if vim.o.filetype == 'lazy' then
-        vim.cmd.close()
-
-        require('faergeek.utils').autocmd(
-          'Show lazy once alpha is ready',
-          'User',
-          function() require('lazy').show() end,
-          {
-            once = true,
-            pattern = 'AlphaReady',
-          }
-        )
-      end
-
       return {
         opts = { margin = 1 },
         layout = {
@@ -95,9 +81,16 @@ return {
             },
             opts = { hl = 'AlphaHeader', shrink_margin = false },
           },
+          {
+            type = 'text',
+            val = require('fortune').get_fortune(),
+            opts = { hl = 'AlphaFooter', shrink_margin = false },
+          },
           { type = 'padding', val = 1 },
           button('e', 'New file', '<Cmd>enew<CR>'),
-          { type = 'padding', val = 1 },
+          button('l', 'Lazy', '<Cmd>Lazy<CR>'),
+          button('m', 'Mason', '<Cmd>Mason<CR>'),
+          button('q', 'Quit', '<Cmd>q<CR>'),
           {
             type = 'group',
             opts = { shrink_margin = false },
@@ -132,18 +125,46 @@ return {
                 end
               end
 
+              if #result ~= 0 then
+                table.insert(result, 0, { type = 'padding', val = 1 })
+
+                table.insert(result, 1, {
+                  type = 'text',
+                  val = 'Recent files:',
+                  opts = { hl = 'SpecialComment' },
+                })
+              end
+
               return result
             end,
           },
-          { type = 'padding', val = 1 },
-          button('q', 'Quit', '<Cmd>q<CR>'),
-          {
-            type = 'text',
-            val = require('fortune').get_fortune(),
-            opts = { hl = 'AlphaFooter', shrink_margin = false },
-          },
         },
       }
+    end,
+    config = function(_, opts)
+      require('alpha').setup(opts)
+
+      local autocmd = require('faergeek.utils').autocmd
+
+      if vim.o.filetype == 'lazy' then
+        vim.cmd.close()
+
+        autocmd(
+          'Show lazy once alpha is ready',
+          'User',
+          function() require('lazy').show() end,
+          {
+            once = true,
+            pattern = 'AlphaReady',
+          }
+        )
+      end
+
+      autocmd(
+        'Redraw alpha on cwd change',
+        'DirChanged',
+        'AlphaRedraw | AlphaRemap'
+      )
     end,
   },
 }
