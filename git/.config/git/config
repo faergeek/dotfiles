@@ -22,7 +22,7 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	allowedSignersFile = /home/faergeek/.ssh/allowed_signers
+	allowedSignersFile = ~/.config/git/allowed_signers
 [init]
 	defaultBranch = master
 [interactive]
