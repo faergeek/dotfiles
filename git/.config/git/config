@@ -19,6 +19,10 @@
 	all = true
 	prune = true
 	pruneTags = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/faergeek/.ssh/allowed_signers
 [init]
 	defaultBranch = master
 [interactive]
@@ -49,7 +53,7 @@
 [user]
 	name = Sergei Slipchenko
 	email = faergeek@gmail.com
-	signingkey = C62F5F3B582FE89A226EA5F6375ECA0AF0329782
+	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDZHgoS5XQ7P09ELaCZphQiDjO6Kxdb3j4k9IrWdm3Jq faergeek@gmail.com
 
 [include]
 	path = config.local
