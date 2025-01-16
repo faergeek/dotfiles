@@ -190,20 +190,6 @@ return {
       'typescript',
       'typescriptreact',
     },
-    opts = {
-      settings = {
-        separate_diagnostic_server = false,
-        tsserver_file_preferences = {
-          includeInlayParameterNameHints = 'all',
-          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayVariableTypeHints = true,
-          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-          includeInlayPropertyDeclarationTypeHints = true,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayEnumMemberValueHints = true,
-        },
-      },
-    },
+    opts = {},
   },
 }
