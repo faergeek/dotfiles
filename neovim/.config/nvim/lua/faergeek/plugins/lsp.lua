@@ -80,7 +80,6 @@ return {
           'lua_ls',
           'marksman',
           'tailwindcss',
-          'ts_ls',
           'yamlls',
         },
         handlers = {
@@ -162,45 +161,6 @@ return {
               },
             }
           end,
-          ts_ls = function()
-            lspconfig.ts_ls.setup {
-              capabilities = capabilities,
-              handlers = {
-                ['_typescript.rename'] = function(_, result, ctx)
-                  if not result then return {} end
-
-                  local client = vim.lsp.get_client_by_id(ctx.client_id)
-
-                  if client then
-                    vim.lsp.util.jump_to_location({
-                      uri = result.textDocument.uri,
-                      range = {
-                        start = result.position,
-                      },
-                    }, client.offset_encoding)
-
-                    vim.lsp.buf.rename(nil, {
-                      filter = function(c) return c == client end,
-                    })
-                  end
-
-                  return {}
-                end,
-              },
-              init_options = {
-                preferences = {
-                  includeInlayParameterNameHints = 'all',
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                  includeInlayFunctionParameterTypeHints = true,
-                  includeInlayVariableTypeHints = true,
-                  includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-                  includeInlayPropertyDeclarationTypeHints = true,
-                  includeInlayFunctionLikeReturnTypeHints = true,
-                  includeInlayEnumMemberValueHints = true,
-                },
-              },
-            }
-          end,
           yamlls = function()
             lspconfig.yamlls.setup {
               capabilities = capabilities,
@@ -220,5 +180,30 @@ return {
         },
       }
     end,
+  },
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    ft = {
+      'javascript',
+      'javascriptreact',
+      'typescript',
+      'typescriptreact',
+    },
+    opts = {
+      settings = {
+        separate_diagnostic_server = false,
+        tsserver_file_preferences = {
+          includeInlayParameterNameHints = 'all',
+          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayVariableTypeHints = true,
+          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+          includeInlayEnumMemberValueHints = true,
+        },
+      },
+    },
   },
 }
