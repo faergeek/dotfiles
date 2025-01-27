@@ -80,6 +80,7 @@ return {
           'lua_ls',
           'marksman',
           'tailwindcss',
+          'vtsls',
           'yamlls',
         },
         handlers = {
@@ -161,6 +162,25 @@ return {
               },
             }
           end,
+          vtsls = function()
+            lspconfig.vtsls.setup {
+              capabilities = capabilities,
+              settings = {
+                vtsls = {
+                  experimental = {
+                    completion = {
+                      enableServerSideFuzzyMatch = true,
+                    },
+                  },
+                },
+                typescript = {
+                  tsserver = {
+                    maxTsServerMemory = 8 * 1024,
+                  },
+                },
+              },
+            }
+          end,
           yamlls = function()
             lspconfig.yamlls.setup {
               capabilities = capabilities,
@@ -182,8 +202,7 @@ return {
     end,
   },
   {
-    'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    'yioneko/nvim-vtsls',
     ft = {
       'javascript',
       'javascriptreact',
@@ -191,5 +210,6 @@ return {
       'typescriptreact',
     },
     opts = {},
+    config = function(_, opts) require('vtsls').config(opts) end,
   },
 }
