@@ -198,6 +198,7 @@ return {
                 },
                 vtsls = {
                   autoUseWorkspaceTsdk = true,
+                  enableMoveToFileCodeAction = true,
                   experimental = {
                     completion = {
                       enableServerSideFuzzyMatch = true,
