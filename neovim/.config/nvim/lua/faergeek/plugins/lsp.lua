@@ -174,6 +174,9 @@ return {
                     propertyDeclarationTypes = true,
                     variableTypes = true,
                   },
+                  preferences = {
+                    jsxAttributeCompletionStyle = 'braces',
+                  },
                 },
                 typescript = {
                   inlayHints = {
@@ -183,6 +186,9 @@ return {
                     parameterTypes = true,
                     propertyDeclarationTypes = true,
                     variableTypes = true,
+                  },
+                  preferences = {
+                    jsxAttributeCompletionStyle = 'braces',
                   },
                   tsserver = {
                     maxTsServerMemory = 8 * 1024,
