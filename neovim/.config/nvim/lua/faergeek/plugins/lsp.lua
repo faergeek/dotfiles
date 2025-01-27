@@ -177,6 +177,7 @@ return {
                   preferences = {
                     jsxAttributeCompletionStyle = 'braces',
                   },
+                  updateImportsOnFileMove = 'always',
                 },
                 typescript = {
                   inlayHints = {
@@ -193,6 +194,7 @@ return {
                   tsserver = {
                     maxTsServerMemory = 8 * 1024,
                   },
+                  updateImportsOnFileMove = 'always',
                 },
                 vtsls = {
                   autoUseWorkspaceTsdk = true,
