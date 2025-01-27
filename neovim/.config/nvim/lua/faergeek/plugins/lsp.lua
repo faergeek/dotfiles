@@ -166,7 +166,24 @@ return {
             lspconfig.vtsls.setup {
               capabilities = capabilities,
               settings = {
+                javascript = {
+                  inlayHints = {
+                    functionLikeReturnTypes = true,
+                    parameterNames = 'all',
+                    parameterTypes = true,
+                    propertyDeclarationTypes = true,
+                    variableTypes = true,
+                  },
+                },
                 typescript = {
+                  inlayHints = {
+                    enumMemberValues = true,
+                    functionLikeReturnTypes = true,
+                    parameterNames = 'all',
+                    parameterTypes = true,
+                    propertyDeclarationTypes = true,
+                    variableTypes = true,
+                  },
                   tsserver = {
                     maxTsServerMemory = 8 * 1024,
                   },
