@@ -166,16 +166,17 @@ return {
             lspconfig.vtsls.setup {
               capabilities = capabilities,
               settings = {
+                typescript = {
+                  tsserver = {
+                    maxTsServerMemory = 8 * 1024,
+                  },
+                },
                 vtsls = {
+                  autoUseWorkspaceTsdk = true,
                   experimental = {
                     completion = {
                       enableServerSideFuzzyMatch = true,
                     },
-                  },
-                },
-                typescript = {
-                  tsserver = {
-                    maxTsServerMemory = 8 * 1024,
                   },
                 },
               },
