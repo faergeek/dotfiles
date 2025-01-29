@@ -127,6 +127,7 @@ vim.filetype.add {
     mli = 'ocamlinterface',
   },
   filename = {
+    ['.swcrc'] = 'jsonc',
     ['Tiltfile'] = 'tiltfile',
     ['todo.txt'] = 'todotxt',
   },
