@@ -5,12 +5,7 @@ set -gx MANPAGER nvim +Man!
 set -gx MANWIDTH 80
 
 # asdf
-if [ -d ~/.asdf ]
-    source ~/.asdf/asdf.fish
-    source ~/.asdf/completions/asdf.fish
-
-    set -gx ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY latest_installed
-end
+set -gx ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY latest_installed
 
 # ghcup
 set -gx PATH $HOME/.cabal/bin ~/.ghcup/bin $PATH
