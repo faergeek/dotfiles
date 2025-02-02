@@ -125,6 +125,8 @@ vim.diagnostic.config {
 vim.filetype.add {
   extension = {
     mli = 'ocamlinterface',
+    mll = 'ocamllex',
+    mly = 'ocamllex',
   },
   filename = {
     ['.swcrc'] = 'jsonc',
