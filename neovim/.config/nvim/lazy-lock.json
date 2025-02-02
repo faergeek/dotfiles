@@ -36,7 +36,6 @@
   "nvim-treesitter": { "branch": "master", "commit": "4988b7068001b3a772c7cc738708341e612e3c26" },
   "nvim-treesitter-context": { "branch": "master", "commit": "bece284c5322ddf6946fa4bdc383a2bc033269d7" },
   "nvim-treesitter-endwise": { "branch": "master", "commit": "8b34305ffc28bd75a22f5a0a9928ee726a85c9a6" },
-  "nvim-treesitter-reason": { "branch": "main", "commit": "f4b91b8daeed0a0ed2604ea663401bf0e97769c0" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "ad8f0a472148c3e0ae9851e26a722ee4e29b1595" },
   "nvim-vtsls": { "branch": "main", "commit": "45c6dfea9f83a126e9bfc5dd63430562b3f8af16" },
   "nvim-web-devicons": { "branch": "master", "commit": "402377242b04be3f4f0f3720bd952df86e946c30" },
@@ -57,7 +56,6 @@
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-kitty": { "branch": "main", "commit": "ceaae754267f9578b6313890596ee34a19c00dad" },
   "vim-lastplace": { "branch": "master", "commit": "e58cb0df716d3c88605ae49db5c4741db8b48aa9" },
-  "vim-reason-plus": { "branch": "master", "commit": "c11a2940f8f3e3915e472c366fe460b0fe008bac" },
   "vim-rhubarb": { "branch": "master", "commit": "386daa2e9d98e23e27ad089afcbe5c5a903e488d" },
   "vim-startuptime": { "branch": "master", "commit": "9aaa3c0880e63a8934ba58a430c6139225bba238" }
 }

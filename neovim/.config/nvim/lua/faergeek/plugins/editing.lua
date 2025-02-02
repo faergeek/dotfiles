@@ -218,12 +218,4 @@ return {
       enable_tailwind = true,
     },
   },
-  {
-    'danielo515/nvim-treesitter-reason',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'reasonml-editor/vim-reason-plus',
-    },
-    build = ':TSInstall reason',
-  },
 }
