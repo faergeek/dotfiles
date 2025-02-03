@@ -2,6 +2,7 @@
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx MANPAGER nvim +Man!
+set -gx MANPATH $__fish_data_dir/man $MANPATH
 set -gx MANWIDTH 80
 
 # asdf
