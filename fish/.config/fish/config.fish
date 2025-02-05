@@ -11,11 +11,15 @@ set -gx ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY latest_installed
 # ghcup
 set -gx PATH $HOME/.cabal/bin ~/.ghcup/bin $PATH
 
-# turn off husky
-#
-# For anyone ever arguing about that
+# Turn off git hooks bullshit.
 # https://www.youtube.com/watch?v=LL01pLjcR5s
+#
+# husky
+# https://typicode.github.io/husky/how-to.html#skipping-git-hooks
 set -gx HUSKY 0
+# lefthook
+# https://lefthook.dev/usage/env.html
+set -gx LEFTHOOK 0
 
 # less
 set -gx PAGER less
