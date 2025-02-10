@@ -3,7 +3,6 @@ return {
     'nvim-treesitter/nvim-treesitter',
     main = 'nvim-treesitter.configs',
     dependencies = {
-      'RRethy/nvim-treesitter-endwise',
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
@@ -29,7 +28,6 @@ return {
     build = ':TSUpdate',
     opts = {
       auto_install = true,
-      endwise = { enable = true },
       ensure_installed = {
         'diff',
         'jsdoc',
@@ -76,6 +74,11 @@ return {
         },
       },
     },
+  },
+  {
+    'RRethy/nvim-treesitter-endwise',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
