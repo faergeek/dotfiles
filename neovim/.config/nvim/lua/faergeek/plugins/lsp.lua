@@ -137,6 +137,11 @@ return {
             }
           end,
           tailwindcss = function()
+            table.insert(
+              lspconfig.tailwindcss.config_def.default_config.filetypes,
+              'ocaml'
+            )
+
             lspconfig.tailwindcss.setup {
               settings = {
                 tailwindCSS = {
@@ -145,6 +150,14 @@ return {
                       {
                         '(?:clsx|cn|cva|cx)\\(([^()]*(?:\\([^)]*\\)[^()]*)*)\\)',
                         '["\'`]([^"\'`]*)["\'`]',
+                      },
+                      {
+                        '(?:~className:\\s*)"([^"]*(?:\\([^"]*\\)[^"]*)*)"',
+                        '([^"]*)',
+                      },
+                      {
+                        '(?:~className:\\s*)\\(([^()]*(?:\\([^)]*\\)[^()]*)*)\\)',
+                        '"([^"]*)"',
                       },
                     },
                   },
