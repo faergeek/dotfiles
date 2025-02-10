@@ -142,4 +142,5 @@ vim.filetype.add {
   },
 }
 
+vim.highlight.priorities.semantic_tokens = 90
 vim.treesitter.language.register('starlark', 'tiltfile')
