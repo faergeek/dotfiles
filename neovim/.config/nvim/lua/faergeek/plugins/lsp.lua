@@ -68,6 +68,7 @@ return {
           'cssls',
           'dockerls',
           'eslint',
+          'helm_ls',
           'html',
           'jsonls',
           'lua_ls',

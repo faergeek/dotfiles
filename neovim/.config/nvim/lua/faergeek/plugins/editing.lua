@@ -221,4 +221,5 @@ return {
       enable_tailwind = true,
     },
   },
+  { 'towolf/vim-helm', ft = 'helm' },
 }
