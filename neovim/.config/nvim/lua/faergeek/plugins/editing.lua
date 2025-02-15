@@ -222,4 +222,12 @@ return {
     },
   },
   { 'towolf/vim-helm', ft = 'helm' },
+  {
+    'danielo515/nvim-treesitter-reason',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'reasonml-editor/vim-reason-plus',
+    },
+    build = ':TSInstall reason',
+  },
 }
