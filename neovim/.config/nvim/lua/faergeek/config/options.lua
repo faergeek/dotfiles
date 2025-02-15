@@ -131,7 +131,6 @@ vim.filetype.add {
   filename = {
     ['.swcrc'] = 'jsonc',
     ['Tiltfile'] = 'tiltfile',
-    ['todo.txt'] = 'todotxt',
   },
   pattern = {
     ['%.env%..+'] = 'sh',
