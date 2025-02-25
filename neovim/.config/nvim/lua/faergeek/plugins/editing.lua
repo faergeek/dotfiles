@@ -230,4 +230,5 @@ return {
     },
     build = ':TSInstall reason',
   },
+  { 'ashishbinu/vim-dotenv', ft = 'dotenv' },
 }
