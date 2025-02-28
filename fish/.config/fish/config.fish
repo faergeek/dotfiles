@@ -45,7 +45,8 @@ end
 set -gx TEALDEER_CONFIG_DIR ~/.config/tealdeer
 
 if status is-interactive
-    fish_vi_key_bindings
+    fish_default_key_bindings
+    fish_vi_key_bindings --no-erase
     fish_config theme choose "Catppuccin Frappe"
 
     set fish_cursor_default block blink
