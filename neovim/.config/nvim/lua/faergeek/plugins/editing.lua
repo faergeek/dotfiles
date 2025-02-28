@@ -192,9 +192,30 @@ return {
     opts = {},
   },
   {
-    'folke/ts-comments.nvim',
-    event = 'VeryLazy',
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    lazy = true,
     opts = {},
+  },
+  {
+    'numToStr/Comment.nvim',
+    dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+    keys = {
+      { desc = 'Comment toggle current line', 'gcc' },
+      { desc = 'Comment toggle linewise (visual)', 'gc', mode = { 'x' } },
+      { desc = 'Comment toggle current block', 'gbc' },
+      { desc = 'Comment toggle blockwise (visual)', 'gb', mode = { 'x' } },
+      { desc = 'Comment insert end of line', 'gcA' },
+      { desc = 'Comment insert above', 'gcO' },
+      { desc = 'Comment insert below', 'gco' },
+    },
+    opts = function()
+      return {
+        pre_hook = require(
+          'ts_context_commentstring.integrations.comment_nvim'
+        ).create_pre_hook(),
+      }
+    end,
   },
   {
     'rlane/pounce.nvim',
