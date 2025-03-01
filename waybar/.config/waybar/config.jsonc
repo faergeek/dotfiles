@@ -70,10 +70,8 @@
   "hyprland/workspaces": {
     "format": "{name} {icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "󰇮",
-      "4": "",
+      "1": "󰖟",
+      "2": "󰇮",
       "special": "󰌨",
       "default": ""
     },
