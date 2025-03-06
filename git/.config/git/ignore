@@ -1,5 +1,6 @@
+*.log
 .DS_Store
 .cache
 .gdb_history
 .neoconf.json
-*.log
+/.ignore
