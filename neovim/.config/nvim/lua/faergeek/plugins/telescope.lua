@@ -72,13 +72,10 @@ return {
               'f',
               '--hidden',
               '--no-ignore-vcs',
-              '--exclude',
-              '.git',
             },
           },
           live_grep = {
             additional_args = { '--hidden', '--no-ignore-vcs' },
-            glob_pattern = { '!**/.git/**' },
           },
           oldfiles = { only_cwd = true },
         },
