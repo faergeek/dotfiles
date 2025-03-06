@@ -129,6 +129,9 @@ vim.filetype.add {
     mly = 'ocamllex',
   },
   filename = {
+    ['.eslintignore'] = 'gitignore',
+    ['.ignore'] = 'gitignore',
+    ['.prettierignore'] = 'gitignore',
     ['.swcrc'] = 'jsonc',
     ['Tiltfile'] = 'tiltfile',
   },
