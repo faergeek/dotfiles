@@ -1,4 +1,9 @@
 return {
+  { 'browserslist/vim-browserslist', ft = 'browserslist' },
+  { 'ashishbinu/vim-dotenv', ft = 'dotenv' },
+  { 'gpanders/nvim-parinfer', ft = { 'dune' } },
+  { 'towolf/vim-helm', ft = 'helm' },
+  { 'fladson/vim-kitty', ft = 'kitty' },
   {
     'nvim-treesitter/nvim-treesitter',
     main = 'nvim-treesitter.configs',
@@ -136,7 +141,6 @@ return {
       use_default_keymaps = false,
     },
   },
-  { 'gpanders/nvim-parinfer', ft = { 'dune' } },
   {
     'kylechui/nvim-surround',
     keys = {
@@ -242,7 +246,6 @@ return {
       enable_tailwind = true,
     },
   },
-  { 'towolf/vim-helm', ft = 'helm' },
   {
     'danielo515/nvim-treesitter-reason',
     dependencies = {
@@ -251,5 +254,4 @@ return {
     },
     build = ':TSInstall reason',
   },
-  { 'ashishbinu/vim-dotenv', ft = 'dotenv' },
 }

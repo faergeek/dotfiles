@@ -1,4 +1,5 @@
 return {
+  { 'dstein64/vim-startuptime', cmd = 'StartupTime' },
   {
     'catppuccin/nvim',
     name = 'catppuccin',
