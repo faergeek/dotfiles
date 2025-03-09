@@ -17,7 +17,6 @@ return {
             information = { 'undercurl' },
           },
         },
-        neotest = true,
         nvim_surround = true,
         pounce = true,
       },
