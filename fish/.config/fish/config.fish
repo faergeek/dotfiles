@@ -47,7 +47,7 @@ set -gx TEALDEER_CONFIG_DIR ~/.config/tealdeer
 if status is-interactive
     fish_hybrid_key_bindings
     bind --user -M insert ctrl-n down-or-search
-    fish_config theme choose "Catppuccin Frappe"
+    fish_config theme choose "Catppuccin Frappé"
 
     set fish_cursor_default block blink
     set fish_cursor_insert line blink
