@@ -11,7 +11,6 @@
 [delta]
 	hyperlinks = true
 	line-numbers = true
-	side-by-side = true
 	syntax-theme = Catppuccin-frappe
 [diff]
 	algorithm = patience
