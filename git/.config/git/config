@@ -9,9 +9,9 @@
 	quotepath = false
 	untrackedCache = true
 [delta]
+	features = catppuccin-frappe
 	hyperlinks = true
 	line-numbers = true
-	syntax-theme = Catppuccin-frappe
 [diff]
 	algorithm = patience
 	colorMoved = default
@@ -57,4 +57,5 @@
 	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDZHgoS5XQ7P09ELaCZphQiDjO6Kxdb3j4k9IrWdm3Jq faergeek@gmail.com
 
 [include]
+	path = theme
 	path = config.local

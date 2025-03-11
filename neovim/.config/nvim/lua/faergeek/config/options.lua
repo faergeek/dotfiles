@@ -138,6 +138,7 @@ vim.filetype.add {
   pattern = {
     ['.*/%.config/git/config%.local%.example'] = 'gitconfig',
     ['.*/%.config/git/config%.local'] = 'gitconfig',
+    ['.*/%.config/git/theme'] = 'gitconfig',
     ['.*/%.config/hypr/.*%.conf'] = 'hyprlang',
     ['.*/%.config/waybar/config'] = 'jsonc',
     ['.*/%.vscode/.*%.json'] = 'jsonc',
