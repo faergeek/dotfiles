@@ -93,14 +93,20 @@ return {
         mode = { 'n', 'x' },
         expr = true,
         ']c',
-        function() return vim.wo.diff and ']c' or '<Cmd>Gitsigns next_hunk<CR>' end,
+        function()
+          return vim.wo.diff and ']c'
+            or '<Cmd>Gitsigns nav_hunk next target="all"<CR>'
+        end,
       },
       {
         desc = 'Previous change',
         mode = { 'n', 'x' },
         expr = true,
         '[c',
-        function() return vim.wo.diff and '[c' or '<Cmd>Gitsigns prev_hunk<CR>' end,
+        function()
+          return vim.wo.diff and '[c'
+            or '<Cmd>Gitsigns nav_hunk prev target="all"<CR>'
+        end,
       },
       {
         desc = 'Hunk Stage',
