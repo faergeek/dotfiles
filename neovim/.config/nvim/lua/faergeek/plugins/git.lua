@@ -143,7 +143,6 @@ return {
       current_line_blame_opts = {
         extra_opts = { '-w' },
       },
-      signs_staged_enable = false,
     },
   },
 }
