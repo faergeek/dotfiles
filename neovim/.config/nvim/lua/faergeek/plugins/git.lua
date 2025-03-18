@@ -94,8 +94,7 @@ return {
         expr = true,
         ']c',
         function()
-          return vim.wo.diff and ']c'
-            or '<Cmd>Gitsigns nav_hunk next target="all"<CR>'
+          return vim.wo.diff and ']c' or '<Cmd>Gitsigns nav_hunk next<CR>'
         end,
       },
       {
@@ -104,8 +103,7 @@ return {
         expr = true,
         '[c',
         function()
-          return vim.wo.diff and '[c'
-            or '<Cmd>Gitsigns nav_hunk prev target="all"<CR>'
+          return vim.wo.diff and '[c' or '<Cmd>Gitsigns nav_hunk prev<CR>'
         end,
       },
       {
