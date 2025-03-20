@@ -252,6 +252,5 @@ return {
       'nvim-treesitter/nvim-treesitter',
       'reasonml-editor/vim-reason-plus',
     },
-    build = ':TSInstall reason',
   },
 }
