@@ -20,7 +20,7 @@ function fish_prompt
 
     if jobs -q
         set_color yellow
-        printf "󰒓 $(jobs --command) "
+        printf "󰒓 $(jobs --command --last) "
     end
 
     if fish_is_root_user
