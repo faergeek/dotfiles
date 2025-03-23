@@ -4,7 +4,6 @@ return {
   { 'gpanders/nvim-parinfer', ft = { 'dune' } },
   { 'towolf/vim-helm', ft = 'helm' },
   { 'fladson/vim-kitty', ft = 'kitty' },
-  { 'reasonml-editor/vim-reason-plus', ft = 'reason' },
   {
     'nvim-treesitter/nvim-treesitter',
     main = 'nvim-treesitter.configs',
@@ -206,6 +205,13 @@ return {
     cmd = { 'HighlightColors' },
     opts = {
       enable_tailwind = true,
+    },
+  },
+  {
+    'danielo515/nvim-treesitter-reason',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'reasonml-editor/vim-reason-plus',
     },
   },
 }
