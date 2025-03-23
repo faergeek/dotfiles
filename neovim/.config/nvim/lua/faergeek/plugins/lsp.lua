@@ -36,7 +36,6 @@ return {
     dependencies = {
       'folke/neoconf.nvim',
       'hrsh7th/cmp-nvim-lsp',
-      'ocaml-mlx/ocaml_mlx.nvim',
     },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
@@ -45,7 +44,6 @@ return {
       local lspconfig = require 'lspconfig'
 
       lspconfig.hls.setup { capabilities = capabilities }
-      require 'ocaml_mlx'
       lspconfig.ocamllsp.setup { capabilities = capabilities }
       lspconfig.tilt_ls.setup { capabilities = capabilities }
       lspconfig.zls.setup { capabilities = capabilities }

@@ -65,9 +65,6 @@ return {
           jsonc = { prettier },
           lua = { formatters.stylua },
           markdown = { prettier },
-          ['ocaml.mlx'] = {
-            formatters.shell { cmd = { 'ocamlformat-mlx', '--impl', '-' } },
-          },
           sql = {
             formatters.shell {
               cmd = { 'sql-formatter' },

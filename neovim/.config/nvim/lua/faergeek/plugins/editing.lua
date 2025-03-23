@@ -5,13 +5,6 @@ return {
   { 'towolf/vim-helm', ft = 'helm' },
   { 'fladson/vim-kitty', ft = 'kitty' },
   {
-    'ocaml-mlx/ocaml_mlx.nvim',
-    dependencies = {
-      'neovim/nvim-lspconfig',
-      'nvim-treesitter/nvim-treesitter',
-    },
-  },
-  {
     'nvim-treesitter/nvim-treesitter',
     main = 'nvim-treesitter.configs',
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
