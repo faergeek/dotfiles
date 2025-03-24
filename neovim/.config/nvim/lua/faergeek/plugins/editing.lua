@@ -33,6 +33,7 @@ return {
       ensure_installed = {
         'diff',
         'jsdoc',
+        'luadoc',
         'luap',
         'markdown_inline',
         'regex',
