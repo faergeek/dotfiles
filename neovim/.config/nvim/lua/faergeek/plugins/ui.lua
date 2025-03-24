@@ -8,6 +8,7 @@ return {
     opts = {
       flavour = 'frappe',
       integrations = {
+        blink_cmp = true,
         fidget = true,
         mason = true,
         native_lsp = {

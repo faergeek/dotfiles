@@ -33,14 +33,11 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
-    dependencies = {
-      'folke/neoconf.nvim',
-      'hrsh7th/cmp-nvim-lsp',
-    },
+    dependencies = { 'folke/neoconf.nvim', 'saghen/blink.cmp' },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
       local lspconfig = require 'lspconfig'
 
       lspconfig.hls.setup { capabilities = capabilities }
@@ -59,7 +56,7 @@ return {
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInstall', 'LspUninstall' },
     opts = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
       local lspconfig = require 'lspconfig'
 
       return {

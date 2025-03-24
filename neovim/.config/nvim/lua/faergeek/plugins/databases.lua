@@ -25,23 +25,4 @@ return {
       vim.g.db_ui_win_position = 'right'
     end,
   },
-  {
-    'kristijanhusak/vim-dadbod-completion',
-    dependencies = {
-      'tpope/vim-dadbod',
-      'hrsh7th/nvim-cmp',
-    },
-    ft = { 'sql', 'mysql', 'plsql' },
-    config = function()
-      local cmp = require 'cmp'
-
-      cmp.setup.filetype({ 'sql', 'mysql', 'plsql' }, {
-        sources = cmp.config.sources({
-          { name = 'vim-dadbod-completion' },
-        }, {
-          { name = 'buffer' },
-        }),
-      })
-    end,
-  },
 }
