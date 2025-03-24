@@ -65,6 +65,7 @@ return {
           jsonc = { prettier },
           lua = { formatters.stylua },
           markdown = { prettier },
+          sh = { formatters.shell { cmd = { 'shfmt' } } },
           sql = {
             formatters.shell {
               cmd = { 'sql-formatter' },
