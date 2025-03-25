@@ -1,0 +1,18 @@
+{
+  "fori": {
+    "prefix": "fori",
+    "body": ["for (let ${1:i} = 0; $1 < ${2:10}; $1++) $0"]
+  },
+  "forof": {
+    "prefix": "forof",
+    "body": ["for (const ${1:item} of ${2:items}) $0"]
+  },
+  "fn": {
+    "prefix": "fn",
+    "body": ["function ${1:name}($2) {", "\t$0", "}"]
+  },
+  "fc": {
+    "prefix": "fc",
+    "body": ["function ${1:Component}({$0}) {", "\treturn <h1>$1</h1>;", "}"]
+  }
+}
