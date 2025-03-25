@@ -29,7 +29,7 @@
 [interactive]
 	diffFilter = delta --color-only
 [log]
-	date = local
+	date = human-local
 [merge]
 	tool = nvimdiff
 [mergetool]
