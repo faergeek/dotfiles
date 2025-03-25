@@ -42,7 +42,7 @@ return {
         desc = 'Git: Blame',
         mode = { 'n', 'x' },
         '<leader>gb',
-        ':Git blame -w<CR>',
+        ':Git blame -w --date=short-local<CR>',
         silent = true,
       },
       {
