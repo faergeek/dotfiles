@@ -36,6 +36,9 @@ return {
       },
       signature = {
         enabled = true,
+        window = {
+          show_documentation = true,
+        },
       },
       sources = {
         per_filetype = {
