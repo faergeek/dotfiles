@@ -1,7 +1,9 @@
 return {
+  { 'saghen/blink.compat', version = '*', lazy = true, opts = {} },
   {
     'saghen/blink.cmp',
     version = '*',
+    dependencies = { 'rcarriga/cmp-dap' },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
@@ -42,6 +44,7 @@ return {
       },
       sources = {
         per_filetype = {
+          ['dap-repl'] = { 'dap' },
           lua = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
           sql = { 'dadbod', 'snippets', 'buffer' },
         },
@@ -49,6 +52,10 @@ return {
           dadbod = {
             name = 'Dadbod',
             module = 'vim_dadbod_completion.blink',
+          },
+          dap = {
+            name = 'dap',
+            module = 'blink.compat.source',
           },
           lazydev = {
             name = 'LazyDev',
