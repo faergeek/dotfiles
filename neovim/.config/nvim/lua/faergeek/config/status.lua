@@ -23,7 +23,7 @@ function _G.statusline()
     parts,
     table.concat {
       '%{',
-      '% &filetype == "alpha"         ? ""',
+      '% &filetype == "alpha"         ? "Dashboard"',
       ': &filetype == "dbui"          ? "DBUI"',
       ': exists("b:db")               ? "%t"',
       ': &filetype == "fugitive"      ? "Git Status"',
