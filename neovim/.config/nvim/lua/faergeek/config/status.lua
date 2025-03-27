@@ -18,7 +18,7 @@ function _G.statusline()
   ---@type string[]
   local parts = {}
 
-  table.insert(parts, ' 󰕰 %{winnr()} 󱔗 %n  %<')
+  table.insert(parts, ' 󰕰 %{winnr()} %<')
   table.insert(
     parts,
     table.concat {
