@@ -117,7 +117,6 @@ return {
               settings = {
                 Lua = {
                   format = { enable = false },
-                  hint = { enable = true, setType = true },
                   workspace = { checkThirdParty = false },
                 },
               },
@@ -166,27 +165,12 @@ return {
               capabilities = capabilities,
               settings = {
                 javascript = {
-                  inlayHints = {
-                    functionLikeReturnTypes = true,
-                    parameterNames = 'all',
-                    parameterTypes = true,
-                    propertyDeclarationTypes = true,
-                    variableTypes = true,
-                  },
                   preferences = {
                     jsxAttributeCompletionStyle = 'braces',
                   },
                   updateImportsOnFileMove = 'always',
                 },
                 typescript = {
-                  inlayHints = {
-                    enumMemberValues = true,
-                    functionLikeReturnTypes = true,
-                    parameterNames = 'all',
-                    parameterTypes = true,
-                    propertyDeclarationTypes = true,
-                    variableTypes = true,
-                  },
                   preferences = {
                     jsxAttributeCompletionStyle = 'braces',
                   },
