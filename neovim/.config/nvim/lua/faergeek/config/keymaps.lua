@@ -29,14 +29,7 @@ keymap(
   require 'faergeek.utils.inlay-hint-keymap'
 )
 
-keymap('Next quickfix item', 'n', ']q', '<Cmd>cnext<CR>')
-keymap('Previous quickfix item', 'n', '[q', '<Cmd>cprevious<CR>')
-
-keymap('Next quickfix list', 'n', ']Q', '<Cmd>cnewer<CR>')
-keymap('Previous quickfix list', 'n', '[Q', '<Cmd>colder<CR>')
-
-keymap('Next loclist item', 'n', ']w', '<Cmd>lnext<CR>')
-keymap('Previous loclist item', 'n', '[w', '<Cmd>lprevious<CR>')
-
-keymap('Next loclist', 'n', ']W', '<Cmd>lnewer<CR>')
-keymap('Previous loclist', 'n', '[W', '<Cmd>lolder<CR>')
+if vim.fn.has 'nvim-0.11' == 0 then
+  keymap(':cnext', 'n', ']q', '<Cmd>cnext<CR>')
+  keymap(':cprevious', 'n', '[q', '<Cmd>cprevious<CR>')
+end
