@@ -11,11 +11,6 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.signcolumn = 'no'
   vim.opt.spell = false
 
-  vim.cmd [[
-    hi! TermCursor guifg=NONE guibg=NONE gui=NONE cterm=NONE
-    hi! TermCursorNC guifg=NONE guibg=NONE gui=NONE cterm=NONE
-  ]]
-
   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
   local line_count = #lines
 
