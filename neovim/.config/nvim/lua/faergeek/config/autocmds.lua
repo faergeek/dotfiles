@@ -7,11 +7,6 @@ autocmd(
   function() vim.highlight.on_yank {} end
 )
 
-autocmd('Override options for terminal buffers', 'TermOpen', function()
-  vim.opt_local.spell = false
-  vim.opt_local.signcolumn = 'auto'
-end)
-
 autocmd(
   'Disable concealing in help',
   'FileType',
