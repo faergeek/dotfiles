@@ -104,22 +104,6 @@ vim.diagnostic.config {
       [vim.diagnostic.severity.WARN] = '',
     },
   },
-  virtual_text = {
-    prefix = function(diagnostic)
-      if diagnostic.severity == vim.diagnostic.severity.ERROR then
-        return ''
-      elseif diagnostic.severity == vim.diagnostic.severity.HINT then
-        return ''
-      elseif diagnostic.severity == vim.diagnostic.severity.INFO then
-        return ''
-      elseif diagnostic.severity == vim.diagnostic.severity.WARN then
-        return ''
-      end
-
-      return '●'
-    end,
-    spacing = 0,
-  },
 }
 
 vim.filetype.add {
