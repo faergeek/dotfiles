@@ -22,19 +22,27 @@ function _G.statusline()
   table.insert(
     parts,
     table.concat {
-      "%{&filetype == 'alpha' ? 'Alpha'",
-      ": &filetype == 'dbui' ? 'DBUI'",
-      ": count(['fugitive', 'fugitiveblame', 'git'], &filetype) ? FugitiveStatusline()",
-      ": &filetype == 'qf' ? w:quickfix_title",
-      ": &filetype == 'oil' ? fnamemodify(v:lua.require('oil').get_current_dir(), ':p:~:.:h')",
-      ": expand('%:p:~:.') ?? '[No Name]'",
-      '}',
+      '%{',
+      '% &filetype == "alpha"         ? ""',
+      ': &filetype == "dbui"          ? "DBUI"',
+      ': exists("b:db")               ? "%t"',
+      ': &filetype == "fugitive"      ? "Git Status"',
+      ': &filetype == "fugitiveblame" ? "Git Blame"',
+      ': &filetype == "git"           ? "Git"',
+      ': &filetype == "help"          ? "%f"',
+      ': &filetype == "qf"            ? "%{w:quickfix_title}"',
+      ': &filetype == "oil"           ? \'%{fnamemodify(v:lua.require("oil").get_current_dir(), ":p:~:.:h")}\'',
+      ':                                \'%{expand("%:p:~:.") ?? "[No Name]"}\'',
+      '%}',
     }
   )
   table.insert(parts, '%( %m%)')
   table.insert(parts, '%( %r%)')
   table.insert(parts, '%=')
-  table.insert(parts, '%(%( %q%)%( %h%)%( %w%) %) %l:%c  %P ')
+  table.insert(
+    parts,
+    '%(%( %{% exists("b:db") ? "%{db_ui#statusline()}" : "" %}%)%( %q%)%( %h%)%( %w%) %) %l:%c  %P '
+  )
 
   return table.concat(parts, '')
 end
