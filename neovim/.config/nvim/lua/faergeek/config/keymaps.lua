@@ -19,15 +19,6 @@ keymap(
 keymap('LSP: Rename Symbol', 'n', '<leader>rs', vim.lsp.buf.rename)
 keymap('LSP: Code Action', { 'n', 'x' }, '<leader>a', vim.lsp.buf.code_action)
 
-keymap('LSP: Document Symbols', 'n', 'gO', function()
-  vim.lsp.buf.document_symbol {
-    on_list = function(options)
-      vim.fn.setloclist(0, {}, ' ', options)
-      vim.cmd.lopen()
-    end,
-  }
-end)
-
 keymap('Find References', 'n', '<leader>fr', vim.lsp.buf.references)
 keymap('Find Implementations', 'n', '<leader>fi', vim.lsp.buf.implementation)
 
