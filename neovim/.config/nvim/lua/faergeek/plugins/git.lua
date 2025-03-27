@@ -150,7 +150,7 @@ return {
       attach_to_untracked = true,
       current_line_blame = true,
       current_line_blame_opts = {
-        extra_opts = { '-w' },
+        ignore_whitespace = true,
       },
     },
   },
