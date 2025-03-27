@@ -21,8 +21,3 @@ keymap('LSP: Code Action', { 'n', 'x' }, '<leader>a', vim.lsp.buf.code_action)
 
 keymap('Find References', 'n', '<leader>fr', vim.lsp.buf.references)
 keymap('Find Implementations', 'n', '<leader>fi', vim.lsp.buf.implementation)
-
-if vim.fn.has 'nvim-0.11' == 0 then
-  keymap(':cnext', 'n', ']q', '<Cmd>cnext<CR>')
-  keymap(':cprevious', 'n', '[q', '<Cmd>cprevious<CR>')
-end
