@@ -1,5 +1,4 @@
 vim.opt.breakindent = true
-vim.opt.clipboard = 'unnamedplus'
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.cpoptions:append 'n'
 vim.opt.cursorline = true
@@ -68,20 +67,6 @@ vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wildignorecase = true
 vim.opt.wildoptions:append { 'fuzzy' }
-
-if vim.env.SSH_TTY then
-  vim.g.clipboard = {
-    name = 'OSC 52',
-    copy = {
-      ['+'] = require('vim.ui.clipboard.osc52').copy '+',
-      ['*'] = require('vim.ui.clipboard.osc52').copy '*',
-    },
-    paste = {
-      ['+'] = require('vim.ui.clipboard.osc52').paste '+',
-      ['*'] = require('vim.ui.clipboard.osc52').paste '*',
-    },
-  }
-end
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
