@@ -12,7 +12,7 @@ syn match qfError "  .*$" contained
 syn match qfWarning "  .*$" contained
 
 " Hide file name and line number for help outline (TOC).
-if has_key(w:, 'qf_toc') || get(w:, 'quickfix_title') =~# '\<TOC$'
+if get(w:, 'quickfix_title') =~# '\<Table of contents$'
   setlocal conceallevel=3 concealcursor=nc
   syn match Ignore "^[^┃]*┃[^┃]*┃   " conceal
 endif
