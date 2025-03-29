@@ -22,21 +22,6 @@ autocmd(
 )
 
 autocmd(
-  'Disable spell checking in certain file types',
-  'FileType',
-  function() vim.opt_local.spell = false end,
-  {
-    pattern = {
-      'dbout',
-      'git',
-      'man',
-      'qf',
-      'samba',
-    },
-  }
-)
-
-autocmd(
   'Mark certain filetype buffers as unlisted',
   'FileType',
   function(event) vim.bo[event.buf].buflisted = false end,

@@ -1,5 +1,4 @@
 require 'faergeek.config.status'
-require 'faergeek.config.spell'
 require 'faergeek.config.options'
 require 'faergeek.config.keymaps'
 require 'faergeek.config.autocmds'
