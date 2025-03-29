@@ -4,9 +4,12 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.cpoptions:append 'n'
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = { 'number', 'screenline' }
-vim.opt.diffopt:append {
+vim.opt.diffopt = {
   'algorithm:patience',
+  'closeoff',
+  'filler',
   'indent-heuristic',
+  'internal',
 }
 vim.opt.expandtab = true
 vim.opt.fillchars = {
