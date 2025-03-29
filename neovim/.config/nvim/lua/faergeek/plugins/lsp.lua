@@ -1,17 +1,5 @@
 return {
   {
-    'williamboman/mason.nvim',
-    cmd = {
-      'Mason',
-      'MasonLog',
-      'MasonUpdate',
-      'MasonInstall',
-      'MasonUninstall',
-      'MasonUninstallAll',
-    },
-    opts = {},
-  },
-  {
     'folke/lazydev.nvim',
     ft = 'lua',
     opts = {
@@ -32,26 +20,23 @@ return {
     },
   },
   {
-    'neovim/nvim-lspconfig',
-    dependencies = { 'folke/neoconf.nvim', 'saghen/blink.cmp' },
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
-    cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
-    config = function()
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-      local lspconfig = require 'lspconfig'
-
-      lspconfig.hls.setup { capabilities = capabilities }
-      lspconfig.ocamllsp.setup { capabilities = capabilities }
-      lspconfig.tilt_ls.setup { capabilities = capabilities }
-      lspconfig.zls.setup { capabilities = capabilities }
-    end,
+    'williamboman/mason.nvim',
+    cmd = {
+      'Mason',
+      'MasonLog',
+      'MasonUpdate',
+      'MasonInstall',
+      'MasonUninstall',
+      'MasonUninstallAll',
+    },
+    opts = {},
   },
   {
     'williamboman/mason-lspconfig.nvim',
     dependencies = {
       'mason.nvim',
+      'folke/neoconf.nvim',
       'b0o/schemastore.nvim',
-      'neovim/nvim-lspconfig',
     },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInstall', 'LspUninstall' },
@@ -209,6 +194,21 @@ return {
           end,
         },
       }
+    end,
+  },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = { 'williamboman/mason-lspconfig.nvim' },
+    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
+    config = function()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
+      local lspconfig = require 'lspconfig'
+
+      lspconfig.hls.setup { capabilities = capabilities }
+      lspconfig.ocamllsp.setup { capabilities = capabilities }
+      lspconfig.tilt_ls.setup { capabilities = capabilities }
+      lspconfig.zls.setup { capabilities = capabilities }
     end,
   },
   {
