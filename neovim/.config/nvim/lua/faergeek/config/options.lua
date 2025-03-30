@@ -1,7 +1,5 @@
 vim.opt.breakindent = true
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-vim.opt.cpoptions:append 'n'
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = { 'number', 'screenline' }
 vim.opt.diffopt = {
