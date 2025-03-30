@@ -83,6 +83,11 @@ return {
                       default = '${workspaceFolder}',
                     },
                     request = { enum = { 'attach' } },
+                    skipFiles = {
+                      type = 'array',
+                      description = 'An array of file or folder names, or path globs, to skip when debugging. Star patterns and negations are allowed, for example, `["**/node_modules/**", "!**/node_modules/my-module/**"]`',
+                      default = { '${/**' },
+                    },
                     type = { enum = { 'pwa-node' } },
                   },
                 },
