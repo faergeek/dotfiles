@@ -58,7 +58,6 @@ vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.statusline = '%!v:lua.statusline()'
-vim.opt.switchbuf = { 'usetab', 'newtab' }
 vim.opt.tabline = '%!v:lua.tabline()'
 vim.opt.tabstop = 2
 vim.opt.termguicolors = true
