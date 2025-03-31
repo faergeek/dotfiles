@@ -216,7 +216,5 @@ return {
       'typescript',
       'typescriptreact',
     },
-    opts = {},
-    config = function(_, opts) require('vtsls').config(opts) end,
   },
 }
