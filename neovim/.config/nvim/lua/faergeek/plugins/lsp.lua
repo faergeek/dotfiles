@@ -159,9 +159,6 @@ return {
                   preferences = {
                     jsxAttributeCompletionStyle = 'braces',
                   },
-                  tsserver = {
-                    maxTsServerMemory = 8 * 1024,
-                  },
                   updateImportsOnFileMove = 'always',
                 },
                 vtsls = {
