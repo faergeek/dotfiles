@@ -30,7 +30,6 @@
   "nvim-treesitter": { "branch": "master", "commit": "9be6836ebeb88a536055bf1ce0961eef68da4bc6" },
   "nvim-treesitter-context": { "branch": "master", "commit": "93b29a32d5f4be10e39226c6b796f28d68a8b483" },
   "nvim-treesitter-endwise": { "branch": "master", "commit": "57d52841a966be6ff9a998a6d3dc1ac9cc9d95fc" },
-  "nvim-treesitter-reason": { "branch": "main", "commit": "f4b91b8daeed0a0ed2604ea663401bf0e97769c0" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "1b212c2eee76d787bbea6aa5e92a2b534e7b4f8f" },
   "nvim-vtsls": { "branch": "main", "commit": "b1f2dfc1ed21d741ebbc211fe02f830ea4545f09" },
   "nvim-web-devicons": { "branch": "master", "commit": "4c3a5848ee0b09ecdea73adcd2a689190aeb728c" },
