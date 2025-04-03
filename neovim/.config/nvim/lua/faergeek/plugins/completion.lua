@@ -25,17 +25,6 @@ return {
           enabled = true,
         },
       },
-      keymap = {
-        ['<C-space>'] = { 'show' },
-        ['<C-e>'] = { 'hide' },
-        ['<C-y>'] = { 'accept' },
-        ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
-        ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
-        ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
-        ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
-        ['<C-f>'] = { 'snippet_forward' },
-        ['<C-b>'] = { 'snippet_backward' },
-      },
       signature = {
         enabled = true,
         window = {
