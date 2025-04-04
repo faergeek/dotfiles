@@ -1,5 +1,5 @@
 vim.opt.breakindent = true
-vim.opt.clipboard = 'unnamedplus'
+if not vim.env.SSH_TTY then vim.opt.clipboard = 'unnamedplus' end
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = { 'number', 'screenline' }
 vim.opt.diffopt = {
@@ -65,20 +65,6 @@ vim.opt.undofile = true
 vim.opt.wildignorecase = true
 vim.opt.wildoptions:append { 'fuzzy' }
 vim.opt.wildoptions:remove { 'pum' }
-
-if vim.env.SSH_TTY then
-  vim.g.clipboard = {
-    name = 'OSC 52',
-    copy = {
-      ['+'] = require('vim.ui.clipboard.osc52').copy '+',
-      ['*'] = require('vim.ui.clipboard.osc52').copy '*',
-    },
-    paste = {
-      ['+'] = function() return vim.split(vim.fn.getreg '0', '\n') end,
-      ['*'] = function() return vim.split(vim.fn.getreg '0', '\n') end,
-    },
-  }
-end
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
