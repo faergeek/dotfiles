@@ -73,20 +73,7 @@ vim.g.zig_fmt_autosave = false
 
 vim.diagnostic.config {
   severity_sort = true,
-  signs = {
-    numhl = {
-      [vim.diagnostic.severity.ERROR] = 'DiagnosticVirtualTextError',
-      [vim.diagnostic.severity.HINT] = 'DiagnosticVirtualTextHint',
-      [vim.diagnostic.severity.INFO] = 'DiagnosticVirtualTextInfo',
-      [vim.diagnostic.severity.WARN] = 'DiagnosticVirtualTextWarn',
-    },
-    text = {
-      [vim.diagnostic.severity.ERROR] = '',
-      [vim.diagnostic.severity.HINT] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.WARN] = '',
-    },
-  },
+  signs = false,
 }
 
 vim.filetype.add {
