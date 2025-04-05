@@ -18,7 +18,7 @@
   "bluetooth": {
     "format": "",
     "format-connected": "󰂱",
-    "on-click": "kitty -e bluetoothctl",
+    "on-click": "kitty -e bluetui",
     "tooltip-format-connected-battery": "{device_enumerate}",
     "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_address})\t{device_battery_percentage}%"
   },
