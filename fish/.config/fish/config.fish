@@ -41,9 +41,6 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gxp PATH "$PNPM_HOME"
 end
 
-# tealdeer
-set -gx TEALDEER_CONFIG_DIR ~/.config/tealdeer
-
 if status is-interactive
     fish_hybrid_key_bindings
     bind --user -M insert ctrl-n down-or-search
