@@ -2,14 +2,14 @@
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx MANPAGER nvim +Man!
-set -gx MANPATH $__fish_data_dir/man: $MANPATH
+set -gxp MANPATH $__fish_data_dir/man:
 set -gx MANWIDTH 80
 
 # asdf
 set -gx ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY latest_installed
 
 # ghcup
-set -gx PATH $HOME/.cabal/bin ~/.ghcup/bin $PATH
+set -gxp PATH $HOME/.cabal/bin $HOME/.ghcup/bin
 
 # Turn off git hooks bullshit.
 # https://www.youtube.com/watch?v=LL01pLjcR5s
@@ -38,7 +38,7 @@ set -gx DIFFPROG 'nvim -d'
 set -gx PNPM_HOME $HOME/.local/share/pnpm
 
 if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
+    set -gxp PATH "$PNPM_HOME"
 end
 
 # tealdeer
