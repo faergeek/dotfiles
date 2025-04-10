@@ -1,11 +1,2 @@
 CompilerSet makeprg=npx\ playwright\ test
-CompilerSet errorformat=%E%>%\\s%\\+%\\d%\\+)\ [%.%#]\ ›\ %.%#,
-CompilerSet errorformat+=%C,
-CompilerSet errorformat+=%C\ \ \ \ %.%#:\ %.%#,
-CompilerSet errorformat+=%C%>\ \ \ \ %#Call\ log:,
-CompilerSet errorformat+=%C\ \ \ \ %\\S%.%#,
-CompilerSet errorformat+=%C%>%\\s%#%\\d%\\+\ \|%.%#,
-CompilerSet errorformat+=%C%>%\\s%#>%\\s%#%l\ \|%\\s%#%m,
-CompilerSet errorformat+=%C%\\s%#\|\ %p^,
-CompilerSet errorformat+=%C%>%\\s%\\+at\ %f:%l:%c,
-CompilerSet errorformat+=%Z,
+CompilerSet errorformat=%+E\ %#at\ %f:%l:%c,
