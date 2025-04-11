@@ -42,7 +42,7 @@ vim.opt.quickfixtextfunc =
 vim.opt.relativenumber = true
 vim.opt.ruler = false
 vim.opt.scrolloff = 8
-vim.opt.sessionoptions = { 'tabpages', 'winsize' }
+vim.opt.sessionoptions = { 'buffers', 'tabpages', 'winsize' }
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 0
 vim.opt.shortmess:append {
