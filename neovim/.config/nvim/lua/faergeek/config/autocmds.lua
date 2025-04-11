@@ -15,13 +15,6 @@ autocmd(
 )
 
 autocmd(
-  'Set options specific to Man',
-  'FileType',
-  function() vim.opt_local.signcolumn = 'auto' end,
-  { pattern = { 'man' } }
-)
-
-autocmd(
   'Mark certain filetype buffers as unlisted',
   'FileType',
   function(event) vim.bo[event.buf].buflisted = false end,
