@@ -41,7 +41,6 @@ autocmd(
       'dap-repl',
       'dbout',
       'git',
-      'man',
       'qf',
       'query',
       'startuptime',
