@@ -2,24 +2,20 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn case ignore
+let b:current_syntax = "qf"
 
-syn match qfFileName "^[^┃]*" nextgroup=qfSeparatorLeft
-syn match qfSeparatorLeft "┃" contained nextgroup=qfLineNr
-syn match qfLineNr "\s*\(\d\+\:\d\+\)\?\s*" contained nextgroup=qfSeparatorRight
-syn match qfSeparatorRight "┃" contained nextgroup=qfError,qfWarning
-syn match qfError "  .*$" contained
-syn match qfWarning "  .*$" contained
+syntax match Directory "^.*│" contains=CursorLineNr,Conceal,DiagnosticError,DiagnosticWarn,DiagnosticInfo,DiagnosticHint
+syntax match CursorLineNr ":\d\+\s*" contained
+syntax match Conceal "│" nextgroup=DiagnosticError,DiagnosticWarn,DiagnosticInfo,DiagnosticHint
+syntax match DiagnosticError " .*" contains=Conceal
+syntax match DiagnosticWarn " .*" contains=Conceal
+syntax match DiagnosticInfo " .*" contains=Conceal
+syntax match DiagnosticHint " .*" contains=Conceal
+syntax match Conceal "\e\[\d\{1,2}m" conceal
 
 " Hide file name and line number for help outline (TOC).
 if get(w:, 'quickfix_title') =~# '\<Table of contents$'
-  setlocal conceallevel=3 concealcursor=nc
-  syn match Ignore "^[^┃]*┃[^┃]*┃   " conceal
+  syntax match Conceal ".*:\d\+." conceal
 endif
 
-hi def link qfSeparatorLeft Delimiter
-hi def link qfSeparatorRight Delimiter
-hi def link qfError DiagnosticError
-hi def link qfWarning DiagnosticWarn
-
-let b:current_syntax = "qf"
+setlocal conceallevel=3 concealcursor=nc

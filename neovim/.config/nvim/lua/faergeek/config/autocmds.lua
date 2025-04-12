@@ -22,13 +22,6 @@ autocmd(
 )
 
 autocmd(
-  'Disable line wrapping in quickfix list',
-  'FileType',
-  function() vim.opt_local.wrap = false end,
-  { pattern = { 'qf' } }
-)
-
-autocmd(
   'Close certain filetype buffers with just <q>',
   'FileType',
   function(event)
@@ -41,7 +34,6 @@ autocmd(
       'dap-repl',
       'dbout',
       'git',
-      'qf',
       'query',
       'startuptime',
     },
