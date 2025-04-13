@@ -58,62 +58,10 @@ return {
           'yamlls',
         },
         handlers = {
-          function(server_name)
-            lspconfig[server_name].setup {
-              capabilities = capabilities,
-            }
-          end,
-          cssmodules_ls = function()
-            lspconfig.cssmodules_ls.setup {
-              capabilities = capabilities,
-              init_options = {
-                camelCase = false,
-              },
-            }
-          end,
-          dockerls = function()
-            lspconfig.dockerls.setup {
-              capabilities,
-            }
-          end,
+          function(server_name) vim.lsp.enable(server_name) end,
           eslint = function()
             lspconfig.eslint.setup {
               capabilities = capabilities,
-              settings = {
-                codeActionOnSave = { enable = true, mode = 'all' },
-              },
-            }
-          end,
-          jsonls = function()
-            lspconfig.jsonls.setup {
-              capabilities = capabilities,
-              init_options = { provideFormatter = false },
-              settings = {
-                json = {
-                  schemas = require('schemastore').json.schemas(),
-                  validate = { enable = true },
-                },
-              },
-            }
-          end,
-          lua_ls = function()
-            lspconfig.lua_ls.setup {
-              capabilities = capabilities,
-              settings = {
-                Lua = {
-                  format = { enable = false },
-                  workspace = { checkThirdParty = false },
-                },
-              },
-            }
-          end,
-          stylelint_lsp = function()
-            lspconfig.stylelint_lsp.setup {
-              capabilities = capabilities,
-              filetypes = { 'css' },
-              settings = {
-                stylelintplus = { autoFixOnFormat = true },
-              },
             }
           end,
           tailwindcss = function()
@@ -145,50 +93,6 @@ return {
               },
             }
           end,
-          vtsls = function()
-            lspconfig.vtsls.setup {
-              capabilities = capabilities,
-              settings = {
-                javascript = {
-                  preferences = {
-                    jsxAttributeCompletionStyle = 'braces',
-                  },
-                  updateImportsOnFileMove = 'always',
-                },
-                typescript = {
-                  preferences = {
-                    jsxAttributeCompletionStyle = 'braces',
-                  },
-                  updateImportsOnFileMove = 'always',
-                },
-                vtsls = {
-                  autoUseWorkspaceTsdk = true,
-                  enableMoveToFileCodeAction = true,
-                  experimental = {
-                    completion = {
-                      enableServerSideFuzzyMatch = true,
-                    },
-                  },
-                },
-              },
-            }
-          end,
-          yamlls = function()
-            lspconfig.yamlls.setup {
-              capabilities = capabilities,
-              settings = {
-                redhat = { telemetry = { enabled = false } },
-                yaml = {
-                  keyOrdering = false,
-                  schemaStore = {
-                    enable = false,
-                    url = '',
-                  },
-                  schemas = require('schemastore').yaml.schemas(),
-                },
-              },
-            }
-          end,
         },
       }
     end,
@@ -198,15 +102,7 @@ return {
     dependencies = { 'williamboman/mason-lspconfig.nvim' },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
-    config = function()
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-      local lspconfig = require 'lspconfig'
-
-      lspconfig.hls.setup { capabilities = capabilities }
-      lspconfig.ocamllsp.setup { capabilities = capabilities }
-      lspconfig.tilt_ls.setup { capabilities = capabilities }
-      lspconfig.zls.setup { capabilities = capabilities }
-    end,
+    config = function() vim.lsp.enable { 'hls', 'ocamllsp', 'tilt_ls' } end,
   },
   {
     'yioneko/nvim-vtsls',
