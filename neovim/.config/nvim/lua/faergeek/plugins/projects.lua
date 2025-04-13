@@ -3,7 +3,13 @@ return {
     'folke/neoconf.nvim',
     dependencies = { 'faergeek/neomakery.nvim' },
     cmd = 'Neoconf',
-    opts = {},
+    opts = {
+      plugins = {
+        jsonls = {
+          configured_servers_only = false,
+        },
+      },
+    },
     config = function(_, opts)
       require('neoconf').setup(opts)
 
