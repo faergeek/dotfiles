@@ -68,7 +68,6 @@ vim.opt.wildoptions:remove { 'pum' }
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
-vim.g.qf_disable_statusline = true
 vim.g.zig_fmt_autosave = false
 
 vim.diagnostic.config {

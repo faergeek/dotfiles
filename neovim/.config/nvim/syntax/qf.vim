@@ -4,18 +4,18 @@ endif
 
 let b:current_syntax = "qf"
 
-syntax match Directory "^.*│" contains=CursorLineNr,Conceal,DiagnosticError,DiagnosticWarn,DiagnosticInfo,DiagnosticHint
-syntax match CursorLineNr ":\d\+\s*" contained
-syntax match Conceal "│" nextgroup=DiagnosticError,DiagnosticWarn,DiagnosticInfo,DiagnosticHint
-syntax match DiagnosticError " .*" contains=Conceal
-syntax match DiagnosticWarn " .*" contains=Conceal
-syntax match DiagnosticInfo " .*" contains=Conceal
-syntax match DiagnosticHint " .*" contains=Conceal
+syntax match Conceal "│"
+syntax match Directory ".*│" contains=CursorLineNr
+syntax match CursorLineNr ":\d\+\s*" contained nextgroup=Conceal
+syntax match DiagnosticSignError "^ " skipwhite nextgroup=Directory
+syntax match DiagnosticSignWarn "^ " skipwhite nextgroup=Directory
+syntax match DiagnosticSignInfo "^ " skipwhite nextgroup=Directory
+syntax match DiagnosticSignHint "^ " skipwhite nextgroup=Directory
 syntax match Conceal "\e\[\d\{1,2}m" conceal
 
 " Hide file name and line number for help outline (TOC).
 if get(w:, 'quickfix_title') =~# '\<Table of contents$'
-  syntax match Conceal ".*:\d\+." conceal
+  syntax match Conceal "^.*│" conceal
 endif
 
-setlocal conceallevel=3 concealcursor=nc
+setlocal conceallevel=3 concealcursor=nvi
