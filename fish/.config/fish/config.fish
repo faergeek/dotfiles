@@ -27,8 +27,8 @@ set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
 set -gx LESS -RFS
 
 # opam
-if [ -d ~/.opam ]
-    source ~/.opam/opam-init/init.fish
+if [ -d $HOME/.opam ]
+    source $HOME/.opam/opam-init/init.fish
 end
 
 # pacdiff
