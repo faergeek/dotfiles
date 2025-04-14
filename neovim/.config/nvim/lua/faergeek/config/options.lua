@@ -10,6 +10,7 @@ vim.opt.diffopt = {
   'internal',
 }
 vim.opt.expandtab = true
+vim.opt.exrc = true
 vim.opt.fillchars = {
   diff = ' ',
   fold = ' ',

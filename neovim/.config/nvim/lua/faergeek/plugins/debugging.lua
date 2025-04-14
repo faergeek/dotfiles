@@ -133,10 +133,6 @@ return {
       local dap = require 'dap'
       dap.defaults.fallback.switchbuf = 'usetab,newtab'
 
-      dap.providers.configs['custom-neoconf'] = function()
-        return require('neoconf').get 'debuggers'
-      end
-
       vim.fn.sign_define {
         {
           text = '',
