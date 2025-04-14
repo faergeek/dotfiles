@@ -100,20 +100,8 @@ return {
         },
         cmd = { 'DapInstall', 'DapUninstall' },
         opts = {
-          ensure_installed = {
-            'firefox',
-            'js',
-          },
+          ensure_installed = { 'js' },
           handlers = {
-            firefox = function()
-              require('mason-nvim-dap').default_setup {
-                adapters = {
-                  command = 'firefox-debug-adapter',
-                  type = 'executable',
-                },
-                name = 'firefox',
-              }
-            end,
             js = function()
               require('mason-nvim-dap').default_setup {
                 adapters = {
