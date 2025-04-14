@@ -33,11 +33,7 @@ return {
   },
   {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = {
-      'mason.nvim',
-      'folke/neoconf.nvim',
-      'b0o/schemastore.nvim',
-    },
+    dependencies = { 'mason.nvim', 'b0o/schemastore.nvim' },
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInstall', 'LspUninstall' },
     opts = function()

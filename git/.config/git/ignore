@@ -3,5 +3,4 @@
 .cache
 .nvim.lua
 .gdb_history
-.neoconf.json
 /.ignore

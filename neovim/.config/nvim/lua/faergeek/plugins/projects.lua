@@ -1,15 +1,4 @@
 return {
-  {
-    'folke/neoconf.nvim',
-    cmd = 'Neoconf',
-    opts = {
-      plugins = {
-        jsonls = {
-          configured_servers_only = false,
-        },
-      },
-    },
-  },
   'tpope/vim-dispatch',
   {
     'rmagatti/auto-session',
