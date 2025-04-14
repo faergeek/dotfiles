@@ -64,18 +64,6 @@ return {
               capabilities = capabilities,
             }
           end,
-          jsonls = function()
-            lspconfig.jsonls.setup {
-              capabilities = capabilities,
-              init_options = { provideFormatter = false },
-              settings = {
-                json = {
-                  schemas = require('schemastore').json.schemas(),
-                  validate = { enable = true },
-                },
-              },
-            }
-          end,
           tailwindcss = function()
             table.insert(
               lspconfig.tailwindcss.config_def.default_config.filetypes,
