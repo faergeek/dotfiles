@@ -8,13 +8,6 @@ autocmd(
 )
 
 autocmd(
-  'Disable concealing in help',
-  'FileType',
-  function() vim.opt_local.concealcursor = '' end,
-  { pattern = { 'help' } }
-)
-
-autocmd(
   'Mark certain filetype buffers as unlisted',
   'FileType',
   function(event) vim.bo[event.buf].buflisted = false end,
