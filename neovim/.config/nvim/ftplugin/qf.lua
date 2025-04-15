@@ -1,5 +1,11 @@
 vim.opt_local.wrap = false
-vim.opt_local.list = false
+vim.opt_local.listchars:remove {
+  'leadmultispace',
+  'multispace',
+  'nbsp',
+  'tab',
+  'trail',
+}
 vim.opt_local.signcolumn = 'auto'
 vim.opt_local.number = false
 vim.opt_local.relativenumber = false
