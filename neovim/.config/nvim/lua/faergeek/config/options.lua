@@ -17,8 +17,10 @@ vim.opt.fillchars = {
   foldclose = '',
   foldopen = '',
 }
-vim.opt.foldcolumn = 'auto:9'
 vim.opt.fixeol = false
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevelstart = 99
+vim.opt.foldmethod = 'expr'
 vim.opt.foldtext = ''
 vim.opt.guicursor =
   'n-v-sm:block,i-c-ci-ve:ver25,r-cr-o:hor20,a:blinkwait300-blinkon200-blinkoff150'
