@@ -26,6 +26,9 @@ set -gx PAGER less
 set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
 set -gx LESS -RFS
 
+# luarocks
+set -gxp PATH $HOME/.luarocks/bin
+
 # opam
 if status is-interactive && [ -r $HOME/.opam/opam-init/init.fish ]
     source $HOME/.opam/opam-init/init.fish
