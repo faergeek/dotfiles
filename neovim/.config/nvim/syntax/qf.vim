@@ -11,7 +11,6 @@ syntax match DiagnosticSignError "^ " skipwhite nextgroup=Directory
 syntax match DiagnosticSignWarn "^ " skipwhite nextgroup=Directory
 syntax match DiagnosticSignInfo "^ " skipwhite nextgroup=Directory
 syntax match DiagnosticSignHint "^ " skipwhite nextgroup=Directory
-syntax match Conceal "\e\[[0-9;]\{1,}[A-Za-z]" conceal
 
 " Hide file name and line number for help outline (TOC).
 if get(w:, 'quickfix_title') =~# '\<Table of contents$'
