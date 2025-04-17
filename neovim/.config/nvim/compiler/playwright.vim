@@ -1,3 +1,5 @@
+let current_compiler = "playwright"
+
 CompilerSet makeprg=npx\ playwright\ test
 CompilerSet errorformat=%E%>\ %\\{2}%\\d%\\+)\ [%.%#]\ ›\ %f:%l:%c\ ›\ %m\ ─%#,
 CompilerSet errorformat+=%-G%[\ >]%#%\\d%\\+\ %#\|%.%#,
