@@ -1,5 +1,4 @@
 local autocmd = require('faergeek.utils').autocmd
-local keymap = require('faergeek.utils').keymap
 
 autocmd(
   'Briefly highlight yanked text',
@@ -17,9 +16,7 @@ autocmd(
 autocmd(
   'Close certain filetype buffers with just <q>',
   'FileType',
-  function(event)
-    keymap('Close', 'n', 'q', '<Cmd>q<CR>', { buffer = event.buf })
-  end,
+  function(event) vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = event.buf }) end,
   {
     pattern = {
       'checkhealth',
@@ -36,14 +33,14 @@ autocmd(
 autocmd('Close help buffers with just <q>', 'BufReadPost', function(event)
   if vim.bo[event.buf].buftype ~= 'help' then return end
 
-  keymap('Close', 'n', 'q', '<Cmd>q<CR>', { buffer = event.buf })
+  vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = event.buf })
 end)
 
 autocmd(
   'Map q to gq',
   'FileType',
   function(event)
-    keymap('Close', 'n', 'q', 'gq', { buffer = event.buf, remap = true })
+    vim.keymap.set('n', 'q', 'gq', { buffer = event.buf, remap = true })
   end,
   {
     pattern = {

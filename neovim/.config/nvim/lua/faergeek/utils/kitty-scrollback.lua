@@ -1,5 +1,4 @@
 local autocmd = require('faergeek.utils').autocmd
-local keymap = require('faergeek.utils').keymap
 
 return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.cmdheight = 0
@@ -50,7 +49,5 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
     { buffer = 0 }
   )
 
-  keymap('Close on <q>', 'n', 'q', '<Cmd>q<CR>', {
-    buffer = 0,
-  })
+  vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = true })
 end
