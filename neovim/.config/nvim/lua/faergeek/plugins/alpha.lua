@@ -144,27 +144,19 @@ return {
     config = function(_, opts)
       require('alpha').setup(opts)
 
-      local autocmd = require('faergeek.utils').autocmd
-
       if vim.o.filetype == 'lazy' then
         vim.cmd.close()
 
-        autocmd(
-          'Show lazy once alpha is ready',
-          'User',
-          function() require('lazy').show() end,
-          {
-            once = true,
-            pattern = 'AlphaReady',
-          }
-        )
+        vim.api.nvim_create_autocmd('User', {
+          callback = function() require('lazy').show() end,
+          once = true,
+          pattern = 'AlphaReady',
+        })
       end
 
-      autocmd(
-        'Redraw alpha on cwd change',
-        'DirChanged',
-        'AlphaRedraw | AlphaRemap'
-      )
+      vim.api.nvim_create_autocmd('DirChanged', {
+        command = 'AlphaRedraw | AlphaRemap',
+      })
     end,
   },
 }

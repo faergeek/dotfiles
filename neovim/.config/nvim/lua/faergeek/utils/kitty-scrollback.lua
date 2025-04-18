@@ -1,5 +1,3 @@
-local autocmd = require('faergeek.utils').autocmd
-
 return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.cmdheight = 0
   vim.opt.laststatus = 0
@@ -36,18 +34,16 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.api.nvim_win_set_buf(0, term_buf)
   vim.schedule(setCursor)
 
-  autocmd(
-    'Just reset cursor position when trying to enter terminal mode',
-    'ModeChanged',
-    function()
+  vim.api.nvim_create_autocmd('ModeChanged', {
+    buffer = 0,
+    callback = function()
       local mode = vim.fn.mode()
       if mode == 't' then
         vim.cmd.stopinsert()
         vim.schedule(setCursor)
       end
     end,
-    { buffer = 0 }
-  )
+  })
 
   vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = true })
 end

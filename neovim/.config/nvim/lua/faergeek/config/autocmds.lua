@@ -1,51 +1,42 @@
-local autocmd = require('faergeek.utils').autocmd
-
-autocmd(
-  'Briefly highlight yanked text',
+vim.api.nvim_create_autocmd(
   'TextYankPost',
-  function() vim.highlight.on_yank {} end
+  { callback = function() vim.hl.on_yank {} end }
 )
 
-autocmd(
-  'Mark certain filetype buffers as unlisted',
-  'FileType',
-  function(event) vim.bo[event.buf].buflisted = false end,
-  { pattern = { 'checkhealth' } }
-)
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(event) vim.bo[event.buf].buflisted = false end,
+  pattern = { 'checkhealth' },
+})
 
-autocmd(
-  'Close certain filetype buffers with just <q>',
-  'FileType',
-  function(event) vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = event.buf }) end,
-  {
-    pattern = {
-      'checkhealth',
-      'dap-float',
-      'dap-repl',
-      'dbout',
-      'git',
-      'query',
-      'startuptime',
-    },
-  }
-)
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(event)
+    vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = event.buf })
+  end,
+  pattern = {
+    'checkhealth',
+    'dap-float',
+    'dap-repl',
+    'dbout',
+    'git',
+    'query',
+    'startuptime',
+  },
+})
 
-autocmd('Close help buffers with just <q>', 'BufReadPost', function(event)
-  if vim.bo[event.buf].buftype ~= 'help' then return end
+vim.api.nvim_create_autocmd('BufReadPost', {
+  callback = function(event)
+    if vim.bo[event.buf].buftype ~= 'help' then return end
 
-  vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = event.buf })
-end)
+    vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = event.buf })
+  end,
+})
 
-autocmd(
-  'Map q to gq',
-  'FileType',
-  function(event)
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(event)
     vim.keymap.set('n', 'q', 'gq', { buffer = event.buf, remap = true })
   end,
-  {
-    pattern = {
-      'fugitive',
-      'fugitiveblame',
-    },
-  }
-)
+  pattern = {
+    'fugitive',
+    'fugitiveblame',
+  },
+})
