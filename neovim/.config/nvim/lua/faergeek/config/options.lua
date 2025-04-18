@@ -27,7 +27,7 @@ vim.opt.guicursor =
 vim.opt.guifont = 'FantasqueSansM Nerd Font'
 vim.opt.ignorecase = true
 vim.opt.inccommand = 'split'
-vim.opt.jumpoptions = 'view'
+vim.opt.jumpoptions:append 'view'
 vim.opt.linebreak = true
 vim.opt.list = true
 vim.opt.listchars = {
