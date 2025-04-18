@@ -54,16 +54,6 @@ return {
         function() require('dap.ui.widgets').hover(nil, { wrap = false }) end,
       },
       {
-        desc = 'Debug: Frames',
-        '<leader>df',
-        function() require('faergeek.utils.dap').frames_sidebar.toggle() end,
-      },
-      {
-        desc = 'Debug: Scopes',
-        '<leader>ds',
-        function() require('faergeek.utils.dap').scopes_sidebar.toggle() end,
-      },
-      {
         desc = 'Debug: Step Over',
         '<leader>do',
         '<Cmd>DapStepOver<CR>',
