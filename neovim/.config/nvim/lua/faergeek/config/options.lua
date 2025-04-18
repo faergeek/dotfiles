@@ -65,7 +65,6 @@ vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wildignorecase = true
 vim.opt.wildoptions:append { 'fuzzy' }
-vim.opt.wildoptions:remove { 'pum' }
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
