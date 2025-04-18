@@ -1,4 +1,5 @@
 .DS_Store
+.eslintcache
 .git
 _opam
 node_modules
