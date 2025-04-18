@@ -93,7 +93,6 @@ vim.filetype.add {
     ['.*/%.config/git/config%.local%.example'] = 'gitconfig',
     ['.*/%.config/git/config%.local'] = 'gitconfig',
     ['.*/%.config/git/theme'] = 'gitconfig',
-    ['.*/%.config/waybar/config'] = 'jsonc',
     ['.*/%.vscode/.*%.json'] = 'jsonc',
   },
 }
