@@ -82,6 +82,12 @@ return {
         ':GBrowse!<CR>',
         silent = true,
       },
+      {
+        'q',
+        'gq',
+        ft = { 'fugitive', 'fugitiveblame' },
+        remap = true,
+      },
     },
   },
   {

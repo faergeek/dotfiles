@@ -17,6 +17,11 @@ return {
         '<BS>',
         '<Cmd>DBUIToggle<CR>',
       },
+      {
+        'q',
+        '<Cmd>q<CR>',
+        ft = 'dbout',
+      },
     },
     init = function()
       vim.g.db_ui_show_database_icon = 1

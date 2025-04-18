@@ -1,5 +1,15 @@
 return {
-  { 'dstein64/vim-startuptime', cmd = 'StartupTime' },
+  {
+    'dstein64/vim-startuptime',
+    cmd = 'StartupTime',
+    keys = {
+      {
+        'q',
+        '<Cmd>q<CR>',
+        ft = 'startuptime',
+      },
+    },
+  },
   {
     'catppuccin/nvim',
     name = 'catppuccin',

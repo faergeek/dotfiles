@@ -81,6 +81,11 @@ return {
         '<leader>dt',
         '<Cmd>DapTerminate<CR>',
       },
+      {
+        'q',
+        '<Cmd>q<CR>',
+        ft = 'dap-float',
+      },
     },
     dependencies = {
       {
