@@ -1,5 +1,16 @@
 return {
   {
+    'dstein64/vim-startuptime',
+    cmd = 'StartupTime',
+    keys = {
+      {
+        'q',
+        '<Cmd>q<CR>',
+        ft = 'startuptime',
+      },
+    },
+  },
+  {
     'goolord/alpha-nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
