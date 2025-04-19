@@ -37,7 +37,6 @@ return {
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'LspInstall', 'LspUninstall' },
     opts = function()
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
       local lspconfig = require 'lspconfig'
 
       return {
@@ -55,11 +54,7 @@ return {
         },
         handlers = {
           function(server_name) vim.lsp.enable(server_name) end,
-          eslint = function()
-            lspconfig.eslint.setup {
-              capabilities = capabilities,
-            }
-          end,
+          eslint = function() lspconfig.eslint.setup {} end,
           tailwindcss = function()
             table.insert(
               lspconfig.tailwindcss.config_def.default_config.filetypes,
