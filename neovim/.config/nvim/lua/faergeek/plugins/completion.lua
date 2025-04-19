@@ -1,9 +1,9 @@
 return {
   { 'saghen/blink.compat', version = '*', lazy = true, opts = {} },
+  { 'rcarriga/cmp-dap', ft = 'dap-repl' },
   {
     'saghen/blink.cmp',
     version = '*',
-    dependencies = { 'rcarriga/cmp-dap' },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
