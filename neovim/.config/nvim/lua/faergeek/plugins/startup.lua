@@ -185,6 +185,9 @@ return {
     opts = {
       args_allow_single_directory = false,
       auto_create = false,
+      session_lens = {
+        load_on_setup = false,
+      },
       use_git_branch = true,
     },
   },
