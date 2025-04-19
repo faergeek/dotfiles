@@ -70,6 +70,9 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
 vim.diagnostic.config {
+  float = {
+    scope = 'cursor',
+  },
   severity_sort = true,
   signs = false,
 }
