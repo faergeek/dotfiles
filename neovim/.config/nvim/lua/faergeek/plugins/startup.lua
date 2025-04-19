@@ -171,10 +171,20 @@ return {
     end,
   },
   {
-    'olimorris/persisted.nvim',
+    'rmagatti/auto-session',
+    lazy = false,
+    keys = {
+      {
+        desc = 'Session: Delete',
+        '<leader>sd',
+        '<Cmd>Autosession delete<CR>',
+      },
+    },
+    ---@module "auto-session"
+    ---@type AutoSession.Config
     opts = {
-      autoload = true,
-      autostart = false,
+      args_allow_single_directory = false,
+      auto_create = false,
       use_git_branch = true,
     },
   },
