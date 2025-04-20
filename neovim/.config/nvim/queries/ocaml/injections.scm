@@ -1,3 +1,5 @@
+;; extends
+
 (item_extension
   (attribute_id) @_name
   (#eq? @_name "mel.raw")
