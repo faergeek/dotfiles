@@ -59,7 +59,7 @@ return {
     },
     opts = {
       max_lines = 8,
-      min_window_height = 30,
+      min_window_height = 20,
       mode = 'topline',
       multiwindow = true,
     },
