@@ -2,7 +2,6 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.opt.cmdheight = 0
   vim.opt.laststatus = 0
   vim.opt.list = false
-  vim.opt.modifiable = true
   vim.opt.number = false
   vim.opt.relativenumber = false
   vim.opt.scrolloff = 0
