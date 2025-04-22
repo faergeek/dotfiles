@@ -21,7 +21,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
     vim.api.nvim_feedkeys(tostring(CURSOR_COLUMN - 1) .. 'l', 'n', true)
   end
 
-  local term_buf = vim.api.nvim_create_buf(true, false)
+  local term_buf = vim.api.nvim_create_buf(false, true)
   local term_io = vim.api.nvim_open_term(term_buf, {})
 
   vim.api.nvim_chan_send(term_io, table.concat(lines, '\r\n'))
