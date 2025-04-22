@@ -24,12 +24,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   local term_buf = vim.api.nvim_create_buf(true, false)
   local term_io = vim.api.nvim_open_term(term_buf, {})
 
-  for i, line in ipairs(lines) do
-    vim.api.nvim_chan_send(term_io, line)
-
-    if i < line_count then vim.api.nvim_chan_send(term_io, '\r\n') end
-  end
-
+  vim.api.nvim_chan_send(term_io, table.concat(lines, '\r\n'))
   vim.api.nvim_buf_delete(0, { force = true })
   vim.api.nvim_win_set_buf(0, term_buf)
   vim.schedule(setCursor)
