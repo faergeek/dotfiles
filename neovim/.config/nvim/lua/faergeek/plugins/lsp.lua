@@ -31,9 +31,10 @@ return {
     },
     opts = {},
   },
+  { 'b0o/schemastore.nvim', lazy = true },
   {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = { 'mason.nvim', 'b0o/schemastore.nvim' },
+    dependencies = 'mason.nvim',
     event = 'FileType',
     cmd = { 'LspInstall', 'LspUninstall' },
     opts = {
