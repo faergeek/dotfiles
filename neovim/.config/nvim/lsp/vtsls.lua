@@ -7,7 +7,6 @@ return {
       tsserver = {
         maxTsServerMemory = 8 * 1024,
       },
-      updateImportsOnFileMove = 'always',
     },
     typescript = {
       preferences = {
@@ -16,11 +15,9 @@ return {
       tsserver = {
         maxTsServerMemory = 8 * 1024,
       },
-      updateImportsOnFileMove = 'always',
     },
     vtsls = {
       autoUseWorkspaceTsdk = true,
-      enableMoveToFileCodeAction = true,
       experimental = {
         completion = {
           enableServerSideFuzzyMatch = true,
