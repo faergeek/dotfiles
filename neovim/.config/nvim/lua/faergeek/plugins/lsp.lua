@@ -34,7 +34,7 @@ return {
   {
     'williamboman/mason-lspconfig.nvim',
     dependencies = { 'mason.nvim', 'b0o/schemastore.nvim' },
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    event = 'FileType',
     cmd = { 'LspInstall', 'LspUninstall' },
     opts = function()
       local lspconfig = require 'lspconfig'
@@ -91,7 +91,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = { 'williamboman/mason-lspconfig.nvim' },
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    event = 'FileType',
     cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
     config = function() vim.lsp.enable { 'hls', 'ocamllsp', 'tilt_ls' } end,
   },

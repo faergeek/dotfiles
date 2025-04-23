@@ -8,7 +8,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     main = 'nvim-treesitter.configs',
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    event = 'FileType',
     cmd = {
       'TSBufDisable',
       'TSBufEnable',
@@ -46,12 +46,12 @@ return {
   {
     'RRethy/nvim-treesitter-endwise',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    event = 'FileType',
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
+    event = 'FileType',
     cmd = {
       'TSContextDisable',
       'TSContextEnable',
