@@ -20,7 +20,6 @@ vim.opt.fillchars = {
 vim.opt.fixeol = false
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldlevelstart = 99
-vim.opt.foldmethod = 'expr'
 vim.opt.foldtext = ''
 vim.opt.guicursor =
   'n-v-sm:block,i-c-ci-ve:ver25,r-cr-o:hor20,a:blinkwait300-blinkon200-blinkoff150'
@@ -43,7 +42,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = false
 vim.opt.scrolloff = 8
-vim.opt.sessionoptions = { 'buffers', 'tabpages', 'winsize' }
+vim.opt.sessionoptions = { 'buffers', 'folds', 'tabpages', 'winsize' }
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 0
 vim.opt.shortmess:append {
