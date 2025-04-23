@@ -36,57 +36,33 @@ return {
     dependencies = { 'mason.nvim', 'b0o/schemastore.nvim' },
     event = 'FileType',
     cmd = { 'LspInstall', 'LspUninstall' },
-    opts = function()
-      local lspconfig = require 'lspconfig'
+    opts = {
+      ensure_installed = {
+        'bashls',
+        'cssls',
+        'dockerls',
+        'eslint',
+        'html',
+        'jsonls',
+        'lua_ls',
+        'marksman',
+        'vtsls',
+        'yamlls',
+      },
+      handlers = {
+        vim.lsp.enable,
+        tailwindcss = function()
+          vim.lsp.config('tailwindcss', {
+            filetypes = vim.list_extend(
+              vim.lsp.config.tailwindcss.filetypes,
+              { 'ocaml' }
+            ),
+          })
 
-      return {
-        ensure_installed = {
-          'bashls',
-          'cssls',
-          'dockerls',
-          'eslint',
-          'html',
-          'jsonls',
-          'lua_ls',
-          'marksman',
-          'vtsls',
-          'yamlls',
-        },
-        handlers = {
-          function(server_name) vim.lsp.enable(server_name) end,
-          eslint = function() lspconfig.eslint.setup {} end,
-          tailwindcss = function()
-            table.insert(
-              lspconfig.tailwindcss.config_def.default_config.filetypes,
-              'ocaml'
-            )
-
-            lspconfig.tailwindcss.setup {
-              settings = {
-                tailwindCSS = {
-                  experimental = {
-                    classRegex = {
-                      {
-                        '(?:clsx|cn|cva|cx)\\(([^()]*(?:\\([^)]*\\)[^()]*)*)\\)',
-                        '["\'`]([^"\'`]*)["\'`]',
-                      },
-                      {
-                        '(?:~className:\\s*)"([^"]*(?:\\([^"]*\\)[^"]*)*)"',
-                        '([^"]*)',
-                      },
-                      {
-                        '(?:~className:\\s*)\\(([^()]*(?:\\([^)]*\\)[^()]*)*)\\)',
-                        '"([^"]*)"',
-                      },
-                    },
-                  },
-                },
-              },
-            }
-          end,
-        },
-      }
-    end,
+          vim.lsp.enable 'tailwindcss'
+        end,
+      },
+    },
   },
   {
     'neovim/nvim-lspconfig',
