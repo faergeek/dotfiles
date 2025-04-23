@@ -4,7 +4,6 @@ return {
   {
     'saghen/blink.cmp',
     version = '*',
-    dependencies = { 'ribru17/blink-cmp-spell' },
     event = { 'CmdlineEnter :', 'InsertEnter' },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -31,11 +30,10 @@ return {
         },
       },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'spell' },
         per_filetype = {
           ['dap-repl'] = { 'dap' },
-          lua = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'spell' },
-          sql = { 'dadbod', 'snippets', 'buffer', 'spell' },
+          lua = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+          sql = { 'dadbod', 'snippets', 'buffer' },
         },
         providers = {
           dadbod = {
@@ -55,10 +53,6 @@ return {
             opts = {
               show_hidden_files_by_default = true,
             },
-          },
-          spell = {
-            name = 'Spell',
-            module = 'blink-cmp-spell',
           },
         },
       },
