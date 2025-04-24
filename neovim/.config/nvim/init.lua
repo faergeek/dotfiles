@@ -9,6 +9,28 @@ vim.api.nvim_create_autocmd(
   { callback = function() vim.hl.on_yank {} end }
 )
 
+vim.api.nvim_create_autocmd('StdinReadPost', {
+  callback = function(event)
+    local term_buf = vim.api.nvim_create_buf(false, true)
+    vim.api.nvim_win_set_buf(0, term_buf)
+
+    vim.opt_local.list = false
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.scrolloff = 0
+    vim.opt_local.signcolumn = 'no'
+
+    vim.api.nvim_chan_send(
+      vim.api.nvim_open_term(term_buf, {}),
+      table.concat(vim.api.nvim_buf_get_lines(event.buf, 0, -1, false), '\r\n')
+    )
+
+    vim.api.nvim_buf_delete(event.buf, { force = true })
+
+    vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = term_buf })
+  end,
+})
+
 vim.api.nvim_create_autocmd('BufReadPost', {
   callback = function(event)
     if vim.bo.buftype == 'help' then
