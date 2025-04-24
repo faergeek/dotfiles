@@ -32,7 +32,7 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
   vim.api.nvim_create_autocmd('ModeChanged', {
     buffer = 0,
     callback = function()
-      local mode = vim.fn.mode()
+      local mode = vim.api.nvim_get_mode().mode
       if mode == 't' then
         vim.cmd.stopinsert()
         vim.schedule(setCursor)
