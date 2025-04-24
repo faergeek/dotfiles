@@ -40,6 +40,44 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd('QuickFixCmdPost', {
+  callback = function(event)
+    local ns = vim.api.nvim_create_namespace 'QuickFixCmdPost'
+    vim.diagnostic.reset(ns)
+
+    local qf = vim.fn.getqflist { items = 0, title = 0 }
+
+    ---@type table<integer, vim.Diagnostic[]>
+    local per_buffer = {}
+    for _, item in ipairs(vim.diagnostic.fromqflist(qf.items)) do
+      per_buffer[item.bufnr] = per_buffer[item.bufnr] or {}
+      item.source = event.match
+      table.insert(per_buffer[item.bufnr], item)
+    end
+
+    ---@param bufnr integer
+    ---@param fn fun()
+    local function once_loaded(bufnr, fn)
+      if vim.api.nvim_buf_is_loaded(bufnr) then
+        fn()
+      else
+        vim.api.nvim_create_autocmd('BufRead', {
+          buffer = bufnr,
+          callback = function() fn() end,
+          once = true,
+        })
+      end
+    end
+
+    for bufnr, diagnostics in pairs(per_buffer) do
+      once_loaded(
+        bufnr,
+        function() vim.diagnostic.set(ns, bufnr, diagnostics) end
+      )
+    end
+  end,
+})
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 
 if not vim.uv.fs_stat(lazypath) then
