@@ -108,21 +108,18 @@ return {
             val = function()
               local max_items = 10
               local result = {}
-              for _, path in pairs(vim.v.oldfiles) do
+              for _, path in ipairs(vim.v.oldfiles) do
                 if #result == max_items then break end
 
                 if
-                  (vim.fn.filereadable(path) == 1)
-                  and vim.startswith(path, vim.fn.getcwd() .. '/')
-                  and not string.find(path, 'COMMIT_EDITMSG')
+                  vim.uv.fs_stat(path)
+                  and vim.startswith(path, vim.fn.getcwd())
                 then
-                  local val = vim.fn.fnamemodify(
-                    path,
-                    ':p:~:.:gs?\\([.]*[^/]\\)[^/]*/?\\1/?'
-                  )
+                  local val =
+                    vim.fn.fnamemodify(path, ':.:gs?\\([.]*[^/]\\)[^/]*/?\\1/?')
 
                   local keybind = '<Cmd>edit '
-                    .. vim.fn.fnameescape(vim.fn.fnamemodify(path, ':p:~:.'))
+                    .. vim.fn.fnameescape(vim.fn.fnamemodify(path, ':.'))
                     .. '<CR>'
 
                   local ico, ico_hl = require('nvim-web-devicons').get_icon(
