@@ -41,6 +41,18 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 
 vim.api.nvim_create_autocmd('QuickFixCmdPost', {
+  pattern = {
+    'caddbuffer',
+    'caddexpr',
+    'caddfile',
+    'cbuffer',
+    'cexpr',
+    'cfile',
+    'cgetbuffer',
+    'cgetexpr',
+    'cgetfile',
+    'make',
+  },
   callback = function(event)
     local ns = vim.api.nvim_create_namespace 'QuickFixCmdPost'
     vim.diagnostic.reset(ns)
