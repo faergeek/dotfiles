@@ -3,6 +3,10 @@ return {
     'folke/snacks.nvim',
     priority = 1000,
     lazy = false,
+    keys = {
+      { ']r', function() require('snacks.words').jump(1, true) end },
+      { '[r', function() require('snacks.words').jump(-1, true) end },
+    },
     ---@module 'snacks'
     ---@type snacks.Config
     opts = {
@@ -10,6 +14,10 @@ return {
         notify = false,
       },
       quickfile = {},
+      words = {
+        modes = { 'n' },
+        notify_jump = true,
+      },
     },
   },
   {

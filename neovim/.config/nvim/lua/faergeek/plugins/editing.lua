@@ -68,24 +68,6 @@ return {
     event = 'InsertEnter',
     opts = { break_undo = false },
   },
-  {
-    'RRethy/vim-illuminate',
-    event = 'LspAttach',
-    keys = {
-      {
-        desc = 'Next Reference',
-        ']r',
-        function() require('illuminate').goto_next_reference() end,
-      },
-      {
-        desc = 'Previous Reference',
-        '[r',
-        function() require('illuminate').goto_prev_reference() end,
-      },
-    },
-    opts = {},
-    config = function(_, opts) require('illuminate').configure(opts) end,
-  },
   { 'Darazaki/indent-o-matic', event = 'BufReadPre', opts = {} },
   { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
   {
