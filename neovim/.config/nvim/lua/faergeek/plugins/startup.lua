@@ -95,7 +95,7 @@ return {
           {
             type = 'text',
             val = require('fortune').get_fortune(),
-            opts = { hl = 'AlphaFooter', shrink_margin = false },
+            opts = { hl = 'AlphaHeaderLabel', shrink_margin = false },
           },
           { type = 'padding', val = 1 },
           button('e', 'New file', '<Cmd>enew<CR>'),
