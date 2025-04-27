@@ -16,7 +16,6 @@ return {
       quickfile = {},
       words = {
         modes = { 'n' },
-        notify_jump = true,
       },
     },
   },
