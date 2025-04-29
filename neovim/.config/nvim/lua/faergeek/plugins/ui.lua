@@ -5,7 +5,6 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = 'frappe',
       integrations = {
         blink_cmp = true,
         fidget = true,

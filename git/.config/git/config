@@ -9,7 +9,7 @@
 	quotepath = false
 	untrackedCache = true
 [delta]
-	features = catppuccin-frappe
+	features = catppuccin-mocha
 	hyperlinks = true
 	line-numbers = true
 [diff]

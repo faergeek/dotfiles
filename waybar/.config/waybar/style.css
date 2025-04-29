@@ -1,4 +1,4 @@
-@import './frappe.css';
+@import './mocha.css';
 
 window#waybar {
   background: transparent;
@@ -9,7 +9,6 @@ window#waybar {
 
 .modules-right > widget > * {
   padding: 2px 8px;
-  border-radius: 8px;
 }
 
 #workspaces {
