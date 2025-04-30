@@ -29,6 +29,9 @@ set -gx LESS -RFS
 # luarocks
 set -gxp PATH $HOME/.luarocks/bin
 
+# Disable annoying MinIO Client's pager
+set -gx MC_DISABLE_PAGER 1
+
 # opam
 if status is-interactive && [ -r $HOME/.opam/opam-init/init.fish ]
     source $HOME/.opam/opam-init/init.fish
