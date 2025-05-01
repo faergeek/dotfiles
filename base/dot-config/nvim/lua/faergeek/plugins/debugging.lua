@@ -115,6 +115,7 @@ return {
     config = function()
       local dap = require 'dap'
       dap.defaults.fallback.switchbuf = 'usetab,newtab'
+      dap.providers.configs['dap.launch.json'] = nil
 
       vim.fn.sign_define {
         {
