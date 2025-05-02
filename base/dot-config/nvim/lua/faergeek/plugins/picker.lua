@@ -3,7 +3,10 @@ return {
     'nvim-telescope/telescope.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      { 'natecraddock/telescope-zf-native.nvim', lazy = true },
+      {
+        'natecraddock/telescope-zf-native.nvim',
+        config = function() require('telescope').load_extension 'zf-native' end,
+      },
     },
     cmd = 'Telescope',
     keys = {
@@ -58,32 +61,24 @@ return {
         '<Cmd>Telescope filetypes<CR>',
       },
     },
-    opts = function()
-      return {
-        defaults = require('telescope.themes').get_ivy {
-          dynamic_preview_title = true,
-          path_display = { 'filename_first' },
+    opts = {
+      defaults = {
+        cache_picker = false,
+        dynamic_preview_title = true,
+        history = false,
+        layout_strategy = 'bottom_pane',
+        path_display = { 'filename_first', 'truncate' },
+        sorting_strategy = 'ascending',
+      },
+      pickers = {
+        find_files = {
+          find_command = { 'fd', '--type', 'f', '--hidden', '--no-ignore-vcs' },
         },
-        pickers = {
-          find_files = {
-            find_command = {
-              'fd',
-              '--type',
-              'f',
-              '--hidden',
-              '--no-ignore-vcs',
-            },
-          },
-          live_grep = {
-            additional_args = { '--hidden', '--no-ignore-vcs' },
-          },
-          oldfiles = { only_cwd = true },
+        live_grep = {
+          additional_args = { '--hidden', '--no-ignore-vcs' },
         },
-      }
-    end,
-    config = function(_, opts)
-      require('telescope').setup(opts)
-      pcall(require('telescope').load_extension, 'zf-native')
-    end,
+        oldfiles = { only_cwd = true },
+      },
+    },
   },
 }
