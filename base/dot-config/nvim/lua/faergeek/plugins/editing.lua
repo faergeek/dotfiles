@@ -156,14 +156,16 @@ return {
     opts = {},
   },
   {
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    lazy = true,
-    opts = {},
-  },
-  {
     'numToStr/Comment.nvim',
-    dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+    dependencies = {
+      {
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        opts = {
+          enable_autocmd = false,
+        },
+      },
+    },
     keys = {
       { desc = 'Comment toggle current line', 'gcc' },
       { desc = 'Comment toggle linewise (visual)', 'gc', mode = { 'x' } },
