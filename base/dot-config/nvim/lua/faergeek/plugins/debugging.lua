@@ -1,6 +1,23 @@
 return {
   {
     'mfussenegger/nvim-dap',
+    cmd = {
+      'DapClearBreakpoints',
+      'DapContinue',
+      'DapDisconnect',
+      'DapEval',
+      'DapNew',
+      'DapPause',
+      'DapRestartFrame',
+      'DapSetLogLevel',
+      'DapShowLog',
+      'DapStepInto',
+      'DapStepOut',
+      'DapStepOver',
+      'DapTerminate',
+      'DapToggleBreakpoint',
+      'DapToggleRepl',
+    },
     keys = {
       {
         desc = 'Debug: Breakpoint Toggle',
