@@ -63,7 +63,6 @@ vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wildignorecase = true
-vim.opt.wildoptions:append { 'fuzzy' }
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
