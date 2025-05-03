@@ -187,10 +187,10 @@ return {
     opts = {
       args_allow_single_directory = false,
       auto_create = false,
+      git_use_branch_name = true,
       session_lens = {
         load_on_setup = false,
       },
-      use_git_branch = true,
     },
   },
 }
