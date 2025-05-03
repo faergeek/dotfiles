@@ -4,10 +4,13 @@ return {
   {
     'saghen/blink.cmp',
     version = '*',
-    event = { 'CmdlineEnter :', 'InsertEnter' },
+    event = 'InsertEnter',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
+      cmdline = {
+        enabled = false,
+      },
       completion = {
         accept = {
           auto_brackets = {
