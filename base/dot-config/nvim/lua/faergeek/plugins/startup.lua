@@ -172,9 +172,14 @@ return {
     lazy = false,
     keys = {
       {
+        desc = 'Session: Save',
+        '<leader>ss',
+        '<Cmd>SessionSave<CR>',
+      },
+      {
         desc = 'Session: Delete',
         '<leader>sd',
-        '<Cmd>Autosession delete<CR>',
+        '<Cmd>SessionDelete<CR>',
       },
     },
     ---@module "auto-session"
