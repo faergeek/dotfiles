@@ -1,41 +1,55 @@
 return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
-  local buf = vim.api.nvim_get_current_buf()
-  local term_buf = vim.api.nvim_create_buf(false, true)
-  vim.api.nvim_win_set_buf(0, term_buf)
+  vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = 0 })
 
-  vim.opt_local.list = false
-  vim.opt_local.number = false
-  vim.opt_local.relativenumber = false
-  vim.opt_local.scrolloff = 0
-  vim.opt_local.signcolumn = 'no'
+  vim.api.nvim_create_autocmd('StdinReadPre', {
+    once = true,
+    callback = function()
+      vim.opt_local.list = false
+      vim.opt_local.number = false
+      vim.opt_local.relativenumber = false
+      vim.opt_local.scrolloff = 0
+      vim.opt_local.sidescrolloff = 0
+      vim.opt_local.signcolumn = 'no'
 
-  vim.api.nvim_chan_send(
-    vim.api.nvim_open_term(term_buf, {}),
-    table.concat(vim.api.nvim_buf_get_lines(buf, 0, -1, false), '\r\n')
-  )
+      vim.opt.cmdheight = 0
+      vim.opt.laststatus = 0
+    end,
+  })
 
-  vim.api.nvim_buf_delete(buf, { force = true })
+  vim.api.nvim_create_autocmd('StdinReadPost', {
+    once = true,
+    callback = function(event)
+      local lines = vim.api.nvim_buf_get_lines(event.buf, 0, -1, true)
+      vim.api.nvim_buf_set_lines(event.buf, 0, -1, true, {})
 
-  vim.keymap.set('n', 'q', '<Cmd>q<CR>', { buffer = term_buf })
-  vim.opt.cmdheight = 0
-  vim.opt.laststatus = 0
+      vim.api.nvim_chan_send(
+        vim.api.nvim_open_term(event.buf, {}),
+        table.concat(lines, '\n')
+      )
+    end,
+  })
 
-  local setCursor = vim.schedule_wrap(
-    function()
-      vim.fn.winrestview {
-        col = CURSOR_COLUMN - 1,
-        curswant = CURSOR_COLUMN - 1,
-        lnum = math.max(
-          1,
-          math.min(
-            INPUT_LINE_NUMBER + CURSOR_LINE - 1,
-            vim.api.nvim_buf_line_count(0)
-          )
-        ),
-        topline = INPUT_LINE_NUMBER,
-      }
+  local function setCursor()
+    if INPUT_LINE_NUMBER ~= 0 then
+      vim.api.nvim_input(tostring(INPUT_LINE_NUMBER))
     end
-  )
+
+    vim.api.nvim_input 'ggzt'
+
+    if CURSOR_LINE ~= 0 then vim.api.nvim_input((CURSOR_LINE - 1) .. 'j') end
+
+    vim.api.nvim_input '0'
+
+    if CURSOR_COLUMN ~= 0 then
+      vim.api.nvim_input((CURSOR_COLUMN - 1) .. 'l')
+    end
+  end
+
+  vim.api.nvim_create_autocmd('TextChanged', {
+    buffer = 0,
+    once = true,
+    callback = function() setCursor() end,
+  })
 
   vim.api.nvim_create_autocmd('TermEnter', {
     buffer = 0,
@@ -44,6 +58,4 @@ return function(INPUT_LINE_NUMBER, CURSOR_LINE, CURSOR_COLUMN)
       setCursor()
     end,
   })
-
-  setCursor()
 end
