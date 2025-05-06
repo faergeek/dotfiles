@@ -53,7 +53,7 @@ return {
       {
         desc = 'Git: File Log',
         '<leader>gfl',
-        '<Cmd>Git log --follow %<CR>',
+        '<Cmd>Git log %<CR>',
       },
       {
         desc = 'Git: Log',
