@@ -33,8 +33,23 @@ return {
   },
   { 'b0o/schemastore.nvim', lazy = true },
   {
+    'neovim/nvim-lspconfig',
+    event = 'FileType',
+    cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
+    config = function()
+      vim.lsp.config('tailwindcss', {
+        filetypes = vim.list_extend(
+          vim.lsp.config.tailwindcss.filetypes,
+          { 'ocaml' }
+        ),
+      })
+
+      vim.lsp.enable { 'hls', 'ocamllsp', 'tilt_ls' }
+    end,
+  },
+  {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = 'mason.nvim',
+    dependencies = { 'mason.nvim', 'neovim/nvim-lspconfig' },
     event = 'FileType',
     cmd = { 'LspInstall', 'LspUninstall' },
     opts = {
@@ -50,27 +65,7 @@ return {
         'vtsls',
         'yamlls',
       },
-      handlers = {
-        vim.lsp.enable,
-        tailwindcss = function()
-          vim.lsp.config('tailwindcss', {
-            filetypes = vim.list_extend(
-              vim.lsp.config.tailwindcss.filetypes,
-              { 'ocaml' }
-            ),
-          })
-
-          vim.lsp.enable 'tailwindcss'
-        end,
-      },
     },
-  },
-  {
-    'neovim/nvim-lspconfig',
-    dependencies = { 'williamboman/mason-lspconfig.nvim' },
-    event = 'FileType',
-    cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
-    config = function() vim.lsp.enable { 'hls', 'ocamllsp', 'tilt_ls' } end,
   },
   {
     'yioneko/nvim-vtsls',
