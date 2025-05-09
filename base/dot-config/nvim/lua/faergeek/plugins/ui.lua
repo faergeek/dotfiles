@@ -47,7 +47,7 @@ return {
   },
   {
     'stevearc/oil.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = 'nvim-tree/nvim-web-devicons',
     event = 'VeryLazy',
     keys = {
       { desc = 'Oil', '-', '<Cmd>Oil<CR>' },

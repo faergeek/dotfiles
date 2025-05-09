@@ -1,5 +1,11 @@
 return {
   {
+    'nvim-tree/nvim-web-devicons',
+    opts = {
+      default = true,
+    },
+  },
+  {
     'folke/snacks.nvim',
     priority = 1000,
     lazy = false,

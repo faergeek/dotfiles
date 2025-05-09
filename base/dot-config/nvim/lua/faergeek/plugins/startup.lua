@@ -65,15 +65,6 @@ return {
         }
       end
 
-      ---@param fn string
-      ---@return string
-      local function get_extension(fn)
-        local match = fn:match '^.+(%..+)$'
-        local ext = ''
-        if match ~= nil then ext = match:sub(2) end
-        return ext
-      end
-
       return {
         opts = { margin = 1 },
         layout = {
@@ -123,9 +114,8 @@ return {
                     .. '<CR>'
 
                   local ico, ico_hl = require('nvim-web-devicons').get_icon(
-                    path,
-                    get_extension(path),
-                    { default = true }
+                    vim.fn.fnamemodify(path, ':t'),
+                    vim.fn.fnamemodify(path, ':e')
                   )
 
                   result[#result + 1] =
