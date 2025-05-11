@@ -5,6 +5,7 @@
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["mpris"],
   "modules-right": [
+    "privacy",
     "tray",
     "idle_inhibitor",
     "memory",
