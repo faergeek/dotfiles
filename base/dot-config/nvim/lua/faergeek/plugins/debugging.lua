@@ -107,9 +107,7 @@ return {
     dependencies = {
       {
         'jay-babu/mason-nvim-dap.nvim',
-        dependencies = {
-          'williamboman/mason.nvim',
-        },
+        dependencies = 'mason-org/mason.nvim',
         cmd = { 'DapInstall', 'DapUninstall' },
         opts = {
           ensure_installed = { 'js' },

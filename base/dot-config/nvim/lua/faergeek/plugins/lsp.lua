@@ -20,7 +20,7 @@ return {
     },
   },
   {
-    'williamboman/mason.nvim',
+    'mason-org/mason.nvim',
     cmd = {
       'Mason',
       'MasonLog',
@@ -48,7 +48,7 @@ return {
     end,
   },
   {
-    'williamboman/mason-lspconfig.nvim',
+    'mason-org/mason-lspconfig.nvim',
     dependencies = { 'mason.nvim', 'neovim/nvim-lspconfig' },
     event = 'FileType',
     cmd = { 'LspInstall', 'LspUninstall' },
