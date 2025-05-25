@@ -7,6 +7,7 @@ return {
   { 'reasonml-editor/vim-reason-plus', ft = 'reason' },
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master',
     main = 'nvim-treesitter.configs',
     event = 'FileType',
     cmd = {
