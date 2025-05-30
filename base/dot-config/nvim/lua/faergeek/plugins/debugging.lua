@@ -89,8 +89,8 @@ return {
         desc = 'Debug: List All Breakpoints',
         '<leader>da',
         function()
-          require('dap').list_breakpoints(true)
-          vim.cmd.cwindow()
+          require('dap').list_breakpoints(false)
+          vim.cmd 'botright cwindow'
         end,
       },
       {
