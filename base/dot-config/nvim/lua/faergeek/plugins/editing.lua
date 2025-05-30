@@ -53,11 +53,7 @@ return {
     'nvim-treesitter/nvim-treesitter-context',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = 'FileType',
-    cmd = {
-      'TSContextDisable',
-      'TSContextEnable',
-      'TSContextToggle',
-    },
+    cmd = 'TSContext',
     opts = {
       max_lines = 8,
       min_window_height = 20,
