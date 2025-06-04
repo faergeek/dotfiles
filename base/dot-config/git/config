@@ -17,7 +17,6 @@
 	colorMoved = default
 	colorMovedWS = allow-indentation-change
 [fetch]
-	all = true
 	prune = true
 	pruneTags = true
 [gpg]
