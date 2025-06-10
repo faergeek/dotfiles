@@ -37,9 +37,6 @@ if status is-interactive && [ -r $HOME/.opam/opam-init/init.fish ]
     source $HOME/.opam/opam-init/init.fish
 end
 
-# pacdiff
-set -gx DIFFPROG 'nvim -d'
-
 # pnpm
 set -gx PNPM_HOME $HOME/.local/share/pnpm
 
