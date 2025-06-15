@@ -1,10 +1,35 @@
 return {
+  {
+    'L3MON4D3/LuaSnip',
+    version = '2.*',
+    build = 'make install_jsregexp',
+    lazy = true,
+    opts = {
+      update_events = { 'TextChanged', 'TextChangedI' },
+    },
+    config = function(_, opts)
+      local ls = require 'luasnip'
+
+      ls.setup(opts)
+
+      ls.filetype_extend('javascriptreact', { 'javascript' })
+      ls.filetype_extend('typescript', { 'javascript' })
+
+      ls.filetype_extend(
+        'typescriptreact',
+        { 'javascript', 'javascriptreact', 'typescript' }
+      )
+
+      require('luasnip.loaders.from_lua').lazy_load()
+    end,
+  },
   { 'saghen/blink.compat', version = '*', lazy = true, opts = {} },
   { 'rcarriga/cmp-dap', ft = 'dap-repl' },
   {
     'saghen/blink.cmp',
     version = '*',
     event = 'InsertEnter',
+    dependencies = { 'L3MON4D3/LuaSnip' },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
@@ -32,6 +57,7 @@ return {
           show_documentation = true,
         },
       },
+      snippets = { preset = 'luasnip' },
       sources = {
         per_filetype = {
           ['dap-repl'] = { 'dap' },
