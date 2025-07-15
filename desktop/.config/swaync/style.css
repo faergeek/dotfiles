@@ -30,17 +30,9 @@
 }
 
 .widget-title,
-.widget-dnd,
-.widget-mpris {
+.widget-dnd {
   margin-right: 16px;
   margin-left: 16px;
-}
-
-.widget-mpris-player {
-  margin: 8px 16px;
-  border: 0;
-  border-radius: 16px;
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.8);
 }
 
 .widget-title {
