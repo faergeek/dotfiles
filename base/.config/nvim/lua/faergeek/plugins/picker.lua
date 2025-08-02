@@ -71,9 +71,6 @@ return {
         sorting_strategy = 'ascending',
       },
       pickers = {
-        find_files = {
-          find_command = { 'fd', '--type', 'f', '--hidden', '--no-ignore-vcs' },
-        },
         oldfiles = { only_cwd = true },
       },
     },
