@@ -30,9 +30,7 @@ return {
     'stevearc/dressing.nvim',
     event = 'VeryLazy',
     opts = {
-      input = {
-        start_in_insert = false,
-      },
+      input = { enabled = false },
       select = {
         get_config = function(opts)
           if opts.kind == 'codeaction' then
