@@ -44,6 +44,9 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gxp PATH "$PNPM_HOME"
 end
 
+# ripgrep
+set -gx RIPGREP_CONFIG_PATH ~/.config/ripgrep/args
+
 if status is-interactive
     fish_hybrid_key_bindings
     bind --user -M insert ctrl-n down-or-search

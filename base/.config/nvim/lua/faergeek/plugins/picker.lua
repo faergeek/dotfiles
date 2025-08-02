@@ -74,9 +74,6 @@ return {
         find_files = {
           find_command = { 'fd', '--type', 'f', '--hidden', '--no-ignore-vcs' },
         },
-        live_grep = {
-          additional_args = { '--hidden', '--no-ignore-vcs' },
-        },
         oldfiles = { only_cwd = true },
       },
     },
