@@ -63,6 +63,7 @@ return {
           javascriptreact = { eslint, prettier },
           json = { prettier },
           jsonc = { prettier },
+          less = { prettier },
           lua = { formatters.stylua },
           markdown = { prettier },
           sh = { formatters.shell { cmd = { 'shfmt' } } },
