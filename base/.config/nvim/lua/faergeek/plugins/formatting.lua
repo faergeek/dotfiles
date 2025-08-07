@@ -1,82 +1,62 @@
 return {
   {
-    'faergeek/format-on-save.nvim',
+    'stevearc/conform.nvim',
     event = 'BufWritePre',
-    cmd = {
-      'Format',
-      'FormatDebugOff',
-      'FormatDebugOn',
-      'FormatOff',
-      'FormatOn',
-    },
+    cmd = 'ConformInfo',
     opts = function()
-      local formatters = require 'format-on-save.formatters'
-
-      local eslint = formatters.lsp { client_name = 'eslint' }
-
-      local function expand_node_bin(bin, ...)
-        local relative_path =
-          vim.fs.normalize('node_modules/.bin/' .. bin, { expand_env = false })
-
-        local results = vim.fs.find(relative_path, {
-          path = vim.fn.expand '%:p:h',
-          type = 'file',
-          upward = true,
-        })
-
-        local node_bin_path = results[1]
-
-        if node_bin_path then
-          return {
-            mode = 'shell',
-            expand_executable = false,
-            cmd = { node_bin_path, ... },
-          }
-        end
-      end
-
-      local function prettier()
-        return expand_node_bin('prettier', '--stdin-filepath', '%')
-          or formatters.if_file_exists {
-            pattern = { '.prettierrc', '.prettierrc.*', 'prettier.config.*' },
-            formatter = formatters.shell {
-              cmd = { 'prettier', '--stdin-filepath', '%' },
-            },
-          }
-      end
-
-      return {
-        experiments = {
-          adjust_cursor_position = true,
-          disable_restore_cursors = true,
-          partial_update = 'diff',
-        },
-        fallback_formatter = {
-          formatters.lsp {},
-        },
-        formatter_by_ft = {
-          css = { prettier },
-          dune = { formatters.shell { cmd = { 'dune', 'format-dune-file' } } },
-          fish = { formatters.shell { cmd = { 'fish_indent' } } },
-          html = { prettier },
-          javascript = { eslint, prettier },
-          javascriptreact = { eslint, prettier },
-          json = { prettier },
-          jsonc = { prettier },
-          less = { prettier },
-          lua = { formatters.stylua },
-          markdown = { prettier },
-          sh = { formatters.shell { cmd = { 'shfmt' } } },
-          sql = {
-            formatters.shell {
-              cmd = { 'sql-formatter' },
-            },
-          },
-          typescript = { eslint, prettier },
-          typescriptreact = { eslint, prettier },
-          yaml = { prettier },
-        },
+      ---@type conform.FiletypeFormatterInternal
+      local eslint_then_prettier = {
+        lsp_format = 'first',
+        name = 'eslint',
+        'prettier',
       }
+
+      ---@type conform.setupOpts
+      return {
+        formatters_by_ft = {
+          _ = { lsp_format = 'fallback' },
+          css = { 'prettier' },
+          dune = { 'format-dune-file' },
+          fish = { 'fish_indent' },
+          html = { 'prettier' },
+          javascript = eslint_then_prettier,
+          javascriptreact = eslint_then_prettier,
+          json = { 'prettier' },
+          jsonc = { 'prettier' },
+          less = { 'prettier' },
+          lua = { 'stylua' },
+          markdown = { 'prettier' },
+          sh = { 'shfmt' },
+          sql = { 'sql_formatter' },
+          typescript = eslint_then_prettier,
+          typescriptreact = eslint_then_prettier,
+          yaml = { 'prettier' },
+        },
+        format_on_save = function(bufnr)
+          if vim.b[bufnr].no_format_on_save then return end
+
+          return {}
+        end,
+      }
+    end,
+    init = function()
+      vim.api.nvim_create_user_command(
+        'Format',
+        function() require('conform').format() end,
+        {}
+      )
+
+      vim.api.nvim_create_user_command(
+        'FormatOff',
+        function() vim.b.no_format_on_save = true end,
+        {}
+      )
+
+      vim.api.nvim_create_user_command(
+        'FormatOn',
+        function() vim.b.no_format_on_save = nil end,
+        {}
+      )
     end,
   },
 }
