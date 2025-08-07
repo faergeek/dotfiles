@@ -5,6 +5,7 @@ return {
   { 'towolf/vim-helm', ft = 'helm' },
   { 'fladson/vim-kitty', ft = 'kitty' },
   { 'reasonml-editor/vim-reason-plus', ft = 'reason' },
+  { 'groenewege/vim-less', ft = 'less' },
   {
     'nvim-treesitter/nvim-treesitter',
     branch = 'master',
