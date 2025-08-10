@@ -89,6 +89,10 @@
       "deactivated": "󰒲"
     }
   },
+  "privacy": {
+    "icon-size": 18,
+    "icon-spacing": 16
+  },
   "pulseaudio": {
     "format": "{icon}",
     "format-icons": {
