@@ -56,7 +56,11 @@
     "on-click": "kitty -e btm"
   },
   "mpris": {
-    "format": "{status_icon}",
+    "format": "{player_icon}{status_icon}",
+    "player-icons": {
+      "firefox": " ",
+      "mpv": " "
+    },
     "status-icons": {
       "paused": "",
       "playing": "",
