@@ -92,11 +92,11 @@
     "format": "{icon}",
     "format-muted": "",
     "format-icons": {
-      "headphone": "󰋎",
+      "headphone": "󱡬",
       "hands-free": "󰋎",
-      "headset": "󰋎",
-      "hdmi": "󰡁",
-      "default": ["", "", ""]
+      "headset": "󰋋",
+      "hdmi": "󰽟",
+      "default": "󰓃"
     },
     "on-click": "kitty -e wiremix",
     "tooltip-format": "{icon} {desc}\t{volume}%"
