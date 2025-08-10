@@ -51,7 +51,8 @@
     "escape": true
   },
   "memory": {
-    "format": "{}% ",
+    "format": "{icon} ",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "tooltip-format": "{used:0.1f}GiB/{total:0.1f}GiB used",
     "on-click": "kitty -e btm"
   },
