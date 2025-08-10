@@ -13,6 +13,7 @@
     "cpu",
     "custom/swaync",
     "pulseaudio",
+    "wireplumber",
     "bluetooth",
     "hyprland/language",
     "clock"
@@ -90,7 +91,6 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "format-muted": "",
     "format-icons": {
       "headphone": "󱡬",
       "hands-free": "󰋎",
@@ -98,12 +98,19 @@
       "hdmi": "󰽟",
       "default": "󰓃"
     },
-    "on-click": "kitty -e wiremix",
-    "scroll-step": 5,
-    "tooltip-format": "{icon} {desc}\t{volume}%"
+    "on-click": "kitty -e wiremix --tab output",
+    "scroll-step": 5
   },
   "tray": {
     "icon-size": 18,
     "spacing": 16
+  },
+  "wireplumber": {
+    "format": "{icon}",
+    "format-icons": ["", "", ""],
+    "format-muted": "",
+    "on-click": "kitty -e wiremix",
+    "scroll-step": 5,
+    "tooltip-format": "{volume}%"
   }
 }
