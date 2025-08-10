@@ -98,7 +98,7 @@
       "hdmi": "󰡁",
       "default": ["", "", ""]
     },
-    "on-click": "kitty -e pulsemixer",
+    "on-click": "kitty -e wiremix",
     "tooltip-format": "{icon} {desc}\t{volume}%"
   },
   "tray": {
