@@ -99,6 +99,7 @@
       "default": "󰓃"
     },
     "on-click": "kitty -e wiremix",
+    "scroll-step": 5,
     "tooltip-format": "{icon} {desc}\t{volume}%"
   },
   "tray": {
