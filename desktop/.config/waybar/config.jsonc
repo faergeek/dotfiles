@@ -2,11 +2,12 @@
   "layer": "top",
   "margin": "8 8 0",
   "spacing": 8,
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["mpris"],
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "gamemode",
     "privacy",
+    "mpris",
     "tray",
     "idle_inhibitor",
     "memory",
@@ -55,12 +56,13 @@
     "on-click": "kitty -e btm"
   },
   "mpris": {
-    "format": "{status_icon} {artist} - {title}",
+    "format": "{status_icon}",
     "status-icons": {
       "paused": "",
       "playing": "",
       "stopped": ""
-    }
+    },
+    "tooltip-format": "{artist} - {title}"
   },
   "hyprland/language": {
     "format-en": "🇺🇸",
