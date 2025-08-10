@@ -102,6 +102,7 @@
     "tooltip-format": "{icon} {desc}\t{volume}%"
   },
   "tray": {
-    "spacing": 10
+    "icon-size": 18,
+    "spacing": 16
   }
 }
