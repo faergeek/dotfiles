@@ -62,6 +62,10 @@ window#waybar {
   text-shadow: 1px 1px 1px @crust;
 }
 
+#privacy-item {
+  color: @peach;
+}
+
 #tray > .passive {
   -gtk-icon-effect: dim;
 }
