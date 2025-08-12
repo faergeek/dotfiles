@@ -51,7 +51,7 @@ return {
         'html',
         'jsonls',
         'lua_ls',
-        'marksman',
+        'markdown_oxide',
         'vtsls',
         'yamlls',
       },
