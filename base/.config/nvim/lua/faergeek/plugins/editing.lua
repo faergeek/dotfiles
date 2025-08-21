@@ -81,7 +81,15 @@ return {
       },
     },
   },
-  { 'Darazaki/indent-o-matic', event = 'BufReadPre', opts = {} },
+  {
+    'Darazaki/indent-o-matic',
+    event = 'BufReadPre',
+    opts = {
+      filetype_markdown = {
+        standard_widths = { 2 },
+      },
+    },
+  },
   { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
   {
     'Wansmer/treesj',

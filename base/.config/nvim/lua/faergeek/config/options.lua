@@ -67,6 +67,7 @@ vim.opt.wildignorecase = true
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
+vim.g.markdown_recommended_style = 0
 
 vim.diagnostic.config {
   float = {
