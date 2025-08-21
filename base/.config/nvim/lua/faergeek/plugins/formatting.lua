@@ -13,6 +13,11 @@ return {
 
       ---@type conform.setupOpts
       return {
+        formatters = {
+          prettier = {
+            require_cwd = true,
+          },
+        },
         formatters_by_ft = {
           _ = { lsp_format = 'fallback' },
           css = { 'prettier' },
