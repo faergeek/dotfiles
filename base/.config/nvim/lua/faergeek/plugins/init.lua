@@ -164,6 +164,10 @@ return {
           { section = 'startup', padding = 1 },
         },
       },
+      image = {
+        convert = { notify = false },
+        doc = { inline = false },
+      },
       picker = {
         formatters = {
           file = { filename_first = true },
