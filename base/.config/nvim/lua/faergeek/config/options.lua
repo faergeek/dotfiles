@@ -44,7 +44,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = false
 vim.opt.scrolloff = 8
-vim.opt.sessionoptions = { 'buffers', 'localoptions', 'tabpages', 'winsize' }
+vim.opt.sessionoptions:remove { 'blank', 'curdir', 'terminal' }
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 0
 vim.opt.shortmess:append {

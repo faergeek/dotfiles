@@ -27,23 +27,6 @@ return {
     end,
   },
   {
-    'stevearc/dressing.nvim',
-    event = 'VeryLazy',
-    opts = {
-      input = { enabled = false },
-      select = {
-        get_config = function(opts)
-          if opts.kind == 'codeaction' then
-            return {
-              backend = 'telescope',
-              telescope = require('telescope.themes').get_cursor {},
-            }
-          end
-        end,
-      },
-    },
-  },
-  {
     'stevearc/oil.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     event = 'VeryLazy',
