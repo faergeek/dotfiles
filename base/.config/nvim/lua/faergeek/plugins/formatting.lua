@@ -21,6 +21,7 @@ return {
         formatters_by_ft = {
           _ = { lsp_format = 'fallback' },
           css = { 'prettier' },
+          dockerfile = { lsp_format = 'never' },
           dune = { 'format-dune-file' },
           fish = { 'fish_indent' },
           html = { 'prettier' },
