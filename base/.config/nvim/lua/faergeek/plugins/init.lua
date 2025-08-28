@@ -170,7 +170,7 @@ return {
       },
       picker = {
         formatters = {
-          file = { filename_first = true },
+          file = { filename_first = true, truncate = 200 },
         },
       },
       quickfile = {},
