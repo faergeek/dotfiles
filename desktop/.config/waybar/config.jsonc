@@ -10,6 +10,7 @@
     "privacy",
     "mpris",
     "tray",
+    "custom/darkman",
     "idle_inhibitor",
     "memory",
     "cpu",
@@ -34,6 +35,10 @@
     "format": "{icon} ",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "on-click": "kitty -e btm"
+  },
+  "custom/darkman": {
+    "exec": "darkman watch | sed -uE -e 's/^(dark)$//' -e 's/^(light)$//'",
+    "on-click": "darkman toggle"
   },
   "custom/swaync": {
     "format": "{icon}",
