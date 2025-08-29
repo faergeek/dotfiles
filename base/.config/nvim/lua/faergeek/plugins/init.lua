@@ -1,10 +1,5 @@
 return {
-  {
-    'nvim-tree/nvim-web-devicons',
-    opts = {
-      default = true,
-    },
-  },
+  { 'nvim-mini/mini.icons', opts = {} },
   {
     'tpope/vim-dispatch',
     cmd = {
@@ -37,6 +32,7 @@ return {
   },
   {
     'folke/snacks.nvim',
+    dependencies = 'nvim-mini/mini.icons',
     priority = 1000,
     lazy = false,
     keys = {

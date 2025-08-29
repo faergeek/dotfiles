@@ -28,8 +28,8 @@ return {
   },
   {
     'stevearc/oil.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    event = 'VeryLazy',
+    dependencies = 'nvim-mini/mini.icons',
+    lazy = false,
     keys = {
       { desc = 'Oil', '-', '<Cmd>Oil<CR>' },
     },
