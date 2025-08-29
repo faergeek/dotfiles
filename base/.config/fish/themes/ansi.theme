@@ -15,6 +15,9 @@ fish_color_selection white --reverse
 fish_color_operator magenta
 fish_color_escape magenta
 fish_color_autosuggestion black
+fish_color_user cyan
+fish_color_host blue
+fish_color_host_remote green
 fish_color_cancel red
 fish_color_search_match --background=brwhite
 
