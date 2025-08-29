@@ -1,6 +1,5 @@
 {
   "layer": "top",
-  "margin": "0",
   "reload_style_on_change": true,
   "spacing": 0,
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
