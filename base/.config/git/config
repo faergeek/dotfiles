@@ -9,13 +9,29 @@
 	quotepath = false
 	untrackedCache = true
 [delta]
-	features = catppuccin-mocha
 	hyperlinks = true
+	blame-palette = "brightwhite white"
+	file-style = omit
+	hunk-header-decoration-style = omit
+	hunk-header-file-style = normal bold
+	hunk-header-style = file syntax
+	keep-plus-minus-markers = true
 	line-numbers = true
+	line-numbers-left-style = white
+	line-numbers-minus-style = red bold
+	line-numbers-plus-style = green bold
+	line-numbers-right-style = white
+	line-numbers-zero-style = white
+	minus-emph-style = red strike bold
+	minus-non-emph-style = syntax dim
+	minus-style = red strike
+	plus-emph-style = syntax bold
+	plus-non-emph-style = syntax dim
+	plus-style = syntax
+	syntax-theme = ansi
+	zero-style = syntax dim
 [diff]
 	algorithm = patience
-	colorMoved = default
-	colorMovedWS = allow-indentation-change
 [fetch]
 	prune = true
 	pruneTags = true
@@ -56,5 +72,4 @@
 	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDZHgoS5XQ7P09ELaCZphQiDjO6Kxdb3j4k9IrWdm3Jq faergeek@gmail.com
 
 [include]
-	path = theme
 	path = config.local

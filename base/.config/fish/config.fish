@@ -8,6 +8,9 @@ set -gx MANWIDTH 80
 # asdf
 set -gx ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY latest_installed
 
+# bat
+set -gx BAT_THEME ansi
+
 # ghcup
 set -gxp PATH $HOME/.cabal/bin $HOME/.ghcup/bin
 
@@ -50,7 +53,7 @@ set -gx RIPGREP_CONFIG_PATH ~/.config/ripgrep/args
 if status is-interactive
     fish_hybrid_key_bindings
     bind --user -M insert ctrl-n down-or-search
-    fish_config theme choose "Catppuccin Mocha"
+    fish_config theme choose ansi
 
     set fish_cursor_default block blink
     set fish_cursor_insert line blink
