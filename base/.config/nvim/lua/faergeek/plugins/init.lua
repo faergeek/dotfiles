@@ -60,6 +60,7 @@ return {
         '<leader>ff',
         function()
           Snacks.picker.files {
+            cmd = 'rg',
             layout = {
               layout = { position = 'bottom' },
               preset = 'ivy',
