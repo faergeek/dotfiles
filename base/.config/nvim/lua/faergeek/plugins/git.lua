@@ -46,11 +46,6 @@ return {
         silent = true,
       },
       {
-        desc = 'Git: Diff',
-        '<leader>gd',
-        '<Cmd>Gvdiffsplit<CR>',
-      },
-      {
         desc = 'Git: File Log',
         '<leader>gfl',
         '<Cmd>Git log %<CR>',
