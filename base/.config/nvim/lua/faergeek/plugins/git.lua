@@ -36,7 +36,7 @@ return {
       {
         desc = 'Git: Status',
         '<leader>gs',
-        '<Cmd>-tab Git<CR>',
+        '<Cmd>Git<CR>',
       },
       {
         desc = 'Git: Blame',
@@ -48,32 +48,25 @@ return {
       {
         desc = 'Git: Diff',
         '<leader>gd',
-        '<Cmd>-tab Gvdiffsplit<CR>',
+        '<Cmd>Gvdiffsplit<CR>',
       },
       {
         desc = 'Git: File Log',
         '<leader>gfl',
-        '<Cmd>-tab Git log %<CR>',
+        '<Cmd>Git log %<CR>',
       },
       {
         desc = 'Git: Log',
         '<leader>gl',
-        '<Cmd>-tab Git log<CR>',
+        '<Cmd>Git log<CR>',
       },
       {
         desc = 'Git: Log',
         mode = { 'x' },
+        expr = true,
+        silent = true,
         '<leader>gl',
-        function()
-          vim.cmd(
-            '-tab Git log -L'
-              .. vim.fn.line 'v'
-              .. ','
-              .. vim.fn.line '.'
-              .. ':'
-              .. '%'
-          )
-        end,
+        '":Git log -L" . line("v") . "," . line(".") . ":" . "%<CR>"',
       },
       {
         desc = 'Git: External',
