@@ -181,10 +181,5 @@ return {
       },
     },
   },
-  {
-    'brenoprata10/nvim-highlight-colors',
-    event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
-    cmd = { 'HighlightColors' },
-    opts = {},
-  },
+  { 'brenoprata10/nvim-highlight-colors', opts = {} },
 }
