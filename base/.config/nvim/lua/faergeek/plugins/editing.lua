@@ -4,7 +4,6 @@ return {
   'gpanders/nvim-parinfer',
   'towolf/vim-helm',
   'fladson/vim-kitty',
-  'reasonml-editor/vim-reason-plus',
   {
     'nvim-treesitter/nvim-treesitter',
     branch = 'master',
