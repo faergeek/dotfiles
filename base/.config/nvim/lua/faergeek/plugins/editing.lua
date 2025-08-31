@@ -185,8 +185,6 @@ return {
     'brenoprata10/nvim-highlight-colors',
     event = { 'BufReadPre', 'BufNew', 'BufNewFile' },
     cmd = { 'HighlightColors' },
-    opts = {
-      enable_tailwind = true,
-    },
+    opts = {},
   },
 }

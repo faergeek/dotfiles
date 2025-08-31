@@ -24,13 +24,6 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function()
-      vim.lsp.config('tailwindcss', {
-        filetypes = vim.list_extend(
-          vim.lsp.config.tailwindcss.filetypes,
-          { 'ocaml' }
-        ),
-      })
-
       if vim.fn.executable 'tilt' == 1 then vim.lsp.enable 'tilt_ls' end
 
       if vim.fn.executable 'ocamllsp' == 1 then vim.lsp.enable 'ocamllsp' end
