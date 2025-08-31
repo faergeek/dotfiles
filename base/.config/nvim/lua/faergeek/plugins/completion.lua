@@ -23,8 +23,8 @@ return {
       require('luasnip.loaders.from_lua').lazy_load()
     end,
   },
-  { 'saghen/blink.compat', version = '*', lazy = true, opts = {} },
-  { 'rcarriga/cmp-dap', ft = 'dap-repl' },
+  { 'saghen/blink.compat', version = '*', opts = {} },
+  'rcarriga/cmp-dap',
   {
     'saghen/blink.cmp',
     version = '*',
@@ -90,6 +90,5 @@ return {
   {
     'kristijanhusak/vim-dadbod-completion',
     dependencies = { 'tpope/vim-dadbod', 'saghen/blink.cmp' },
-    ft = { 'sql', 'mysql', 'plsql' },
   },
 }

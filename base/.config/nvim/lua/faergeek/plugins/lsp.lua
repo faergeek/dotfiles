@@ -1,7 +1,6 @@
 return {
   {
     'folke/lazydev.nvim',
-    ft = 'lua',
     opts = {
       library = {
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
@@ -24,8 +23,6 @@ return {
   { 'b0o/schemastore.nvim', lazy = true },
   {
     'neovim/nvim-lspconfig',
-    event = 'FileType',
-    cmd = { 'LspInfo', 'LspLog', 'LspRestart', 'LspStart', 'LspStop' },
     config = function()
       vim.lsp.config('tailwindcss', {
         filetypes = vim.list_extend(
@@ -46,8 +43,6 @@ return {
   {
     'mason-org/mason-lspconfig.nvim',
     dependencies = { 'mason.nvim', 'neovim/nvim-lspconfig' },
-    event = 'FileType',
-    cmd = { 'LspInstall', 'LspUninstall' },
     opts = {
       ensure_installed = {
         'bashls',
@@ -65,11 +60,6 @@ return {
   },
   {
     'yioneko/nvim-vtsls',
-    ft = {
-      'javascript',
-      'javascriptreact',
-      'typescript',
-      'typescriptreact',
-    },
+    dependencies = { 'neovim/nvim-lspconfig' },
   },
 }
