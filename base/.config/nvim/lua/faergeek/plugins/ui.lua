@@ -40,6 +40,7 @@ return {
         ['q'] = 'actions.close',
         ['='] = 'actions.refresh',
         ['-'] = 'actions.parent',
+        ['~'] = 'actions.open_cwd',
         ['.'] = 'actions.open_cmdline',
         ['gx'] = 'actions.open_external',
       },
