@@ -7,21 +7,18 @@ set -gx MANWIDTH 80
 
 # asdf
 set -gx ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY latest_installed
+add_to_path "$HOME/.asdf/shims"
 
 # bat
 set -gx BAT_THEME ansi
 
 # ghcup
-set -gxp PATH $HOME/.cabal/bin $HOME/.ghcup/bin
+add_to_path $HOME/.cabal/bin $HOME/.ghcup/bin
 
-# Turn off git hooks bullshit.
-# https://www.youtube.com/watch?v=LL01pLjcR5s
-#
 # husky
-# https://typicode.github.io/husky/how-to.html#skipping-git-hooks
 set -gx HUSKY 0
+
 # lefthook
-# https://lefthook.dev/usage/env.html
 set -gx LEFTHOOK 0
 
 # less
@@ -30,25 +27,20 @@ set -gx LESSUTFCHARDEF E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
 set -gx LESS -RFS
 
 # luarocks
-set -gxp PATH $HOME/.luarocks/bin
+add_to_path $HOME/.luarocks/bin
 
 # Disable annoying MinIO Client's pager
 set -gx MC_DISABLE_PAGER 1
 
 # opam
-if status is-interactive && [ -r $HOME/.opam/opam-init/init.fish ]
-    source $HOME/.opam/opam-init/init.fish
-end
+[ -z "$OPAM_SWITCH_PREFIX" ] && [ -r $HOME/.opam/opam-init/init.fish ] && source $HOME/.opam/opam-init/init.fish
 
 # pnpm
 set -gx PNPM_HOME $HOME/.local/share/pnpm
-
-if not string match -q -- $PNPM_HOME $PATH
-    set -gxp PATH "$PNPM_HOME"
-end
+add_to_path "$PNPM_HOME"
 
 # ripgrep
-set -gx RIPGREP_CONFIG_PATH ~/.config/ripgrep/args
+set -gx RIPGREP_CONFIG_PATH $HOME/.config/ripgrep/args
 
 if status is-interactive
     fish_hybrid_key_bindings
