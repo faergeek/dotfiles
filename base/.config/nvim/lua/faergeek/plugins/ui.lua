@@ -38,7 +38,7 @@ return {
         ['g?'] = 'actions.show_help',
         ['<CR>'] = 'actions.select',
         ['q'] = 'actions.close',
-        ['<C-l>'] = 'actions.refresh',
+        ['='] = 'actions.refresh',
         ['-'] = 'actions.parent',
         ['~'] = 'actions.open_cwd',
         ['.'] = 'actions.open_cmdline',
