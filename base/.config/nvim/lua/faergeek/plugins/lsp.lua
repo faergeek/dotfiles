@@ -51,4 +51,8 @@ return {
       },
     },
   },
+  {
+    'yioneko/nvim-vtsls',
+    dependencies = { 'neovim/nvim-lspconfig' },
+  },
 }
