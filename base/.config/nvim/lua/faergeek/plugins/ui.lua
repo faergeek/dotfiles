@@ -40,6 +40,7 @@ return {
         ['q'] = 'actions.close',
         ['='] = 'actions.refresh',
         ['-'] = 'actions.parent',
+        ['.'] = 'actions.open_cmdline',
         ['gx'] = 'actions.open_external',
       },
       lsp_file_methods = {
