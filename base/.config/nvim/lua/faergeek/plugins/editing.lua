@@ -135,15 +135,12 @@ return {
     opts = {},
   },
   {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    lazy = true,
+    opts = { enable_autocmd = false },
+  },
+  {
     'numToStr/Comment.nvim',
-    dependencies = {
-      {
-        'JoosepAlviste/nvim-ts-context-commentstring',
-        opts = {
-          enable_autocmd = false,
-        },
-      },
-    },
     keys = {
       { desc = 'Comment toggle current line', 'gcc' },
       { desc = 'Comment toggle linewise (visual)', 'gc', mode = { 'x' } },
