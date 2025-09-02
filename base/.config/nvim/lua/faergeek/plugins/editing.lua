@@ -69,7 +69,6 @@ return {
   { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
   {
     'Wansmer/treesj',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     keys = {
       {
         desc = 'Split/Join',
