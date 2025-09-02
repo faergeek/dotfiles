@@ -23,10 +23,7 @@ return {
       indent = { enable = true },
     },
   },
-  {
-    'RRethy/nvim-treesitter-endwise',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-  },
+  'RRethy/nvim-treesitter-endwise',
   {
     'nvim-treesitter/nvim-treesitter-context',
     opts = {
