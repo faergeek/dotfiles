@@ -39,9 +39,6 @@ return {
         ['<CR>'] = 'actions.select',
         ['q'] = 'actions.close',
         ['-'] = 'actions.parent',
-        ['~'] = 'actions.open_cwd',
-        ['.'] = 'actions.open_cmdline',
-        ['y.'] = 'actions.yank_entry',
         ['gx'] = 'actions.open_external',
       },
       lsp_file_methods = {
