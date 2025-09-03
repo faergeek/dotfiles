@@ -8,7 +8,9 @@
 [delta]
 	hyperlinks = true
 	blame-palette = "brightwhite white"
-	file-style = omit
+	file-decoration-style = omit
+	file-modified-label = modified:
+	file-style = blue italic
 	hunk-header-decoration-style = omit
 	hunk-header-file-style = normal bold
 	hunk-header-style = file syntax
