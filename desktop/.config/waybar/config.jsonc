@@ -91,8 +91,7 @@
     "tooltip-format": "{artist} - {title}"
   },
   "hyprland/language": {
-    "format-en": "🇺🇸",
-    "format-ru": "🇷🇺"
+    "format": "󰌌 {}"
   },
   "hyprland/window": {
     "max-length": 100,
