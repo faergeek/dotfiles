@@ -18,6 +18,7 @@ button {
 
 button:hover {
   border-color: alpha(@mauve, 0.5);
+  box-shadow: none;
   background: transparent;
 }
 
