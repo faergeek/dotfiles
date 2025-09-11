@@ -45,8 +45,13 @@ button.urgent,
 #privacy-item,
 #custom-swaync.notification,
 #custom-swaync.dnd-notification,
-#idle_inhibitor.activated {
+#idle_inhibitor.activated,
+#battery.discharging.warning {
   color: @peach;
+}
+
+#battery.discharging.critical {
+  color: @red;
 }
 
 #tray > .needs-attention {

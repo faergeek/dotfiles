@@ -18,8 +18,22 @@
     "wireplumber",
     "bluetooth",
     "power-profiles-daemon",
+    "battery",
     "hyprland/language"
   ],
+  "battery": {
+    "format": "{icon}",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "discharging": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "format-time": "{H}h {M}m",
+    "states": {
+      "critical": 10,
+      "warning": 20
+    },
+    "tooltip-format": "{capacity}% ({timeTo})"
+  },
   "bluetooth": {
     "format": "",
     "format-connected": "󰂱",
