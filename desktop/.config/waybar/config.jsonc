@@ -17,6 +17,7 @@
     "pulseaudio",
     "wireplumber",
     "bluetooth",
+    "power-profiles-daemon",
     "hyprland/language"
   ],
   "bluetooth": {
@@ -105,6 +106,14 @@
   "privacy": {
     "icon-size": 18,
     "icon-spacing": 16
+  },
+  "power-profiles-daemon": {
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   },
   "pulseaudio": {
     "format": "{icon}",
