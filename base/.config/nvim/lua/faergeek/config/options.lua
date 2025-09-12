@@ -12,6 +12,7 @@ vim.opt.expandtab = true
 vim.opt.exrc = true
 vim.opt.fillchars = {
   diff = ' ',
+  eob = ' ',
   fold = ' ',
   foldclose = '',
   foldopen = '',
