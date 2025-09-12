@@ -1,8 +1,6 @@
 vim.opt.backupcopy = 'yes'
 vim.opt.breakindent = true
 if not vim.env.SSH_TTY then vim.opt.clipboard = 'unnamedplus' end
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = { 'number', 'screenline' }
 vim.opt.diffopt = {
   'algorithm:patience',
   'closeoff',
