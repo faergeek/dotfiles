@@ -62,7 +62,6 @@ vim.opt.splitright = true
 vim.opt.statusline = '%!v:lua.statusline()'
 vim.opt.tabline = '%!v:lua.tabline()'
 vim.opt.tabstop = 2
-vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wildignorecase = true
 
