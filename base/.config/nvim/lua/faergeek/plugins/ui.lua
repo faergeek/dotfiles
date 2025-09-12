@@ -20,6 +20,11 @@ return {
         nvim_surround = true,
         pounce = true,
       },
+      float = {
+        solid = true,
+        transparent = true,
+      },
+      transparent_background = true,
     },
     config = function(_, opts)
       vim.api.nvim_create_autocmd('OptionSet', {

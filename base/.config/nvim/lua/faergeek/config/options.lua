@@ -64,6 +64,7 @@ vim.opt.tabline = '%!v:lua.tabline()'
 vim.opt.tabstop = 2
 vim.opt.undofile = true
 vim.opt.wildignorecase = true
+vim.opt.winborder = 'rounded'
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
