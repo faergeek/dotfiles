@@ -4,7 +4,7 @@ function fish_prompt
         printf ":"
     end
 
-    set_color blue
+    set_color cyan
     printf "$(prompt_pwd)"
 
     set --global --export __fish_git_prompt_color normal
