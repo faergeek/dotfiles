@@ -22,8 +22,17 @@ return {
       },
     },
     config = function(_, opts)
-      require('catppuccin').setup(opts)
-      vim.cmd.colorscheme 'catppuccin'
+      vim.api.nvim_create_autocmd('OptionSet', {
+        callback = function()
+          if vim.o.termguicolors then
+            require('catppuccin').setup(opts)
+            vim.cmd.colorscheme 'catppuccin'
+          else
+            vim.cmd.colorscheme 'default'
+          end
+        end,
+        pattern = 'termguicolors',
+      })
     end,
   },
   {
