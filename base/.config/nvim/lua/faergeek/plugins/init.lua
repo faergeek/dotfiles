@@ -163,7 +163,7 @@ return {
       },
       image = {
         convert = { notify = false },
-        doc = { inline = false },
+        doc = { enabled = false },
       },
       picker = {
         formatters = {
