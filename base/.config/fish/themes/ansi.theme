@@ -19,10 +19,10 @@ fish_color_user green
 fish_color_host yellow
 fish_color_host_remote red
 fish_color_cancel red
-fish_color_search_match --background=brwhite
+fish_color_search_match --background=white
 
 # https://fishshell.com/docs/current/interactive.html#pager-color-variables
 fish_pager_color_progress cyan
 fish_pager_color_prefix magenta
-fish_pager_color_completion black
+fish_pager_color_completion white
 fish_pager_color_description yellow
