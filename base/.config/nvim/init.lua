@@ -99,6 +99,6 @@ require('lazy').setup('faergeek.plugins', {
     },
   },
   ui = {
-    border = 'rounded',
+    backdrop = 100,
   },
 })
