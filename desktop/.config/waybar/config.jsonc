@@ -1,9 +1,10 @@
 {
+  "fixed-center": false,
   "layer": "top",
   "reload_style_on_change": true,
   "spacing": 0,
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["clock"],
+  "modules-center": [],
   "modules-right": [
     "gamemode",
     "privacy",
@@ -19,7 +20,8 @@
     "bluetooth",
     "power-profiles-daemon",
     "battery",
-    "hyprland/language"
+    "hyprland/language",
+    "clock"
   ],
   "battery": {
     "format": "{icon}",
@@ -42,7 +44,7 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_address})\t{device_battery_percentage}%"
   },
   "clock": {
-    "format": "{:L%A %H:%M}",
+    "format": "󱑀 {:L%a, %H:%M}",
     "tooltip-format": "{:L%d %B %Y}"
   },
   "cpu": {
@@ -77,12 +79,8 @@
   },
   "mpris": {
     "dynamic-order": ["title", "artist", "album"],
-    "format": "{player_icon}{status_icon}",
-    "format-playing": "{player_icon}{status_icon} {dynamic}",
-    "player-icons": {
-      "firefox": " ",
-      "mpv": " "
-    },
+    "format": "{status_icon}",
+    "format-playing": "{status_icon} {dynamic}",
     "status-icons": {
       "paused": "",
       "playing": "",
