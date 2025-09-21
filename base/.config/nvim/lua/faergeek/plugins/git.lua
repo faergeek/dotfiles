@@ -141,11 +141,6 @@ return {
         '<leader>hp',
         '<Cmd>Gitsigns preview_hunk<CR>',
       },
-      {
-        desc = 'Hunk Inline Preview',
-        '<leader>hi',
-        '<Cmd>Gitsigns preview_hunk_inline<CR>',
-      },
     },
     opts = {
       attach_to_untracked = true,
