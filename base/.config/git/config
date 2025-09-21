@@ -42,6 +42,7 @@
 	defaultBranch = main
 [interactive]
 	diffFilter = delta --color-only
+	singleKey = true
 [log]
 	date = human-local
 [merge]
