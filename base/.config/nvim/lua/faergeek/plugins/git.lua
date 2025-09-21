@@ -153,6 +153,7 @@ return {
       current_line_blame_opts = {
         ignore_whitespace = true,
       },
+      numhl = true,
     },
   },
 }
