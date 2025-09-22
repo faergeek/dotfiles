@@ -20,6 +20,8 @@ return {
         },
         formatters_by_ft = {
           _ = { lsp_format = 'fallback' },
+          c = { 'clang-format' },
+          cpp = { 'clang-format' },
           css = { 'prettier' },
           dockerfile = { lsp_format = 'never' },
           dune = { 'format-dune-file' },
