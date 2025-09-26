@@ -9,16 +9,16 @@ return {
         blink_cmp = true,
         fidget = true,
         mason = true,
-        native_lsp = {
-          underlines = {
-            errors = { 'undercurl' },
-            hints = { 'undercurl' },
-            warnings = { 'undercurl' },
-            information = { 'undercurl' },
-          },
-        },
         nvim_surround = true,
         pounce = true,
+      },
+      lsp_styles = {
+        underlines = {
+          errors = { 'undercurl' },
+          hints = { 'undercurl' },
+          warnings = { 'undercurl' },
+          information = { 'undercurl' },
+        },
       },
     },
     config = function(_, opts)
