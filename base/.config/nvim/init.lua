@@ -35,16 +35,11 @@ vim.api.nvim_create_autocmd('QuickFixCmdPost', {
     local ns = vim.api.nvim_create_namespace 'QuickFixCmdPost'
     vim.diagnostic.reset(ns)
 
+    local qf = vim.fn.getqflist { id = 0, items = 0 }
+
     ---@type integer[]
     local bufnrs = {}
-
-    for _, item in
-      ipairs(
-        vim.diagnostic.fromqflist(
-          vim.fn.getqflist({ items = 0, title = 0 }).items
-        )
-      )
-    do
+    for _, item in ipairs(vim.diagnostic.fromqflist(qf.items)) do
       if not vim.tbl_contains(bufnrs, item.bufnr) then
         bufnrs[#bufnrs + 1] = item.bufnr
       end
@@ -66,16 +61,11 @@ vim.api.nvim_create_autocmd('QuickFixCmdPost', {
 
     for _, bufnr in ipairs(bufnrs) do
       once_loaded(bufnr, function()
+        qf = vim.fn.getqflist { id = qf.id, items = 0 }
+
         ---@type vim.Diagnostic[]
         local diagnostics = {}
-
-        for _, item in
-          ipairs(
-            vim.diagnostic.fromqflist(
-              vim.fn.getqflist({ items = 0, title = 0 }).items
-            )
-          )
-        do
+        for _, item in ipairs(vim.diagnostic.fromqflist(qf.items)) do
           if item.bufnr == bufnr then
             item.source = event.match
             diagnostics[#diagnostics + 1] = item
