@@ -72,6 +72,7 @@ vim.g.markdown_recommended_style = 0
 vim.diagnostic.config {
   float = {
     scope = 'cursor',
+    source = true,
   },
   severity_sort = true,
   signs = false,
