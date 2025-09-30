@@ -14,6 +14,10 @@ return {
       ---@type conform.setupOpts
       return {
         formatters = {
+          meson = {
+            command = 'meson',
+            args = { 'format', '--source-file-path', '$FILENAME', '-' },
+          },
           prettier = {
             require_cwd = true,
           },
@@ -34,6 +38,7 @@ return {
           less = { 'prettier' },
           lua = { 'stylua' },
           markdown = { 'prettier' },
+          meson = { 'meson' },
           sh = { 'shfmt' },
           sql = { 'sql_formatter' },
           typescript = eslint_then_prettier,
