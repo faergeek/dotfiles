@@ -14,10 +14,6 @@ return {
       ---@type conform.setupOpts
       return {
         formatters = {
-          meson = {
-            command = 'meson',
-            args = { 'format', '--source-file-path', '$FILENAME', '-' },
-          },
           prettier = {
             require_cwd = true,
           },
