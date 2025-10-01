@@ -2,4 +2,7 @@
 early_exit=true
 paint_mode=arrow
 save_dir=$HOME/Downloads
-show_panel=true
+save_filename_format=screenshot-%Y-%m-%d-%H-%M-%S.png
+transparent = true
+
+# vim: ft=conf
