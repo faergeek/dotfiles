@@ -1,4 +1,5 @@
 [general]
+copy-command = "wl-copy"
 disable-notifications = true
 early-exit = true
 initial-tool = "arrow"
