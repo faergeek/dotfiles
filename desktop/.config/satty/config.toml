@@ -1,0 +1,8 @@
+[general]
+disable-notifications = true
+early-exit = true
+initial-tool = "arrow"
+output-filename = "Downloads/screenshot-%Y-%m-%d-%H-%M-%S.png"
+
+[color-palette]
+palette = ["#d20f39", "#40a02b", "#df8e1d", "#1e66f5", "#ea76cb", "#179299"]
