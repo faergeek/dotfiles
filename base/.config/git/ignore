@@ -3,4 +3,4 @@
 .cache
 .nvim.lua
 .gdb_history
-/.rgignore
+.rgignore
