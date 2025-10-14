@@ -1,6 +1,4 @@
-*.log
 .DS_Store
-.cache
-.nvim.lua
 .gdb_history
+.nvim.lua
 .rgignore
