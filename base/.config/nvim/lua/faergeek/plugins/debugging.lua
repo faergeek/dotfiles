@@ -104,29 +104,6 @@ return {
         ft = 'dap-float',
       },
     },
-    dependencies = {
-      {
-        'jay-babu/mason-nvim-dap.nvim',
-        dependencies = 'mason-org/mason.nvim',
-        cmd = { 'DapInstall', 'DapUninstall' },
-        opts = {
-          ensure_installed = { 'js' },
-          handlers = {
-            js = function()
-              require('mason-nvim-dap').default_setup {
-                adapters = {
-                  executable = { command = 'js-debug-adapter' },
-                  host = 'localhost',
-                  port = '8123',
-                  type = 'server',
-                },
-                name = 'pwa-node',
-              }
-            end,
-          },
-        },
-      },
-    },
     config = function()
       local dap = require 'dap'
 
@@ -138,6 +115,13 @@ return {
           '--eval-command',
           'set print pretty on',
         },
+      }
+
+      dap.adapters['pwa-node'] = {
+        executable = { command = 'js-debug-adapter' },
+        host = 'localhost',
+        port = '8123',
+        type = 'server',
       }
 
       dap.defaults.fallback.switchbuf = 'usetab,newtab'
