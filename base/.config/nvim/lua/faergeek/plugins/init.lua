@@ -116,7 +116,6 @@ return {
             layout = {
               layout = { position = 'bottom' },
               preset = 'ivy',
-              preview = 'main',
             },
           }
         end,
