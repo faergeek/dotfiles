@@ -1,8 +1,8 @@
 {
   "fixed-center": false,
-  "layer": "top",
   "reload_style_on_change": true,
-  "spacing": 0,
+  "margin": "8px 8px 0",
+  "spacing": 4,
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": [],
   "modules-right": [
@@ -10,7 +10,6 @@
     "privacy",
     "mpris",
     "tray",
-    "custom/darkman",
     "idle_inhibitor",
     "memory",
     "cpu",
@@ -52,10 +51,6 @@
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "on-click": "kitty -e btm --default_widget_type cpu --expanded"
   },
-  "custom/darkman": {
-    "exec": "darkman watch | sed -uE -e 's/^(dark)$//' -e 's/^(light)$//'",
-    "on-click": "darkman toggle"
-  },
   "custom/swaync": {
     "format": "{icon}",
     "format-icons": {
@@ -89,20 +84,22 @@
     "tooltip-format": "{artist} - {title}"
   },
   "hyprland/language": {
-    "format": "󰌌 {}"
+    "format": "󰌌 {}",
+    "format-en": "EN",
+    "format-ru": "RU"
   },
   "hyprland/window": {
+    "icon": true,
+    "icon-size": 16,
     "max-length": 100,
     "separate-outputs": true
   },
   "hyprland/workspaces": {
-    "format": "{name} {icon}",
+    "format": "{icon}<sub>{name}</sub>",
     "format-icons": {
-      "1": "󰖟",
-      "2": "󰇮",
-      "3": "",
-      "special": "󰌨",
-      "default": ""
+      "active": "",
+      "default": "",
+      "special": "󰌨"
     },
     "show-special": true,
     "on-click": "activate"
@@ -115,8 +112,9 @@
     }
   },
   "privacy": {
-    "icon-size": 18,
-    "icon-spacing": 16
+    "icon-size": 16,
+    "icon-spacing": 8,
+    "transition-duration": 0
   },
   "power-profiles-daemon": {
     "format-icons": {
@@ -139,8 +137,8 @@
     "scroll-step": 5
   },
   "tray": {
-    "icon-size": 18,
-    "spacing": 16
+    "icon-size": 16,
+    "spacing": 8
   },
   "wireplumber": {
     "format": "{icon}",

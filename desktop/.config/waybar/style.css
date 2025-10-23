@@ -1,0 +1,49 @@
+@import './latte.css';
+
+#waybar {
+  background: none;
+  color: @crust;
+  font:
+    bold 16px FantasqueSansM Nerd Font Propo,
+    Cantarell;
+  text-shadow: 0 0 4px @mauve;
+}
+
+.modules-left > widget > *,
+.modules-center > widget > *,
+.modules-right > widget > * {
+  padding: 0 8px;
+}
+
+button {
+  border: 0;
+  padding: 0 8px;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  box-shadow: none;
+  text-shadow: inherit;
+  transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1) color;
+}
+
+button:hover,
+button.active {
+  color: @mauve;
+}
+
+#workspaces {
+  padding: 0;
+}
+
+button.urgent,
+#privacy-item,
+#custom-swaync.notification,
+#custom-swaync.dnd-notification,
+#idle_inhibitor.activated,
+#battery.discharging.warning {
+  color: @peach;
+}
+
+#battery.discharging.critical {
+  color: @red;
+}
