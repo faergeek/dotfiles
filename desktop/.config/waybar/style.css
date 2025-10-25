@@ -4,7 +4,7 @@
   background: none;
   color: @crust;
   font:
-    bold 16px FantasqueSansM Nerd Font Propo,
+    16px FantasqueSansM Nerd Font Propo,
     Cantarell;
   text-shadow: 0 0 4px @mauve;
 }
