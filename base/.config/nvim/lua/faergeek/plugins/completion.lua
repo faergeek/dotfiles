@@ -24,7 +24,7 @@ return {
     end,
   },
   { 'saghen/blink.compat', version = '*', lazy = true, opts = {} },
-  { 'rcarriga/cmp-dap', lazy = true },
+  { 'rcarriga/cmp-dap', ft = 'dap-repl' },
   {
     'saghen/blink.cmp',
     version = '*',
