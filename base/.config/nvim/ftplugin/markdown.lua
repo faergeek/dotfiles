@@ -1,2 +1,2 @@
-vim.opt.conceallevel = 1
-vim.opt.concealcursor = ''
+vim.opt_local.conceallevel = 1
+vim.opt_local.concealcursor = ''
