@@ -6,24 +6,44 @@ return {
   'fladson/vim-kitty',
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master',
-    main = 'nvim-treesitter.configs',
     build = ':TSUpdate',
-    opts = {
-      auto_install = true,
-      ensure_installed = { 'diff', 'jsdoc', 'luadoc', 'luap', 'regex' },
-      highlight = { enable = true },
-      ignore_install = {
-        'c',
-        'lua',
-        'markdown',
-        'markdown_inline',
-        'query',
-        'vim',
-        'vimdoc',
-      },
-      indent = { enable = true },
-    },
+    opts = {},
+    config = function(_, opts)
+      local nvim_treesitter = require 'nvim-treesitter'
+      nvim_treesitter.setup(opts)
+
+      nvim_treesitter.install { 'diff', 'jsdoc', 'luadoc', 'luap', 'regex' }
+
+      local languages = {}
+      vim.list_extend(languages, nvim_treesitter.get_available(1))
+      vim.list_extend(languages, nvim_treesitter.get_available(2))
+      vim.list.unique(languages)
+
+      local filetypes = {}
+      for _, language in ipairs(languages) do
+        vim.list_extend(
+          filetypes,
+          vim.treesitter.language.get_filetypes(language)
+        )
+      end
+
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = filetypes,
+        callback = function(event)
+          local language = vim.treesitter.language.get_lang(event.match)
+
+          if
+            vim.tbl_contains(nvim_treesitter.get_installed 'parsers', language)
+          then
+            vim.treesitter.start(event.buf, language)
+          else
+            nvim_treesitter
+              .install(language)
+              :await(function() vim.treesitter.start(event.buf, language) end)
+          end
+        end,
+      })
+    end,
   },
   'RRethy/nvim-treesitter-endwise',
   {
