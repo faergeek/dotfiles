@@ -52,7 +52,6 @@ vim.opt.shortmess:append {
   c = true,
 }
 vim.opt.showbreak = '↳ '
-vim.opt.showmatch = true
 vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = 'yes'
 vim.opt.smartcase = true
