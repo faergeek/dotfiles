@@ -1,6 +1,7 @@
 return {
   {
     'mfussenegger/nvim-dap',
+    dependencies = { 'igorlfs/nvim-dap-view' },
     cmd = {
       'DapClearBreakpoints',
       'DapContinue',
@@ -58,11 +59,6 @@ return {
         desc = 'Debug: New',
         '<leader>dn',
         '<Cmd>DapNew<CR>',
-      },
-      {
-        desc = 'Debug: Toggle REPL',
-        '<leader>dr',
-        '<Cmd>DapToggleRepl<CR>',
       },
       {
         desc = 'Debug: Hover',
@@ -156,5 +152,26 @@ return {
         },
       }
     end,
+  },
+  {
+    'igorlfs/nvim-dap-view',
+    cmd = {
+      'DapViewClose',
+      'DapViewJump',
+      'DapViewNavigate',
+      'DapViewOpen',
+      'DapViewShow',
+      'DapViewToggle',
+      'DapViewWatch',
+    },
+    ---@module 'dap-view'
+    ---@type dapview.Config
+    opts = {
+      auto_toggle = true,
+      follow_tab = true,
+      winbar = {
+        default_section = 'repl',
+      },
+    },
   },
 }
