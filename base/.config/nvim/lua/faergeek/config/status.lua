@@ -14,6 +14,15 @@ function _G.tabline()
   return table.concat(parts, '')
 end
 
+---@param bufnr integer
+---@return string
+function _G.oil_buf_name(bufnr)
+  local dir = require('oil').get_current_dir(bufnr)
+
+  return dir and vim.fn.fnamemodify(dir, ':p:~:.:h')
+    or vim.api.nvim_buf_get_name(bufnr)
+end
+
 function _G.statusline()
   ---@type string[]
   local parts = {}
@@ -29,7 +38,7 @@ function _G.statusline()
       ': &filetype == "fugitiveblame" ? "Git Blame"',
       ': &filetype == "git"           ? "Git"',
       ': &filetype == "help"          ? "%f"',
-      ': &filetype == "oil"           ? \'%{fnamemodify(v:lua.require("oil").get_current_dir(), ":p:~:.:h")}\'',
+      ': &filetype == "oil"           ? \'%{v:lua.oil_buf_name(0)}\'',
       ':                                \'%{expand("%:p:~:.") ?? "[No Name]"}\'',
       '%}',
     }
