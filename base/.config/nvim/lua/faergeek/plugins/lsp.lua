@@ -29,13 +29,11 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function()
-      if vim.fn.executable 'tilt' == 1 then vim.lsp.enable 'tilt_ls' end
-
-      if vim.fn.executable 'ocamllsp' == 1 then vim.lsp.enable 'ocamllsp' end
-
-      if vim.fn.executable 'haskell-language-server-wrapper' == 1 then
-        vim.lsp.enable 'hls'
-      end
+      vim.lsp.enable {
+        'hls',
+        'ocamllsp',
+        'tilt_ls',
+      }
     end,
   },
   {
