@@ -91,7 +91,6 @@ vim.filetype.add {
   pattern = {
     ['.*/%.config/git/config%.local%.example'] = 'gitconfig',
     ['.*/%.config/git/config%.local'] = 'gitconfig',
-    ['.*/%.config/git/theme'] = 'gitconfig',
     ['.*/%.vscode/.*%.json'] = 'jsonc',
   },
 }
