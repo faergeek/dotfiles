@@ -17,7 +17,6 @@ return {
       local languages = {}
       vim.list_extend(languages, nvim_treesitter.get_available(1))
       vim.list_extend(languages, nvim_treesitter.get_available(2))
-      vim.list.unique(languages)
 
       local filetypes = {}
       for _, language in ipairs(languages) do
