@@ -26,7 +26,7 @@ return {
         callback = function()
           if vim.o.termguicolors then
             require('catppuccin').setup(opts)
-            vim.cmd.colorscheme 'catppuccin'
+            vim.cmd.colorscheme 'catppuccin-nvim'
           else
             vim.cmd.colorscheme 'default'
           end
