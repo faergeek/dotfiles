@@ -1,5 +1,7 @@
 ---@type vim.lsp.Config
 return {
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.vtsls
   settings = {
     javascript = {
       suggestionActions = { enabled = false },
