@@ -7,4 +7,7 @@ return {
     'pnpm-lock.yaml',
     'yarn.lock',
   },
+  init_options = {
+    camelCase = 'dashes',
+  },
 }
