@@ -31,6 +31,11 @@ return {
     },
   },
   {
+    'folke/persistence.nvim',
+    event = 'BufReadPre',
+    opts = {},
+  },
+  {
     'folke/snacks.nvim',
     dependencies = 'nvim-mini/mini.icons',
     priority = 1000,
