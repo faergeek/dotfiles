@@ -1,5 +1,4 @@
 return {
-  { 'rafamadriz/friendly-snippets' },
   { 'saghen/blink.compat', version = '*', lazy = true, opts = {} },
   { 'rcarriga/cmp-dap', ft = 'dap-repl' },
   {
