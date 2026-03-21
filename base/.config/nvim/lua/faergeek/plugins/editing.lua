@@ -78,11 +78,7 @@ return {
   {
     'Darazaki/indent-o-matic',
     event = 'BufReadPre',
-    opts = {
-      filetype_markdown = {
-        standard_widths = { 2 },
-      },
-    },
+    opts = {},
   },
   { 'farmergreg/vim-lastplace', event = 'BufReadPre' },
   {
