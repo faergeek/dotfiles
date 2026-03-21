@@ -48,7 +48,6 @@ return {
         'html',
         'jsonls',
         'lua_ls',
-        'markdown_oxide',
         'vtsls',
         'yamlls',
       },
