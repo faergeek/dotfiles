@@ -35,8 +35,8 @@ return {
       sources = {
         per_filetype = {
           ['dap-repl'] = { 'dap' },
-          lua = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
-          sql = { 'dadbod', 'snippets', 'buffer' },
+          lua = { inherit_defaults = true, 'lazydev' },
+          sql = { 'dadbod', 'buffer' },
         },
         providers = {
           dadbod = {
