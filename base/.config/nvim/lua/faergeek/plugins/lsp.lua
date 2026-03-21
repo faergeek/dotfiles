@@ -30,6 +30,7 @@ return {
     'neovim/nvim-lspconfig',
     config = function()
       vim.lsp.enable {
+        'gdscript',
         'hls',
         'ocamllsp',
         'tilt_ls',

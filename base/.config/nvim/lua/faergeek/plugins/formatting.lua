@@ -26,6 +26,7 @@ return {
           dockerfile = { lsp_format = 'never' },
           dune = { 'format-dune-file' },
           fish = { 'fish_indent' },
+          gdscript = { 'gdscript-formatter' },
           html = { 'prettier' },
           javascript = eslint_then_prettier,
           javascriptreact = eslint_then_prettier,
