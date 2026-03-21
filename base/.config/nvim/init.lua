@@ -4,6 +4,9 @@ require 'faergeek.config.options'
 vim.keymap.set({ 'n', 'x' }, 'k', "v:count ? 'k' : 'gk'", { expr = true })
 vim.keymap.set({ 'n', 'x' }, 'j', "v:count ? 'j' : 'gj'", { expr = true })
 
+vim.keymap.set('n', '<leader>l', '<Cmd>Lazy<CR>')
+vim.keymap.set('n', '<leader>m', '<Cmd>Mason<CR>')
+
 vim.cmd(
   'silent mkspell! ' .. vim.fn.stdpath 'config' .. '/spell' .. '/words.add'
 )

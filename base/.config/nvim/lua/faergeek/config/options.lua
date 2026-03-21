@@ -12,7 +12,6 @@ vim.opt.expandtab = true
 vim.opt.exrc = true
 vim.opt.fillchars = {
   diff = ' ',
-  eob = ' ',
   fold = ' ',
   foldclose = '',
   foldopen = '',
@@ -48,7 +47,6 @@ vim.opt.shiftround = true
 vim.opt.shiftwidth = 0
 vim.opt.shortmess:append {
   W = true,
-  I = true,
   c = true,
 }
 vim.opt.showbreak = '↳ '

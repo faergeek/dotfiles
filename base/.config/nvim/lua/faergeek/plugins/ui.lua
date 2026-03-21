@@ -20,6 +20,7 @@ return {
           information = { 'undercurl' },
         },
       },
+      show_end_of_buffer = true,
     },
     config = function(_, opts)
       vim.api.nvim_create_autocmd('OptionSet', {
