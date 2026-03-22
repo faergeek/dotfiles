@@ -2,14 +2,14 @@
 
 set -eu
 
-if [ $# -ne 3 ]; then
-  echo "USAGE: $0 <file> <line> <column>"
+if [ $# -lt 1 ]; then
+  echo "USAGE: $0 <file> [line] [column]"
   exit 1
 fi
 
 FILE="$1"
-LNUM="$2"
-COL="$3"
+LNUM="${2:-1}"
+COL="${3:-1}"
 
 if [ -r ./nvim-server.pipe ]; then
   nvim --server ./nvim-server.pipe --remote "$FILE"
