@@ -1,7 +1,6 @@
 return {
   'browserslist/vim-browserslist',
   'gpanders/nvim-parinfer',
-  'towolf/vim-helm',
   'fladson/vim-kitty',
   {
     'nvim-treesitter/nvim-treesitter',
