@@ -113,6 +113,12 @@ return {
         },
       }
 
+      dap.adapters.godot = {
+        type = 'server',
+        host = '127.0.0.1',
+        port = 6006,
+      }
+
       dap.adapters['pwa-node'] = {
         executable = { command = 'js-debug-adapter' },
         host = 'localhost',
