@@ -1,6 +1,5 @@
 return {
   'browserslist/vim-browserslist',
-  'ashishbinu/vim-dotenv',
   'gpanders/nvim-parinfer',
   'towolf/vim-helm',
   'fladson/vim-kitty',
