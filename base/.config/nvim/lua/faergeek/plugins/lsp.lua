@@ -18,12 +18,7 @@ return {
       'MasonUninstall',
       'MasonUninstallAll',
     },
-    opts = {
-      ui = {
-        backdrop = 100,
-        border = 'none',
-      },
-    },
+    opts = {},
   },
   { 'b0o/schemastore.nvim', lazy = true },
   {

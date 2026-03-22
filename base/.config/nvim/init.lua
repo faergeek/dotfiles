@@ -141,7 +141,4 @@ require('lazy').setup('faergeek.plugins', {
       },
     },
   },
-  ui = {
-    backdrop = 100,
-  },
 })
