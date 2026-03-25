@@ -14,6 +14,10 @@ return {
       ---@type conform.setupOpts
       return {
         formatters = {
+          ['clang-format'] = {
+            cwd = require('conform.util').root_file { '.clang-format' },
+            require_cwd = true,
+          },
           prettier = {
             require_cwd = true,
           },
