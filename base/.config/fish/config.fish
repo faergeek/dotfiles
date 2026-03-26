@@ -39,6 +39,13 @@ set -gx MC_DISABLE_PAGER 1
 set -gx PNPM_HOME $HOME/.local/share/pnpm
 add_to_path "$PNPM_HOME"
 
+# pyenv
+if type -q pyenv
+    set -gx PYENV_ROOT $HOME/.pyenv
+    add_to_path "$PYENV_ROOT/bin"
+    pyenv init - fish | source
+end
+
 # ripgrep
 set -gx RIPGREP_CONFIG_PATH $HOME/.config/ripgrep/args
 
