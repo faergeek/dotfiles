@@ -119,6 +119,12 @@ return {
         port = 6006,
       }
 
+      dap.adapters.python = {
+        type = 'server',
+        host = '127.0.0.1',
+        port = 5678,
+      }
+
       dap.adapters['pwa-node'] = {
         executable = { command = 'js-debug-adapter' },
         host = 'localhost',
