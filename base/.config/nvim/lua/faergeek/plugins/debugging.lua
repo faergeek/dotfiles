@@ -92,7 +92,7 @@ return {
       {
         desc = 'Debug: Terminate',
         '<leader>dt',
-        '<Cmd>DapTerminate<CR>',
+        '<Cmd>DapDisconnect<CR>',
       },
       {
         'q',
