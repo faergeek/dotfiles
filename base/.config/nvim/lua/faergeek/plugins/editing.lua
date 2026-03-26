@@ -28,12 +28,16 @@ return {
         pattern = filetypes,
         callback = function(event)
           local language = vim.treesitter.language.get_lang(event.match)
+          if not language then return end
 
           if
             vim.tbl_contains(nvim_treesitter.get_installed 'parsers', language)
           then
             vim.treesitter.start(event.buf, language)
-            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+            if #vim.treesitter.query.get_files(language, 'indents') ~= 0 then
+              vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+            end
           else
             nvim_treesitter
               .install(language)
