@@ -46,7 +46,7 @@ return {
       keymaps = {
         ['g?'] = 'actions.show_help',
         ['<CR>'] = 'actions.select',
-        ['q'] = 'actions.close',
+        ['gq'] = 'actions.close',
         ['-'] = 'actions.parent',
         ['gx'] = 'actions.open_external',
       },
