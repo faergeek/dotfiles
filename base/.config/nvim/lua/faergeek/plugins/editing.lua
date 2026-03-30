@@ -1,7 +1,6 @@
 return {
   'browserslist/vim-browserslist',
   'gpanders/nvim-parinfer',
-  'fladson/vim-kitty',
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
