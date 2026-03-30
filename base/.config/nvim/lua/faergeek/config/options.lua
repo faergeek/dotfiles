@@ -1,13 +1,8 @@
 vim.opt.backupcopy = 'yes'
 vim.opt.breakindent = true
 if not vim.env.SSH_TTY then vim.opt.clipboard = 'unnamedplus' end
-vim.opt.diffopt = {
-  'algorithm:patience',
-  'closeoff',
-  'filler',
-  'indent-heuristic',
-  'internal',
-}
+vim.opt.diffopt:append { 'algorithm:patience' }
+vim.opt.diffopt:remove { 'linematch:40' }
 vim.opt.expandtab = true
 vim.opt.exrc = true
 vim.opt.fillchars = {
