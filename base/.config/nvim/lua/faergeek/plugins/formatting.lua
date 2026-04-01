@@ -71,6 +71,8 @@ return {
         function() vim.b.no_format_on_save = nil end,
         {}
       )
+
+      vim.opt.formatexpr = "v:lua.require'conform'.formatexpr()"
     end,
   },
 }
