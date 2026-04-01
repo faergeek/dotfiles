@@ -132,7 +132,6 @@ return {
         type = 'server',
       }
 
-      dap.defaults.fallback.switchbuf = 'usetab,newtab'
       dap.providers.configs['dap.launch.json'] = nil
 
       vim.fn.sign_define {
@@ -180,7 +179,6 @@ return {
     ---@type dapview.Config
     opts = {
       auto_toggle = true,
-      follow_tab = true,
       winbar = {
         default_section = 'repl',
       },
