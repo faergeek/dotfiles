@@ -44,8 +44,9 @@ return {
             end
           end
 
-          local ok, parser = pcall(vim.treesitter.get_parser, event.buf)
-          if ok and parser then
+          if
+            vim.tbl_contains(nvim_treesitter.get_installed 'parsers', language)
+          then
             start()
           else
             nvim_treesitter.install(language):await(start)
