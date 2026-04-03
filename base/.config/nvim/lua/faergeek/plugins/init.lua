@@ -54,19 +54,6 @@ return {
         function() Snacks.picker() end,
       },
       {
-        desc = 'Find Buffers',
-        '<leader>o',
-        function()
-          Snacks.picker.buffers {
-            layout = {
-              layout = { position = 'bottom' },
-              preset = 'ivy',
-              preview = 'main',
-            },
-          }
-        end,
-      },
-      {
         desc = 'Find Old files',
         '<leader>fo',
         function()
