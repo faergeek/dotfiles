@@ -151,6 +151,19 @@ return {
     opts = {},
   },
   {
+    'tpope/vim-commentary',
+    dependencies = {
+      {
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        opts = {
+          languages = {
+            c = { __default = '// %s', __multiline = '/* %s */' },
+          },
+        },
+      },
+    },
+  },
+  {
     'rlane/pounce.nvim',
     keys = {
       {
