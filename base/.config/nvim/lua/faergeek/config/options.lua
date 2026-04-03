@@ -13,7 +13,6 @@ vim.opt.fillchars = {
 }
 vim.opt.fixeol = false
 vim.opt.foldcolumn = 'auto:9'
-vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldlevelstart = 99
 vim.opt.foldtext = ''
 vim.opt.guicursor =

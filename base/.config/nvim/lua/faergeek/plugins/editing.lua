@@ -29,18 +29,23 @@ return {
           local language = vim.treesitter.language.get_lang(event.match)
           if not language then return end
 
-          if
-            vim.tbl_contains(nvim_treesitter.get_installed 'parsers', language)
-          then
-            vim.treesitter.start(event.buf, language)
+          local function start()
+            vim.treesitter.start(event.buf)
+
+            if #vim.treesitter.query.get_files(language, 'folds') ~= 0 then
+              vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+            end
 
             if #vim.treesitter.query.get_files(language, 'indents') ~= 0 then
               vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
             end
+          end
+
+          local ok, parser = pcall(vim.treesitter.get_parser, event.buf)
+          if ok and parser then
+            start()
           else
-            nvim_treesitter
-              .install(language)
-              :await(function() vim.treesitter.start(event.buf, language) end)
+            nvim_treesitter.install(language):await(start)
           end
         end,
       })
