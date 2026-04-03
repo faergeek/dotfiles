@@ -33,11 +33,14 @@ return {
             vim.treesitter.start(event.buf)
 
             if #vim.treesitter.query.get_files(language, 'folds') ~= 0 then
-              vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+              for _, winid in ipairs(vim.fn.win_findbuf(event.buf)) do
+                vim.wo[winid][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+              end
             end
 
             if #vim.treesitter.query.get_files(language, 'indents') ~= 0 then
-              vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+              vim.bo[event.buf].indentexpr =
+                "v:lua.require'nvim-treesitter'.indentexpr()"
             end
           end
 
