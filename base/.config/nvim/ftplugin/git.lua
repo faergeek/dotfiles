@@ -1,2 +1,2 @@
-vim.wo.spell = false
-vim.wo.list = false
+vim.opt_local.spell = false
+vim.opt_local.list = false
