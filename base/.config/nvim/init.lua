@@ -25,32 +25,6 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd('SpellFileMissing', {
-  callback = function(event)
-    vim.notify(
-      'Downloading missing spell files for "' .. event.match .. '"...',
-      vim.log.levels.INFO
-    )
-
-    for _, suffix in ipairs { 'spl', 'sug' } do
-      local fname = event.match .. '.utf-8.' .. suffix
-
-      vim.fn.system {
-        'curl',
-        '--fail',
-        '--silent',
-        '--output',
-        vim.fn.stdpath 'config' .. '/spell/' .. fname,
-        'https://ftp.nluug.nl/pub/vim/runtime/spell/' .. fname,
-      }
-
-      if vim.v.shell_error ~= 0 then
-        vim.notify('Failed to download ' .. fname, vim.log.levels.ERROR)
-      end
-    end
-  end,
-})
-
 vim.api.nvim_create_autocmd('QuickFixCmdPost', {
   pattern = {
     'caddbuffer',
@@ -134,7 +108,6 @@ require('lazy').setup('faergeek.plugins', {
       disabled_plugins = {
         'gzip',
         'netrwPlugin',
-        'spellfile',
         'tarPlugin',
         'tutor',
         'zipPlugin',
