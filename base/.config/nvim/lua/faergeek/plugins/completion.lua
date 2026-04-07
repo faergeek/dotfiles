@@ -1,6 +1,5 @@
 return {
-  { 'saghen/blink.compat', version = '*', lazy = true, opts = {} },
-  { 'rcarriga/cmp-dap', ft = 'dap-repl' },
+  { 'mayromr/blink-cmp-dap', ft = 'dap-repl' },
   {
     'saghen/blink.cmp',
     version = '*',
@@ -45,7 +44,7 @@ return {
           },
           dap = {
             name = 'dap',
-            module = 'blink.compat.source',
+            module = 'blink-cmp-dap',
           },
           lazydev = {
             name = 'LazyDev',
