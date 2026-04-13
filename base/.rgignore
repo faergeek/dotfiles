@@ -1,6 +1,8 @@
 .DS_Store
 .eslintcache
 .git
+.stfolder
+.stversions
 _opam
 node_modules
 package-lock.json
