@@ -32,6 +32,7 @@ vim.opt.listchars = {
   tab = '» ',
   trail = '·',
 }
+vim.opt.modeline = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = false
@@ -84,8 +85,11 @@ vim.filetype.add {
     ['Tiltfile'] = 'tiltfile',
   },
   pattern = {
+    ['.*/%.config/fish/themes/.*%.theme'] = 'fish',
     ['.*/%.config/git/config%.local%.example'] = 'gitconfig',
     ['.*/%.config/git/config%.local'] = 'gitconfig',
+    ['.*/%.config/swappy/config'] = 'ini',
+    ['.*/%.config/uwsm/env'] = 'sh',
     ['.*/%.vscode/.*%.json'] = 'jsonc',
   },
 }

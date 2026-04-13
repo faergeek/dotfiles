@@ -1,5 +1,3 @@
-# vim: ft=fish
-
 # https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
 fish_color_command cyan
 fish_color_keyword red

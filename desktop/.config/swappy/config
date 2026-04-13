@@ -4,5 +4,3 @@ paint_mode=arrow
 save_dir=$HOME/Downloads
 save_filename_format=screenshot-%Y-%m-%d-%H-%M-%S.png
 transparent = true
-
-# vim: ft=conf
