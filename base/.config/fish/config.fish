@@ -15,6 +15,10 @@ set -gx BAT_THEME ansi
 # ghcup
 add_to_path $HOME/.cabal/bin $HOME/.ghcup/bin
 
+# go
+set -gx GOPATH $HOME/.go
+type -q go && add_to_path (go env GOPATH)/bin
+
 # husky
 set -gx HUSKY 0
 
