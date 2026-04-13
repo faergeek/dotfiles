@@ -4,7 +4,7 @@ return {
   ---@type lspconfig.settings.tailwindcss
   settings = {
     tailwindCSS = {
-      classFunctions = { 'clsx', 'cn', 'classNames', 'cva' },
+      classFunctions = { 'clsx', 'cn', 'classNames', 'cva', 'tv' },
     },
   },
 }
