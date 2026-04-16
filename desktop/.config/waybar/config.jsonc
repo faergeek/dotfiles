@@ -73,6 +73,9 @@
     "on-click": "kitty -e btm --default_widget_type mem --expanded"
   },
   "mpris": {
+    "album-len": 50,
+    "artist-len": 50,
+    "dynamic-len": 100,
     "dynamic-order": ["title", "artist", "album"],
     "format": "{status_icon}",
     "format-playing": "{status_icon} {dynamic}",
@@ -81,6 +84,7 @@
       "playing": "",
       "stopped": ""
     },
+    "title-len": 50,
     "tooltip-format": "{artist} - {title}"
   },
   "hyprland/language": {
