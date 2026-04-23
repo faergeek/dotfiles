@@ -103,3 +103,5 @@ capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 vim.lsp.config('*', {
   capabilities = capabilities,
 })
+
+require('vim._core.ui2').enable {}
