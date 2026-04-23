@@ -25,11 +25,6 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd('CmdlineChanged', {
-  pattern = '[:/?]',
-  callback = function() vim.fn.wildtrigger() end,
-})
-
 vim.api.nvim_create_autocmd('QuickFixCmdPost', {
   pattern = {
     'caddbuffer',

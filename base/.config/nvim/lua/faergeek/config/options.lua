@@ -59,8 +59,6 @@ vim.opt.tabline = '%!v:lua.tabline()'
 vim.opt.tabstop = 2
 vim.opt.undofile = true
 vim.opt.wildignorecase = true
-vim.opt.wildoptions:append { 'fuzzy' }
-vim.opt.wildmode:prepend { 'noselect:lastused' }
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
