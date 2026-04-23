@@ -40,6 +40,7 @@ return {
           lua = { 'stylua' },
           markdown = { 'prettier' },
           meson = { 'meson' },
+          python = { 'ruff_fix', 'ruff_organize_imports', 'ruff_format' },
           sh = { 'shfmt' },
           sql = { 'sql_formatter' },
           typescript = eslint_then_prettier,
