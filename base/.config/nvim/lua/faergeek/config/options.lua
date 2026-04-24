@@ -96,10 +96,3 @@ vim.filetype.add {
 
 vim.hl.priorities.semantic_tokens = 90
 vim.treesitter.language.register('starlark', 'tiltfile')
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
-
-vim.lsp.config('*', {
-  capabilities = capabilities,
-})
