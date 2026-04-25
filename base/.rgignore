@@ -3,6 +3,7 @@
 .git
 .stfolder
 .stversions
+__pycache__
 _opam
 node_modules
 package-lock.json
