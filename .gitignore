@@ -1,5 +1,3 @@
 !/.rgignore
 /base/.config/fish/fish_variables
 /base/.config/git/config.local
-/base/.config/nvim/spell/*.spl
-/base/.config/nvim/spell/*.sug
