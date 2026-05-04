@@ -33,7 +33,8 @@
       "critical": 10,
       "warning": 20
     },
-    "tooltip-format": "{capacity}% ({timeTo})"
+    "tooltip-format": "{capacity}% ({timeTo})",
+    "tooltip-format-discharging": "{capacity}% ({timeTo})\n{power}W"
   },
   "bluetooth": {
     "format": "",
