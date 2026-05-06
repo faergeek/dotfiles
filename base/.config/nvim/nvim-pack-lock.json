@@ -58,11 +58,11 @@
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-dap-view": {
-      "rev": "e541ff9ed4b209a9620413c9fc43ae23fccc257a",
+      "rev": "988c0cfa8740fcf6c0528ddf11e2651d2d0ae792",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-highlight-colors": {
-      "rev": "e2cb22089cc2358b2b995c09578224f142de6039",
+      "rev": "e4c7af0211866162d999ce0bdd6a029302e19139",
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "6db1246640e9e1bdf8a1d1f6d27a940fc0a572d5",
+      "rev": "c8982fcea21d0d8e928a367e0c1536e6ac7cf98e",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
