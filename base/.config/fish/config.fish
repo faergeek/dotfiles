@@ -41,7 +41,7 @@ set -gx MC_DISABLE_PAGER 1
 
 # pnpm
 set -gx PNPM_HOME $HOME/.local/share/pnpm
-add_to_path "$PNPM_HOME"
+add_to_path "$PNPM_HOME/bin"
 
 # pyenv
 if type -q pyenv
