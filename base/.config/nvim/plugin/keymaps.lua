@@ -1,7 +1,19 @@
 vim.keymap.set({ 'n', 'x' }, 'k', "v:count ? 'k' : 'gk'", { expr = true })
 vim.keymap.set({ 'n', 'x' }, 'j', "v:count ? 'j' : 'gj'", { expr = true })
 
-vim.keymap.set('n', '<leader>l', function() vim.pack.update() end)
+vim.keymap.set('n', '<leader>pu', function() vim.pack.update() end)
+
+vim.keymap.set(
+  'n',
+  '<leader>pr',
+  function()
+    vim.pack.update(nil, {
+      offline = true,
+      target = 'lockfile',
+    })
+  end
+)
+
 vim.keymap.set('n', '<leader>m', '<Cmd>Mason<CR>')
 
 vim.keymap.set('n', '<BS>', '<Cmd>DBUIToggle<CR>')
