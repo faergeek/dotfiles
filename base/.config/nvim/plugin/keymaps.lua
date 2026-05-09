@@ -211,7 +211,7 @@ vim.keymap.set('n', '<leader>dn', '<Cmd>DapNew<CR>')
 vim.keymap.set(
   { 'n', 'x' },
   '<leader>dh',
-  function() require('dap-view').hover() end
+  function() require('dap.ui.widgets').hover(nil, { wrap = false }) end
 )
 
 vim.keymap.set('n', '<leader>do', '<Cmd>DapStepOver<CR>')
