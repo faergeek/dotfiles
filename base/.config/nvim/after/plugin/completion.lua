@@ -49,7 +49,6 @@ require('blink.cmp').setup {
   sources = {
     per_filetype = {
       ['dap-repl'] = { 'dap' },
-      lua = { inherit_defaults = true, 'lazydev' },
       sql = { 'dadbod', 'buffer' },
     },
     providers = {
@@ -60,11 +59,6 @@ require('blink.cmp').setup {
       dap = {
         name = 'dap',
         module = 'blink-cmp-dap',
-      },
-      lazydev = {
-        name = 'LazyDev',
-        module = 'lazydev.integrations.blink',
-        score_offset = 100,
       },
       path = {
         opts = {
