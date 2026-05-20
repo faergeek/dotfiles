@@ -46,7 +46,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.icons": {
-      "rev": "9c7b1b90b15bdd69c52f6e31889dbc9987c30ec4",
+      "rev": "520995f1d75da0e4cc901ee95080b1ff2bc46b94",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.pairs": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-dap-view": {
-      "rev": "b5cc6e1c4cd188478fdad2e0b58dbca08fd6d363",
+      "rev": "2fe10567913fca43f352791ac83d19b9fdeacc95",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-highlight-colors": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "988a3aafe6d8bb0f71c54aa79e2c65a79aa08837",
+      "rev": "05383893462944f20bf2044b5a1216f894c9b7a0",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
