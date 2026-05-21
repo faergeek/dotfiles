@@ -37,6 +37,7 @@ require('conform').setup {
   },
   formatters_by_ft = {
     _ = { lsp_format = 'fallback' },
+    astro = { 'prettier' },
     c = { 'clang-format' },
     cpp = { 'clang-format' },
     css = { 'prettier' },
