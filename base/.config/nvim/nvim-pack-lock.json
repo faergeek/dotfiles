@@ -42,7 +42,7 @@
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
-      "rev": "cbf8d285e1462dd24acf3507817be2bbcb035919",
+      "rev": "bb639d4bf385a4d89f478b83af4d770be05ab7eb",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.icons": {
@@ -66,7 +66,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
-      "rev": "dfbada1a311c4bf3369f8d5421369c9b6e8b888f",
+      "rev": "a4ed4e761c400849e8c9f8bda33e5083f890268c",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-parinfer": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "1f00d77909a88e5e228f3bc5ddbfac9b80fc5b9e",
+      "rev": "6a25868796bb0108145fdb748a43f6d95cf0039c",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
