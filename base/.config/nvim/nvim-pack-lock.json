@@ -14,7 +14,7 @@
       "src": "https://github.com/j-morano/buffer_manager.nvim"
     },
     "catppuccin": {
-      "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
+      "rev": "8edd468af4d63212b84d69b2ddb5ffc9023ef5eb",
       "src": "https://github.com/catppuccin/nvim"
     },
     "conform.nvim": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-dap-view": {
-      "rev": "2fe10567913fca43f352791ac83d19b9fdeacc95",
+      "rev": "df0b12000776d75c8d9518a1ca220377ea69cd7d",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-highlight-colors": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "6a25868796bb0108145fdb748a43f6d95cf0039c",
+      "rev": "c214b52ae8195083b7304cfb1bd1d50fbe2bcc0a",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
