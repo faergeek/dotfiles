@@ -22,7 +22,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fidget.nvim": {
-      "rev": "82404b196e73a00b1727a91903beef5ddc319d22",
+      "rev": "57bd054365e6fa089704854bdba668bff1c83227",
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "gitsigns.nvim": {
@@ -54,7 +54,7 @@
       "src": "https://github.com/nvim-mini/mini.pairs"
     },
     "nvim-dap": {
-      "rev": "531771530d4f82ad2d21e436e3cc052d68d7aebb",
+      "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-dap-view": {
