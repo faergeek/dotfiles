@@ -50,7 +50,7 @@
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.pairs": {
-      "rev": "4a014143fcb4e9df26198ccb3ecff3b9e77a048c",
+      "rev": "db0fac0a25884183650352ccf92b362a41ed2e9c",
       "src": "https://github.com/nvim-mini/mini.pairs"
     },
     "nvim-dap": {
@@ -66,7 +66,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
-      "rev": "bfcc0171a43f22afa61d927ffe9fcb6cb85dc99e",
+      "rev": "3371bf298c1f56efc26771ee961f461176958fb5",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-parinfer": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "322751401046ae2dbbe32eeb31992a5d4fcc8d92",
+      "rev": "019c5ef98a80632a6ab2470eb993fd57d7d9333e",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
