@@ -38,7 +38,7 @@
       "src": "https://github.com/folke/lazydev.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "21c5b3ebeaa0412e28096bb0701434c51c1fbf76",
+      "rev": "50bf3871b539896bd0650b882f6e6b467cc1c1eb",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "019c5ef98a80632a6ab2470eb993fd57d7d9333e",
+      "rev": "490afbd7fd3b316330550405ac74758a971104a4",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
