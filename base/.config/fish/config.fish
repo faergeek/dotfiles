@@ -65,7 +65,7 @@ if status is-interactive
     set fish_cursor_external $fish_cursor_insert
 
     if type -q eza
-        alias ls='eza --icons --hyperlink'
+        alias ls='eza --icons --hyperlink=auto'
     else
         alias ls='ls --color=auto --hyperlink=auto'
     end
