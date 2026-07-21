@@ -58,27 +58,27 @@ vim.fn.sign_define {
   {
     text = '',
     name = 'DapBreakpoint',
-    texthl = 'DapUIBreakpointsLine',
+    texthl = 'DapBreakpoint',
   },
   {
     text = '',
     name = 'DapBreakpointCondition',
-    texthl = 'DapUIBreakpointsLine',
+    texthl = 'DapBreakpointCondition',
   },
   {
     text = '',
     name = 'DapLogPoint',
-    texthl = 'DapUIBreakpointsLine',
+    texthl = 'DapLogPoint',
   },
   {
     text = '',
     name = 'DapStopped',
-    numhl = 'DapUIBreakpointsCurrentLine',
-    texthl = 'DapUIBreakpointsCurrentLine',
+    numhl = 'DapStopped',
+    texthl = 'DapStopped',
   },
   {
     text = '',
     name = 'DapBreakpointRejected',
-    texthl = 'DapUIBreakpointsDisabledLine',
+    texthl = 'DapBreakpointRejected',
   },
 }
