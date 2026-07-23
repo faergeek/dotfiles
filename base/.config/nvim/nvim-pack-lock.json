@@ -14,7 +14,7 @@
       "src": "https://github.com/j-morano/buffer_manager.nvim"
     },
     "catppuccin": {
-      "rev": "058e83dc009e4dd62f30807054de9cc849699e27",
+      "rev": "c7c692a0ad3080710893abbae100171819a3e4be",
       "src": "https://github.com/catppuccin/nvim"
     },
     "conform.nvim": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "77fb1b0aa0c7528680bed48687f3dd2c2a6ed111",
+      "rev": "3d2c297f7152208daf4a382ea7123f9e4ebf9da1",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
