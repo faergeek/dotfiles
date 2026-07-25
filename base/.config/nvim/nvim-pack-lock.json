@@ -30,7 +30,7 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "indent-o-matic": {
-      "rev": "764da1f30b5bb4a49035c3abc9a586322296b812",
+      "rev": "81fa0e03bd2615a23b23312512371a2fc47fc0a4",
       "src": "https://github.com/Darazaki/indent-o-matic"
     },
     "lazydev.nvim": {
@@ -78,7 +78,7 @@
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
-      "rev": "bd41519ff7901da11ba6e1c8f419f17f2d94305a",
+      "rev": "0153df68b44fa97a3e11696ca55cbdd7a6d42398",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-context": {
