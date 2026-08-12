@@ -18,7 +18,7 @@
       "src": "https://github.com/catppuccin/nvim"
     },
     "conform.nvim": {
-      "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
+      "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fidget.nvim": {
@@ -26,7 +26,7 @@
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "31d6fb2d618bca1482b9f274751ead5f03461408",
+      "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "indent-o-matic": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-dap-view": {
-      "rev": "43a2ccf5618ea26a9b11575ff18ded1cc82746bf",
+      "rev": "4e73e57008df10f9971b60c3a11e6aa11ba9f94a",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-highlight-colors": {
@@ -66,7 +66,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
-      "rev": "43ed3797b266e1ee8d222e491379ad471c9d3146",
+      "rev": "4267d26e60323a45e18f8e7a63a964cc8f53ca4e",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-parinfer": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "427b0ff24377a6cdd18aa822a984a5adf156c3fa",
+      "rev": "c8170f9628265f5a01510182703bab9125ef15d8",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
