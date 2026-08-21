@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "cef8d093b63c9be7e8b49f7dc341e8447fc4c300",
+      "rev": "73e89eb3e536a4dd8f991c963bd37189520c9919",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
