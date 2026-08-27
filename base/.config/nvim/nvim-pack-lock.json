@@ -38,7 +38,7 @@
       "src": "https://github.com/folke/lazydev.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "24d4ab0838b250753b307a8747ade06dc99aed9d",
+      "rev": "1b621470c01bd8190bb32a290d21575d3e6470c5",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
