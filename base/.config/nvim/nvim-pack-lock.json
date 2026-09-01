@@ -78,7 +78,7 @@
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
-      "rev": "857651fce37eba032ebe28f3a206283cdc65c45a",
+      "rev": "19071296d3d643b48615ee574a20e8a03ac40872",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-context": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "2940d5e12f8797620cd47dca984d46119e1fa4b8",
+      "rev": "d34c58439271f5e73ed79c2b8d1a09731c4525f1",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
