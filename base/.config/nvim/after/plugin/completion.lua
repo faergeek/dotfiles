@@ -8,17 +8,7 @@ require('fidget').setup {}
 require('mason').setup {}
 
 require('mason-lspconfig').setup {
-  ensure_installed = {
-    'bashls',
-    'cssls',
-    'dockerls',
-    'eslint',
-    'html',
-    'jsonls',
-    'lua_ls',
-    'vtsls',
-    'yamlls',
-  },
+  ensure_installed = { 'lua_ls' },
 }
 
 require('blink.cmp').setup {
