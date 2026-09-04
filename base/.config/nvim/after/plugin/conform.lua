@@ -19,10 +19,12 @@ vim.api.nvim_create_user_command(
 vim.opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 
 ---@type conform.FiletypeFormatterInternal
-local eslint_then_prettier = {
+local jsformatters = {
   lsp_format = 'first',
   name = 'eslint',
+  'oxfmt',
   'prettier',
+  'oxlint',
 }
 
 require('conform').setup {
@@ -47,8 +49,8 @@ require('conform').setup {
     fish = { 'fish_indent' },
     gdscript = { 'gdscript-formatter' },
     html = { 'prettier' },
-    javascript = eslint_then_prettier,
-    javascriptreact = eslint_then_prettier,
+    javascript = jsformatters,
+    javascriptreact = jsformatters,
     json = { 'prettier' },
     jsonc = { 'prettier' },
     less = { 'prettier' },
@@ -58,8 +60,8 @@ require('conform').setup {
     python = { 'ruff_fix', 'ruff_organize_imports', 'ruff_format' },
     sh = { 'shfmt' },
     sql = { 'sql_formatter' },
-    typescript = eslint_then_prettier,
-    typescriptreact = eslint_then_prettier,
+    typescript = jsformatters,
+    typescriptreact = jsformatters,
     yaml = { 'prettier' },
   },
   format_on_save = function(bufnr)
