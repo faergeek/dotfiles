@@ -50,7 +50,7 @@
   "cpu": {
     "format": "{icon} ",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "kitty -e btm --default_widget_type cpu --expanded"
+    "on-click": "kitty -e btm --expanded"
   },
   "custom/swaync": {
     "format": "{icon}",
@@ -71,7 +71,7 @@
     "format": "{icon} ",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "tooltip-format": "{used:0.1f}GiB/{total:0.1f}GiB used",
-    "on-click": "kitty -e btm --default_widget_type mem --expanded"
+    "on-click": "kitty -e btm --expanded --process_default_sort mem --process_memory_as_value"
   },
   "mpris": {
     "album-len": 50,
