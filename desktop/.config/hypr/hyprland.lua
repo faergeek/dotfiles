@@ -290,7 +290,7 @@ hl.bind('SUPER + CTRL + Q', hl.dsp.exec_cmd 'loginctl lock-session')
 
 hl.bind(
   'CTRL + ALT + SHIFT + BACKSPACE',
-  hl.dsp.exec_cmd 'hyprshutdown --post-cmd uwsm stop'
+  hl.dsp.exec_cmd 'hyprshutdown --post-cmd "uwsm stop"'
 )
 
 -- https://wiki.hypr.land/Configuring/Basics/Window-Rules/
