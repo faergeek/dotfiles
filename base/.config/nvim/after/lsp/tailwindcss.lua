@@ -4,7 +4,11 @@ return {
   ---@type lspconfig.settings.tailwindcss
   settings = {
     tailwindCSS = {
-      classFunctions = { 'cva' },
+      experimental = {
+        classRegex = {
+          { 'cva\\(((?:[^()]|\\([^()]*\\))*)\\)', '["\'`]([^"\'`]*).*?["\'`]' },
+        },
+      },
     },
   },
 }
