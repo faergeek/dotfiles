@@ -30,7 +30,7 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "indent-o-matic": {
-      "rev": "81fa0e03bd2615a23b23312512371a2fc47fc0a4",
+      "rev": "0fadef43f311f673b6de0e39ceed3cc69fd49062",
       "src": "https://github.com/Darazaki/indent-o-matic"
     },
     "lazydev.nvim": {
@@ -66,7 +66,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
-      "rev": "ac062d0d01c019c0dbdb798968f3e5d8b35c3853",
+      "rev": "45a3a444b710511c39abca3b60bb6e23a21e3de5",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-parinfer": {
