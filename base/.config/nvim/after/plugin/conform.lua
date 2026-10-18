@@ -33,6 +33,26 @@ require('conform').setup {
       cwd = require('conform.util').root_file { '.clang-format' },
       require_cwd = true,
     },
+    oxfmt = {
+      cwd = require('conform.util').root_file {
+        -- https://oxc.rs/docs/guide/usage/formatter/config.html#create-a-config-file
+        '.oxfmtrc.json',
+        '.oxfmtrc.jsonc',
+        'oxfmt.config.ts',
+        'oxfmt.config.mts',
+      },
+      require_cwd = true,
+    },
+    oxlint = {
+      cwd = require('conform.util').root_file {
+        -- https://oxc.rs/docs/guide/usage/linter/config.html#create-a-config-file
+        '.oxlintrc.json',
+        '.oxlintrc.jsonc',
+        'oxlint.config.ts',
+        'oxlint.config.mts',
+      },
+      require_cwd = true,
+    },
     prettier = {
       require_cwd = true,
     },
