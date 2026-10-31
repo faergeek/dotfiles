@@ -10,7 +10,7 @@
       "version": ">=0.0.0"
     },
     "buffer_manager.nvim": {
-      "rev": "a0ac2db39c8bd4a2b6ca897f38c88770f90d9323",
+      "rev": "574ccf195a8e7627bc5b57f6c0c252844837fbee",
       "src": "https://github.com/j-morano/buffer_manager.nvim"
     },
     "catppuccin": {
@@ -66,7 +66,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
-      "rev": "4b2b045b8ceb035f5c8bc9cab19b95706bfa6a19",
+      "rev": "460bb34e7be114f1fda7815781696bc701e60f83",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-parinfer": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "246ca2fa1323ee1312b84352ab09b8c2fa292888",
+      "rev": "cc6302a0957806dfc0f2687f1f35ee9652686101",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
