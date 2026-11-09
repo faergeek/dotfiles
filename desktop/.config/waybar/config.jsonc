@@ -119,6 +119,12 @@
   "privacy": {
     "icon-size": 16,
     "icon-spacing": 8,
+    "ignore": [
+      {
+        "type": "location",
+        "name": "darkman"
+      }
+    ],
     "transition-duration": 0
   },
   "power-profiles-daemon": {
