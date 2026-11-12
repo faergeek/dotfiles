@@ -22,9 +22,6 @@ require('blink.cmp').setup {
       },
       create_undo_point = false,
     },
-    ghost_text = {
-      enabled = true,
-    },
   },
   sources = {
     per_filetype = {
