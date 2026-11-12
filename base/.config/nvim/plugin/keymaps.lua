@@ -110,18 +110,6 @@ vim.keymap.set('n', '<leader>fk', function() Snacks.picker.keymaps() end)
 
 vim.keymap.set('n', '<leader>sr', function() require('persistence').load() end)
 
-vim.keymap.set(
-  'n',
-  ']r',
-  function() require('illuminate').goto_next_reference() end
-)
-
-vim.keymap.set(
-  'n',
-  '[r',
-  function() require('illuminate').goto_prev_reference() end
-)
-
 vim.keymap.set('n', '-', '<Cmd>Oil<CR>')
 
 vim.keymap.set(

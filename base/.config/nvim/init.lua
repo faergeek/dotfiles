@@ -205,7 +205,6 @@ vim.pack.add {
   gh 'mayromr/blink-cmp-dap',
 
   gh 'browserslist/vim-browserslist',
-  gh 'RRethy/vim-illuminate',
   gh 'stevearc/oil.nvim',
 
   gh 'nvim-lua/plenary.nvim',
