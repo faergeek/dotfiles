@@ -30,12 +30,6 @@ require('blink.cmp').setup {
       enabled = true,
     },
   },
-  signature = {
-    enabled = true,
-    window = {
-      show_documentation = true,
-    },
-  },
   sources = {
     per_filetype = {
       ['dap-repl'] = { 'dap' },
