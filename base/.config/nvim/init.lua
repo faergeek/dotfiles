@@ -264,10 +264,6 @@ require('persistence').setup {}
 
 require('gitsigns').setup {
   attach_to_untracked = true,
-  current_line_blame = true,
-  current_line_blame_opts = {
-    ignore_whitespace = true,
-  },
   numhl = true,
 }
 
