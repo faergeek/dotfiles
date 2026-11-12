@@ -72,7 +72,7 @@ vim.g.db_ui_win_position = 'right'
 vim.diagnostic.config {
   float = {
     scope = 'cursor',
-    source = true,
+    source = 'if_many',
   },
   severity_sort = true,
   signs = false,
