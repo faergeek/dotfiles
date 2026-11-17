@@ -259,6 +259,7 @@ require('snacks').setup {
     },
   },
   quickfile = {},
+  words = {},
 }
 
 require('persistence').setup {}
