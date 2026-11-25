@@ -26,7 +26,7 @@
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "c0862d382a35b7b45757d8d151a6a634c09bf3ce",
+      "rev": "ea38d317af34f8ffcfbaf0f0dcc1471736661a4c",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "indent-o-matic": {
@@ -110,7 +110,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "schemastore.nvim": {
-      "rev": "024511f9960150bc172e82201d2ce5eb64adc588",
+      "rev": "5926c7899b2e36cd0f944ef3a933abd68c0fcdb8",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {
